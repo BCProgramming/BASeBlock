@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+*.db
+/Poing2.sln.ide
+/_ReSharper.Poing2
+/Poing2/bin/Debug
+/Poing2.sln.DotSettings.user
+/Poing2.vsmdi
