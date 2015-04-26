@@ -1,0 +1,4 @@
+Compilation of script, "C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs resulted in 0 Warnings & 2 Errors.
+Errors:
+'SpartanLevel.SpartanLevelBuilder.BuildLevelSet(System.Drawing.RectangleF)': no suitable method found to override #CS0115 Line 91 Column 29 in file: c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs
+'SpartanLevel.SpartanLevelBuilder' does not implement inherited abstract member 'BASeBlock.BaseLevelBuilder.BuildLevelSet(System.Drawing.RectangleF, System.Windows.Forms.IWin32Window)' #CS0534 Line 18 Column 15 in file: c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs

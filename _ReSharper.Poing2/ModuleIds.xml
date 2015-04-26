@@ -1,0 +1,10 @@
+<Modules>
+  <Module PersistentId="7CC30E5A-7187-4822-B94F-63DE980446BA" ModuleId="BASeBlock" />
+  <Module PersistentId="C40AAD74-B465-449D-B953-1EF23374A45B" ModuleId="BCUpdateLib" />
+  <Module PersistentId="B991D056-5227-430B-B7FB-B57785559BFA" ModuleId="BBlocktests" />
+  <Module PersistentId="AC9FEAFF-577F-4CED-8136-7919ED654A06" ModuleId="irrklangadapter" />
+  <Module PersistentId="System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" ModuleId="System" />
+  <Module PersistentId="986B3DB4-269B-4D43-AD3F-D73C9AF8DE68" ModuleId="ProductKeyGenerator" />
+  <Module PersistentId="5E122EA6-B454-4DE1-8492-4E85227B6613" ModuleId="BCActivator" />
+  <Module PersistentId="38940002-5EA5-43F8-8378-3B4D14319143" ModuleId="BCUpdateConsole" />
+</Modules>

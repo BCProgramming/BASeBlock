@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="dde749e8-f1c0-4ce1-9986-6fd1d746918f" name="BC_Programming@TERATRON 2010-11-30 11:19:54" runUser="TERATRON\BC_Programming" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="a23eb23f-c60a-4200-b6ee-a3fda6880aaf">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Debug\TestResults\BC_Programming_TERATRON 2010-11-30 11_19_54" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-11-30T11:19:54.1184877-08:00" queuing="2010-11-30T11:19:54.8585300-08:00" start="2010-11-30T11:19:55.0065385-08:00" finish="2010-11-30T11:19:57.0366546-08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestLocalHighScores" storage="c:\users\bc_programming\documents\visual studio 2008\projects\baseblocks\bblocktests\bin\debug\bblocktests.dll" id="84f114cb-7134-b2bb-24b7-d28c6c2a8e2a">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="31206204-f483-4df6-aec7-4dcdaa20da76" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/BC_Programming/Documents/Visual Studio 2008/Projects/BASeBlocks/BBlocktests/bin/Debug/BBlocktests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="BBlocktests.BBlocktests, BBlocktests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestLocalHighScores" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="84f114cb-7134-b2bb-24b7-d28c6c2a8e2a" executionId="31206204-f483-4df6-aec7-4dcdaa20da76" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="31206204-f483-4df6-aec7-4dcdaa20da76" testId="84f114cb-7134-b2bb-24b7-d28c6c2a8e2a" testName="TestLocalHighScores" computerName="TERATRON" duration="00:00:01.8810077" startTime="2010-11-30T11:19:55.0585414-08:00" endTime="2010-11-30T11:19:56.9976523-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <StdOut>Submitting score Name:Barry with score: 600
+Submitting score Name:Billy with score: 200
+Submitting score Name:Chuck with score: 400
+Submitting score Name:Trish with score: 700
+Submitting score Name:Bob with score: 250
+Submitting score Name:Thomas with score: 320
+Current Scores:
+Entry:Barry,759
+Entry:Billy,759
+Entry:Chuck,759
+Entry:Trish,759
+Entry:Bob,759
+Entry:Thomas,759
+Testing "Eligible" routine...
+IsEligible, Name=Billy, Score=210
+return value:-1
+IsEligible, Name=Bob, Score=225
+return value:-1
+IsEligible, Name=BearLover, Score=400
+return value:7
+IsEligible, Name=Tickles, Score=54
+return value:7</StdOut>
+        <DebugTrace>Loading Scores from http://bc-programming.com/hiscore/hiscores.php?action=simpleview&amp;gameID=2
+loaded 6 scores.using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Barry&amp;score=600&amp;hashvalue=e21dad30860707f6f72030c05cb6c08e
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Billy&amp;score=200&amp;hashvalue=262cd487d87a134f8ab3c2ef9f627903
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Chuck&amp;score=400&amp;hashvalue=9bbc3d5e3be3297a20ac4d2b7bc29cba
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Trish&amp;score=700&amp;hashvalue=2c61c66a325613985a68878f9ae18022
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Bob&amp;score=250&amp;hashvalue=33f6f668954887aa8135adbf0705e7c0
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Thomas&amp;score=320&amp;hashvalue=b205480216a40b49902765111a67d301
+</DebugTrace>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

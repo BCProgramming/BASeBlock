@@ -1,0 +1,935 @@
+
+ Begin Log:10/4/2012 at 10:51 PM
+Initializing BASeBlock- Version:2.6.0.0
+Random Number Generator initialized with seed:189158154
+Deleting leftover temporary files...
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\LevelSets\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+using Scripts folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\
+using toolbarimage folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\toolbar\
+Ignoring assemblies:^(?!BASeBlock).*$
+force including assemblies:DragonAdapter,_script,BASeBlock,irrklangadapter
+Creating temporary game data folder
+adding temporary data folder C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP\wrongzip.zip9066fd1e-aefa-4af4-b614-7461f4e830a7
+Inspecting Assembly:script_SpartanLevelBuilder
+Found iLevelSetBuilder Implementor:SpartanLevelBuilder
+Type:SpartanLevel.SpartanLevelBuilder is a, or implements, iLevelSetBuilder
+Inspecting Assembly:script_testscript
+Found Block Derivation:AddBallBlockEx2
+Type:ballblock.AddBallBlockEx2 is a, or implements, Block
+Inspecting Assembly:BASeBlock
+Found Block Derivation:RegularPolygonBlock
+Type:BASeBlock.RegularPolygonBlock is a, or implements, Block
+Found IGameInitializer Implementor:RegularPolygonBlock
+Type:BASeBlock.RegularPolygonBlock is a, or implements, IGameInitializer
+Found Block Derivation:EllipseBlock
+Type:BASeBlock.EllipseBlock is a, or implements, Block
+Found IGameInitializer Implementor:EllipseBlock
+Type:BASeBlock.EllipseBlock is a, or implements, IGameInitializer
+Found GameObject Derivation:DebugHelper
+Type:BASeBlock.DebugHelper is a, or implements, GameObject
+Found BlockCategoryAttribute Derivation:PassiveEffectCategoryAttribute
+Type:BASeBlock.PassiveEffectCategoryAttribute is a, or implements, BlockCategoryAttribute
+Found BlockCategoryAttribute Derivation:PolygonBlockCategoryAttribute
+Type:BASeBlock.PolygonBlockCategoryAttribute is a, or implements, BlockCategoryAttribute
+Found BlockCategoryAttribute Derivation:StandardBlockCategoryAttribute
+Type:BASeBlock.StandardBlockCategoryAttribute is a, or implements, BlockCategoryAttribute
+Found BlockCategoryAttribute Derivation:ImpactEffectBlockCategoryAttribute
+Type:BASeBlock.ImpactEffectBlockCategoryAttribute is a, or implements, BlockCategoryAttribute
+Found BlockCategoryAttribute Derivation:PowerupEffectCategoryAttribute
+Type:BASeBlock.PowerupEffectCategoryAttribute is a, or implements, BlockCategoryAttribute
+Found BlockCategoryAttribute Derivation:MaliceCategoryAttribute
+Type:BASeBlock.MaliceCategoryAttribute is a, or implements, BlockCategoryAttribute
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Type:BASeBlock.BasicGradientColourizer is a, or implements, iEditBlockFilter
+Found iEditBlockFilter Implementor:BlockReplacer
+Type:BASeBlock.BlockReplacer is a, or implements, iEditBlockFilter
+Found iEditBlockFilter Implementor:MakeColourTest
+Type:BASeBlock.MakeColourTest is a, or implements, iEditBlockFilter
+Found Block Derivation:SwitchBlockMulti
+Type:BASeBlock.SwitchBlockMulti is a, or implements, Block
+Found Block Derivation:SwitchBlock
+Type:BASeBlock.SwitchBlock is a, or implements, Block
+Found iSoundEngineDriver Implementor:NullSound
+Type:BASeBlock.NullSound is a, or implements, iSoundEngineDriver
+Found GameObject Derivation:Shell
+Type:BASeBlock.Shell is a, or implements, GameObject
+Found Block Derivation:ManyToOneTestBlock
+Type:BASeBlock.ManyToOneTestBlock is a, or implements, Block
+Found Block Derivation:ImageBlock
+Type:BASeBlock.ImageBlock is a, or implements, Block
+Found Block Derivation:BallBehaviourBlock`1
+Type:BASeBlock.BallBehaviourBlock`1 is a, or implements, Block
+Found Block Derivation:CrazyBlock
+Type:BASeBlock.CrazyBlock is a, or implements, Block
+Found Block Derivation:NormalBlock
+Type:BASeBlock.NormalBlock is a, or implements, Block
+Found Block Derivation:PowerupBlock
+Type:BASeBlock.PowerupBlock is a, or implements, Block
+Found GameObject Derivation:TransitoryBlockObject
+Type:BASeBlock.PowerupBlock+TransitoryBlockObject is a, or implements, GameObject
+Found Block Derivation:SpawnerBlock
+Type:BASeBlock.SpawnerBlock is a, or implements, Block
+Found Block Derivation:OrbBlock
+Type:BASeBlock.OrbBlock is a, or implements, Block
+Found IGameInitializer Implementor:OrbBlock
+Type:BASeBlock.OrbBlock is a, or implements, IGameInitializer
+Found Block Derivation:ImageClipBlock
+Type:BASeBlock.ImageClipBlock is a, or implements, Block
+Found Block Derivation:TexturedBlock
+Type:BASeBlock.TexturedBlock is a, or implements, Block
+Found Block Derivation:StrongBlock
+Type:BASeBlock.StrongBlock is a, or implements, Block
+Found Block Derivation:CreditBlock
+Type:BASeBlock.CreditBlock is a, or implements, Block
+Found Block Derivation:BombBlockAngular
+Type:BASeBlock.BombBlockAngular is a, or implements, Block
+Found Block Derivation:BombBlock
+Type:BASeBlock.BombBlock is a, or implements, Block
+Found Block Derivation:SpeedBallBlock
+Type:BASeBlock.SpeedBallBlock is a, or implements, Block
+Found Block Derivation:AddBallBlock
+Type:BASeBlock.AddBallBlock is a, or implements, Block
+Found iBallBehaviour Implementor:ProxyBallBehaviour
+Type:BASeBlock.ProxyBallBehaviour is a, or implements, iBallBehaviour
+Found Block Derivation:FrustratorBlock
+Type:BASeBlock.FrustratorBlock is a, or implements, Block
+Found Block Derivation:ReplacerBlock
+Type:BASeBlock.ReplacerBlock is a, or implements, Block
+Found Block Derivation:BlockShotBlock
+Type:BASeBlock.BlockShotBlock is a, or implements, Block
+Found Block Derivation:AttractionRepulsionBlock
+Type:BASeBlock.AttractionRepulsionBlock is a, or implements, Block
+Found Block Derivation:BallDirectedShotBlock
+Type:BASeBlock.BallDirectedShotBlock is a, or implements, Block
+Found Block Derivation:DestructionBlock
+Type:BASeBlock.DestructionBlock is a, or implements, Block
+Found Block Derivation:ConstructionBlock
+Type:BASeBlock.ConstructionBlock is a, or implements, Block
+Found Block Derivation:TetherBlock
+Type:BASeBlock.TetherBlock is a, or implements, Block
+Found Block Derivation:BlackHoleBlock
+Type:BASeBlock.BlackHoleBlock is a, or implements, Block
+Found iBallBehaviour Implementor:GravityBlockBallBehaviour
+Type:BASeBlock.BlackHoleBlock+GravityBlockBallBehaviour is a, or implements, iBallBehaviour
+Found Block Derivation:BevelBlock
+Type:BASeBlock.BevelBlock is a, or implements, Block
+Found Block Derivation:InvincibleBlock
+Type:BASeBlock.InvincibleBlock is a, or implements, Block
+Found Block Derivation:BrickBlock
+Type:BASeBlock.BrickBlock is a, or implements, Block
+Found IGameInitializer Implementor:BrickBlock
+Type:BASeBlock.BrickBlock is a, or implements, IGameInitializer
+Found Block Derivation:SnowBlock
+Type:BASeBlock.SnowBlock is a, or implements, Block
+Found Block Derivation:SplitBlock
+Type:BASeBlock.SplitBlock is a, or implements, Block
+Found Block Derivation:RayBlock
+Type:BASeBlock.RayBlock is a, or implements, Block
+Found Block Derivation:StreetBlock
+Type:BASeBlock.StreetBlock is a, or implements, Block
+Found iSoundEngineDriver Implementor:BASSDriver
+Type:BASeBlock.BASSDriver is a, or implements, iSoundEngineDriver
+Found GameObject Derivation:AnimatedImageObject
+Type:BASeBlock.AnimatedImageObject is a, or implements, GameObject
+Found GameObject Derivation:GameImageObject
+Type:BASeBlock.GameImageObject is a, or implements, GameObject
+Found GameObject Derivation:MacGuffinOrb
+Type:BASeBlock.MacGuffinOrb is a, or implements, GameObject
+Found CollectibleOrb Derivation:MacGuffinOrb
+Type:BASeBlock.MacGuffinOrb is a, or implements, CollectibleOrb
+Found GameObject Derivation:HealingOrb
+Type:BASeBlock.HealingOrb is a, or implements, GameObject
+Found CollectibleOrb Derivation:HealingOrb
+Type:BASeBlock.HealingOrb is a, or implements, CollectibleOrb
+Found GameObject Derivation:PowerupOrb
+Type:BASeBlock.PowerupOrb is a, or implements, GameObject
+Found CollectibleOrb Derivation:PowerupOrb
+Type:BASeBlock.PowerupOrb is a, or implements, CollectibleOrb
+Found GameObject Derivation:ScoreOrb
+Type:BASeBlock.ScoreOrb is a, or implements, GameObject
+Found CollectibleOrb Derivation:ScoreOrb
+Type:BASeBlock.ScoreOrb is a, or implements, CollectibleOrb
+Found GameObject Derivation:HitscanBullet
+Type:BASeBlock.HitscanBullet is a, or implements, GameObject
+Found iProjectile Implementor:HitscanBullet
+Type:BASeBlock.HitscanBullet is a, or implements, iProjectile
+Found GameObject Derivation:Bullet
+Type:BASeBlock.Bullet is a, or implements, GameObject
+Found GameObject Derivation:SpinShot
+Type:BASeBlock.SpinShot is a, or implements, GameObject
+Found iProjectile Implementor:SpinShot
+Type:BASeBlock.SpinShot is a, or implements, iProjectile
+Found GameObject Derivation:BoxDestructor
+Type:BASeBlock.BoxDestructor is a, or implements, GameObject
+Found iProjectile Implementor:BoxDestructor
+Type:BASeBlock.BoxDestructor is a, or implements, iProjectile
+Found GameObject Derivation:AttractRepulseDestructor
+Type:BASeBlock.AttractRepulseDestructor is a, or implements, GameObject
+Found GameObject Derivation:LaserShot
+Type:BASeBlock.LaserShot is a, or implements, GameObject
+Found iProjectile Implementor:LaserShot
+Type:BASeBlock.LaserShot is a, or implements, iProjectile
+Found GameObject Derivation:Fireball
+Type:BASeBlock.Fireball is a, or implements, GameObject
+Found iProjectile Implementor:Fireball
+Type:BASeBlock.Fireball is a, or implements, iProjectile
+Found GameObject Derivation:BlueFireball
+Type:BASeBlock.BlueFireball is a, or implements, GameObject
+Found iProjectile Implementor:BlueFireball
+Type:BASeBlock.BlueFireball is a, or implements, iProjectile
+Found GameObject Derivation:ExplosionShot
+Type:BASeBlock.ExplosionShot is a, or implements, GameObject
+Found GameObject Derivation:ProxyObject
+Type:BASeBlock.ProxyObject is a, or implements, GameObject
+Found GameObject Derivation:AnimatedSprite
+Type:BASeBlock.AnimatedSprite is a, or implements, GameObject
+Found GameObject Derivation:PolygonProtector
+Type:BASeBlock.PolygonProtector is a, or implements, GameObject
+Found GameObject Derivation:LineSegment
+Type:BASeBlock.LineSegment is a, or implements, GameObject
+Found GameObject Derivation:BlockChangeEffect
+Type:BASeBlock.BlockChangeEffect is a, or implements, GameObject
+Found GameObject Derivation:CreationEffect
+Type:BASeBlock.CreationEffect is a, or implements, GameObject
+Found GameObject Derivation:ExplosionEffect
+Type:BASeBlock.ExplosionEffect is a, or implements, GameObject
+Found GameObject Derivation:MarioDeathStyleObject
+Type:BASeBlock.MarioDeathStyleObject is a, or implements, GameObject
+Found GameObject Derivation:MegamanTest
+Type:BASeBlock.MegamanTest is a, or implements, GameObject
+Found GameObject Derivation:SillyFace
+Type:BASeBlock.SillyFace is a, or implements, GameObject
+Found GameObject Derivation:BasicFadingText
+Type:BASeBlock.BasicFadingText is a, or implements, GameObject
+Found TriggerEvent Derivation:KillAllObjectsEvent
+Type:BASeBlock.KillAllObjectsEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:FinishLevelEvent
+Type:BASeBlock.FinishLevelEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:LoseLifeEvent
+Type:BASeBlock.LoseLifeEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:EventDetector
+Type:BASeBlock.EventDetector is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:SpawnEnemyEvent
+Type:BASeBlock.SpawnEnemyEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:PlaySoundEvent
+Type:BASeBlock.PlaySoundEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:BlockEvent
+Type:BASeBlock.BlockEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:TextScrollEvent
+Type:BASeBlock.TextScrollEvent is a, or implements, TriggerEvent
+Found TriggerEvent Derivation:ToggledRepeatingTrigger
+Type:BASeBlock.ToggledRepeatingTrigger is a, or implements, TriggerEvent
+Found Trigger Derivation:TimedTriggers
+Type:BASeBlock.TimedTriggers is a, or implements, Trigger
+Found Trigger Derivation:SoundStopTrigger
+Type:BASeBlock.SoundStopTrigger is a, or implements, Trigger
+Found Trigger Derivation:EnemyTrigger
+Type:BASeBlock.EnemyTrigger is a, or implements, Trigger
+Found Trigger Derivation:BlockTrigger
+Type:BASeBlock.BlockTrigger is a, or implements, Trigger
+Found iBallBehaviour Implementor:ParticleEmitterBehaviour
+Type:BASeBlock.ParticleEmitterBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:WaterBallBehaviour
+Type:BASeBlock.WaterBallBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:NonReboundableBallBehaviour
+Type:BASeBlock.NonReboundableBallBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:LinearGravityBallBehaviour
+Type:BASeBlock.LinearGravityBallBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:TimedBehaviour
+Type:BASeBlock.TimedBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:LeapFrogExploderBehaviour
+Type:BASeBlock.LeapFrogExploderBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:PausedBallBehaviour
+Type:BASeBlock.PausedBallBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:LaserSpinBehaviour
+Type:BASeBlock.LaserSpinBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:CrazyBallBehaviour
+Type:BASeBlock.CrazyBallBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:PowerBallBehaviour
+Type:BASeBlock.PowerBallBehaviour is a, or implements, iBallBehaviour
+Found iBallBehaviour Implementor:TempBallBehaviour
+Type:BASeBlock.TempBallBehaviour is a, or implements, iBallBehaviour
+Found iProjectile Implementor:cBall
+Type:BASeBlock.cBall is a, or implements, iProjectile
+Found iProjectile Implementor:FrustratorBall
+Type:BASeBlock.FrustratorBall is a, or implements, iProjectile
+Found iProjectile Implementor:ProjectileBall
+Type:BASeBlock.ProjectileBall is a, or implements, iProjectile
+Found TemplateCategory Derivation:AllCategory
+Type:BASeBlock.Templates.AllCategory is a, or implements, TemplateCategory
+Found TemplateCategory Derivation:RegularExpressionNameCategoryFilter
+Type:BASeBlock.Templates.RegularExpressionNameCategoryFilter is a, or implements, TemplateCategory
+Found TemplateCategory Derivation:AlphabetCategory
+Type:BASeBlock.Templates.AlphabetCategory is a, or implements, TemplateCategory
+Found BlockCategoryAttribute Derivation:MinecraftBlockAttribute
+Type:BASeBlock.MinecraftBlockAttribute is a, or implements, BlockCategoryAttribute
+Found Block Derivation:MinecraftBlock
+Type:BASeBlock.MinecraftBlock is a, or implements, Block
+Found IGameInitializer Implementor:MinecraftBlock
+Type:BASeBlock.MinecraftBlock is a, or implements, IGameInitializer
+Found GameObject Derivation:GamePowerUp
+Type:BASeBlock.GamePowerUp is a, or implements, GameObject
+Found GamePowerUp Derivation:BallSplitterPowerup
+Type:BASeBlock.BallSplitterPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:BallSplitterPowerup
+Type:BASeBlock.BallSplitterPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:Charger
+Type:BASeBlock.Charger is a, or implements, GamePowerUp
+Found GameObject Derivation:Charger
+Type:BASeBlock.Charger is a, or implements, GameObject
+Found GamePowerUp Derivation:IcePowerUp
+Type:BASeBlock.IcePowerUp is a, or implements, GamePowerUp
+Found GameObject Derivation:IcePowerUp
+Type:BASeBlock.IcePowerUp is a, or implements, GameObject
+Found GamePowerUp Derivation:MagnetPowerup
+Type:BASeBlock.MagnetPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:MagnetPowerup
+Type:BASeBlock.MagnetPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:BuilderPowerUp
+Type:BASeBlock.BuilderPowerUp is a, or implements, GamePowerUp
+Found GameObject Derivation:BuilderPowerUp
+Type:BASeBlock.BuilderPowerUp is a, or implements, GameObject
+Found GamePowerUp Derivation:StickyPaddlePowerUp
+Type:BASeBlock.StickyPaddlePowerUp is a, or implements, GamePowerUp
+Found GameObject Derivation:StickyPaddlePowerUp
+Type:BASeBlock.StickyPaddlePowerUp is a, or implements, GameObject
+Found GamePowerUp Derivation:AddBallPowerup
+Type:BASeBlock.AddBallPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:AddBallPowerup
+Type:BASeBlock.AddBallPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:BlockRandomizerPowerup
+Type:BASeBlock.BlockRandomizerPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:BlockRandomizerPowerup
+Type:BASeBlock.BlockRandomizerPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:RandomizerPowerup
+Type:BASeBlock.RandomizerPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:RandomizerPowerup
+Type:BASeBlock.RandomizerPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:ShieldPowerup
+Type:BASeBlock.ShieldPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:ShieldPowerup
+Type:BASeBlock.ShieldPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:PaddlePlusPowerup
+Type:BASeBlock.PaddlePlusPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:PaddlePlusPowerup
+Type:BASeBlock.PaddlePlusPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:EnemySpawnerPowerUp
+Type:BASeBlock.EnemySpawnerPowerUp is a, or implements, GamePowerUp
+Found GameObject Derivation:EnemySpawnerPowerUp
+Type:BASeBlock.EnemySpawnerPowerUp is a, or implements, GameObject
+Found GamePowerUp Derivation:FrustratorPowerup
+Type:BASeBlock.FrustratorPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:FrustratorPowerup
+Type:BASeBlock.FrustratorPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:ExtraLifePowerup
+Type:BASeBlock.ExtraLifePowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:ExtraLifePowerup
+Type:BASeBlock.ExtraLifePowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:LifeUpPowerUp
+Type:BASeBlock.LifeUpPowerUp is a, or implements, GamePowerUp
+Found GameObject Derivation:LifeUpPowerUp
+Type:BASeBlock.LifeUpPowerUp is a, or implements, GameObject
+Found GamePowerUp Derivation:PaddleMinusPowerup
+Type:BASeBlock.PaddleMinusPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:PaddleMinusPowerup
+Type:BASeBlock.PaddleMinusPowerup is a, or implements, GameObject
+Found Block Derivation:BoundedMovingBlock
+Type:BASeBlock.BoundedMovingBlock is a, or implements, Block
+Found Block Derivation:PathedMovingBlock
+Type:BASeBlock.PathedMovingBlock is a, or implements, Block
+Found Block Derivation:AnimatedImageBlock
+Type:BASeBlock.AnimatedImageBlock is a, or implements, Block
+Found Block Derivation:AnimatedTextureBlock
+Type:BASeBlock.AnimatedTextureBlock is a, or implements, Block
+Found Block Derivation:PowerAssignmentBlock
+Type:BASeBlock.PowerAssignmentBlock is a, or implements, Block
+Found Block Derivation:PulsingBlock
+Type:BASeBlock.PulsingBlock is a, or implements, Block
+Found GameObject Derivation:InvaderController
+Type:BASeBlock.InvaderController is a, or implements, GameObject
+Found iProjectile Implementor:InvaderBallShot
+Type:BASeBlock.InvaderBallShot is a, or implements, iProjectile
+Found Block Derivation:InvaderBlock
+Type:BASeBlock.InvaderBlock is a, or implements, Block
+Found Block Derivation:GrowBlock
+Type:BASeBlock.GrowBlock is a, or implements, Block
+Found Block Derivation:ControllableBlock
+Type:BASeBlock.ControllableBlock is a, or implements, Block
+Found Block Derivation:MovingPlatformBlock
+Type:BASeBlock.MovingPlatformBlock is a, or implements, Block
+Found Block Derivation:CreeperBlock
+Type:BASeBlock.CreeperBlock is a, or implements, Block
+Found Block Derivation:VomitBlock
+Type:BASeBlock.VomitBlock is a, or implements, Block
+Found Block Derivation:DemonBlock
+Type:BASeBlock.DemonBlock is a, or implements, Block
+Found Block Derivation:SpeedEffectBlock
+Type:BASeBlock.SpeedEffectBlock is a, or implements, Block
+Found Block Derivation:PowerupCycleBlock
+Type:BASeBlock.PowerupCycleBlock is a, or implements, Block
+Found Block Derivation:SandBlock
+Type:BASeBlock.SandBlock is a, or implements, Block
+Found Block Derivation:GamePowerupBlock
+Type:BASeBlock.GamePowerupBlock is a, or implements, Block
+Found Block Derivation:WaterBlock
+Type:BASeBlock.WaterBlock is a, or implements, Block
+Found GameObject Derivation:GameCharacter
+Type:BASeBlock.GameCharacter is a, or implements, GameObject
+Found GameObject Derivation:macGuffinpowerup
+Type:BASeBlock.macGuffinpowerup is a, or implements, GameObject
+Found GameCharacterPowerup Derivation:macGuffinpowerup
+Type:BASeBlock.macGuffinpowerup is a, or implements, GameCharacterPowerup
+Found GameObject Derivation:InvinciblePowerup
+Type:BASeBlock.InvinciblePowerup is a, or implements, GameObject
+Found GameCharacterPowerup Derivation:InvinciblePowerup
+Type:BASeBlock.InvinciblePowerup is a, or implements, GameCharacterPowerup
+Found GameObject Derivation:ExtraLifeItem
+Type:BASeBlock.ExtraLifeItem is a, or implements, GameObject
+Found GameCharacterPowerup Derivation:ExtraLifeItem
+Type:BASeBlock.ExtraLifeItem is a, or implements, GameCharacterPowerup
+Found GameObject Derivation:MushroomPower
+Type:BASeBlock.MushroomPower is a, or implements, GameObject
+Found GameCharacterPowerup Derivation:MushroomPower
+Type:BASeBlock.MushroomPower is a, or implements, GameCharacterPowerup
+Found GameCharacterAbility Derivation:InvinciblePowerupAbility
+Type:BASeBlock.InvinciblePowerupAbility is a, or implements, GameCharacterAbility
+Found GameObject Derivation:BehaviourRemoverProxy
+Type:BASeBlock.PaddleBehaviours.BehaviourRemoverProxy is a, or implements, GameObject
+Found GameObject Derivation:PaddleSizeChangeBehaviourObject
+Type:BASeBlock.PaddleBehaviours.SizeChangeBehaviour+PaddleSizeChangeBehaviourObject is a, or implements, GameObject
+Found GameObject Derivation:BuilderShot
+Type:BASeBlock.PaddleBehaviours.BuilderShotBehaviour+BuilderShot is a, or implements, GameObject
+Found iProjectile Implementor:BuilderShot
+Type:BASeBlock.PaddleBehaviours.BuilderShotBehaviour+BuilderShot is a, or implements, iProjectile
+Found Block Derivation:Paddle
+Type:BASeBlock.Paddle is a, or implements, Block
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Type:BASeBlock.CreditLevelBuilder is a, or implements, iLevelSetBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Type:BASeBlock.ArkanoidLevelBuilder is a, or implements, iLevelSetBuilder
+Found iLevelSetBuilder Implementor:LevelBuilder_FromStream
+Type:BASeBlock.LevelBuilder_FromStream is a, or implements, iLevelSetBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Type:BASeBlock.LevelBuilderFromFile is a, or implements, iLevelSetBuilder
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Type:BASeBlock.DefaultLevelBuilder is a, or implements, iLevelSetBuilder
+Found GamePowerUp Derivation:TerminatorPelletPowerup
+Type:BASeBlock.TerminatorPelletPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:TerminatorPelletPowerup
+Type:BASeBlock.TerminatorPelletPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:TerminatorLaserSpinPowerup
+Type:BASeBlock.TerminatorLaserSpinPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:TerminatorLaserSpinPowerup
+Type:BASeBlock.TerminatorLaserSpinPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:TerminatorBallShotPowerup
+Type:BASeBlock.TerminatorBallShotPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:TerminatorBallShotPowerup
+Type:BASeBlock.TerminatorBallShotPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:TerminatorPistolPowerup
+Type:BASeBlock.TerminatorPistolPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:TerminatorPistolPowerup
+Type:BASeBlock.TerminatorPistolPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:TerminatorShotgunPowerup
+Type:BASeBlock.TerminatorShotgunPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:TerminatorShotgunPowerup
+Type:BASeBlock.TerminatorShotgunPowerup is a, or implements, GameObject
+Found GamePowerUp Derivation:TerminatorLaserPowerup
+Type:BASeBlock.TerminatorLaserPowerup is a, or implements, GamePowerUp
+Found GameObject Derivation:TerminatorLaserPowerup
+Type:BASeBlock.TerminatorLaserPowerup is a, or implements, GameObject
+Found GameObject Derivation:SnakeEnemy
+Type:BASeBlock.SnakeEnemy is a, or implements, GameObject
+Found GameObject Derivation:EyeGuy
+Type:BASeBlock.EyeGuy is a, or implements, GameObject
+Found iProjectile Implementor:EyeGuy
+Type:BASeBlock.EyeGuy is a, or implements, iProjectile
+Found GameObject Derivation:SpinnerGuy
+Type:BASeBlock.SpinnerGuy is a, or implements, GameObject
+Found iProjectile Implementor:SpinnerGuy
+Type:BASeBlock.SpinnerGuy is a, or implements, iProjectile
+Found GameObject Derivation:ShootSpinner
+Type:BASeBlock.ShootSpinner is a, or implements, GameObject
+Found iProjectile Implementor:ShootSpinner
+Type:BASeBlock.ShootSpinner is a, or implements, iProjectile
+Found GameObject Derivation:BouncerGuy
+Type:BASeBlock.BouncerGuy is a, or implements, GameObject
+Found iProjectile Implementor:BouncerGuy
+Type:BASeBlock.BouncerGuy is a, or implements, iProjectile
+Found GameObject Derivation:ChomperEnemy
+Type:BASeBlock.ChomperEnemy is a, or implements, GameObject
+Skipped Assembly Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Skipped Assembly BCUpdateLib, Version=1.4.0.0, Culture=neutral, PublicKeyToken=adeb01d7443df504
+Skipped Assembly FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Skipped Assembly Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrklangadapter
+ReflectionTypeLoadException occured;   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at BASeBlock.MultiTypeManager..ctor(IEnumerable`1 lookassemblies, IEnumerable`1 typesload, iManagerCallback pcallback, AssemblyLoadTestFunction TestAssembly, TypeManagerLoadProgressCallback pprog, TypeManagerInspectTypeCallback pinspectioncallback, IEnumerable`1 preloadedassemblies) in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\LoadedTypeManager.cs:line 230 InnerExceptions:
+RTLE Loader Exception:Could not load file or assembly 'irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7' or one of its dependencies. An attempt was made to load a program with an incorrect format. Source:stack Trace:
+End of RTLE Loader Exceptions
+Skipped Assembly Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Skipped Assembly Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35
+Skipped Assembly OpenTK.Compatibility, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4
+Skipped Assembly OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4
+Skipped Assembly System.Drawing.Html, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete.(13 Assemblies 
+ found 6 instances of type iLevelSetBuilder
+ found 0 instances of type iBBPlugin
+ found 13 instances of type iBallBehaviour
+ found 3 instances of type iEditBlockFilter
+ found 4 instances of type Trigger
+ found 9 instances of type TriggerEvent
+ found 0 instances of type BlockEvent
+ found 0 instances of type BlockTrigger
+ found 57 instances of type Block
+ found 2 instances of type iSoundEngineDriver
+ found 22 instances of type GamePowerUp
+ found 67 instances of type GameObject
+ found 0 instances of type EnemyTrigger
+ found 7 instances of type BlockCategoryAttribute
+ found 5 instances of type IGameInitializer
+ found 0 instances of type IBindingExtension
+ found 4 instances of type GameCharacterPowerup
+ found 1 instances of type GameCharacterAbility
+ found 4 instances of type CollectibleOrb
+ found 3 instances of type TemplateCategory
+ found 0 instances of type iGameInput
+ found 15 instances of type iProjectile
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc1.ogg
+Loading Sound:arkvc2.ogg
+Loading Sound:asboom.ogg
+Loading Sound:badger.ogg
+Loading Sound:basec.ogg
+Loading Sound:basestomp.ogg
+Loading Sound:bbounce.ogg
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:bossclear.ogg
+Loading Sound:bosskill.ogg
+Loading Sound:bounce.ogg
+Loading Sound:brickbreak.ogg
+Loading Sound:bump.ogg
+Loading Sound:bumper.ogg
+Loading Sound:charge.ogg
+Loading Sound:chipmunk.ogg
+Loading Sound:coin.ogg
+Loading Sound:commando.xm
+Loading Sound:credit.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:creepdeath.ogg
+Loading Sound:doh.ogg
+Loading Sound:drop.ogg
+Loading Sound:elecman.ogg
+Loading Sound:electriclaser.ogg
+Loading Sound:emerge.ogg
+Loading Sound:explode.ogg
+Loading Sound:firelaser.ogg
+Loading Sound:galway.xm
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:grow.ogg
+Loading Sound:impact.ogg
+Loading Sound:intro1.ogg
+Loading Sound:intro2.ogg
+Loading Sound:intro4.ogg
+Loading Sound:intro5.ogg
+Loading Sound:invincible.ogg
+Loading Sound:kangaroo.ogg
+Loading Sound:koala.ogg
+Loading Sound:laser2.ogg
+Loading Sound:mardeath2.ogg
+Loading Sound:mardeathx.ogg
+Loading Sound:menu_select.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mmDeath.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:multiplierup.ogg
+Loading Sound:orbting.ogg
+Loading Sound:ostrich.ogg
+Loading Sound:panda.ogg
+Loading Sound:pause - Copy.ogg
+Loading Sound:pause.ogg
+Loading Sound:pdbmw.xm
+Loading Sound:pdls.xm
+Loading Sound:penguin.ogg
+Loading Sound:platypus.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:possum.ogg
+Loading Sound:powerup.ogg
+Loading Sound:puzzle.ogg
+Loading Sound:randomy.ogg
+Loading Sound:ray.ogg
+Loading Sound:revel.ogg
+Loading Sound:right.ogg
+Loading Sound:ripwah.ogg
+Loading Sound:sgcock.ogg
+Loading Sound:shelldie.wav
+Loading Sound:shoot.ogg
+Loading Sound:shootfail.ogg
+Loading Sound:shotgun.ogg
+Loading Sound:shrink.ogg
+Loading Sound:smbjump.ogg
+Loading Sound:smwbclear.ogg
+Loading Sound:smwbonus.ogg
+Loading Sound:smwbstart.ogg
+Loading Sound:snowbreak.ogg
+Loading Sound:spinshoot.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:squirrel.ogg
+Loading Sound:street.ogg
+Loading Sound:switch.ogg
+Loading Sound:switch_active.ogg
+Loading Sound:switch_inactive.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:ttoaster.ogg
+Loading Sound:ttoaster2.ogg
+Loading Sound:ttoaster3.ogg
+Loading Sound:ttoaster4.ogg
+Loading Sound:uncharge.ogg
+Loading Sound:wakka.ogg
+Loading Sound:wart.ogg
+Loading Sound:win.ogg
+Loading Sound:wrong.ogg
+Loading Sound:zaark.xm
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Loading sounds from:C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP\wrongzip.zip9066fd1e-aefa-4af4-b614-7461f4e830a7
+Loading Sound:wrongzip.ogg
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image attractor_active.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image attractor_inactive.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bevel.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blockballdestructor.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blockdestructor.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image bubble.pngSize:{Width=296, Height=295} to {Width=148, Height=147.5}
+Reducing image buildpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image construct.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack6.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crack7.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image creeperblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image emptyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image explosion.pngSize:{Width=456, Height=406} to {Width=228, Height=203}
+Reducing image explosive.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image field.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image frustrator.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image iceeffect.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image magnet.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image oneup.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paused.pngSize:{Width=216, Height=49} to {Width=108, Height=24.5}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image platformblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image powerupblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image randomizer.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image rayblock_old.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image shieldpowerup.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar_old.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image SPINMARQUEE1.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE2.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE3.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE4.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE5.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE6.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE7.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image SPINMARQUEE8.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image splitblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image switchoverlay.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic1.pngSize:{Width=431, Height=259} to {Width=215.5, Height=129.5}
+Reducing image tallypic2.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image terminatorpower_ballshot.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image terminatorpower_laserspin.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image terminatorpower_pellet.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image terminatorpower_pistol.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image terminatorpower_shotgun.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image TETHER.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:attractor_active.png
+Loading image:attractor_inactive.png
+Loading image:bevel.png
+Loading image:blackhole.png
+Loading image:blockballdestructor.png
+Loading image:blockdestructor.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:bouncer_closed.png
+Loading image:bouncer_mid.png
+Loading image:bouncer_open.png
+Loading image:bubble.png
+Loading image:buildpaddle.png
+Loading image:buildpwr.png
+Loading image:char_dead.png
+Loading image:char_jump.png
+Loading image:char_stand.png
+Loading image:char_turn.png
+Loading image:char_walk.png
+Loading image:construct.png
+Loading image:crack1.png
+Loading image:crack2.png
+Loading image:crack3.png
+Loading image:crack4.png
+Loading image:crack5.png
+Loading image:crack6.png
+Loading image:crack7.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:creeperblock.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:emptyblock.png
+Loading image:enemyspawn.png
+Loading image:explosion.png
+Loading image:explosive.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:field.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:frustrator.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:iceeffect.png
+Loading image:invader.png
+Loading image:invincible.png
+Loading image:jsicon.png
+Loading image:leaf.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:loadingbg.png
+Loading image:magnet.png
+Loading image:main3bg.png
+Loading image:mainbg.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:mushroom.png
+Loading image:oneup.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:paused.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:platformblock.png
+Loading image:powerupblock.png
+Loading image:property.png
+Loading image:randomizer.png
+Loading image:rayblock.png
+Loading image:rayblock_old.png
+Loading image:shell.png
+Loading image:shieldpowerup.png
+Loading image:shll1.png
+Loading image:shll2.png
+Loading image:shll3.png
+Loading image:sidebarbg.png
+Loading image:sidebar_old.png
+Loading image:skull.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:SPINMARQUEE1.png
+Loading image:SPINMARQUEE2.png
+Loading image:SPINMARQUEE3.png
+Loading image:SPINMARQUEE4.png
+Loading image:SPINMARQUEE5.png
+Loading image:SPINMARQUEE6.png
+Loading image:SPINMARQUEE7.png
+Loading image:SPINMARQUEE8.png
+Loading image:spinshooter_closed.png
+Loading image:spinshooter_mid.png
+Loading image:spinshooter_open.png
+Loading image:spinshotbg.png
+Loading image:splitblock.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:switchoverlay.png
+Loading image:tallypic1.png
+Loading image:tallypic2.png
+Loading image:terminator.png
+Loading image:terminatorpower_ballshot.png
+Loading image:terminatorpower_laserspin.png
+Loading image:terminatorpower_pellet.png
+Loading image:terminatorpower_pistol.png
+Loading image:terminatorpower_shotgun.png
+Loading image:terminator_laser.png
+Loading image:terminator_laserspin.png
+Loading image:terminator_pellet.png
+Loading image:terminator_shotgun.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:TETHER.png
+Loading image:vc1.png
+Loading image:vc2.png
+Loading image:vc3.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP\wrongzip.zip9066fd1e-aefa-4af4-b614-7461f4e830a7
+Loading compatible images in C:\Users\BC_Programming\AppData\Roaming\BASeBlock\toolbar\
+Loading image:allcategory.png
+Loading image:fill.png
+Loading image:new.png
+Loading image:selectgenerated.png
+Loading image:text.png
+Loading image:unselectall.png
+Initialization completed in 00:00:14.3318198
+Click Image above to continue...

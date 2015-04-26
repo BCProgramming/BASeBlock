@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="24e80471-9ccf-4165-a12e-5776207057c6" name="BC_Programming@TERATRON 2010-12-28 00:51:39" runUser="TERATRON\BC_Programming" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="a23eb23f-c60a-4200-b6ee-a3fda6880aaf">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\TestResults\BC_Programming_TERATRON 2010-12-28 00_51_39" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-12-28T00:51:39.1752899-08:00" queuing="2010-12-28T00:51:40.0020914-08:00" start="2010-12-28T00:51:40.0800915-08:00" finish="2010-12-28T00:51:40.8288928-08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestUpdateClass" storage="c:\users\bc_programming\documents\visual studio 2008\projects\baseblocks\bblocktests\bin\release\bblocktests.dll" id="dbfee751-d657-0dc0-59d9-9abf89f99cda">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="65e9f5f5-5ffe-409c-8e3d-e85502a0649b" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/BC_Programming/Documents/Visual Studio 2008/Projects/BASeBlocks/BBlocktests/bin/Release/BBlocktests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="BBlocktests.BBlocktests, BBlocktests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestUpdateClass" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="dbfee751-d657-0dc0-59d9-9abf89f99cda" executionId="65e9f5f5-5ffe-409c-8e3d-e85502a0649b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="65e9f5f5-5ffe-409c-8e3d-e85502a0649b" testId="dbfee751-d657-0dc0-59d9-9abf89f99cda" testName="TestUpdateClass" computerName="TERATRON" duration="00:00:00.6008796" startTime="2010-12-28T00:51:40.1424916-08:00" endTime="2010-12-28T00:51:40.7976928-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method BBlocktests.BBlocktests.TestUpdateClass threw exception:  System.IndexOutOfRangeException: Index was outside the bounds of the array..</Message>
+          <StackTrace>    at BASeBlock.BCUpdate.UpdateInfo.SetParameters(String updatestring) in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\BCUpdate.cs:line 103
+   at BASeBlock.BCUpdate..ctor() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\BCUpdate.cs:line 147
+   at BBlocktests.BBlocktests.TestUpdateClass() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\BBlocktests.cs:line 75
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

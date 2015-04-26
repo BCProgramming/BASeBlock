@@ -1,0 +1,6 @@
+﻿Code version: 6.0.2202.688
+Assembly name DragonOgg, Version=1.0.4123.19930, Culture=neutral, PublicKeyToken=null mvid {d587e7b8-d818-4bbb-80c7-be7f78a67757}
+* ref mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+  mvid {b2dd7fad-f33e-483a-8e08-5d9b09c1f0fb}
+* ref OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4
+  mvid {d85857bc-6652-4258-b04f-f0bdaeed67db}

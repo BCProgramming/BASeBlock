@@ -1,0 +1,33 @@
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BBlocktests.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BBlocktests.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Bass.Net.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\BBlocktests.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\BBlocktests.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Ionic.Zip.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BBlocktests.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BBlocktests.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Bass.Net.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Ionic.Zip.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\BBlocktests.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\BBlocktests.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\System.Drawing.Html.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\System.Drawing.Html.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\obj\Release\BBlocktests.csprojResolveAssemblyReference.cache

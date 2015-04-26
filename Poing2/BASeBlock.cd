@@ -1,0 +1,4079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BASeBlock.BackgroundDrawer" Collapsed="true">
+    <Position X="3.5" Y="34.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAgAAAAAAACAAAEAAAAAAA=</HashCode>
+      <FileName>BackgroundDrawer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.BackgroundColourImageDrawer" Collapsed="true">
+    <Position X="3.5" Y="35.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACKAAIBACIgYIAIAAABBAAjQIADCgBmAAAEAASEBFA=</HashCode>
+      <FileName>BackgroundDrawer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.BallBehave" Collapsed="true">
+    <Position X="167" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wBAIACAAICAAAAAABACAQQACAQAIEAAAQCANAAgIAAA=</HashCode>
+      <FileName>BallBehave.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BASSDirect" Collapsed="true">
+    <Position X="177.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>BASSDirect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BASSSound" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="181" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgQAQAAiAEEAAQAAQAQAIAEEBAAAAAoAAAgACEgAA=</HashCode>
+      <FileName>BASSDriver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.BASSDriver" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="179.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAEgAACACACAEAAgAIAQCAAAAAAgBAAIAAAAAAEA=</HashCode>
+      <FileName>BASSDriver.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.BBBinder" Collapsed="true">
+    <Position X="182.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BBBinder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BBClipboard" Collapsed="true">
+    <Position X="184.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEEAAAAAAAAAAAEAAAAAAAQAAAEAAAAAAQAAAAA=</HashCode>
+      <FileName>BBClipboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.UndoStackItem" Collapsed="true">
+    <Position X="25.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAgAAAAAAAAAAAQAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>BBEditorUndo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.EditorUndoStackItem" Collapsed="true">
+    <Position X="25.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAABABQ=</HashCode>
+      <FileName>BBEditorUndo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BBEditorUndo&lt;T&gt;" Collapsed="true">
+    <Position X="163.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAABAAABAAAAAAAAAABoAAUQAIAAAAAAAEAAAA=</HashCode>
+      <FileName>BBEditorUndo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BBScript" Collapsed="true">
+    <Position X="168.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgA=</HashCode>
+      <FileName>BBScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BBSettings" Collapsed="true">
+    <Position X="172.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>kQMAAAJARAAAQBAQAAAQACAAQAAGAEAYCQBQAAhAogU=</HashCode>
+      <FileName>BBSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FloatFConverter" Collapsed="true">
+    <Position X="168.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAAACAAAAIAAAAAAAA=</HashCode>
+      <FileName>BBTypeConverters.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ColorMatrices" Collapsed="true">
+    <Position X="174" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAABAAAAAAAAEAAAAAQAAAAEIAEA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.HSLColor" Collapsed="true">
+    <Position X="163.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAQIIgAECIAQAAEAAAAAAACAgAAAAAACACAAIACAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.KeyboardInfo" Collapsed="true">
+    <Position X="167" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAg=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StandardMatrices" Collapsed="true">
+    <Position X="163.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ManyToOneAttributeData" Collapsed="true">
+    <Position X="186.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockDataManager" Collapsed="true">
+    <Position X="177.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAIAAAEA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BCBlockGameState" Collapsed="true">
+    <Position X="174" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>0mOl98425pu//387H/1dS74d6/Ev1fv83Wle12l6nn8=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockTypeAggregateFilter" Collapsed="true">
+    <Position X="22.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAQAg=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseBlockListFilter" Collapsed="true">
+    <Position X="22.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAEAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.BlockFilterAggregate" Collapsed="true">
+    <Position X="0.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseBlockFilter" Collapsed="true">
+    <Position X="5.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAgAAAAAAAAIAQgAgAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.BasicGradientColourizer" Collapsed="true">
+    <Position X="3" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAABAAAAAAAAAAAAAgAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.RandomizerFilter" Collapsed="true">
+    <Position X="5.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockReplacer" Collapsed="true">
+    <Position X="7.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MakeColourTest" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockDescriptionAttribute" Collapsed="true">
+    <Position X="179.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockCategoryAttribute" Collapsed="true">
+    <Position X="31.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PassiveEffectCategoryAttribute" Collapsed="true">
+    <Position X="27.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PolygonBlockCategoryAttribute" Collapsed="true">
+    <Position X="29.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StandardBlockCategoryAttribute" Collapsed="true">
+    <Position X="31.75" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ImpactEffectBlockCategoryAttribute" Collapsed="true">
+    <Position X="34" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PowerupEffectCategoryAttribute" Collapsed="true">
+    <Position X="36.25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MaliceCategoryAttribute" Collapsed="true">
+    <Position X="38.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>BlockCategoryAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockCombo" Collapsed="true">
+    <Position X="10.5" Y="29" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAFAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BlockCombo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockProxy" Collapsed="true">
+    <Position X="116" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAIgAAAAIAACQAAEAAAAAACIARAAAACAA=</HashCode>
+      <FileName>BlockProxy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LoadedScriptsStringEditor" Collapsed="true">
+    <Position X="181" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAACAAAAAAAEAAAAA=</HashCode>
+      <FileName>BlockTypeStringEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ItemTypeEditor&lt;T&gt;" Collapsed="true">
+    <Position X="165.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAABAAAAAAAAAAAAAACAAAAAAAEAAAAA=</HashCode>
+      <FileName>BlockTypeStringEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameObjectTypeEditor" Collapsed="true">
+    <Position X="168.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAACAAAAAAAEAAAAA=</HashCode>
+      <FileName>BlockTypeStringEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockTypeStringEditor" Collapsed="true">
+    <Position X="182.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAIAAAACAAAAAAAEAAAAA=</HashCode>
+      <FileName>BlockTypeStringEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BoardState" Collapsed="true">
+    <Position X="184.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BoardState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FallingTextAnimator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="181" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAIIgAACAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>BobbingTextAnimator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.BobbingTextAnimator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="186.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAICAhAAIgQAAQCAAAAAEAAACJAAEAgCAQAAAII=</HashCode>
+      <FileName>BobbingTextAnimator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.BossableAttribute" Collapsed="true">
+    <Position X="163.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BossableAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BallDrawHandler_Standard" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.BallDrawHandler_Arrow" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAgAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.iBallBehaviourExtension" Collapsed="true">
+    <Position X="165.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TimedBallBehaviour" Collapsed="true">
+    <Position X="39.5" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEAAAAAAQICAAAAAAAAAgAQAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseBehaviour" Collapsed="true">
+    <Position X="45" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAAAAgAARIgIAAAAAAAAhECAAQAAAAAAAAAAAAhA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.ParticleEmitterBehaviour" Collapsed="true">
+    <Position X="41.75" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQIBAEAAAAAAAgAEAAAAAAAAABAgAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.WaterBallBehaviour" Collapsed="true">
+    <Position X="44" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAQAAAAAAAAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.NonReboundableBallBehaviour" Collapsed="true">
+    <Position X="46.25" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LinearGravityBallBehaviour" Collapsed="true">
+    <Position X="48.5" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAAAAEAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TimedBehaviour" Collapsed="true">
+    <Position X="50.75" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAABAAAAAAAgCAAAAAEAAAAAAAIQABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LeapFrogExploderBehaviour" Collapsed="true">
+    <Position X="53" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAwAAABgAAAAEgACAAAAAAAAAQQgAAIBA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PausedBallBehaviour" Collapsed="true">
+    <Position X="55.25" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAIARIgAAIAAQABAlBAAABQEAAQAAQgAAEBE=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LaserSpinBehaviour" Collapsed="true">
+    <Position X="57.5" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAIAACAIAAAAAhAAACAAAAAAAQAAFgABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CrazyBallBehaviour" Collapsed="true">
+    <Position X="32.75" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAABAgAAQIgAAAAAAAABAAACAAAABAAAAAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PowerBallBehaviour" Collapsed="true">
+    <Position X="35" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TempBallBehaviour" Collapsed="true">
+    <Position X="37.25" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAABIAAAAAAAAAAAACAAAAAAAAAAAAAAIBA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.AssignmentNonremovableAttribute" Collapsed="true">
+    <Position X="163.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FrustratorBall" Collapsed="true">
+    <Position X="23.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgEAAAAAAAAgACAQAAACAAAAAAAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ProjectileBall" Collapsed="true">
+    <Position X="26" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.cBall" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EoAILwOgSGwRIlgBAMLBCEAghCEQAICIAIElgBCOBBA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.GameObject" Collapsed="true">
+    <Position X="84.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAACAAIgIEAAAAEAAAAAAAAAABAEAAAAAgAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SizeableGameObject" Collapsed="true">
+    <Position X="61" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAgCAAAAIAAAAAAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.AnimatedImageObject" Collapsed="true">
+    <Position X="49.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAgAAAAAIgAACAAAAAAJAAIAACAAQAAAAAAEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameImageObject" Collapsed="true">
+    <Position X="77.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAACAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Projectile" Collapsed="true">
+    <Position X="113.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAAgAAAAJgAABCIAAAAAAGIIAAAAAABCAAIEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.SizedProjectile" Collapsed="true">
+    <Position X="113.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAKAAoAgAAAAAAAIAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.MacGuffinOrb" Collapsed="true">
+    <Position X="91.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.HealingOrb" Collapsed="true">
+    <Position X="93.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAEAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PowerupOrb" Collapsed="true">
+    <Position X="95.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAgABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ScoreOrb" Collapsed="true">
+    <Position X="98" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAABAEAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CollectibleOrb" Collapsed="true">
+    <Position X="94.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQMAAAAAAACIgAEAAAAAAABIAIAAQAACAAAAAAEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.ColouredCollectibleOrb" Collapsed="true">
+    <Position X="94.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAIAAAAAAAAAAAAAAQAAAAAAAAAAAEBAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.HitscanBullet" Collapsed="true">
+    <Position X="118.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAEAAogAAAAAAAAAAAABAABAAAMAAAAgAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SpinShot" Collapsed="true">
+    <Position X="120.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIBAAAAAAAEJgAAAAIAAAAAACAAAAAAEgBAAgAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BoxDestructor" Collapsed="true">
+    <Position X="107" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAQMgAEBAAAAAAAAAEBAAAACIACgFgAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.AttractRepulseDestructor" Collapsed="true">
+    <Position X="8" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAAAAAAAAIgAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlueFireball" Collapsed="true">
+    <Position X="23.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAIgAAAAAAAAAAAAAAAAEAAAQAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ExplosionShot" Collapsed="true">
+    <Position X="12.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAIgAAAAIAAAAAAAICAAAAAAAAAAAECAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Fireball" Collapsed="true">
+    <Position X="23.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIgAAAAAAAAAAAAAAIABAAAAAAACEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.ProxyObject" Collapsed="true">
+    <Position X="14.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIgAAAAABAABAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.VelocityChanger" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.VelocityChangerLinear" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAIAAAAAAAAAIAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.VelocityChangerExponential" Collapsed="true">
+    <Position X="0.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.VelocityChangerParametric" Collapsed="true">
+    <Position X="2.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAIAQAAAAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.VelocityChangerLeafy" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.AnimatedSprite" Collapsed="true">
+    <Position X="50.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAACAkAAAAgIwABIAAAAAAAAAAAAAAAAAAAEAAEQAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.CountDownObject" Collapsed="true">
+    <Position X="80" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CgABQAAAAgAAIgAAAAQQCAAAAAAAgABAAEABAAAQAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PolygonProtector" Collapsed="true">
+    <Position X="82.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAEAAAgAAAAAIAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LineSegment" Collapsed="true">
+    <Position X="122.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAogAAAAAAAAKAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseRadiusEffectBlock" Collapsed="true">
+    <Position X="86.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAACAAAAAAJgAAAAAAIAAAiAAAAAAoAAASgAAEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockChangeEffect" Collapsed="true">
+    <Position X="84.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CreationEffect" Collapsed="true">
+    <Position X="86.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAQAAQIAAAAAAAIAAAAAgAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ExplosionEffect" Collapsed="true">
+    <Position X="89" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAACMAgBAACAAAAAAAAAACBAAAFCAEICgAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MarioDeathStyleObject" Collapsed="true">
+    <Position X="100.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAIgAABAAEAAAQAAIAAAJAAAACgAAEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.MegamanTest" Collapsed="true">
+    <Position X="143" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SillyFace" Collapsed="true">
+    <Position X="145.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BasicFadingText" Collapsed="true">
+    <Position X="161" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIEIAAAAAAiiagAgQAAAgAACAAAAgAFAIAwACACUEgA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BBImageSerializationData" Collapsed="true">
+    <Position X="167" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>cLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.cLevel" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BEAFpQyEFBAnBRRDGBBQSSBigjAAVgAlVuYgiHCAggQ=</HashCode>
+      <FileName>cLevel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ColorMorph" Collapsed="true">
+    <Position X="175.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgEgAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ColorMorph.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PlayMessageData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="181" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIEAAIAAcEQgAAIABgQhACCAAABAACIAzEABU=</HashCode>
+      <FileName>CPlayMessageData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.CPrimes" Collapsed="true">
+    <Position X="182.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CPrimes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StreamProgress" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQKBAIAJQAAAAAACAAAAAAAAAAAAAAAAwAAg=</HashCode>
+      <FileName>cStreamProgress.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.cNewSoundManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="172.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAIAAgTAARAIABABAQA0gCwFEgAEQMAHhAFQAdIQ=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ScriptObject" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="184.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAgAAQgAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.SerializableImage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="163.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAgAAAAAAAAgAAAAAAAAgA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ImageManager" Collapsed="true">
+    <Position X="175.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCABAIAQAAABAAAACBAABAKwAAQgAAIAAgAkIAXCAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ImageKeyEditor" Collapsed="true">
+    <Position X="174" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Debuggerform" Collapsed="true">
+    <Position X="165.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAACAAAAAAAECAAAACBAAIAAAQAEAAIAAEAAA=</HashCode>
+      <FileName>Debuggerform.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.DebugHelper" Collapsed="true">
+    <Position X="125" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAoAQQAAAAowAAAAAAAAAIAAAEAAAAAIAAAAAQBAA=</HashCode>
+      <FileName>DebugHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.InvisibleBuilderAttribute" Collapsed="true">
+    <Position X="184.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseLevelBuilder" Collapsed="true">
+    <Position X="32.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAhAAAAAAhAAAAAAAAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.CreditLevelBuilder" Collapsed="true">
+    <Position X="31.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAgAAAAgBgAAAAAAAAAAAAAAACEAAAAAAA=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ArkanoidLevelBuilder" Collapsed="true">
+    <Position X="33.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAgAAAAAAgAAAAAAAAAABAAAAAEAAAAAAA=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LevelBuilder_FromStream" Collapsed="true">
+    <Position X="36" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAgAAAAAAQAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LevelBuilderFromFile" Collapsed="true">
+    <Position X="38.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAEAgAAAAAAgAAAAAAAAAAAAAAAAEAAAIAAQ=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.AdvancedLevelBuilder" Collapsed="true">
+    <Position X="27" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAIAAAAgAEAAAAgAAAAAAAAAAAAAABAEAAgAAAA=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.DefaultLevelBuilder" Collapsed="true">
+    <Position X="29.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIQAIAAAAgAEAAAAgAAAAAAAAAAAAAAEAEAAAAAAA=</HashCode>
+      <FileName>DefaultLevelBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.DeletionHelperAPI" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABCAAIAAAgAQAgAAAAAAAAAAEAAABgAAAAAA=</HashCode>
+      <FileName>DeletionHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.DeletionHelper" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="167" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAACAAAAABAAYAAAAAAAAAAAQAQEAAgAAAAAA=</HashCode>
+      <FileName>DeletionHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.DWM" Collapsed="true">
+    <Position X="170.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DWM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CreatorPropertiesEditor" Collapsed="true">
+    <Position X="186.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EditorSet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CreatorProperties" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="184.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAQEAAAgCIAAgAQAAAQgAAAgAgAAAAAAAAAAABA=</HashCode>
+      <FileName>EditorSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.SingleLevelContainer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="179.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>EditorSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.EditorSet" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="172.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAIAAAAAgCAAAgAAAAAAggAAAACgEQABQAAAAAAA=</HashCode>
+      <FileName>EditorSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.EnumerableComparer&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="177.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAAAAAAA=</HashCode>
+      <FileName>EnumerableComparer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ObjectExtensions" Collapsed="true">
+    <Position X="181" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.iImagableExtensions" Collapsed="true">
+    <Position X="167" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ColourExtensions" Collapsed="true">
+    <Position X="177.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GraphicsPathExtensions" Collapsed="true">
+    <Position X="182.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.RandomExtensions" Collapsed="true">
+    <Position X="172.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PointExtensions" Collapsed="true">
+    <Position X="182.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PointFExtensions" Collapsed="true">
+    <Position X="184.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAIAAAAAAAAEAAAAAAAgACAAAACAAAAEAEAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BitmapExtensions" Collapsed="true">
+    <Position X="175.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ImageExtensions" Collapsed="true">
+    <Position X="170.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SortedListExtensions" Collapsed="true">
+    <Position X="181" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TimeSpanExtensions" Collapsed="true">
+    <Position X="181" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.RectangleExtensions" Collapsed="true">
+    <Position X="174" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAgAIAAgAABAAACAAAUAAAAAAAAAgBAAAAQgQAEA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StreamExtensions" Collapsed="true">
+    <Position X="168.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ISerializableExtensions" Collapsed="true">
+    <Position X="186.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SerializationInfoExtensions" Collapsed="true">
+    <Position X="167" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAARAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StackExtensions" Collapsed="true">
+    <Position X="186.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ListExtensions" Collapsed="true">
+    <Position X="179.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Extensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FadingImageObject" Collapsed="true">
+    <Position X="17" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAMgAAAAAAAAAAAAAAAAAAAQAABAAgBAQ=</HashCode>
+      <FileName>FadingImageObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FallingBlockObject" Collapsed="true">
+    <Position X="21.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAQIglAAAAEAAAAAAAAAAAEBQAAAgAEAQA=</HashCode>
+      <FileName>FallingBlockObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.FancyText" Collapsed="true">
+    <Position X="182.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FancyText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FileEnumerator" Collapsed="true">
+    <Position X="184.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAYAAEAAAAAAAAQAAAAAAAAAEAQAAACAAAEAU=</HashCode>
+      <FileName>FileEnumerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FileExtensions" Collapsed="true">
+    <Position X="186.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAQ=</HashCode>
+      <FileName>FileExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FilteredEnumerator&lt;T&gt;" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="165.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilteredEnumerator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.FireworkTrail" Collapsed="true">
+    <Position X="104.75" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAgAIiBBgAIAEAAAAAIAAAAAAAQAAABEAAA=</HashCode>
+      <FileName>Fireworks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.GenericFireworkBlast&lt;T&gt;" Collapsed="true">
+    <Position X="10.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Fireworks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.DustTrail" Collapsed="true">
+    <Position X="104.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>Fireworks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FireworkEffect" Collapsed="true">
+    <Position X="10.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAhAQAEgAAAAQIAAEIAAKAAAAAAAAgAAAAgAAA=</HashCode>
+      <FileName>Fireworks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FolderListView" Collapsed="true">
+    <Position X="170.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAICAACBAEEAGAYQACAAAIAABAAAACCBgAAAA=</HashCode>
+      <FileName>FolderListView.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FormPlacement" Collapsed="true">
+    <Position X="6.75" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAQCAAAAAACAYAQAFAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>FormPlacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FormPlacementINI" Collapsed="true">
+    <Position X="5.5" Y="28.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAACBAAAAAAAIAAAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>FormPlacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FormPlacementStream" Collapsed="true">
+    <Position X="7.75" Y="28.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAAIAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>FormPlacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.AutoFormSaver" Collapsed="true">
+    <Position X="165.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAAAAEAIAgAAAAAAAA=</HashCode>
+      <FileName>FormPlacement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.frmBaseBlock" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="174" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>rer67a/Xe+Pl131f77y+/W/nX2u6G4j4r3d3dzlzzFg=</HashCode>
+      <FileName>frmBaseBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.frmCreatorPropertiesEditor" Collapsed="true">
+    <Position X="177.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEQACBAIACAgAFAAAACAAQCCAAEAAAAABGAAAAAAAAg=</HashCode>
+      <FileName>frmCreatorPropertiesEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.frmEditor" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="179.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>jZ3+/9a/5uv/+fNvef3+le//+e7P/9317///9rM51bc=</HashCode>
+      <FileName>frmEditor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.frmhighscores" Collapsed="true">
+    <Position X="182.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAHAgAAAAAACQAABCAgAAADAAAAAAAAAAAAw=</HashCode>
+      <FileName>frmhighscores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.frmImageDataListEditor" Collapsed="true">
+    <Position X="184.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IUAQkAAIECBAAAAAAEDABQACiAAEgAAAEwUEAAgAAIA=</HashCode>
+      <FileName>frmImageDataListEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.frmLevelBrowser" Collapsed="true">
+    <Position X="186.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAAICAAAACgAACAAIACEAEAAEgAAEAIACAAAAA=</HashCode>
+      <FileName>frmLevelBrowser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.frmScriptDataItemListEditor" Collapsed="true">
+    <Position X="163.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAiAEQACCgABgAAEDABABCmAAAAAAAEBQAAAABAAQ=</HashCode>
+      <FileName>frmScriptDataItemListEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.frmSoundDataListEditor" Collapsed="true">
+    <Position X="165.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>I0D4kAABACAhgBAEAEDgBioCmBCohAABFWQUAAAACKA=</HashCode>
+      <FileName>frmSoundDataListEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameCharacter" Collapsed="true">
+    <Position X="149.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAQAAACIAIpAggBECAQQABAAIAAAIACAgAIAAACE=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.macGuffinpowerup" Collapsed="true">
+    <Position X="152" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIIAAoAAAEAAAAAgBQAAAAgAAAAhAAAAAgE=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.InvinciblePowerup" Collapsed="true">
+    <Position X="154.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAgAAAEAAAAAABAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ExtraLifeItem" Collapsed="true">
+    <Position X="156.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MushroomPower" Collapsed="true">
+    <Position X="158.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.NoEmergePowerupAttribute" Collapsed="true">
+    <Position X="174" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameCharacterPowerup" Collapsed="true">
+    <Position X="155.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAQIgAAAMAAAAQAAAAAQAgAAAAAAAAAAgA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameCharacterAbility" Collapsed="true">
+    <Position X="28.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAIAAAAAAAAAQAAAgAAAAAACIAAAAAAAA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TimedCharacterAbility" Collapsed="true">
+    <Position X="28.5" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAAAAEAAAgEAAAAAAAAAAAgAhAACAAAAIACAAQAAA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.InvinciblePowerupAbility" Collapsed="true">
+    <Position X="28.5" Y="24.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADIAAEAACAgAAAAAIAAAAAQAAAgAAAAAAAIAACAEAAA=</HashCode>
+      <FileName>GameCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameControllerManager" Collapsed="true">
+    <Position X="167" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameControllerManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.NoKillIncrementAttribute" Collapsed="true">
+    <Position X="175.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.KillIncrementAttribute" Collapsed="true">
+    <Position X="168.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GameEnemy" Collapsed="true">
+    <Position X="143" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IJAWAAUgIABAIgy2AAIABMAEyBIABgZAglAAACCgBAE=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.SnakeEnemy" Collapsed="true">
+    <Position X="140.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAABAACMwAAAiAASQCAACAAAwTCgAAQAgggAgA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.ShootSpinner" Collapsed="true">
+    <Position X="127.25" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAAAAAAAAgAgAAAEAAAAAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BouncerGuy" Collapsed="true">
+    <Position X="129.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAkAAAAAAAAAAAABAAAgAAgAABAAAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.QuadSpinner" Collapsed="true">
+    <Position X="131.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SpinnerGuy" Collapsed="true">
+    <Position X="127.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAJAAAAAAAAACAAAAgAAAAgAAAAAIABAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.EyeGuyShootEventArgs&lt;T&gt;" Collapsed="true">
+    <Position X="179.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAACAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAAIAI=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.EyeGuy" Collapsed="true">
+    <Position X="129.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAQAAQtAFgAAAAIBCIIBABBkAggRQgAADEBQQ=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.ChomperEnemy" Collapsed="true">
+    <Position X="134" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiBAIAEAAgIIgIQgEAACAABAAIiQFAAAAAQAAIkQAA=</HashCode>
+      <FileName>GameEnemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PowerupAttribute" Collapsed="true">
+    <Position X="22.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ColouredGamePowerupAttribute" Collapsed="true">
+    <Position X="22.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAQAAAAACAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PositivePowerupAttribute" Collapsed="true">
+    <Position X="22.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PowerupCollectionEditor" Collapsed="true">
+    <Position X="8" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GamePowerUp" Collapsed="true">
+    <Position X="50.75" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAIgAAAAAAAAAAiAAIAAABAAAEAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BallSplitterPowerup" Collapsed="true">
+    <Position X="32.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAgAAAAAAAAgAAEAAAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Charger" Collapsed="true">
+    <Position X="35" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddlePowerUp&lt;PaddlePower&gt;" Collapsed="true">
+    <Position X="47.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAgQAAQAAAAAAQAAAAAAAAAEAAEAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.IcePowerUp" Collapsed="true">
+    <Position X="37.25" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MagnetPowerup" Collapsed="true">
+    <Position X="39.5" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQACAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BuilderPowerUp" Collapsed="true">
+    <Position X="41.75" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAQAAAAAAAAAAAAAAAAAAAEAAAAAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StickyPaddlePowerUp" Collapsed="true">
+    <Position X="44" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ClearPowerup" Collapsed="true">
+    <Position X="59.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.AddBallPowerup" Collapsed="true">
+    <Position X="62" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockRandomizerPowerup" Collapsed="true">
+    <Position X="64.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAASAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.RandomizerPowerup" Collapsed="true">
+    <Position X="66.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAASAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ShieldPowerup" Collapsed="true">
+    <Position X="68.75" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddlePlusPowerup" Collapsed="true">
+    <Position X="71" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.EnemySpawnerPowerUp" Collapsed="true">
+    <Position X="73.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAABAAAAIAAAAAAAAAAIAAAAACACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FrustratorPowerup" Collapsed="true">
+    <Position X="75.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ExtraLifePowerup" Collapsed="true">
+    <Position X="26" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LifeUpPowerUp" Collapsed="true">
+    <Position X="28.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleMinusPowerup" Collapsed="true">
+    <Position X="30.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACACAA=</HashCode>
+      <FileName>GamePowerUp.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.StatisticsManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="165.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAQCEAAABECAIAAAAgAAAAABAAAAAAAAEBAAA=</HashCode>
+      <FileName>GameStatistics.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.GameStatistics" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIIIAAQKAAAoBkEAAAAoAgAAAAAAAlAAAAAAAABAA=</HashCode>
+      <FileName>GameStatistics.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.GameStopwatch" Collapsed="true">
+    <Position X="172.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAABAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>GameStopwatch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseCompareDiff" Collapsed="true">
+    <Position X="16.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenericComparer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CompareFieldDiff" Collapsed="true">
+    <Position X="16.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAEAACAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenericComparer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GenericComparer" Collapsed="true">
+    <Position X="174" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GenericComparer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GenericObjectEditor" Collapsed="true">
+    <Position X="175.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAACAAQACAAAAAAAAAAAAIAAAAEA=</HashCode>
+      <FileName>GenericObjectEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Polygon" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="186.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAgAiAAIgAhAQEQAMAAIIgAAAQQAAQAAACAQAYgDA=</HashCode>
+      <FileName>GeometryHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.GeometryHelper" Collapsed="true">
+    <Position X="177.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAQAEAAAAAACAAAACAAAA=</HashCode>
+      <FileName>GeometryHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GraphicsExtension" Collapsed="true">
+    <Position X="181" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAIAAAABAACABAQAIAAAAgI=</HashCode>
+      <FileName>gextensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FontMetrics" Collapsed="true">
+    <Position X="172.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAABAAAACAACAAABBAAACAAAAMAAAAAAACAAEA=</HashCode>
+      <FileName>gextensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ImageImport" Collapsed="true">
+    <Position X="172.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEQAEAAwACAhAFAEAAOwAgAKAAAgAgQAAQQBhAAQAQA=</HashCode>
+      <FileName>ImageImport.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.InstantEffect" Collapsed="true">
+    <Position X="10.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAAAACAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>InstantEffect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ItemBucket&lt;T&gt;" Collapsed="true">
+    <Position X="163.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAABAAAAAAAAAAAAgAAQAAAAAAQBAAAAAAEGAA=</HashCode>
+      <FileName>ItemBucket.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LevelbackupManager" Collapsed="true">
+    <Position X="170.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LevelbackupManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LevelLockData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="172.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAIAAAAAAAAAAAAAAAAAgAAAAAAAECEAAAAAAAAg=</HashCode>
+      <FileName>LevelLockData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.LevelSet" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="174" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAABBAAAAgABAFAAAAABAgAAEAAAABgAAAQAAAAAQ=</HashCode>
+      <FileName>LevelSet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.frmChooser&lt;T&gt;" Collapsed="true">
+    <Position X="175.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEQQAAAAAAABAQAAAIAAEAAACAAACBAAAAwAAAA=</HashCode>
+      <FileName>ListChooser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MinecraftBlockAttribute" Collapsed="true">
+    <Position X="25" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAAAAAEABAA=</HashCode>
+      <FileName>MinecraftBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.MinecraftBlock" Collapsed="true">
+    <Position X="60.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAgAAAgAAAAQAIAAkAAAEAAAAIAAAgBAAABA=</HashCode>
+      <FileName>MinecraftBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.NameGenerator" Collapsed="true">
+    <Position X="168.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAQAAABAAAAEBAAAIAAAAAAAAAAAAAAgABAAAAAAA=</HashCode>
+      <FileName>NameGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.NaturalComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAQBAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>NaturalSorter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.NullSound" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="179.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAACACAAAEAAgAAAQAAAAAAAgBAAAAAAAAAAA=</HashCode>
+      <FileName>NullSound.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ObjectPathDataManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="184.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAABAAAAACAAABAIgAAAAAgAAAAAAAABAAAA=</HashCode>
+      <FileName>ObjectPathData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ObjectPathDataPoint" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="186.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAEAAgEAAAAgAAAgIAAAAggAAAAAEAAAAAAAAAABI=</HashCode>
+      <FileName>ObjectPathData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ObjectPathData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="182.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAhBAgCAAAAAIAQgkAAAAgAJAAAAACAAABA=</HashCode>
+      <FileName>ObjectPathData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ObjectPropertyEditor" Collapsed="true">
+    <Position X="163.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAYAIQACAAAAAAAACAAQACAAACAABAAAAgCAgAAAA=</HashCode>
+      <FileName>ObjectPropertyEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ObjectTypeEditor" Collapsed="true">
+    <Position X="165.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ObjectPropertyEditor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ObstacleSnake" Collapsed="true">
+    <Position X="138.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQABAAAQEIgAIAAAAxAAAACAAKAAAAAAJAAAEAAI=</HashCode>
+      <FileName>ObstacleSnake.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.PaddleElementChangeEventArgs&lt;T&gt;" Collapsed="true">
+    <Position X="172.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAQgAAAAAAAAAAkACAgEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Paddle" Collapsed="true">
+    <Position X="121" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAgCATAiRgAAOUmIAIQAAoAECcEIgQAJCIEJA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PixelText" Collapsed="true">
+    <Position X="179.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>PixelText.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PlatformObject" Collapsed="true">
+    <Position X="153.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIBGASIAQEIAopAggAYAAAQABAYAgEAAgICgAACMAQE=</HashCode>
+      <FileName>PlatformObject.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.PlatformEnemy" Collapsed="true">
+    <Position X="147.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlatformObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Shell" Collapsed="true">
+    <Position X="147.5" Y="18.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIBAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlatformObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PolygonObstacle" Collapsed="true">
+    <Position X="136.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACECAAAAAABIgxAlAIEBABCgEIAgEIABQACAAQWQAA=</HashCode>
+      <FileName>PolygonObstacle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.FileLogCallback" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="163.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAAIAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.Program" Collapsed="true">
+    <Position X="165.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAIAAAAAAAAAAEAAAAAAAAAAAAIAAAAAIBAAAAAQ=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PropertyGridCustom" Collapsed="true">
+    <Position X="167" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGridCustom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CustomCollectionForm" Collapsed="true">
+    <Position X="10.25" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PropertyGridCustom.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Resource1" Collapsed="true">
+    <Position X="179.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACBAAAAAABAYCAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SerializationHelper" Collapsed="true">
+    <Position X="165.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>SerializationHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SerializePen" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAhAAAAAAAAEAoAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SerializeBrush.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.SerializeBrush" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAEAAAAAAAgAAAAEAABEAAAAAAAIAA=</HashCode>
+      <FileName>SerializeBrush.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.SimpleTextEdit" Collapsed="true">
+    <Position X="175.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEQAAQACAAAAAAAAiCAQACAAEAEAAIAAAAAAgAAAA=</HashCode>
+      <FileName>SimpleTextEdit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SimpleTextEditor" Collapsed="true">
+    <Position X="177.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SimpleTextEdit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SoundPluginSelector" Collapsed="true">
+    <Position X="182.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIACCACACAAABAAAACAAQACAAAAAAIAAAAAgAgAAAA=</HashCode>
+      <FileName>SoundPluginSelector.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TestCheckObject" Collapsed="true">
+    <Position X="177.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SpecialEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TypeCheckboxItem&lt;T&gt;" Collapsed="true">
+    <Position X="167" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAABAAAAAAAAAAAAAACAAAAAAAEAAAAA=</HashCode>
+      <FileName>SpecialEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TrackBarEditor" Collapsed="true">
+    <Position X="186.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEQAAgAAAABAAAAAAAAAAAAAAAQAAAAAAEAAAAA=</HashCode>
+      <FileName>SpecialTypeEditors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SplashScreen" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="184.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>aAqCAUgAIypWKIyAKniN5LWCY5iAAdC4AAICiRGMioo=</HashCode>
+      <FileName>SplashScreen.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.ButtonStripRenderer" Collapsed="true">
+    <Position X="167" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAACAEAAAAAAAAAAAAAAACAAEAAAAAAA=</HashCode>
+      <FileName>StripRenderers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseTerminatorBehaviour" Collapsed="true">
+    <Position X="32" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABYgCAawAAARBiAAECACEIIgIAgYAAAIQAAIAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorPaddlePowerup&lt;T&gt;" Collapsed="true">
+    <Position X="52" Y="21" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorPelletBehaviour" Collapsed="true">
+    <Position X="38.75" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAgAAAAACAAQAAAAAAAAAQAAAAAAAAQA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorFireworkBehaviour" Collapsed="true">
+    <Position X="41" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAAQA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorPermanentBallShootBehaviour" Collapsed="true">
+    <Position X="23" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorBallShotBehaviour" Collapsed="true">
+    <Position X="25.25" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAAAQA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorHitscanshotBehaviour" Collapsed="true">
+    <Position X="27.5" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorShotgunBehaviour" Collapsed="true">
+    <Position X="29.75" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorLaserBehaviour" Collapsed="true">
+    <Position X="32" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAgAAAAACAAQgAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorLaserSpinBehaviour" Collapsed="true">
+    <Position X="34.25" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAQAAAAAAAAAAACAAQgAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorPelletPowerup" Collapsed="true">
+    <Position X="46.25" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorLaserSpinPowerup" Collapsed="true">
+    <Position X="48.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorBallShotPowerup" Collapsed="true">
+    <Position X="50.75" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorPistolPowerup" Collapsed="true">
+    <Position X="53" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorShotgunPowerup" Collapsed="true">
+    <Position X="55.25" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorLaserPowerup" Collapsed="true">
+    <Position X="57.5" Y="22.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TerminatorLightningBehaviour" Collapsed="true">
+    <Position X="36.5" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Terminators.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.CharacterAnimator" Collapsed="true">
+    <Position X="0.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACBAAAKgCAAAAAEAAAIQAAAAAAEAACAAAAgAI=</HashCode>
+      <FileName>TextAnimationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LinearCharacterAnimator" Collapsed="true">
+    <Position X="0.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TextAnimationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TextAnimationManager" Collapsed="true">
+    <Position X="179.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>TextAnimationManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ToolStripSpinMarquee" Collapsed="true">
+    <Position X="184.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAgACIAAAAAAAABAAQAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>ToolStripSpinMarquee.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BaseMultiEditor" Collapsed="true">
+    <Position X="10.25" Y="20" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAQAAAACAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BallBehaviourCollectionEditor" Collapsed="true">
+    <Position X="10.25" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.GenericCollectionEditor&lt;T&gt;" Collapsed="true">
+    <Position X="12.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockEventCollectionEditor" Collapsed="true">
+    <Position X="14.75" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockTriggerEventCollectionEditor" Collapsed="true">
+    <Position X="14.75" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TriggerCollectionEditor" Collapsed="true">
+    <Position X="17" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TimedTriggerDataCollectionEditor" Collapsed="true">
+    <Position X="19.25" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.EventCollectionEditor" Collapsed="true">
+    <Position X="1.25" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.EnemyTriggerCollectionEditor" Collapsed="true">
+    <Position X="3.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockTriggerCollectionEditor" Collapsed="true">
+    <Position X="5.75" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.KillAllObjectsEvent" Collapsed="true">
+    <Position X="24.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAEBAAAAAAAAAAAAAAAQgAAAAACAAAAgAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.FinishLevelEvent" Collapsed="true">
+    <Position X="26.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.LoseLifeEvent" Collapsed="true">
+    <Position X="28.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TriggerEvent" Collapsed="true">
+    <Position X="33.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAADAAAAAgAQAAAAAIAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.EventDetector" Collapsed="true">
+    <Position X="31" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.SpawnEnemyEvent" Collapsed="true">
+    <Position X="33.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAIAAAAAAQAAgAAAAAAAAAAAAAAAgABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PlaySoundEvent" Collapsed="true">
+    <Position X="35.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAJAAAABIAAAAAAAAAAgAAAAAAAAAABAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockEvent" Collapsed="true">
+    <Position X="37.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAABAAIAAAAAAAAAAgAAAAAAAAAAAAAAgAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TextScrollEvent" Collapsed="true">
+    <Position X="40" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACABAAAAAAKAAAAAAAAAAAAAAAAAAAAAACAAAADA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.ToggledRepeatingTrigger" Collapsed="true">
+    <Position X="42.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAIAQAIQAgAAgAAAAAACAAAAAAAEAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.TimedTriggers" Collapsed="true">
+    <Position X="0.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABgAKAAAAAAAAAAAAAAAAAgAAIAACAAAAAACAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.SoundStopTrigger" Collapsed="true">
+    <Position X="3" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAgAAAAACAAggAAAAAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Trigger" Collapsed="true">
+    <Position X="4" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAEAAACAAAAAgQAAAAAEAAAgBAAABCAAAAAAAAAQABg=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.EnemyTrigger" Collapsed="true">
+    <Position X="5.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAEAAAAAAAggAAAACAAAAAAACAAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.BlockTrigger" Collapsed="true">
+    <Position X="7.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAACAAAAIAgAAAABIAAgAAAAACABAAAAAAgAABA=</HashCode>
+      <FileName>Triggers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.TrigHelper" Collapsed="true">
+    <Position X="165.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAQBAAAAAAAAAAAAAEAAAAAgEAAEAAAAAAAEAAAAA=</HashCode>
+      <FileName>TrigHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Win32File" Collapsed="true">
+    <Position X="174" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAQAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAGAAA=</HashCode>
+      <FileName>Win32File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Win32Find" Collapsed="true">
+    <Position X="175.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAoAAAAAAAABAAAAEAAAAAAAAAAAAAQAAAAAAAEQU=</HashCode>
+      <FileName>Win32File.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.XmlFormatter" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="177.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAA0AAAAAAAAAACAQCAOBAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XMLFormatter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.XmlFormatterPersistenceData" Collapsed="true">
+    <Position X="181" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XMLFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.XmlFormatterBinder" Collapsed="true">
+    <Position X="179.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XMLFormatter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.XMLLoader" Collapsed="true">
+    <Position X="182.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>XMLLoader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.AddBallBlock" Collapsed="true">
+    <Position X="44.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\AddBallBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.AnimatedBlock" Collapsed="true">
+    <Position X="20.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAkAgAAIwAAAAAgJAAggAAAAAhCBgggUKBhAGA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.BoundedMovingBlock" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAIAAAAAAAAAAgAAAAAAAAAAAAEAAEABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.PathedMovingBlock" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAQACAIAQIgAAAAAADAMgAEAAAQBAAAKgEAIAAFg=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.AnimatedTextureBlock" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAQAgCAAIgAAAAAAACAgAAAAQgAAgAAAAQAAABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.PassiveEffectBlock" Collapsed="true">
+    <Position X="14" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAACAAgAAABAADA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.PowerAssignmentBlock" Collapsed="true">
+    <Position X="13" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAIAAAgAAAAQAAAAAAAAAAAADI=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.AnimatedImageBlock" Collapsed="true">
+    <Position X="19.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEACIACAAAsIgAAAAggAQAggAAAAAAAAAAAEAgIABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.PulsingBlock" Collapsed="true">
+    <Position X="31" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAIAAAACAQIgAABAAADAAgAAAAAAgCEAAAAABAEBA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.InvaderController" Collapsed="true">
+    <Position X="102.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgACEgAAgAAAIgAAAAAAAAAAAAAAAAABAAAQAAAAAAA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.InvaderPaddleDamage" Collapsed="true">
+    <Position X="11.75" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAgAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.InvaderBallShot" Collapsed="true">
+    <Position X="28.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.InvaderBlock" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAALAAAAAAIAAAgAAAAQAAKAAgACAAAABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.GrowBlock" Collapsed="true">
+    <Position X="76" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIhAAAAAAAAAAAAAAAAACAAAAAAAAABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ControllableBlock" Collapsed="true">
+    <Position X="33.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAACAAACAAIAAAAAAQAIAiAEAIIAAKAFQAAAQAABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.MovingPlatformBlock" Collapsed="true">
+    <Position X="19.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZAAAAFAAIAgAIQABAACAgAIgBAgAAAACAIABkBAAATA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.CreeperBlock" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAIAAIgAAAAAAVAAgQCAIAAACAAhEEAAAADA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.VomitBlock" Collapsed="true">
+    <Position X="24.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAJgAAAAIAAgAgASAAAEQCCAgUEABAADA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.DemonBlock" Collapsed="true">
+    <Position X="26.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAEAAAAgAAAAAAACAABAEAAAARA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.SpeedEffectBlock" Collapsed="true">
+    <Position X="15.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAACAAAgAAAAAAAACgAAAQAAACAAAAAgIACJg=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.PowerupCycleBlock" Collapsed="true">
+    <Position X="28.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAgAAAAAAQAAwAAAAAAAAQAAAEAAAAJA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.GamePowerupBlock" Collapsed="true">
+    <Position X="35.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAABAAQAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.WaterBlock" Collapsed="true">
+    <Position X="10.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.AttractionRepulsionBlock" Collapsed="true">
+    <Position X="40" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAgBQAAAAgEAgAAAAAEAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\AttractionRepulsionBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BallBehaviourBlock&lt;T&gt;" Collapsed="true">
+    <Position X="46.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAABAAAEAACABA=</HashCode>
+      <FileName>Blocks\BallBehaviourBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BallDirectedShotBlock" Collapsed="true">
+    <Position X="78.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEBAAABA=</HashCode>
+      <FileName>Blocks\BallDirectedShotBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BevelBlock" Collapsed="true">
+    <Position X="98.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAggEAAQAQIAiACAgAACAAAgBAAAAQRg=</HashCode>
+      <FileName>Blocks\BevelBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BlackHoleBlock" Collapsed="true">
+    <Position X="53.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAAgAAAAAAAAAAAAEACAADA=</HashCode>
+      <FileName>Blocks\BlackHoleBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ManyToOneBlockAttribute" Collapsed="true">
+    <Position X="163.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ManyToOneBlockData" Collapsed="true">
+    <Position X="31.5" Y="21.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAADAAAAAAAAAAAEAIAAEAAACQAAAAAACAAIAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ManyToOneTestBlockData" Collapsed="true">
+    <Position X="31.5" Y="22.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ManyToOneTestBlock" Collapsed="true">
+    <Position X="109.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.LinkedListExtender" Collapsed="true">
+    <Position X="177.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BBEditorVisibleAttribute" Collapsed="true">
+    <Position X="165.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BBEditorInvisibleAttribute" Collapsed="true">
+    <Position X="186.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BatchedDrawBlock" Collapsed="true">
+    <Position X="114.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AUAAAEAIAAAAIgAAAAAAAAAgADAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.Block" Collapsed="true">
+    <Position X="63.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZOQEkAQ2AEJQsy1CgSMgNCbwEbOICmBLFAvEMfREKPg=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.ProxyBallBehaviour" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAgAAxIgoAQIAAAAgwACBAQAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Blocks\Block.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.BlockShotBlock" Collapsed="true">
+    <Position X="78.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAgAAAAAAACAAAAEAAAgBA=</HashCode>
+      <FileName>Blocks\BlockShotBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BombBlock" Collapsed="true">
+    <Position X="80.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAgAAAAEAAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\BombBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BombBlockAngular" Collapsed="true">
+    <Position X="82.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAABAAAAACAEAAAABEAIAgAAAAAAAAAAAAEIAAABA=</HashCode>
+      <FileName>Blocks\BombBlockAngular.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.BrickBlock" Collapsed="true">
+    <Position X="89.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAIAAFEAAAABA=</HashCode>
+      <FileName>Blocks\BrickBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.BuilderBlock" Collapsed="true">
+    <Position X="87.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBBAMAAABAAAAAQUCIAAICAgAAACAIAAAAQAEAAgADA=</HashCode>
+      <FileName>Blocks\BuilderBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.CardinalPopperBlock" Collapsed="true">
+    <Position X="91.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAAAAAAgAAAAAAAAAgACAAAAAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\CardinalPopper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.ConstructionBlock" Collapsed="true">
+    <Position X="94" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAACABAAAAAAAAgAAAABIAQBEAAEAgAABA=</HashCode>
+      <FileName>Blocks\ConstructionBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.CrazyBlock" Collapsed="true">
+    <Position X="46.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Blocks\CrazyBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.DestructionBlock" Collapsed="true">
+    <Position X="37.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAACAAAAAAAAAAgAAAAAAAABAACEAAAABA=</HashCode>
+      <FileName>Blocks\DestructionBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.FrustratorBlock" Collapsed="true">
+    <Position X="42.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAECAAAAQAAAgAgAAQAgAAAACEAAAADA=</HashCode>
+      <FileName>Blocks\FrustratorBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.GenericImageBlock" Collapsed="true">
+    <Position X="46.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgBAAAAAAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\GenericImageBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ImageBlock" Collapsed="true">
+    <Position X="67" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAgAoAAAAAIAggQAAAAAAAAAAEACAABA=</HashCode>
+      <FileName>Blocks\ImageBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ImageClipBlock" Collapsed="true">
+    <Position X="51.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAgAAAAAAAAAggAAAABAAAQAAkAAIABA=</HashCode>
+      <FileName>Blocks\ImageClipBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.InvincibleBlock" Collapsed="true">
+    <Position X="55.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAgAAAAAAAAAAAAEAAAADA=</HashCode>
+      <FileName>Blocks\InvincibleBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.NormalBlock" Collapsed="true">
+    <Position X="100.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAEAIAAAECAAggAAAAAC0AAgAAAIAAAAAAQAEQAAIDA=</HashCode>
+      <FileName>Blocks\NormalBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.OrbBlock" Collapsed="true">
+    <Position X="103" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAACAgAAAAGAAAAgAAAAAEAIIAAAAAAQADA=</HashCode>
+      <FileName>Blocks\OrbBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.PowerupBlock" Collapsed="true">
+    <Position X="58" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BARAAAAgACAAAwAAAIAAIAAgIAAAABAAAQAEcAAEADA=</HashCode>
+      <FileName>Blocks\PowerupBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.RayBlock" Collapsed="true">
+    <Position X="62.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAQAAAACAAAAAAIDAgAEAAAAAACAAAEBAAADA=</HashCode>
+      <FileName>Blocks\RayBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.ReplacerBlock" Collapsed="true">
+    <Position X="112" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAggAEAABAIAAQAAEAEAABA=</HashCode>
+      <FileName>Blocks\ReplacerBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.SnowBlock" Collapsed="true">
+    <Position X="67" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEEAAAABA=</HashCode>
+      <FileName>Blocks\SnowBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.SpeedBallBlock" Collapsed="true">
+    <Position X="49" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\SpeedBallBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.SplitBlock" Collapsed="true">
+    <Position X="71.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAgAQAAAAAAAAAAEAAAQBA=</HashCode>
+      <FileName>Blocks\SplitBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.StreetBlock" Collapsed="true">
+    <Position X="73.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABA=</HashCode>
+      <FileName>Blocks\StreetBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.StrongBlock" Collapsed="true">
+    <Position X="76" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAACBCAAIAAAgAAAAAAAAAAAADAAAAAACAAEAAAABA=</HashCode>
+      <FileName>Blocks\StrongBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.SwitchBlockMulti" Collapsed="true">
+    <Position X="116.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECBAAAgIAAAAgAAAAIAAAAgAAAAQgBAgAAEFCAAABA=</HashCode>
+      <FileName>Blocks\SwitchBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.SwitchBlock" Collapsed="true">
+    <Position X="118.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAgAAEoggQAAAKQIAEiAgABAAQgiFAMEEBARDA=</HashCode>
+      <FileName>Blocks\SwitchBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.SwitchStateData" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="174" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAABAAAAAAAAAAgAAAAIABAAAAAAAAgAAA=</HashCode>
+      <FileName>Blocks\SwitchStateData.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.TetherBlock" Collapsed="true">
+    <Position X="85" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAJQAEAAAQCAAgAAAAAIAKAAAAEAAAIjQ=</HashCode>
+      <FileName>Blocks\TetherBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.TexturedBlock" Collapsed="true">
+    <Position X="89.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAghAAAAAAAAAgAAAAAAAAAAAAAgAAABA=</HashCode>
+      <FileName>Blocks\TexturedBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.SandBlock" Collapsed="true">
+    <Position X="96.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>FallingBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.FallingBlock" Collapsed="true">
+    <Position X="96.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAgEAAAAAACARAAAAAAABA=</HashCode>
+      <FileName>FallingBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.LinearGlintEffect" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="175.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACIhgABAAACAAgAAAAAAACAGAAAAgiABA=</HashCode>
+      <FileName>IBlockEffect.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.ParticleEmanationEffect" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="174" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAQAAAAIgAAAAgAAAAhAAAEAAACAQAAAAAAABA=</HashCode>
+      <FileName>IBlockEffect.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.PolygonBlockDrawMethod" Collapsed="true">
+    <Position X="16" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAgAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.SpokedPolyDrawMethod" Collapsed="true">
+    <Position X="13.75" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAIAAAgAgAAAAAAAAAAAAACAACFA=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.PathGradientPolyDrawMethod" Collapsed="true">
+    <Position X="16" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAEAAgAAAAAAAAAgQAAAAAAgEAAAAAAAABA=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.FilledPolyDrawMethod" Collapsed="true">
+    <Position X="18.25" Y="17.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgAAAAAAAAAAgAAAAAAAAAgQAAAQAEAAAAAAAgAABU=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.PolygonBlock" Collapsed="true">
+    <Position X="106.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAQAABQAgAAAAAAAIAgEEiIAgFAJABgEQBAACA=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.RegularPolygonBlock" Collapsed="true">
+    <Position X="105.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAEQgAAAABBIAgAAAAAAgAABCAAAAAAAIAAANABA=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Blocks.EllipseBlock" Collapsed="true">
+    <Position X="107.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAggAAEAgAQAAACAAygECAAAAABQAAAAABIADA=</HashCode>
+      <FileName>PolygonBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.SpawnerBlock" Collapsed="true">
+    <Position X="64.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAgAgIAIAABAAAAIACgCAAAAAICACAAEIAAAhg=</HashCode>
+      <FileName>SpawnerBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Blocks.WoodBlock" Collapsed="true">
+    <Position X="69.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAAAAAAgAAAAAAAAAgAAEAAAAAAEAAEAAAAAA=</HashCode>
+      <FileName>WoodBlock.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Controls.BlockToolStripButton" Collapsed="true">
+    <Position X="181" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAACAARSgAAAAEAAAAAAAAAAEAAAABABAAAAAAAgA=</HashCode>
+      <FileName>BlockToolStripButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.Cheat" Collapsed="true">
+    <Position X="20.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAQAAgAAAAABAAAAAAAAQAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.TheNullCheatCheat" Collapsed="true">
+    <Position X="18" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.ThatsaPaddlinCheat" Collapsed="true">
+    <Position X="20.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.PlayMusicCheat" Collapsed="true">
+    <Position X="22.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.GetMeWetCheat" Collapsed="true">
+    <Position X="24.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.BombsAwayCheat" Collapsed="true">
+    <Position X="27" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.imboredCheat" Collapsed="true">
+    <Position X="29.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.ifeelthepowerCheat" Collapsed="true">
+    <Position X="31.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.PowerHasCorruptedMeCheat" Collapsed="true">
+    <Position X="33.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.ObstacleCheat" Collapsed="true">
+    <Position X="36" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.ReplaceBlocksCheat" Collapsed="true">
+    <Position X="38.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.LightningCheat" Collapsed="true">
+    <Position X="2.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.TerminatedCheat" Collapsed="true">
+    <Position X="4.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.FireworksCheat" Collapsed="true">
+    <Position X="6.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.PermaballCheat" Collapsed="true">
+    <Position X="9" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.NibblesBasCheat" Collapsed="true">
+    <Position X="11.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAgAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.AStickySituationCheat" Collapsed="true">
+    <Position X="13.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Cheats.SpawnPowerUpCheat" Collapsed="true">
+    <Position X="15.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Cheats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.BaseSettingsValue" Collapsed="true">
+    <Position X="175.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAACAAAAAAAQAEAABAAAAAAAAAgAAgQACA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.BaseSettingsSection" Collapsed="true">
+    <Position X="174" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAQAAAAAAAAQAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.SettingsCategory" Collapsed="true">
+    <Position X="174" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.BaseSettings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="172.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAIAAAEAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeCamp.Configuration.MRULists" Collapsed="true">
+    <Position X="165.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAASAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.INIMRUList" Collapsed="true">
+    <Position X="179.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAIASAQAAAAAAEggAAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.INItemValueExtensions" Collapsed="true">
+    <Position X="182.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAggAAAAAAAAAAABAAAAEAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.INIItem" Collapsed="true">
+    <Position X="1.75" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.INIDataItem" Collapsed="true">
+    <Position X="0.5" Y="28.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAIABAAAAAABAEAAAAgAQAAIAAAAAAABAgAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.INIComment" Collapsed="true">
+    <Position X="2.75" Y="28.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeCamp.Configuration.INISection" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="181" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAQADAESEAEAAQgAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeCamp.Configuration.INIFile" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="177.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JDABgIAAIAAAABAACQCAAEAKCQgAAAwGAcAAAAEACAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeCamp.CommandLineParser.CmdParser" Collapsed="true">
+    <Position X="170.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAAAAAQAAAAAAAAAIAAABAAAAQIAAAAAAAAAAAA=</HashCode>
+      <FileName>CmdParser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.ColorPicker.ComboBoxColorPicker" Collapsed="true">
+    <Position X="179.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAIEAQCCAAAAACACAAAACBAQAAAAAAAEI0AAAAAA=</HashCode>
+      <FileName>ComboBoxColorPicker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.ColorPicker.OfficeColorPicker" Collapsed="true">
+    <Position X="170.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQCAApIIACMIAAAAKACBAIACEBAEAACAAggDiABAAAI=</HashCode>
+      <FileName>OfficeColorPicker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.ColorPicker.SelectableColor" Collapsed="true">
+    <Position X="186.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAIAAAAAAAAAAAAAAAAgAEAAAAAgAAAAAI=</HashCode>
+      <FileName>SelectableColor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.ColorPicker.ToolStripColorPicker" Collapsed="true">
+    <Position X="182.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEKAAIACECBAACAAaQCAgFEAgAQAAAMAIIAAgAAwAUQ=</HashCode>
+      <FileName>ToolStripColorPicker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.Util.ContextMenuForm" Collapsed="true">
+    <Position X="181" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAgACAAACAAEACAAAACEAIEAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ContextMenuForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.Util.CustomColors" Collapsed="true">
+    <Position X="163.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAWAATQAAg1IpAIUIRABBAAnAhAABQISAAcoDABQIE=</HashCode>
+      <FileName>CustomColors.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="OfficePickers.Util.GradientPanel" Collapsed="true">
+    <Position X="179.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAASAAAQAAAAQAAAAAAAAAAAAQCAAAAAAAAA=</HashCode>
+      <FileName>GradientPanel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.ParticlePrecedenceComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="175.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BASeBlock.Particles.Particle" Collapsed="true">
+    <Position X="15.25" Y="29.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIgAABAAAAABAIAQAAAAACAACAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.BaseParticle" Collapsed="true">
+    <Position X="15.25" Y="28.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAIgAAAAIAAAAAIAIAAABAQAAAAAAEAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Particles.SizedParticle" Collapsed="true">
+    <Position X="5.25" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAkAAIgAAACAAAAAAIAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.AnimatedImageParticle" Collapsed="true">
+    <Position X="4" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAIgAAAAggAAAEKAAAAgAAEAAAAACAAAQ=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.ImageParticle" Collapsed="true">
+    <Position X="6.25" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgBAAAAAAAAAIAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.BubbleParticle" Collapsed="true">
+    <Position X="6.25" Y="34.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAgIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.CharacterDebris" Collapsed="true">
+    <Position X="10.75" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAIAABAAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.QuadDebris" Collapsed="true">
+    <Position X="8.5" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAIgAAAAAAAAAAIAAAAAJAAAACAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.BrickDebris" Collapsed="true">
+    <Position X="13" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAIAQAAAAEAAAAAAAAAAgAAAAIAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.PolyDebris" Collapsed="true">
+    <Position X="12" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAABAgAAQAAIgABgAAACABQIACAgAAgAAREAAAAYAU=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.LineParticle" Collapsed="true">
+    <Position X="15.25" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAACAKgEAAAAgAABAIAAgCAAEAAAAAAEAAAQ=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.DebrisParticle" Collapsed="true">
+    <Position X="17.5" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAgAAAAAIgAAAAAAAAAAIAAAgAgwBAYAAAAAQAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.WaterParticle" Collapsed="true">
+    <Position X="19.75" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAEEAAAAAAIgAAgAUAAAAAIAIAAAAAAAgACAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.DustParticle" Collapsed="true">
+    <Position X="22" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAIIgAAAAAAAAAAIAAAAAAgAAAAAAAAgAQ=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.Sparkle" Collapsed="true">
+    <Position X="24.25" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAABQgAAAIgAgEIAAAAAAICQAAAAAAAAAAABAAIA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.FireParticle" Collapsed="true">
+    <Position X="26.5" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAIgAAAAAAAgAAIAAAIAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.EmitterParticle" Collapsed="true">
+    <Position X="28.75" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAABgAAAAIgAAAAQAAAAAoAAACEAAAAAAAAAAAAQ=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.GenericEmitter&lt;T&gt;" Collapsed="true">
+    <Position X="28.75" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAAAoAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Particles.LightOrb" Collapsed="true">
+    <Position X="1.75" Y="31.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAAAAABAIABAIgAAAEAgAAIAICAAAAAAAAAAIAAIAAQ=</HashCode>
+      <FileName>cParticle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Events.ButtonEventArgs&lt;TResult&gt;" Collapsed="true">
+    <Position X="165.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAII=</HashCode>
+      <FileName>EnemyDeathEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Events.BlockEventArgs&lt;TResult&gt;" Collapsed="true">
+    <Position X="19.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAABAAAAAAAAAAAAQAAAABAAAAAAAAAAAAIAI=</HashCode>
+      <FileName>EnemyDeathEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Events.BlockHitEventArgs&lt;TResult&gt;" Collapsed="true">
+    <Position X="19.5" Y="29" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIA=</HashCode>
+      <FileName>EnemyDeathEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Events.TriggerEventArgs" Collapsed="true">
+    <Position X="163.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAAAAAAAAAAAABAAAQAAAAAAAAAAIAA=</HashCode>
+      <FileName>EnemyDeathEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Events.EnemyStateChangeEventArgs" Collapsed="true">
+    <Position X="175.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAAAIAAAAAACAAAAAAAAAQ=</HashCode>
+      <FileName>EnemyDeathEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Events.EnemyDeathEventArgs" Collapsed="true">
+    <Position X="174" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAgAAAAgAAA=</HashCode>
+      <FileName>EnemyDeathEventArgs.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="vbAccelerator.Components.Controls.FloatControl" Collapsed="true">
+    <Position X="167" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAAAAAAAAAABAAAAABAAEAAAAAAAAAAEAIQAxAAAg=</HashCode>
+      <FileName>FloatControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Templates.frmFromTemplate" Collapsed="true">
+    <Position X="181" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAQAAQACQAGAAAAACAAwACAAAQgABCACAIAAgBBAA=</HashCode>
+      <FileName>FromTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Templates.TemplateCategory" Collapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ICAAAAAAAAAgEAAACAAQAAQAICAAAAAAAAAAAAEQAgA=</HashCode>
+      <FileName>TemplateCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Templates.AllCategory" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>TemplateCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Templates.RegularExpressionNameCategoryFilter" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAACAIAAAAQAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>TemplateCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Templates.AlphabetCategory" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAACIAA=</HashCode>
+      <FileName>TemplateCategory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Templates.TemplateManager" Collapsed="true">
+    <Position X="175.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAACEAAAAAAQAAAAAAA=</HashCode>
+      <FileName>TemplateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bcHighScores.PHPCompatible" Collapsed="true">
+    <Position X="177.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HiScores.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="bcHighScores.HighScoreManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="186.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAgAACAAAAAAgAAAAAAAEAEAAgCAAAAA=</HashCode>
+      <FileName>HiScores.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bcHighScores.HighScoreEntry" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="184.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAwkAAAAAAQgEAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>HiScores.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bcHighScores.LocalHighScores" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="184.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAIAAAAgAAAAAAAAgABAgAgCACAAQgQAAAAA=</HashCode>
+      <FileName>HiScores.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="bcHighScores.NetHighScores" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="172.25" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACKAQAAAAAASAAAAAAgAAAEBCCAAAACAAAgRAAADA=</HashCode>
+      <FileName>HiScores.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Windows.Forms.ImageCombo" Collapsed="true">
+    <Position X="10.5" Y="27.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>ImageCombo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Windows.Forms.ImageComboItem" Collapsed="true">
+    <Position X="168.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAASAAAAAgAAAEAAAAAAAAAAAAAAAIAADACQAAwAA=</HashCode>
+      <FileName>ImageCombo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StringExtensions" Collapsed="true">
+    <Position X="172.25" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nullcallback" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="177.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="System.Reflection.BASeCamp.RequiredVersionAttribute" Collapsed="true">
+    <Position X="177.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEACAAAgAAAAAAAAAEAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Reflection.BASeCamp.MultiTypeManager" Collapsed="true">
+    <Position X="167" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAABAAAAAAAAACAAAAAAAAAAEAAAAAAAAAIAAAAA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Reflection.BASeCamp.LoadedTypeManager" Collapsed="true">
+    <Position X="182.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECBAAAAEAAAAkAAAAAAAAAAAAAAEAQAAAAAAAABAgAA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Office2007Renderer.Office2007ColorTable" Collapsed="true">
+    <Position X="167" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DCUQCKBAQACDAACQzGTcIYAeHoEIK0CJCIKAQAAAiAg=</HashCode>
+      <FileName>Office2007ColorTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Office2007Renderer.UseAntiAlias" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Office2007Helpers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Office2007Renderer.UseClearTypeGridFit" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Office2007Helpers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Office2007Renderer.UseClipping" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="172.25" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAACAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Office2007Helpers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Office2007Renderer.Office2007Renderer" Collapsed="true">
+    <Position X="168.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UBUAEV4AIWIAsHIkMmBAMABrhKACAUEmGCgEALCDAAI=</HashCode>
+      <FileName>Office2007Renderer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.PowerupDescriptionAttribute" Collapsed="true">
+    <Position X="163.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.TimedPaddleBehaviour" Collapsed="true">
+    <Position X="15" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAARAAAAAAAAEABAgAgBAiAAAgAAAAAAAAQ=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.GenericTimedBehaviour&lt;T&gt;" Collapsed="true">
+    <Position X="14" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAgAAAAAAEAAAAAABAgAAAAAAAAAAgAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.InfiniteEnergyBehaviour" Collapsed="true">
+    <Position X="18.5" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAABAAAAAARAgAAAAAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.InvinciblePaddleBehaviour" Collapsed="true">
+    <Position X="16.25" Y="27.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAYgAAAAAAEACAAAABAgACAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.BasePaddleBehaviour" Collapsed="true">
+    <Position X="25.25" Y="24.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAARIgAAAAAAEEQhAAAgAACaAQAEAAEAAgA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.BehaviourRemoverProxy" Collapsed="true">
+    <Position X="14.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAIAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.BloodDripBehaviour" Collapsed="true">
+    <Position X="20.75" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IBAAAAAAAAARIgBAAAAAEAAAAEAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.SizeChangeBehaviour" Collapsed="true">
+    <Position X="43.25" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAAAAAAAARIgBAAAAgEABAAAAgAAACAAAEAAhAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.BuilderShotBehaviour" Collapsed="true">
+    <Position X="45.5" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAQAgIAAICRAgIAIgCIEAAAACAIAAACAAQEAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.TerminatorBehaviour" Collapsed="true">
+    <Position X="47.75" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABIAAEIwAAARBgggICAAEAAAAAAoAFAIAAAEAAAAAIA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.StickyNonRemovableAttribute" Collapsed="true">
+    <Position X="167" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.DeflectorBehaviour" Collapsed="true">
+    <Position X="2.75" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBAAAAAAAAIRIgAAAAAQEAABAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.FrozenBehaviour" Collapsed="true">
+    <Position X="5" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAQAAAADARAgAAAAAAEAAAAAAIAAAAAAAAAgIAABA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.MagnetBehaviour" Collapsed="true">
+    <Position X="7.25" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABwAAAAAAAARogACAAAgEAAQAAAIAAAKAAAEAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.PaddleBehaviours.StickyBehaviour" Collapsed="true">
+    <Position X="9.5" Y="25.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAIAAABAgAAAAAANAAEAAAoAAAIBAAEAAAABAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgressStream.DecoratorStream" Collapsed="true">
+    <Position X="0.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAgGAAAAABgAAAAAAAAAAAAAAEIACQ=</HashCode>
+      <FileName>ProgressStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ProgressStream.ProgressCallbackStream" Collapsed="true">
+    <Position X="0.5" Y="14" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAACAAAAAACgAAAEAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>ProgressStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Projectiles.Bullet" Collapsed="true">
+    <Position X="19.25" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACBCoABgAIgAAACIgkAAAAAIAAEAAAAABAMCEoIA=</HashCode>
+      <FileName>Projectiles\Bullet.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BASeBlock.Projectiles.LaserShot" Collapsed="true">
+    <Position X="109.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EiIQCAAAgABAKggAAAEAAQKwACAgAKAAEAAQAqAAaAA=</HashCode>
+      <FileName>Projectiles\LaserShot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Projectiles.LightningShot" Collapsed="true">
+    <Position X="111.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IiIAAAAAAgAEIggBACQICCBBwAAAACAAAQQBAEAggAA=</HashCode>
+      <FileName>Projectiles\LightningShot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Properties.Resources" Collapsed="true">
+    <Position X="181" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Properties.Settings" Collapsed="true">
+    <Position X="172.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAIAAAAAAFAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Img.QColorMatrix" Collapsed="true">
+    <Position X="170.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAEQEAoKBIkBQCAAAYRAQCQCgAgIgwgMgCkQAACICA=</HashCode>
+      <FileName>QColorMatrix.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Collections.Generic.ReferenceCounted&lt;T&gt;" Collapsed="true">
+    <Position X="175.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAQAEAACCBAAACAAAAAAgAKAAIAAA=</HashCode>
+      <FileName>ReferenceCounted.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Scripting.ScriptObject" Collapsed="true">
+    <Position X="182.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAgAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ScriptManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BASeBlock.Scripting.BBScriptEngine" Collapsed="true">
+    <Position X="170.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAACgAABAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>ScriptManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="BASeBlock.KeyStateInfo" Collapsed="true">
+    <Position X="165.25" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAEAAAAQBAACAIAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BASeBlock.BlockData" Collapsed="true">
+    <Position X="163.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAEAAQACAAAgACAQAAAAAAQAAAAAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BASeBlock.Vector" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="168.75" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAIEAAAAAGE8AMAAAAgAABAAIAAAAAACAEA4jA=</HashCode>
+      <FileName>GeometryHelper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Struct Name="BASeBlock.MemData" Collapsed="true">
+    <Position X="167" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MemData.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="System.Reflection.BASeCamp.VersionInfo" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="170.5" Y="14.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAQEgACAAgAgAEAEAIAACAEgAAAAByA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Struct>
+  <Interface Name="BASeBlock.iBackgroundDrawer" Collapsed="true">
+    <Position X="168.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAACAAAEAAAAAAA=</HashCode>
+      <FileName>BackgroundDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iMovingObject" Collapsed="true">
+    <Position X="181" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IGameInitializer" Collapsed="true">
+    <Position X="168.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IBindingExtension" Collapsed="true">
+    <Position X="175.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCBlockGameState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IFilterDataObject" Collapsed="true">
+    <Position X="163.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iEditBlockFilter" Collapsed="true">
+    <Position X="182.75" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAgAAAAAAAAAAQAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BCEditBlockFilter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.Animatable" Collapsed="true">
+    <Position X="163.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BobbingTextAnimator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iBallDrawHandler" Collapsed="true">
+    <Position X="172.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iBallBehaviour" Collapsed="true">
+    <Position X="170.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAARIgIAAAAAAAAAACAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iLocatable" Collapsed="true">
+    <Position X="31.5" Y="31.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iProjectile" Collapsed="true">
+    <Position X="31.5" Y="32.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iSizedProjectile" Collapsed="true">
+    <Position X="31.5" Y="34.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IAnimatedSpriteAction" Collapsed="true">
+    <Position X="167" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>cGameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iActiveSoundObject" Collapsed="true">
+    <Position X="165.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAgAAAAAAAAQAAAAAEAAAAAAAIAAAgACEAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iSoundSourceObject" Collapsed="true">
+    <Position X="165.25" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iSoundEngineDriver" Collapsed="true">
+    <Position X="163.5" Y="17.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAACAAAEAAgAAAQAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IEditorClient" Collapsed="true">
+    <Position X="184.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAQAAAAgABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAEAQ=</HashCode>
+      <FileName>EditorExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IEditorExtensions" Collapsed="true">
+    <Position X="19.5" Y="32.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EditorExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IEditorBlockExtensions" Collapsed="true">
+    <Position X="19.5" Y="33.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>EditorExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IFilteredEnumerator&lt;T&gt;" Collapsed="true">
+    <Position X="165.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FilteredEnumerator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iBBPlugin" Collapsed="true">
+    <Position X="174" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAQAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>iBBPlugin.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.IExplodable" Collapsed="true">
+    <Position X="186.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IExplodable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iGameInput" Collapsed="true">
+    <Position X="170.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQQAAAABAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>iGameClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iGameClient" Collapsed="true">
+    <Position X="167" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIAAAAEAAAIQAAIAIAIBAAAQAAAAQoAAEAhQAAAxAA=</HashCode>
+      <FileName>iGameClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iImagable" Collapsed="true">
+    <Position X="174" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgiAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>iImagable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iLevelSetBuilder" Collapsed="true">
+    <Position X="177.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAhAAAAAAhAAAAAAAAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>iLevelSetBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iPlatformBlockExtension" Collapsed="true">
+    <Position X="184.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlatformObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.iBumpable" Collapsed="true">
+    <Position X="179.25" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlatformObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.Blocks.IBlockEffect" Collapsed="true">
+    <Position X="177.5" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIgAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>IBlockEffect.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.Blocks.IDamageableBlock" Collapsed="true">
+    <Position X="181" Y="16" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IDamageableBlock.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeCamp.Configuration.ISettingsStorage" Collapsed="true">
+    <Position X="186.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAgAAAAAAAAEAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>cINIFile.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="bcHighScores.IHighScoreList" Collapsed="true">
+    <Position X="172.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAACAAAgQAAAAA=</HashCode>
+      <FileName>HiScores.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="iManagerCallback" Collapsed="true">
+    <Position X="179.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>LoadedTypeManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.PaddleBehaviours.iIncrementablePaddleBehaviour" Collapsed="true">
+    <Position X="175.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="BASeBlock.PaddleBehaviours.iPaddleBehaviour" Collapsed="true">
+    <Position X="182.75" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAIgAAAAAAEAAhAAAgAACCAAAEAAAAAAA=</HashCode>
+      <FileName>Paddle.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BASeBlock.HitWallReturnConstants" Collapsed="true">
+    <Position X="167" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAABAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>cBall.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BASeBlock.RectangleEdgeFilter" Collapsed="true">
+    <Position X="168.75" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAIAAAAABAAAAAAAAAAAAAAAAAAAIAAAAEAAEA=</HashCode>
+      <FileName>gextensions.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BASeBlock.ButtonConstants" Collapsed="true">
+    <Position X="163.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACBAAAAgABAQCAQAAAAIBAAAAAAIAgQAAAAAAYBAEA=</HashCode>
+      <FileName>iGameClient.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="BASeBlock.GameRunStateConstants" Collapsed="true">
+    <Position X="165.25" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAACIBAQgAAAJAAAAAAAAAAAQAAAAQAA=</HashCode>
+      <FileName>iGameClient.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="OfficePickers.ColorPicker.ToolStripColorPickerDisplayType" Collapsed="true">
+    <Position X="170.5" Y="18.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAgAAAAAAAAAAAAAAAQAAAAAAAAAAASAEDAAA=</HashCode>
+      <FileName>ToolStripColorPicker.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="BASeBlock.OnSoundStopDelegate" Collapsed="true">
+    <Position X="167" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BASeBlock.OnSoundPlayDelegate" Collapsed="true">
+    <Position X="165.25" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataManager.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="BASeBlock.Blocks.BlockHitFunction" Collapsed="true">
+    <Position X="163.5" Y="19.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAEA=</HashCode>
+      <FileName>Blocks\AnimatedBlocks.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

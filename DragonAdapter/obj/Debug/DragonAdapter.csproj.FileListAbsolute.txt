@@ -1,0 +1,46 @@
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\DragonAdapter.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\DragonAdapter.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BASeBlock.exe
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\DragonOgg.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\System.Drawing.Html.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.GLControl.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BCUpdateLib.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Bass.Net.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Ionic.Zip.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.GLControl.xml
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.Compatibility.xml
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BCUpdateLib.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BASeBlock.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.xml
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\obj\Debug\DragonAdapter.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\DragonAdapter\obj\Debug\DragonAdapter.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\DragonAdapter.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\DragonAdapter.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\DragonOgg.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.Compatibility.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\System.Drawing.Html.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.GLControl.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Bass.Net.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Ionic.Zip.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.GLControl.xml
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.Compatibility.xml
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BCUpdateLib.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\OpenTK.xml
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\obj\Debug\DragonAdapter.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\DragonAdapter\obj\Debug\DragonAdapter.pdb

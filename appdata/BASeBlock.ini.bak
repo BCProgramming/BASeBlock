@@ -1,0 +1,30 @@
+[folders]
+Sound=%APPDATA%\BASeBlock\Sounds\
+Image=%APPDATA%\BASeBlock\Images\
+Levels=%APPDATA%\BASeBlock\LevelSets\
+Plugins=%APPDATA%\BASeBlock\Plugins\
+Scripts=%APPDATA%\BASeBlock\Scripts\
+toolbarimages=%APPDATA%\Roaming\BASeBlock\toolbar\
+templates=%APPDATA%\Roaming\BASeBlock\Templates
+[game]
+ReduceQualityAmount=0.5
+ParticleGenerationFactor=0.4
+Monospace=Consolas,Courier New,Liberation Mono
+SoundEngine=NBASS
+;SoundEngine=IRRKLANG
+;SoundEngine=DragonOgg
+CollisionCode=new
+menu=Office2007Renderer
+[ignore]
+;these are Regular Expressions....
+;assemblies=Iron.*\..*,irrKlang\..*,Microsoft\..*,Mono\..*,lua51,LuaInterface,BASS.Net,Interop\..*,IronMath,IronPython,IronPython\..*
+;only match BASeBlock for now.
+;assemblies=^(?!BASeBlock).*$|.*DirectX.*
+assemblies=^(?!BASeBlock).*$
+[include]
+assemblies=DragonAdapter,_script,BASeBlock,irrklangadapter
+[Editor]
+[recent.Game]
+item1=C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levelsets\testplatform5.blf
+item2=D:\testthemed2.blf
+item3=C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levelsets\invaders.blf

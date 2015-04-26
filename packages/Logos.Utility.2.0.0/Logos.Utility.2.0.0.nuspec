@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Logos.Utility</id>
+    <version>2.0.0</version>
+    <title>Logos.Utility</title>
+    <authors>Logos Bible Software</authors>
+    <owners>Logos Bible Software</owners>
+    <licenseUrl>https://raw.github.com/LogosBible/Logos.Utility/master/ReadMe.txt</licenseUrl>
+    <projectUrl>https://github.com/LogosBible/Logos.Utility</projectUrl>
+    <iconUrl>http://code.logos.com/blog/images/Logos.Utility.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Logos Bible Software Utility Library</description>
+    <releaseNotes />
+    <copyright>Copyright 2013 Logos Bible Software</copyright>
+    <language />
+  </metadata>
+</package>

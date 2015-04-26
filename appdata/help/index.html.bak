@@ -1,0 +1,86 @@
+<html><head><title>BASeBlock Help</title></head>
+
+
+<body>
+<img src="header.png" style="margin-left:auto;margin-right:auto">
+<h2>BASeBlock Help Documentation</h2>
+<p>
+BASeBlock is an action game based on Arkanoid, which itself is based on breakout. The idea of these games is simple; keep bouncing a ball
+back and forth until all the blocks are gone, aiming for a high score.
+</p><p>
+BASeBlock doesn't deviate much from this formula. However it has a number of mechanisms,power ups, and keystrokes that could use explaining.
+</p><p>
+<h3>The statusbar</h3>
+<p>
+<div>
+<img src="sidebarimage.png" style="float:left;margin-right:2em"> The statusbar is shown on the right side of the game screen. It shows some useful information on your status:
+<ul>
+<li><b>Name of the Level</b><br>
+This shows the name of the level- as well as which sequence number it is overall. Note that it's not strictly the case that all levels
+will advance you sequentially, but it is a rule of thumb.</li>
+<li><b>Score,Lives, HP,Energy</b><br>
+Your Score increases as you acquire points. Scores are worth more when you have more objects on the screen. Your HP measures the strength of the paddle. Explosions and enemy attacks will
+chip away at this value. If it reaches zero, your paddle explodes. However, you do not lose a life until all the balls in play go below the bottom of the play field. 
+</li>
+<li><b>Energy</b><br>
+The Energy bar shows how much "item" energy you have. Various items use this energy: the magnet powerup uses it, as does the terminator powerup.
+</li>
+<li>
+Directly below the energy bar, the power-ups your paddle currently has are shown as small icons. In this case, the paddle in the game has the "sticky" behaviour, as well as magnet and Terminator (shooting) behaviours. Paddle "behaviours" typically indicate power-ups, but not always. Also, the background of the sidebar can be customized on a per-level basis for the levelsets, so it won't always appear as shown here. However, all the described elements will appear in the same locations.
+</li>
+</ul>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<h3>Powerups</h3>
+As blocks are destroyed, some of them will drop Powerups. these will fall from where they spawn. If you catch them with the paddle, they can cause all sorts of effects. Not all of them good.
+<p>
+
+<h3><img src="..\images\addballpwr.png" width="32" height="16">Add Ball</h3>
+<p></p>
+The Add Ball Powerup does as it's name implies- it adds a ball to the playing field. The ball is spawned at the paddle location, usually at a medium speed.
+</p>
+<h3><img src="..\images\frustrator.png" width="32" height="16">Frustrator</h3><p>
+This little guy lives up to his name! Its effect is the same as the Frustrator Block. for a given duration (normally a few seconds) blocks are brought back to life. This "powerup" is best avoided. However, it could work in your favour, if you are going for a high score.
+</p><p>
+<h3><img src="..\images\paddleminus4.png" width="32" height="16">Paddle Shrinker</h3><p>
+Shrinks the paddle. Also gives you a "negative" bonus. Obviously this is best avoided, but in some circumstances it could be an advantage; in levels with a lot of eyeguys or DemonBlocks shooting at you, a smaller paddle makes for a smaller target, and you will have an easier time dodging attacks- but a harder time making contact with the ball or balls.
+</p><p>
+<h3><img src="..\images\paddleplus4.png" width="32" height="16">Paddle Expander</h3><p>
+Increases the size of the paddle. Normally, this is a good thing, but a larger paddle will also mean a bigger target if there are any enemies around. Take this power at your own discretion.
+</p><p>
+<h3><img src="..\images\shieldpowerup.png" width="32" height="16">Shield</h3><p>
+Creates a strong Block immediately beneath the paddle. This can keep a few balls from leaving the playing field, or even prevent a lost life.
+</p><p>
+<h3><img src="..\images\slimepower.png" width="32" height="16">Sticky Paddle Powerup</h3><p>
+A very useful powerup. This powerup gives your paddle the "Sticky" behaviour. What this does is makes all balls stick to your paddle. using the left mouse button will release the last ball to touch you. Press Shift+Click to release all balls attached to the paddle at once. Also, you can hold down the left mouse button to effectively nullify the "sticky" effect.
+</p><p>
+<h3><img src="..\images\magnet.png" width="32" height="16">electromagnet</h3><p>
+The electromagnet powerup installs a linear static diode, or lsd for short; it also recharges (like any Energy-using power-up) the Paddle's energy reserves. using Button3 (middle mouse button) you can attract any balls directly above the paddle. This can be used to speed them up, or slow them down as desired.
+</p><p>
+<h3><img src="..\images\life1.png" width="32" height="16">Health</h3><p>
+heals your paddle. Not much else to say, really.
+</p><p>
+<h3><img src="..\images\weaponpwr.png" width="32" height="16">Terminator</h3><p>
+
+The Terminator powerup gives you a weapon, or upgrades the one you have. All power levels use the same amount of energy; the higher leveled powerups can decimate an entire playfield in seconds. If you have no ammo, shooting will cause your paddle to emit black smoke and take a bit of damage.
+
+<ol>
+<li>The First level of power is a "shotgun" type weapon. One shot shoots about 5 pellets with a spread, which will embed themselves in blocks. Blocks take more hits from these pellets than they would from balls. One good thing this thing has is the ability to kill Eyeguys instantly.</li>
+<li>The Second level of power shoots a single ball with some degree of inaccuracy from the center of the paddle. This ball will not bounce, instead being destroyed. (it will be split by ball splitters and have it's direction changed by speedeffect blocks, however)</li>
+<li>Level three is the same as level two; but you get to dual weild them.</li>
+<li>level four gives you the ability to shoot lasers. These are dead accurate and head straight up; however, they cannot penetrate some kinds of blocks.</li>
+<li>Level five gives you dual lasers- and makes them more inaccurate- The lasers are still stopped by a number of blocks.</li>
+<li>Level 6 makes you shoot a single ball; just like level 2, except this time the ball has freakin' lasers attached to it.</li>
+<li>Level 7 is the same as level 6, but you get two of them</li>
+<li>Level 8 is for you to try to discover. It's unlikely that you can get 8 terminator powerups in a game... unless you design a level for the purpose...
+</li>
+</ol>
+Beyond power level 8, the cycle repeats- but each weapon is a machine gun. (you can hold the button down for rapid fire).
+
+</p><p>
+
+
+
+
+</body>
+
+</html>

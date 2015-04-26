@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="af2ea967-104c-4289-9a87-872a80522710" name="BC_Programming@TERATRON 2010-11-24 14:07:13" runUser="TERATRON\BC_Programming" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="a23eb23f-c60a-4200-b6ee-a3fda6880aaf">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\TestResults\BC_Programming_TERATRON 2010-11-24 14_07_13" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-11-24T14:07:13.8358337-08:00" queuing="2010-11-24T14:07:14.4468686-08:00" start="2010-11-24T14:07:14.5268732-08:00" finish="2010-11-24T14:09:03.5641098-08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestLocalHighScores" storage="c:\users\bc_programming\documents\visual studio 2008\projects\baseblocks\bblocktests\bin\release\bblocktests.dll" id="84f114cb-7134-b2bb-24b7-d28c6c2a8e2a">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="b3303b36-fe2f-4d90-be48-f86716fce8a1" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/BC_Programming/Documents/Visual Studio 2008/Projects/BASeBlocks/BBlocktests/bin/Release/BBlocktests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="BBlocktests.BBlocktests, BBlocktests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestLocalHighScores" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="84f114cb-7134-b2bb-24b7-d28c6c2a8e2a" executionId="b3303b36-fe2f-4d90-be48-f86716fce8a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="b3303b36-fe2f-4d90-be48-f86716fce8a1" testId="84f114cb-7134-b2bb-24b7-d28c6c2a8e2a" testName="TestLocalHighScores" computerName="TERATRON" duration="00:01:48.8914772" startTime="2010-11-24T14:07:14.5738759-08:00" endTime="2010-11-24T14:09:03.5231074-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <StdOut>Submitting score Name:Barry with score: 600
+Submitting score Name:Billy with score: 200
+Submitting score Name:Chuck with score: 400
+Submitting score Name:Trish with score: 700
+Submitting score Name:Bob with score: 250
+Submitting score Name:Thomas with score: 320
+Current Scores:
+Testing "Eligible" routine...
+IsEligible, Name=Billy, Score=210</StdOut>
+        <DebugTrace>loaded 0 scores.using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Barry&amp;score=600&amp;hashvalue=e21dad30860707f6f72030c05cb6c08e
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Billy&amp;score=200&amp;hashvalue=262cd487d87a134f8ab3c2ef9f627903
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Chuck&amp;score=400&amp;hashvalue=9bbc3d5e3be3297a20ac4d2b7bc29cba
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Trish&amp;score=700&amp;hashvalue=2c61c66a325613985a68878f9ae18022
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Bob&amp;score=250&amp;hashvalue=33f6f668954887aa8135adbf0705e7c0
+using URL GET Request:http://bc-programming.com/hiscore/hiscores.php?action=submit&amp;gameID=2&amp;name=Thomas&amp;score=320&amp;hashvalue=b205480216a40b49902765111a67d301
+</DebugTrace>
+        <ErrorInfo>
+          <Message>Test method BBlocktests.BBlocktests.TestLocalHighScores threw exception:  System.FormatException: Input string was not in a correct format..</Message>
+          <StackTrace>    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at bcHighScores.NetHighScores.Eligible(String Name, Int32 score) in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\HiScores.cs:line 294
+   at BBlocktests.BBlocktests.TestLocalHighScores() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\BBlocktests.cs:line 132
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

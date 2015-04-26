@@ -1,0 +1,34 @@
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\irrklangadapter.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\irrklangadapter.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\irrKlang.NET2.0.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\System.Drawing.Html.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Bass.Net.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Ionic.Zip.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\obj\Release\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\obj\Release\irrklangadapter.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\irrklangadapter\obj\Release\irrklangadapter.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\irrklangadapter.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\irrklangadapter.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\irrKlang.NET2.0.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\System.Drawing.Html.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Bass.Net.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Ionic.Zip.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\obj\Release\irrklangadapter.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\obj\Release\irrklangadapter.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\irrklangadapter\obj\Release\irrklangadapter.csprojResolveAssemblyReference.cache

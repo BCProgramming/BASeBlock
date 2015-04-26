@@ -1,0 +1,13 @@
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\BCUpdateConsole.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\BCUpdateConsole.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\BCUpdateLib.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\obj\x86\Debug\BCUpdateConsole.csprojResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\obj\x86\Debug\BCUpdateConsole.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\obj\x86\Debug\BCUpdateConsole.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\BCUpdateConsole.exe.CodeAnalysisLog.xml
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCUpdateConsole\bin\Debug\BCUpdateConsole.exe.lastcodeanalysissucceeded

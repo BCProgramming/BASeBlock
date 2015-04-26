@@ -1,0 +1,15 @@
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\obj\x86\Debug\BCActivator.csprojResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\BCActivator.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\BCActivator.CA.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\BCActivator.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Microsoft.Deployment.WindowsInstaller.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\BCUpdateLib.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Microsoft.Deployment.WindowsInstaller.xml
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\obj\x86\Debug\BCActivator.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\obj\x86\Debug\BCActivator.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BCActivator\bin\Debug\Ionic.Zip.dll

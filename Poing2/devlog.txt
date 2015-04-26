@@ -1,0 +1,1620 @@
+﻿BASeCamp BASeBlocks Development log
+
+Started far too long after the project was started (Sept 30th, 2010)
+
+Oct 07 2010
+
+Game is coming along nicely; recently added:
+
+* Tally screen at the end of the level
+*"Demo" mode, which is atm an option on the menu. will be removed, as it is mostly used for the next item...
+*gameover and "demo" screens, whereby a certain "gameover" level is played, with appropriate music, of course (well, it will be).
+Ideally, this will be a level with blocks that spell out gameover. Not sure how to get that working, either I can "hard-code" it or I can use something like a graphicspath.
+
+November 12th 2010
+
+Improvements: quite a number of them; fixed a few bugs here and there in various places, specifically tweaked the tally and gameover "dialogs" (the boxes in the screen when the rest of the screen is "darkened", etc)
+
+New: "powerups" these are a derived GameObject type (GamePowerup) these are spawned randomly by normal blocks at the moment from a pool of Types. currently have three; one makes the paddle larger (and gives you points) one makes the paddle smaller (and you lose points) and one that I initially made to test image animation for powerups (which now works, both the paddle grow and shrink powerups also use it).
+
+new: a new paddle, the "sticky" paddle. As I write this, it is actually a derived Paddle class, however, I have realized that this will not work in the long run.
+The various "powers" that the paddle can have- being sticky, perhaps shooting freaking lazers, etc should be cumulative.
+
+Therefore in the last 5 minutes I have conjured up a "fix" for this in my head; rather then derived Paddle classes, instead, a new Interface- "iPaddleBehaviour" of which the base Paddle class stores a collection and fires "events" into said interfaces, with the appropriate information of course.
+
+And it is completed; the iPaddleBehaviour interface is defined, The base "Paddle" class is calling into a List<iPaddleBehaviour> for "enhanced" behaviours, and there is a "StickyBehaviour" class that works perfectly as well.
+
+next up: it already overrides Draw() but the next step will be to create "overlays" for each paddle "enhancement"; for example, perhaps a some cannons sticking out of the paddle for the laser behaviour (and shooting behaviours) and perhaps... a layer of slime for the "sticky" paddle. It's an open court!
+
+
+But first, another thing has popped in my head: as it is now, the Behaviours are literally hooking the Click event of the
+main picturebox; ideally, there would be a more  generic way of receiving notifications about game events.
+
+One can feasibly expect the following inputs:
+
+Move left
+move right
+move absolute (fired to move/when moved to an absolute location (this would be the case for mouse movement)
+Button A (for releasing the ball from sticky mode, etc)
+etcetera buttons
+
+//therefore, this could be a interface:
+
+//iGameInput
+//
+
+
+
+edit: I finished a working implementation. It doesn't use an interface, but instead has a series of events exposed by iGameClient; the form implements this interface and fires said events when the mouse is moved clicked, etc.
+works well. This will make adding keyboard controls and stuff easier later on, as I can just add a class that recognizes the appropriate inputs and fires those events as necessary.
+
+
+other ideas: more powerups, more blocks, (of course) paddle behaviours, etc.
+
+probably make a change so that the various powerups don't have an equal chance to spawn; make some powerups more rare.
+
+November 15th 2010, 9:06PM
+
+added the above self-suggestion: powerup chances are now "weighted"; ideally, each block could also have a varying chance. For now I leave it as is.
+Also, the paddle being used is still subject to the "sticky" behaviour; this should be changed to a powerup of some sort.
+
+I am zipping up the project as it stands now and uploading it to my site to allow for some previewing by a select few; note however, that
+there are a number of "testing" bits that I can't be bothered to change atm; for example, the StickyPaddle behaviour mentioned above, which can be found on line 192 of BCBlockGameState:
+
+PlayerPaddle.Behaviours.Add(new StickyBehaviour(this));
+
+That in and of itself (the "StickyBehaviour" class, that is) has a small but mostly asthetic bug that I have yet to fix as well. This isn't even to note the fact that I am yet to add quite a number of different blocks, as well.
+
+
+
+
+Music/Sound information:
+
+All Music and Sound is loaded and managed by the "SoundManager" class, found in SoundManager.cs.
+
+On the downside, however, many of it's methods are not exactly polymorphic in a way that would facilitate replacing the core library
+with another; some of them return "ISound" and "ISoundSource" interfaces as defined in the wrapper library. For shame.
+
+So, what would be necessary to replace the library with another? More then I would like to admit. ideally, of course, all the changes would be only in the SoundManager class; but since the SoundManager class 
+contains a number of methods that return Sound library objects. These are used in various locations, and the return values are also used by the main game in a few locations.
+
+One concept  that might work would be to replace the ISoundSource and other interface returning methods so that they instead return an abstract class; this abstract class can be derived from in new Sound-oriented objects for each "type" of sound library; for example, FMOD could have it's own "Driver" class that derives from SoundManager, and has a nested class
+that derives from the abstract class. It's probably possible to jury-rig it to use another sound interface, it will probably require modification in the main program. Later versions will likely implement a better Sound framework that supports at least two sound "driver" objects; one for the current irrklang library, as well as the equally powerful (if not more so) FMOD wrapper I found. Further "wrappers" could be added later for other wrapper libraries.
+
+(perhaps even conditionally compile some of them depending on platform, if that is possible).
+
+
+
+*ADDITIONAL INFORMATION ABOUT MONO/LINUX*
+
+Aside from the clear fact that the irrklang sound library has no .NET wrapper for Linux (which means t hat to get it to compile will mean vast changes and commenting out/removal of a lot of code dealing with the sound)
+there are a few other considerations.
+
+Application Data folder: inside the zip, there will be two directories; a "BASeBlocks" directory, and a "Appdata" directory. the contents of the Appdata directory should be copied to %APPDATA% on windows systems. On Linux systems, 
+the contents of the directory should be copied to /home/usr/.config .
+
+With Linux, you might need to edit the INI file; probably not though, as I just changed it to recognize %APPDATA% and replace it regardless of wether it is running on windows or Linux.
+
+
+Wednesday, November 17th 2010
+
+Finally "buckled down" and rewrote a new SoundManager class that uses a more "plugin-like" architecture; the SoundManager accepts a instance of a driver interface in it's constructor; that interface is used to load sounds, and the interface returns further objects that it's wrapped into neat little interfaces.
+
+The idea here is so that even when the sound libraries in question differ greatly in how they are used, I can use it the same way for all of them.
+
+
+
+Also: new credit where credit due: many new block designs are in the works by Mulreay; 
+from the sounds of things they should be pretty good, and make a nice addition
+ (and a motivation for creating) further block types.
+
+
+*Yet more Linux info*
+
+as the new SoundManager (correctly dubbed "cNewSoundManager") is now written, and I have created "driver" adapter classes so that it can use either the same irrklang as always or it can use nBASS, it's now
+feasible to consider Linux support; this is partly due to the fact that while nBASS isn't specifically written to be Linux compatible, Mono has some things that can be done
+so that imports from the win32 bass.dll are instead being imported from bass.so (from my understanding, .so files are the equivalent of dll files on linux).
+
+Steps:
+
+First, Of course, the Sound system will have to be Set to use nBASS. this can be configured via the INI file, which can be found
+in the application data folder I noted earlier (%APPDATA%\BASeBlock\BASeBlock.ini on windows, /home/usr/.config/BASeBlock/BASeBlock.ini in linux- replace usr with your user name, of course)
+
+Once the game is set to use the BASS library, another change needs to be made; as I noted the nBASS library tries to import and use functions from "bass.dll". however, we can simply remap those functions to bass.so on linux and they will import fine.
+The mechanism to do so is to use the Mono DLLmap feature (info here: http://www.mono-project.com/Config_DllMap)
+
+As it stands now, I've created the BASeBlock.config file with the appropriate block:
+
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+<dllmap dll="bass.dll" target="bass.so"/>
+<dllmap dll="irrKlang.dll" target="irrKlang.so"/>
+
+</configuration>
+
+this "redirects" the attempts to load "bass.dll" to "bass.so"... 
+
+actually this could probably work with the irrklang library as well, but that warrants some further testing. Might require a config file for the actual
+wrapper dlls instead (for example, irrKlang.NET2.0.dll (a .NET library) would need irrKlang.NET2.0.config that contains the second <dllmap> tag shown above.
+
+
+November 18th 2010 10:31 PM
+
+Modified "BoundedMovingBlock" so that it no longer impacts balls multiple times... at least not as often.
+
+
+Dec 8th 2010 12:26PM
+
+TODO: add StickyPaddle powerup; add Powerupblock that drops a specific powerup (displaying the powerup image on it's face).
+
+Optimize... it runs far to slowly. No idea how to speed it up but there has got to be a way.
+
+
+Dec 24th 2019 4:41 PM
+
+managed to greatly increase the speed of the game by performing some refactoring; as it was, if an animated block needed to be redrawn, then all blocks would be redrawn.
+
+so- if a single waterblock was in the game- poof. Every single frame, every single block was redrawn.
+
+Now it is much speedier, and the framerate for the default level is around 80fps, and that is with the debug.Print() statements present.
+
+Dec 27th 2010 5:54 PM
+
+Adding Plugin support via a new interface. Good thing I wrong the "LoadedTypeManager" class to be generic and able to manage various types, rather then making a more specific
+one for iLevelBuilder.
+
+
+Dec 28th 2010 3:24AM
+
+Doing further work on a basic Updating architecture. The update information works on the server side (from what I can tell) and I even have a somewhat-working Visual Basic 6 form that acquires the update data.
+
+Creating a C# version should be pretty easy. It should support the following:
+
+Viewing All available Updates
+Viewing updates for a particular game (or set of "games") (gameid corresponds 1 to 1 to a application program, so BASeBlock LevelBuilder "Packs" (I'm under the crazy idea that they might be worth distributing separately) could 
+be "filed" under a different ID.
+ability to check for and start an update in the background with a simple function call; the form would then be simply a small progress bar, perhaps even with a Notification icon.
+this will be integrated into each application- that is, BASeBlock and BASeProgramX will both use the same Code .cs class for updating, and they will probably both accept say a /doupdate or /update switch,
+but there will be no need for a central "download manager" (unless I create that as yet another separate application, but it won't be necessary).
+
+January 19th 2011 11:06 AM
+
+Work has slowed down on BASeBlock somewhat; although it's more likely I've simply forgotten all the changes. I made some changes to the bobbingtextanimator on the intro screen, the sizing is now more
+consistent even with different amounts of text (which was a necessary change since I also made that text be randomly selected from a larger group of strings). I added a "Demonblock" which shoots a new Fireball entity, and I have made a seemingly innocuous change that caused the "mysterious lose life for no reason bug" to appear seemingly out of nowhere. 
+I changed the rayblock so that it can selectively shoot out of any of it's four sides; as well as making some architectural changes to the way IsTempBall was handled in the ball (previously it was a variable, now it is a lambda that returns true only if there is one or more TempBallBehaviour objects "installed" to that ball.
+That appeares to be what triggered the issue, but now that it's more common I may be able to trace it down once and for all. The alternate solution is the "brute force" it, and actually look on every frame wether we have any balls, but I'm not sure if that would be ideal.
+
+February 07 2011 4:29 PM
+
+Added Up and Down arrow usage to the cheat input "dialog"; it now navigated through recent entries much like a command history.
+
+February 08 2011 6:07 PM
+
+Spent the last three hours trying to get BASeBlock working on my laptop (via a installer)
+There seem to be some strange issues during load, originally it crashed hard during the bootstrap (splash screen) but now it handles some ReflectionTypeLoadExceptions that occur for seemingly no reason.
+
+They seem to occur when the LoadTypes() method of the LoadedTypeManager class tries to iterate through the types of the BASeBlock assembly itself.
+I hacked in a fix by making it manually check afterward (in the initgamestate) wether the Levelman list was empty, and if so it simply adds in typeof(defaultlevelbuilder) and typeof(ArkanoidLevelBuilder).
+
+Would like to get to the bottom of the typeload error, though. It might be related to how the assembly references DirectInput, but my laptop doesn't seem to have the assembly present to load.
+
+
+Fixed Sound volume bug; was using BASS.BASS_SetVolume, rather then setting the channel volume.
+
+Added Terminator Paddle Behaviour and Powerup.
+
+February 10 2011 6:48 PM
+
+I noticed a pattern emerging with a few powerups; namely, I would have a iPaddleBehaviour implementation that gave the paddle a specific power, and 
+then I would create a power up that would instill that behaviour to the Paddle; I have adopted this "pattern" into an abstract generic class; as it stands now it still needs to be derived from in another class, but now there is no code repeating in each instance, and each
+derived class is no more then a few executable lines.
+
+Wednesday February 16th 2011 8:51 PM
+
+Finally decided to tackle some of the issues occuring when attempting to install on other machines (such as my laptop). Some of the issues had been fixed, but a good summary:
+
+-Sound volume refuses to stick to computer's volume, and continues to max out the system volume (not pleasant on a laptop, let me tell you)
+-Update "applet" refused to work at all; would merely state that it encountered an error attempting to execute the file, without downloading it.
+-Some pretty major bugs related to my use of reflection (specifically, it seems that although I was able to load BASeBlock.EXE fine to start the program, I couldn't load it
+for reflection-based purposes because I was missing some dependencies. The Fix was to actually remove those dependencies from the project entirely (I wasn't using them)
+-The Splash screen, when shown as the about box, wouldn't show at all but would steal the focus.
+
+
+I have so far fixed all of these issues; the sound "bug" was a bug in the BASS sound driver class, I was setting the master volume rather then the channel volume when playing sounds;
+The update applet was trying to use the GetTempPath() API, but it kept giving me an empty string. I assume it worked in the IDE for... well, damned if I know. But I have very little doubt that 
+this wasn't the cause of at least part of the update problem.
+Splash screen "fixed" by making it set it's opacity to 100 right off when shown as the About box. Bit of a hack but oh well.
+
+new issues I noticed:
+
+-Cheat input "dialog" seems unresponsive
+
+Tuesday March 1st 2011 12:01 AM
+
+Finally "buckled down" and created the Editing form; it at the moment has very rudimentary Editing capabilities- the ability to add new blocks, drag blocks around (including the ability to snap to a grid) drag a group of selected
+blocks (selected by dragging a box around them) as well as using a propertyGrid to change the properties of the blocks. This adds a new dimension to the implementations of blocks, though, since
+they now should expose "interesting" features through that propertygrid. Right now many things cannot be edited (such as brushes and pens), which leaves a bit to be desired.
+
+Still needs better ability to Edit the levels themselves.
+
+Wednesday march 2nd 2011 12:05 AM
+
+Fairly good progress on the editor; now has ability to edit the balls as well as blocks. Still needs some tweaking about to try to get the balls to "highlight" properly (size of highlight is wrong).
+
+Also added a quick "behaviours" form that allows the editing of a Ball's behaviours. Seems to work a treat, too.
+
+Thursday March 3rd 2011 12:15 AM
+
+EXCELLENT progress on the editor. Now supports editing of Balls, Blocks, provides a flashing indicator of what balls and blocks are selected,
+provides a method to generate a level consisting of a given number of blocks. May add a "Paint" routine where pressing the mouse paints
+all blocks that the mouse touches a certain colour. Currently attempting to resolve issues with the editor and Animated blocks... and No, I don't mean animation of those blocks. 
+
+the problem with "PerformFrame()" of the blocks is it would require me to construct a BCBlockGameState so that the blocks can "evaluate" their environment. This may be doable (just set it to the EditBalls and EditBlocks and away we go)
+
+The problem with animated Blocks I am attempting to resolve is that they are unmovable; the BlockRectangle can be moved but it only moves the selection flash.
+
+
+Friday March 4th, 2011 11:56 AM
+
+Even more great progress; I had to recreate the form due to some designer glitching that corrupted it but, it was pretty much just re-adding the same controls
+and linking up the events properly. Changed the "level" listview to be more feature-complete; it now shows a thumbnail of the level (AWESOME), and so far the level name, number, and the number of blocks.
+
+also added "auditing" of levels; currently it's fairly simple but the idea will be to have a sort of "subsystem" (set of classes) designed solely for auditing levels. By which I mean, scanning the Set for possible issues. Currently it detects missing balls and blocks, as well as when there are no blocks that can be destroyed (which would mean the level lasts forever).
+
+Additional possible "audits" might be detecting when there are balls but none of them have a non-zero speed, when there are blocks outside the game area, etc.
+
+The "idea" will be to display the errors in a list; allowing the user to double-click on an issue to be taken to the level where the issue resides, or for some of them have a "fix it for me" type of feature that for example adds a block to empty levels, adds a default ball to levels without balls, gives balls speed, etc.
+
+Friday March 4th 2011 9:56 PM
+
+WAY progress... not on the Editor (which is more in the rough polish stage) but rather on executing an idea that was presented to me.
+Graham suggested a "Creeper" block, that would move around and hunt the paddle. It intrigued me; more or less, because I had been considering some sort of enemy.
+Because the Block "API" (if you will- the way the Block code can interact with the game) is relatively limited in that manner, I decided instead to make a Abstract class, GameEnemy, which would make managing various "States" easier.
+A "state" generally indicates how the AI of an enemy will perform; for example, when the enemy is in the "Attack" state, it may be more aggressive, wheras there could be fleeing states, and so forth. Often, these are accompanied by having a different set of animation frames.
+
+
+So, the GameEnemy base class has several Dictionaries, most of which are indexed by the key of the current EnemyState, that provide state-unique things like the animation frames and the delay times (which are both per-state as well as per-frame).
+
+For a test, I created a Megaman "enemy" that walks slowly using the standard blue sprite, but after 750 frames he turns green and speeds up both in horizontal speed as well as reducing the delay times.
+
+After smoothing out a few bugs, it seems to work like a charm.
+
+I was considering the first enemy to be a "muncher" type enemy, which looks like pacman and whose AI attempts to eat balls. THis would also be a "test" of sorts since
+the plan will be to neglect the GameEnemy's Default behaviour in which it uses Image frames, instead going for a Pie shape that animates a opening and closing mouth (like pacman) and can point in any direction.
+No doubt I will have to dust off some of my trig skills (particularly since I want the ball to "bounce off" the cruncher if it hits them away from the mouth).
+
+Saturday March 5th 2011 8:13 PM
+
+fixed some long standing issues with the animated blocks, highlighted by the editor (in that DemonBlocks, Black Hole Blocks, etc were all loaded with an empty blockrectangle; seems that while it serializes and deserializes the values properly, it doesn't actually set it's own BlockRectangle to that of the base Blocks. (long story, animated blocks are really
+just a wrapper around another block)
+
+The Editor (and subsequently the LoadedLevelBuilder) Now load the levelsets via a new "EditorSet" class designed to make it easier to store stuff that might be editor specific; such as author, creation time, etc- that is,
+stuff that would be blatantly irrelevant if I were to place them within the LevelSet itself.
+
+Tuesday March 08 2011, 2:26AM
+
+added a "chomper" gameenemy, as noted earlier; doesn't work as well as I would like. Might not use it in-game.
+
+fixed an editor bug that prevented levels from being saved at all. Also fixed an additional bug that prevented normalblocks from saving properly.
+
+Added a new  "life" powerup that restores "health". This brings me to another issue;
+
+the fact that, in many levels, health is entirely vestigial. ideally, there needs to be some sort of omnipresent hazard that damages the paddle on any level. Perhaps the Chomper enemy
+could be adapted to try to shoot the paddle instead of hunting balls?
+
+
+Friday March 11th 2011 1:23 PM
+
+removed "chomper" enemy (the code is still there, it just never get's spawned) it's just to buggy.
+
+I did add "eye guy" which is a "suzy" from Megaman, that moves in one of four cardinal directions. Basically, it moved in one direction until it hits a edge, all the while smashing right through any and all bricks in the way, it's direction changes if it get's hit by a ball, etc.
+also, I made it shoot fireballs while it's eye is open.
+
+trying to enhance the editor- added new classes so that the EditorSet (the class that get's serialized/deserialized) also contains a "cache" of sound data/key names and so forth so it can store sounds that the levels in the set require, and make sure they are "loaded" so to speak when the Set loads. Same for images.
+Currently just need to write the appropriate interfaces for editing. Currently going with a ridiculous form-based approach since the PropertyGrid isn't exactly catering to this sort of thing.
+
+Friday March 11th 2011 9:19 PM
+
+Created a new installer. Will test on "Training computer" at work; it should have the required .NET install; with any luck it will work there
+(being a relatively "virgin" system it will make for a good test; also, it's specifications are about average for a modern machine, so I'll be able to see if performance is an issue (it's a constant worry, really)
+
+
+Either way, I have Sound Embedding functional; the UI needs some touching up and polish (and I need to add a similar UI for Images... sigh) But it works (I tested it; the file embedded, and was retrieved successfully).
+
+How it works: 
+
+Since I don't recall adding a lot of comments regarding the how (yet) I put this here mostly for my later refreshing on the topic.
+
+The BCBlockGameState keeps instances of a SoundManager and ImageManager class, which are populated when the InitGameState() routine is called (it used to be a static constructor but apparently Mono didn't like that... although to be honest I've given up trying ot get it working in Mono)
+In any case, Playing sound or drawing/requesting images is performed at that level; the various Block classes for example use the ImageManager to acquire Image resources, and the Sounds are requested "by key" via the Sound Manager (which itself delegates the actual playback to a previously defined
+"Sound Driver" interface implementation; Currently I've been using the BASS.NET driver a lot, but IRRKLANG worked when I last tried as well. Future versions may include more "drivers".
+
+In any case, sounds are acquired "by key" in that a dictionary/hashtable is kept with a String key being used to lookup the appropriate SoundSource (used to represent a single sound object)
+
+
+With Embedding sounds in levelsets; there are two things to consider:
+
+During the phase of "editing" when the embedded sounds are defined, those same sounds aren't loaded by the driver; previews may have to be done "manually" if I ever implement them; I'm not to keen on the idea
+of forcing Sounds to load during the primordial stages while such sounds are just being defined; perhaps I could create a new instance of the sound manager class, I don't know.
+
+In any case, the data is persisted; basically a Key, some sound data, and the extension of the file (ogg, mp3, wav, etc) When the data is "reconstituted" (via the IDeserializationCallback interface that is implemented)
+the Sounds are "loaded" into the static Sound Manager class, replacing any existing items with the same key (which could be used to "replace" sound for specific levelsets, or even be used wit an otherwise empty levelset to merely redefine those sounds for later games during the same session)
+this is accomplished by writing the data to a temporary file and loading it that way. It uses the recently (as in just now I thought of it and added it) changed TempDeleter Class used to delete the temporary Zip Directory created during load when the object is disposed to delete the file when appropriate. Generally, this means after the application ends. Obviously
+unexpected crashes will cause files to remain strewn about, but hey, fixing that might not be worth it.
+
+
+Saturday March 12th 2011
+
+"fixed"- or rather, seem to have accidentally prevented- a issue that has been plaguing me all morning.
+
+It started innocently enough; I wanted to run the program on a Win7 computer at work so I could show off my leet skillz... although mostly the splash screen commentary.
+So I installed it, tried to start it... And nothing.
+
+For the longest time- it did nothing. And then- System.Net.WebException.
+
+
+ WTF! I thought. All the code that would raise that error is in a try block.
+ 
+ When I got back to my dev machine- this one,  I continued my tests in a VM. Same problems. and yet, it ran perfectly on my laptop!
+ 
+ It took me a while, but suddenly it clicked- all the computers it worked on had internet- those it didn't work on did not. (which makes sense in a way, given the errors) I disconnected the laptop from the network and tried to start the same install of baseblock I had seconds earlier.
+ 
+ and it crashed. Success, the reason seems to have been found. (although why the hell it takes almost a full minute just to show the splash screen I haven't a clue)
+ 
+ So I fuddled about with the Main() routine, added a extra if() to proceed only if a network connection is detected, etc
+
+
+
+
+
+
+
+[10:59] <+Mulreay> A gaping mouth/eye/black hole that eats the ball and spits it out somewhere else on the game
+[10:59] <&BC_Programming> like a warp block
+[10:59] <&BC_Programming> I actually was thinking of something along those lines
+[10:59] <+Mulreay> yeah
+[11:00] <&BC_Programming> but now I have to worry about "how will they be dealt with in the editor" and that... well actually that might be perfectly doable
+[11:00] <&BC_Programming> if I learn a bit more about the propertygrid thing
+[11:00] <+Mulreay> would be cool
+[11:00] <&BC_Programming> going to fix the eyeguy collision code and probably do a setup build for upload
+[11:01] <&BC_Programming> um... let's call it a beta
+[11:01] <&BC_Programming> wtf I can call it whatever I want
+[11:01] <+Mulreay> hahaha thought of another one but would be crazy
+[11:01] <&BC_Programming> oh crazy is good 
+[11:01] <&BC_Programming> I mean come on I'm stealing enemies from megaman
+[11:01] <&BC_Programming> if that's not crazy I don't wanna be sane
+[11:02] <&BC_Programming> ...and reading that back I have no idea what I just said
+[11:03] <+Mulreay> It enters a block/gate that makes the ball go NUTS it turns opaque and just runs for like 5secs but add double speed, you don't have to hit it, it just bounces around and hits random blocks... 
+[11:04] <&BC_Programming> hmm I think I like that but not sure if I understand fully
+[11:04] <&BC_Programming> let's say- it's a block right
+[11:04] <+Mulreay> yes
+[11:04] <&BC_Programming> what happens when it hits a ball
+[11:04] <&BC_Programming> or I should say when a ball hits it
+[11:04] <+Mulreay> heh
+[11:04] <+Mulreay> yeah was thinking there
+[11:05] <+Mulreay> The ball changes to say a different type.. I just used opaque for an example
+[11:05] <&BC_Programming> ahhh
+[11:05] <&BC_Programming> I see
+[11:05] <&BC_Programming> so- a new block, and a new BallBehaviour
+[11:05] <&BC_Programming> See I already wrote stuff to cover these sorts of features
+[11:05] <&BC_Programming> that is how awesome I am
+[11:05] <+Mulreay> cool
+[11:05] <&BC_Programming> but wait a second.. the ball already is opaque?
+[11:06] <&BC_Programming> maybe change to some other distinct color
+[11:06] <&BC_Programming> colour*
+[11:06] <+Mulreay> The ball then goes crazy and zips around at like 2x speed, you don't have to use the paddle as it will bounce anyway.. probably 5secs or so
+[11:06] <&BC_Programming> ok I like this, I do
+[11:07] <+Mulreay> You don't have to use colour. I get color, even though it's soooo wrong
+[11:08] <+Mulreay> hahahah just thought of something that would be cool, and it's from chatting with you on skype
+[11:08] <&BC_Programming> so- let's think this out- so a standard, everyday ball hits this new block, and it get's given- well I guess some new behaviour(I'm thinking  "crazyBall") and what crazyball does is make the ball go faster and when it bounces it doesn't bounce "predictably" and sorta just bounces in a random direction, and it lasts for a specified time and then it is removed
+[11:09] <+Mulreay> perfect
+[11:09] <&BC_Programming> but there is only one problem
+[11:09] <&BC_Programming> and I've had to find silly ways to deal with it- such as with the black hole block-
+[11:09] <&BC_Programming> what if there is only one ball
+[11:09] <&BC_Programming> and it hits that block
+[11:09] <&BC_Programming> if it goes "crazy" it will remove itself right
+[11:10] <&BC_Programming> leaving no balls at all
+[11:10] <&BC_Programming> ....Actually... come to think of it, that <could> work
+[11:10] <+Mulreay> The ball will still be the ball in play... not a new one
+[11:10] <&BC_Programming> oh oh!
+[11:10] <&BC_Programming> so after the specified time it's not removed from play
+[11:10] <&BC_Programming> it just goes back to normal?
+[11:10] <+Mulreay> yeah
+[11:10] <+Mulreay> after a set amount of time
+[11:11] <&BC_Programming> I was sorta liking the it dies idea as well, since then if you hit it with your only ball you better hope that the craziness causes the creation of more balls or else you lose a life
+[11:11] <&BC_Programming> wouldn't be too hard to do both, see which is more "playable"
+[11:12] <+Mulreay> yeah, best way is to test
+[11:12] <+Mulreay> I did have another idea but don't want to overload you
+[11:13] <&BC_Programming> no no this is good
+[11:13] <&BC_Programming> see I run out of ideas
+[11:13] <+Mulreay> heh
+[11:13] <+Mulreay> ok
+[11:13] <&BC_Programming> that's why I just end up stealing enemies from megaman
+[11:14] <+Mulreay> Remember when you do the euargh noise on skype playing minecraft, when you spew bones at me?Well why not have a 'mouth block' that when it enters there is like a 2sec wait and then you hear euargh and 3 balls shoot out... as if it's being sick
+[11:15] <&BC_Programming> HAHAHA
+[11:15] <&BC_Programming> awesome
+[11:15] <&BC_Programming> LOVEIT
+[11:15] <+Mulreay> heh
+[11:15] <&BC_Programming> I already have demon blocks, I think those are in the vid, they make a rather funny noise
+[11:15] <+Mulreay> cool
+[11:15] <&BC_Programming> but a BLECH noise
+[11:15] <&BC_Programming> that would rule
+
+
+
+Friday April 8th 2011 6:56 PM
+
+
+Since last time, The Editor and main game now have Recent  File lists (The editor's is populated when files are opened or saved, the games is when a levelset is loaded)
+also added (untested and un"hooked" as of yet) ability to save levelsets as JSON, which is utterly pointless... and I wonder how that works for the embedded sounds.)
+
+Fixed stuff that I've forgotten. Sigh to that, oh well. Finally said feck it and fixed VisualSVN, so now I'll actually
+be able to properly track changes. It's only a local repo but that works for me.
+
+Friday April 29th 2011 12:55 AM
+
+additions are too numerous to mention; refactored some code, added a new enemy (a snake, the AI still needs work but it's death is AWESOME. new changes will probably be to make that snake a huge pain- currently only hitting it's head can kill it, which isn't super hard, but what if hitting it elsewhere and splitting it
+created TWO snakes! The possibilities are endless.
+
+Wednesday May 4th 2011 11:38 PM
+
+
+made a few minor changes here and there to fix errant behaviour I was seeing. Noticed a new problem where balls can go flying through solid walls if they are made to go fast enough, and it's not even very fast. It requires the ball to get lodged in the joint between two blocks, so it can probably be fixed by either overlapping the blocks
+or making them part of a single larger block.
+
+I think I fixed the various pausing bugs; unpausing the game was being done even if the game wasn't really paused, which caused some confusion.
+
+Currently working on the BackgroundDrawer Classes to allow for the new features (animated background, moving, rotating, etc) to be editable.
+
+Friday June 24th 2011
+
+
+current issue: latest "fix" to implement Liang-Barsky rectangle hit detection has caused two issues:
+
+Balls that have PowerBallBehaviour still have their location adjusted (looks weird).
+Standard balls seem to occasionally keep going for no reason.
+
+
+Friday July 1st 2011 4:34 PM
+
+Game refuses to run on my Vista VM; but runs on win7. This bears further investigation.
+
+Wednesday July 6th, 2011 12:22 AM
+
+resolved a few bugs, finally fixed the fact that balls weren't bouncing proper; 
+at least it's believable now, and it does prevent the ball from jumping right over a 
+block because it is going super fast or something, which is helpful. Added new Switch: -datafolder or /datafolder:
+
+/datafolder:pathname or
+/datafolder:'pathname'
+
+the second syntax is required if there are spaces in the path.
+
+This changes the datafolder location that is used. This doesn't actually change the location of the folders that it looks in for images, but rather only changes
+the "base" folder. This is the folder used to look for BASeBlock.ini; that ini file can easily refer to different paths, as well.
+
+"Finished"- or at least, got it working and usable- the QueuedSoundManager. At the moment, it is only used in the same context as the cNewSoundManager used it's own private queue, but it <should> work for sounds, as well.
+Also has random order, but that needs refining.
+
+Wednesday July 6th 2011 5:37PM
+
+added "fixes" to the Terminator Behaviour; power levels are now used.
+
+
+Friday July 7th, 2011 12:16 AM
+
+Fixed a NASTY bug in AnimatedBlock.
+
+Issue: nibbles.bas (cheat) with demonblock as a parameter, would create a snake comprised of demonblocks, but it would be impossible to defeat because the snakeEnemy class wasn't getting any events from the blocks.
+
+The cause? 
+
+As with the other AnimatedBlock related bugs, it had to do with the fact that an AnimatedBlock is really two blocks- the animatedblock, and the "baseBlock" that is an aggregate class. At this point I have no idea why I designed it this way, but it does the job... I guess.
+
+So anyway, the problem was that the SnakeEnemy was hooking the AnimatedBlock events, but those events were never fired because the AnimatedBlock also subclassed PerformBlockHit and called directly into the baseblock (it's aggregate) implementation of the same, so the actual AnimatedBlock, despite having a perfectly fine set of events, never had those events called.
+
+The fix? changed the line in AnimatedBlock's PerformBlockHit, from:
+
+return baseBlock.PerformBlockHit(parentstate,ballhit,ref ballsadded);
+
+to:
+
+return base.PerformBlockHit(parentstate,ballhit,ref ballsadded)  | baseBlock.PerformBlockHit(parentstate, ballhit, ref ballsadded) ;
+
+One rather significant disadvantage is  that this means that it will call two routines instead of one, but a implementation that works is prefered over a fast, broken one, I suppose.
+
+
+"Creeper" block, which goes towards the paddle when hit.
+
+Wednesday, August 31st, 2011 2:09 AM
+
+Recently integrated the concept of "paths" into the game, and the editor. Paths are stored as lists of points (obviously) which are saved as part of a ObjectPathDataManager class that is held by each LevelSet. This effectively means that paths are "levelset-wide" and indexable by their name. This was decided because it many paths might be used multiple times either in the same level or even among different levels.
+
+The idea is that any block or other entity that uses paths will save/load not the path data itself (as PathedMovingBlock does now, for example) but rather just a string key that indexes into the paths that are part of the levelset, and acquire the path/point data from that.
+
+The Editor supports editing of paths now as well. I haven't yet added a facility for creating them, but existing path points can be moved around.
+
+
+Wednesday September 21st 2011 2:32 PM
+
+Since last info, fixed up path editing code (Still need some tweaks for multi-select). Added categories for the blocks, using Attributes (BlockCategoryAttribute and it's derived types).
+
+TODO: fix up "construction block" somewhat.
+
+Ideally, both the construction block and the to be implemented Destruction block shouldn't destroy/create  blocks in the given radius instantly. Instead, what they could do is
+create a gameobject of some type, which for the sake of brevity I will refer to as "Explosion" (and which will make a perfect name, being that is what it is), or radiuseffect, or something, which
+will expand outward from the block, and destroy/create blocks as it's radius hits them.
+
+Thursday September 22nd 2011 12:12 PM
+
+* fixed eyeguy, now it/he rotates when active. Looks very cool.
+
+TODO: implement GameObject which will be used for construction of blocks and destruction of blocks. Possibly a abstract base class object that is derived from to create
+one class for each of those actions.
+
+Destruction:
+fairly simple: each frame, check if any blocks are "touched" by the explosion (see if any blocks are within the radius of the "explosion" and if so, destroy them.
+
+
+Construction:
+more elaborate. when initialized, it knows it's maximum radius, as well as the size of the block it is going to create, so it "initializes" by creating a list of rectangleF structures
+that correspond to each block that it will end up creating. Each frame, it checks (using the same logic as the destruction block) to see if any of those structures are within the radius, and if so, it creates
+a block at that location and removes the structure from the list.
+
+
+Thursday October 27th 2011 6:24 AM
+
+Construction and Destruction blocks and supporting gameobjects described above finished; also made it so the game detects "combos" or chains of explosions. An appropriate message is displayed and a sound bite is played corresponding
+to the number of chained explosions. Finished implementing the "upgrade" ability to the Terminator Behaviour, which now has three levels; the first power level shoots a ball from the center, the second shoots two, one from each end, and the third fires a laser from the center. The laser goes through
+any destructable block. Also added a "level browser" which can view levels; this will probably become the core interface for custom level selection. It currently looks at the folder specified for levels, and enumerates all BLF files. changed the EditorSet object to save a full resolution bitmap of each level in the set as part of the ImageData collection, which is used to 
+"preview" that level. Arguably, I could have simply used the existing code for drawing a level to draw it on the fly as needed, but this way will probably be less trouble-prone in the future.
+
+
+Monday  Nov 7th, 2011, 6:17PM
+
+Changed ImageDataItem so it has a Flag value; current values allow it to be "hidden". this is used by the Level saving logic to 
+hide the thumbnail images when the image data is viewed using the facilities of the editor.
+
+Tuesday Nov 8th 2011, 1:14 PM
+
+ Intro Sequence now shows "Ready In" count down.
+ 
+ Wednesday Nov 9th 2011 2:30 AM
+ 
+ Changed BCBlockGameState's InitGameState() to deal with Pipe-delimited values for the various folders. (This also involved a change to cINIFile)
+ 
+ 
+ Thursday Nov 10th, 2011 9:50 AM
+ 
+ Working on adding Scripting support. First, adding the code for loading/saving scripts via CreatorProperties. I can always hide the button for editing scripts (next to image and sound) before it's finished.
+ 
+ 
+ Friday Nov 11th 2011 1:49 AM
+ 
+ During the addition of scripting support, I added a number of references, which ended up being copied (By Visual Studio) to the game's Debug and Release folders, as such
+ the startup time was immense, as it iterated all the values in those assemblies looking for Blocks and stuff.
+ 
+ I changed the [ignore] sections 'assemblies' INI value so that it was a regular expression, and changed it to default to "^(?!BASeBlock).*$" which means only the BASeBlock assembly will be 
+ inspected. more items can be added as ^(?!Plugin).*$ in the same manner to make sure they are inspected as well.
+ 
+ Side Note: RegExBuddy Rules.
+ 
+ Saturday November 12th, 2011, 3:38 AM
+ 
+ Added "LightOrb" not quite the effect I was going for (given the name) but it ended up making the ExploderEffect effects 20% cooler, so there is t hat.
+ 
+ (and I mean that literally, 20% of the particles the explosion emits are now LightOrb particles...)
+ 
+ Friday November 18th 2011 4:17 AM
+ 
+ Over the last week or so, I added scripting capability to BASeBlock. it's not fully tested, but it works perfectly for those scenarios I've tried.
+ There were some hurdles with regard to serialization that I overcame with a custom SerializationBinder, but it works! BASeBlock can now have blocks, paddlebehaviours, etc added by simply plopping scripts in it's scripts folder, and those will
+ be compiled as needed.
+ 
+ Also, changed the editor so that it properly prompts if the levelset is unsaved (IsDirty being set)
+ 
+ TODO:
+ 
+ Make it so that the levelset files have a "header" object with a well-defined structure. That object is read first and contains information
+ such as the assemblies used by the levelset (for blocks and whatnot) so it can ensure they are available, Otherwise, trying to read the EditorSet will result in a exception.
+ This "header" object is not written via a gzipstream, but directly, or as a separate gzipStream.
+ 
+ 
+ 
+ Monday, Nov 21st 2011 6:33 PM
+ 
+ Notable fixes/additions:
+ 
+ Fixed bug that prevented sounds from being played in certain circumstances (instead crashing with an exception)
+ tweaked Brick block to explode with more horizontal force when destroyed without a ball, as well as fixing the PerformBlockHit() implementation so it calls the base class (which manages the OnBlockHit/Destroy/etc Events,
+ and therefore was the cause that the head brick blocks weren't being detected as hit when part of a snakeEnemy (this was a bug in The BrickBlock, not in SnakeEnemy)
+ tweaked Brick Block to allow for a different texture.
+ 
+ 
+ Oh... I added the BrickBlock. That's a tad important too, I guess.
+ 
+ The BrickBlock was "inspired" by the Super Mario Brothers Brick. Particularly, the style with which it is destroyed. When you break a brick, it "shatters" into four pieces of debris which sort of explode and fall of the screen.
+ 
+ That is what I was going for with the BrickBlock. More generally, however, I integrated the code that Actually creates the debris as a static function
+ of the BrickDebris class; and, any block can be destroyed in the same fashion.
+ 
+ 
+ Tuesday Nov 22nd 2011
+ 
+ BLock to add: FrustratorBlock: adds blocks back to the level on a timer.
+ 
+ Wednesday Nov 23rd, 2011
+ 
+ Tweaks: changed the sidebar colour to Blue (no reason) this should be a Level-based option. In fact, I could make
+ the sidebar image itself changable per-level. That would be pretty awesome.
+ 
+ Changed eyeguy. this amounts to a fix. It removes blocks the same way the destruction block does. I changed it to not generate particles, as well.
+ - now it calls the Blocks "StandardSpray() routine, which acts appropriately.
+ 
+ Thursday Nov. 24th, 2011
+ 
+ Added FrustratorBlock. tweaked the blockcategories of several blocks. Fun was had by all.
+ 
+ Friday Nov 25th, 2011
+ 
+ Fixed bug in SoundDataListEditor form- music wasn't stopping when the form was closed.
+ 
+ Working on a new base class block idea. The idea is to allow for block drawing to take draw based on multiple blocks; for example, say a border around contiguous blocks of the same kind or something.
+ 
+ the framework will have a BatchedDrawBlock, which overrides and seals the Draw() method, and defines a new, Abstract Draw() routine that passes in the list of BatchedDrawBlock's of the same kind.
+ it also has an abstract method that will be used to return the specific type of the derived class for comparisons.
+ 
+ 
+ The block overrides performframe, but only needs the first call. There it initializes it's gamestate pointer (since it's needed during the Draw) and it sets it's MainBlock field only if no other block of the
+ same specific type has it set. (this means the first one for which PerformFrame() is called will have it set and the rest will not).
+ 
+ the overridden/Sealed Draw() routine breaks out if the block doesn't have _isMainBlock set, otherwise, it creates a list of all the BatchedDrawBlocks of it's
+ specific type, calls the abstract method that accepts the list, and breaks out.
+ 
+ Sun November 27th, 2011 10:30 PM
+ 
+ Fixed issue with editor & the background drawer, whereby the background drawer was trying to acquire a reference to it's Image, but that image had not yet been deserialized and added to the Imagemanager.
+ Changed deserialization to set the values of the internal variables (rather then using the public setters/properties) and 
+ then implemented IDeserializationCallback and set the property setter to itself (thus causing it to call AcquireBrushes() and create the brushes, but this time
+ the images had finished deserializing.
+ 
+ Tuesday Nov 29th, 2011 12:03 pm
+ 
+ Added somewhat pointless feature that allows the display of timed messages. Currently tested by syncing the display of lyrics with the song being played
+ for the level music....
+ 
+ Thursday December 8th 2011 12:28 AM
+ 
+ This is not so much a devlog entry as it is a personal notation.
+ 
+ My outlook towards BASeBlock has changed. It no longer represents an accomplishment, but something I've wasted my time on. I put it on my site. Barely any downloads. What was the point? And now I have no steady job 
+ and so am forced to try to monetize this stuff, but so far have made a grand total of 15 cents; (Though google adsense has fetched me 12 dollars over the past year, but I can't get that until it breaks 20, which won't be any time soon).
+ 
+ Even worse, it also represents a future time sink. High scores aren't finished. Still. Will I finish them? I don't know. Will I even gain the drive to finish them?
+ 
+ Tuesday December 13th 2011
+ 
+ Changed Editor load so that it looks for a "template" file to load, defined in the INI file, and if found it will load that as an "EditorSet" (basically, it can  be any BLF file).
+ 
+ In the future I think a "cool" idea  would be "templates" for LevelSets, which could be used to include a set of sounds and/or images in them
+ I'm thinking of something like VB6's "new form" dialogs or Visual Studio's various new project selections. This could possibly even be an entire set of interfaces, to support "wizards" and stuff.
+ 
+ 
+ Wednesday December 14th 2011
+ 
+ New idea, for iLevelSetBuilder- add a function, "hasSubMenu()" If that returns true, the various menus that show LevelSetBuilder drop downs will instead call "GetDropdowns()" which will return a array (or list) of ToolStripMenuitems which
+ can be plonked as submenus of the LevelSetBuilder's toolstrip.
+ 
+ Monday January 23rd 2012
+ 
+ Realized previous idea (for iLevelSetBuilder) was stupid with a capital T.
+ 
+ I've made other changes, however.
+ 
+ abstracted away the Ball drawing code to iBallDrawHandler implementations. (rather than the ball drawing itself, that is). Behaviours still get to draw too, but 
+ this way the drawing can be entirely handled by something. prompted by idea to create an "arrow" type projectile. Also added ball behaviour so that a ball doesn't interact with the paddle,
+ and a new projectile, "spinshot" which is a larger ball surrounded by several smaller balls which rotate around it. Also, it fires lasers all over hte place. very cool, very destructive.
+ 
+ Friday Jan 27th 2010
+ 
+ Changed eyeguy to properly destroy blocks
+ Tweaked eyeguy so that it doesn't move below the paddle
+ 
+ Monday Jan 30th 2012
+ 
+ Fixed Terminator Behaviour so it doesn't keep emitting sounds when it is removed.
+ 
+ 
+ 
+ new powerup/block ideas
+ 
+ -Splitter powerup, that splits all balls in play (possibly ignoring balls with TemporaryBallBehaviour) into a given number of balls, by cloning them and changing the speed of the clones.
+ -Rocket block, which when hit rockets in a given direction, destroying any block it hits as it does so. (possibly, just make a new gameobject that performs the rocketing action as a projectile...
+ -new explosion effect type that changes all blocks in it's radius to a new type.
+ -a powerup that gives the laserspinshot behaviour to all balls. 
+ 
+ ALSO: fix highscores, at least for local play.
+ 
+ Sunday, February 12th 2012
+ 
+ 
+ Added: Blocks:AttractionRepulsionBlock,BlockShotBlock,BallDirectedShotBlock
+ GameObjects: BoxDestructor,AttractRepulseDestructor
+ 
+ BoxDestructor: Takes a block image and creates a projectile that will destroy any blocks that it encounters and overlaps.
+ currently uses the block rectangle to determine intersection.
+ BlockShotBlock is a block that uses this. the visual effect is that you hit the block, and it appears to shoot off as a result, because the block
+ spawns a BoxDestructor that looks exactly like the block.
+ AttractionRepulsionBlock is a block that can be activated and deactivated when hit. When two are activated at once they will attract or repel from
+ one another based on whether they have the same RGB triplet (alpha is disregarded). This is done using another  class that takes both blocks and 
+ creates the proper BoxDestructor instances, as well as watching them for when they touch. For attraction, the two blocks touching each other will result in an explosion (ExplosionEffect).
+ 
+ High Scores are now working. All the above works for hte most part, save the AttractionRepulsion stuff which needs more investigative debugging.
+ 
+ Frebruary 13th 2012:
+ Possible refactor idea: abstract gamestates to an interface and set of objects. Instead of
+ having switches in the gameproc and paint routines, it can simply call the current state object.
+ 
+ to fix the issue where other code uses the currentstate, I could define a static class that defines the various types, which could be
+ used like the enum. At the moment the gameproc and paint routines are collosal and huge and this would make defining new "states" much easier.
+ I will reserve this for after release, though :o)
+ 
+ Feb 14th 2012 6:55
+ 
+ Fixed Paddle movement so it doesn't go outside the gamearea partially.
+ 
+ Feb 15th 2012 1:37AM
+ 
+ Saw some docs in MSDN about BASS.NET and realized it was relatively easy to get it working as x64.
+ As such I decided to try to get it working on both.
+ So far, so good. Though, the program doesn't work. It crashes now when trying to enumerate types; it shows two LoaderExceptions when trying to 
+ call GetTypes() on the BASeBlock Assembly object; "'' is not a valid win32 application" is the message for both.
+ 
+ I've not traced that problem. However, I was able to work-around it by changing the handling of the RuntimeTypeLoaderException, since the Exception
+ itself has the Types that were able to be loaded and it seems full to me. Also, everything seems to work just fine. It even loaded a saved LevelSet, which I wasn't sure would
+ work across architectures. The biggest difference is that the framerate is about a third faster. Which is pretty cool if you ask me.
+ 
+ VERY pleased with this result. 
+ 
+ 
+ If I ever (finally) work around to trying it again on Mono, the hard part Ought to be taken care of (though, I'm not sure).
+ 
+ --Tweaked Level Loading & Saving so that it can use Deflate rather than gzip. This makes it about 100 bytes smaller or so. wow.
+ 
+ Feb 15th 2012
+ 
+ Because I'd rather try to avoid the licensing crap that seems to be involved with trying to sell BASeBlock while it uses BASS and BASS.NET, I've
+ attempted to write a OpenAL "Driver" implementation. It should work.
+ 
+ My main concern is 64-bit. I am using OpenTK's OpenAL wrappers. OpenTK <always> loads the 32-bit dll, which means that
+ if I want it to work on x64, I need to do some work. Currently I have it determine the appropriate file and it copies it to the assemblies folder (BASeBlock.exe's folder, really). it copies it as OpenAL32.dll in either case.
+ However, since I'm fairly certain this won't work. Who knows,  though.
+ 
+ Also OpenAL is a pain. I had to write a wrapper to poll for state changes to fire the Stop Event.
+ 
+ Another problem is that I'll have to fuck around with it some more to get it to read .ogg files.
+ 
+ 
+ 
+ Well, gave up on that idea. Think I'll just use BASS.NET; after all, the thing I am "charging" for is really just the save code, and that is all me
+ (well, me and .NET).
+ 
+ Anyway, been tweaking some stuff; changed the Terminator:
+ 
+Power Level One: Machine gun
+Power level Two: Shoot a single ball from the center of the paddle upwards.
+Power Level Three: similar to Level one, but it shoots from each side of the paddle.
+power level Four: shoots a single laser from the center of the paddle.
+power level Five: shoots a laser from each side.
+power level Six: Shoot a single ball from the center of the paddle upwards: however,
+this will have a laserspinball behaviour, delay set to half a second.
+power level Seven, same as five, but with laser spin
+power level eight: SpinShot.
+
+Also moved the indicator-majigs (the ones that show what power the paddle has).
+
+Changed high score handling so it doesn't append MD5 for local scores
+
+
+fixed relatively major issue where all the Types managed by the type manager were doubled.
+
+Friday Feb 17th 2012
+
+Finally uploaded the first version! After trudging through a few shoals and thanks to a few friends fixing some issues and assumptions I made in the code,
+I think this version may actually start reliably. Why is it that everybody else aside from me has issues with my software a lot of the time?
+
+
+issues:
+
+XP/non-DWM: because of the different paint model, the code that paints directly on the Graphics context in the paint routine is often flickery.
+Solution: make two paint routines: one for DWM, and one for non-DWM. the non-DWM creates it's own bitmap and invokes the DWM version, and then blits that.
+
+what that means:
+create code to choose and set appropriate event handlers based on current DWM/non DWM state.
+add hook to detect when DWM changes (if Vista/7 are set to the Luna theme (Aero off) they will have the same problems).
+
+
+^implemented, non-DWM codepath untested, though.
+
+Multithreading:
+
+the multi-threading code works fine... as long as there are two or more processors. Otherwise, the worker thread seems
+to like to starve the UI thread.(since they share the same CPU) I'm not sure how to fix this. 
+
+This problem typically only occurs when dealing with UI elements- the high scores form,  opening the editor, etc. While the main gameproc() thread is running.
+So the solution is to stop the gameproc(), or at least find a way to pause it.
+
+Clearly, something to do with form focus is in order.
+
+-Balls occasionally move way to slow- this is EyeGuy's fault. 
+
+fix:It should check to make sure balls move at least as fast as they hit the eyeguy.
+
+*applied*
+
+
+-BoxDestructor (or more specifically, the ShotBallDirected destructor thing) works improperly in some circumstances. Specifically, those cases
+where it is hit, but not hit (that is, when something spawns a ball on it to simulate hitting it, it uses that balls speed (usually 0). so it just sorta sits there forever.
+
+fix: will make the block use a minimum speed. Also, if the speed is below a given threshold it will choose a random direction as well.
+*applied*
+
+Editor things to do:
+make the code that populates the new-> list more modular.
+make changes (of some sort) for the block drop-downs so that it doesn't need to be one-type-per-item; this could perhaps
+hook into a Binder (this can be useful for blocks that are a single type, but not- for example, a Block that delegates it's various methods to a script)
+
+idea: for the drop down, it can inspect the reflection data for a given block (it already does) and look for a certain attributes- say
+"ManyToOneClassBlockAttribute" or something.
+
+
+if it finds the attribute, then the handling for that block "type" will be different.
+
+Instead of simply adding that type to the menu, it will instead call a static function on that type, possibly an enumerator that returns another class; this
+will be used to retrieve Tag, Image, and Text information to be used for each item. Typically, the implementation of the routine
+would store this data for later retrieval.
+
+When creating the object, the Activator.CreateInstance() routine will be called with the specified tag.
+Normally, this would fail. However, the custom binder (will) be written so that
+in the event of a "standard" bind failure it will look through all classes that implement the "IBindExtension" attribute(this will be managed by MultiTypeManager) , which has no methods
+but instead is used to flag the existence of a static method that can be called to attempt to bind a given name to a class instance.
+"ManyToOneClassBlockAttribute" type-classes will need to implement that interface and provide the method and return a new instance as appropriate
+relating to the provided type information.
+
+Example:
+
+
+[ManyToOneClassBlock]
+class JavascriptBlock : Block,IBindExtension
+
+JavascriptBlock will have the enumerator function called by the editor; typically the game itself has no reason to enumerate these types, so 
+the class should instead 
+
+
+Scratch that- what we need is more or less an Editor Feature- it has everything to do with the instantiation.
+
+What we want:
+
+The Editor's various drop downs to display blocks.
+
+It does this. However, we want it to be possible to write a class- say a "JavaScriptedBlock" or something, which
+will show up as multiple items. Each item of course corresponding to creating an instance of that class with different parameters.
+
+
+IGameInitialize & GameInitialize(); in order to do this properly, Block classes that want to implement that feature
+will likely want to Implement the IGameInitialize interface as well as the GameInitialize() method, and prepopulate static information. 
+
+how it will work for (again, a javascriptedblock).
+
+1. Initgamestate is called. the tail end finds  that JavaScriptedBlock implements IGameInitialize and calls the static GameInitialize() routine.
+
+2. in JavaScriptBlock's static gameinitialize(), it will populate it's own static information. For example, it could enumerate a specific folder in Appdata
+for javascript files, load those, etc.
+
+
+Current LOC: total line count:166326
+
+More: WEll, the above works! I even have a Block implementation that enumerates javascript files and uses JINT.
+
+Still working out some issues regarding interoperating between them (how to create instances of clr objects, for example).
+
+
+
+
+
+TODO: refactor core logic to a set of interface implementations. (that is, instead of a giant switch() statement for handling each Gamestate,
+instead have a set of "iGameStateHandler" implementations; one for when the game is running, one for when the game is paused, etc.
+the Enumeration could be replaced with a static class that provides instances of those classes. (meaning that all present code that
+checks the gamestate will still work).
+
+
+Game issues:
+
+Bullets aren't destroyed if the block they are "attached" to is destroyed by a Eyeguy.
+
+The splitter "powerup" will split balls stuck via the stickypaddle.  (solution: see if the stickypaddle powerup is applied, and force it to releaseallballs)
+
+FrustratorBlock only respawns a single block.
+
+
+
+2.1.0.0 changelog:
+
+*Bullets now check periodically to make sure the block the are "attached" to still exists. (prevents the "floating machine gun bullets" bug).
+*Splitter ball powerup now works properly with the sticky paddle power up. (if the paddle has it the splitter forces it to release all the balls it holds).
+*fixed CrazyBlock so it isn't mysteriously invisible for no reason. 
+   (Serialization issue, it was being saved as it's superclass type (BallBehaviourBlock<CrazyBallBehaviour>). Happens to the best of us.
+*Changed vomitblock to actually make sense rather than inexplicably cause a crapload of ridiculously large explosions.
+*fixed terminator (gun) powerup to enable the machine gun" higher level modes.
+*changed grow and shrink sound effects
+*the Magnet powerup now recharges the energy of the paddle as well.
+*changed sticky and terminator overlay images
+*attempted fix XP issue where some items drawn are flickery. Solution was to check the OS/composition options and use a different paint routine.
+  the XP/non-composited version composites the image itself by passing in a bitmap buffer to the "normal" paint routine, and then painting that.
+  I say "attempted" because I've not had the chance to test it.
+
++FrustratorBlock now lives up to it's name.
++pressing shift with the "Sticky" behaviour will release all the balls stuck to the paddle.
++Clicking during the level score countdown will skip it
++added a new splash screen image 
++added JavaScriptBlock, which at the moment is pretty much useless. (Uses JINT interpreter)
++Added Extra life powerup, when I realized there was no way to get extra lives. at all. Very rare, though. (maybe I could add something like coins to collect?)
++added "brickstest" levelset, which demonstrates theming.
++made eyeguys less of a death sentence when they are spawned. (they shoot less often now).
++made the enemy spawning "powerup" stop putting eyeguys underneath the paddle.
++when eyeguys die they now use the "explosion" effect, which was added LONG after I original implemented Eyeguys.
++added Block replacer filter to editor. 
+
+
+In progress:
+
+new radius effect (which is what the Explosion and Creation explosion use) that will be an "explosion" but instead
+of destroying blocks, it will change them to a specific type.
+
+TODO:
+
+Make some LevelSets to demonstrate the capabilities the editor provides.
+Document the blocks, behaviours, abilities, and powerups.
+Make Game Over screen that shows top scores "fancier"...
+
+
+Feb 20th 2012
+
+Had some ideas. First, I got to thinking that LevelSets take too long to load.
+Not a whole lot I can do about that, really- unless I define my own format, and I'm not about to dig
+into and rip apart my serialization code for that.
+
+However, Instead of ripping it apart, I could make it a separate group of functions to support a "indexed"  type of file.
+For example- the EditorSet, which is what is used to load and save (via FromFile() and it's Save() routine) could easily
+have new routines written that perform the same task but deal with a "different" file format.
+
+New BLF File format:
+
+starts with: HeaderIndexedMagicNumber = 0x346475467 as the header magic number. (4 bytes).
+Version number of BASeBlock. (4*4 bytes, Major, Minor, Revision, Build)
+
+After that is the index. This will be another serializable class, which holds the following for each Level:
+
+-Name of the level (up to 128 chars)
+-Offset in the stream
+
+Note that this will be a "static" record size- that is, the size to reserve will be calculable by multiplying the number of levels
+in the set by a specified size. (Which can be determined by serializing a empty instance of the class to a memory stream and measuring the resulting size)
+this index table will appear immediately after the magic number.
+
+When a LevelSet is loaded in this fashion, the cLevel "objects" are constructed in a different fashion- they are created
+with a constructor that accepts a delegate of type BCBlockGameState.DeferredLevelLoadProc<cLevel>. When this constructor is set,
+a private delegate variable is set as well as a "isLoaded" property.
+
+Any property access will call a "EnsureLoaded()" routine, which will inspect isloaded, and if false, and the delegate is not null,
+it will call that delegate.
+
+The delegate can then initialize the cLevel object as required. (using FromSerializer, a internal method that is basically the serialization constructor
+as an instance method)
+
+
+Monday Feb 20th 2012:
+
+Ripping through the Editor code. Trying to make a useful "Main set"... 
+Managed to lose two entire levelsets due to bugs. Make backups! In fact, maybe it should do that automatically?
+
+Also, considering trying to implement a (sane) Undo method. there isn't one and it's annoying.
+
+Undo/Redo is usually implemented with a stack. Each item could simply be the state of the level (serialized to a memory stream). to restore, we just seek to the start and deserialize that memory stream to a cLevel, and
+then copy the balls and blocks from it, replacing the ones being edited. 
+
+
+
+
+Tuesday Feb 21st, 2012:
+
+Well, was reading the BASS.NET documentation:
+
+BASS.NET is free for non-commercial use. If you are a non-commercial entity (eg. an individual) and you are not charging for your product, and the product has no other commercial purpose, then you can use BASS.NET in it for free.
+In any other case (e.g. if you wish to use BASS.NET in shareware or commercial products) a license is required from radio42! 
+
+BASS.NET is available for use in your shareware or commercial products. The licence types available are as follows: 
+
+Shareware license: 29.00 Euro
+Allows the usage of BASS.NET in an unlimited number of your shareware products, which must sell for no more than 40 Euros each. If you're an individual (not a corporation) making and selling your own software (and its price is within the limit), this is the licence for you. 
+Single Commercial license: 199.00 Euro
+Allows the usage of BASS.NET in a single commercial product. If you are a company making and selling your own software (and use BASS.NET only in a single product), this is the licence for you. 
+Unlimited Commercial license: 499.00 Euro
+Allows the usage of BASS.NET in an unlimited number of your commercial products. This licence is on a per site basis. So if your company has two sites that use BASS.NET, then two licences are required. 
+
+Dammit.
+
+I mean, at least the entire sound system is already based on a "Plugin" architecture (hell, I started with irrklang... and switched because that was windows only and I was fascinated with Mono
+at the time) but no matter how long I search, doesn't seem that there are ANY non-commercial (or licensed) sound library out there under something like the LGPL. That's fucking retarded. So basically, in order for my app to have sound, I can
+either fork out some money that I don't have, or I can write my own bloody sound library. Honestly neither of those is very appealing.
+
+Seriously. Why the heck does anybody use OpenAL? 
+"Oh, here's a library that makes doing what the Windows API's PlaySound() function does really complicated and shit" Not seeing the appeal.
+Making it cross platform seems pointless. It it plays only .wav files how is that cross-platform anyway? .wav is more a windows format.
+
+Now, if OpenAL- or at least the wrappers as such for it- actually provided a sane interface (first mistake "hey, let's do what OpenGL did") and features that damn near
+everybody needs (you know, like being able to use .ogg format files?) then I could see it.
+
+
+Regarding BASS.NET it's a fair price for sure, but it presents something of a chicken and egg problem at this point: my only possibly  (immediate) means of income would be this game, but I can't sell it
+without purchasing a license, but I can't get money without selling it, etc.
+
+I have tried using other API's; OpenTK is fucking useless and I don't understand why anybody would go "Oh, PCM WAVE files? YEAH THAT'S A FUCKIN GOOD IDEA" and getting the thing to work with Ogg files is like teaching a Rooster
+to play catch. A giant waste of my time. I also tried DragonOgg, which was supposed to essentially wrap OpenTK with a nice Ogg streaming/playing/etc wrapper.
+
+Of course the downside being that it doesn't work, at all. Doesn't seem to like the fact that I use threads. Guess it's stuck in the early 90's along with early Madonna singles. That will be it's crime. It will also be it's punishment.
+
+On the other hand, nobody seems interested in buying it anyway so I pretty much wasted my time on my silly little protection module. Of course if people were going to buy it,
+they would do it now, since I don't have a internet connection.
+
+Moved irrklang sound driver lib to a separate dll. this can be used by changing the INI file setting:
+
+SoundEngine=IRRKLANG
+
+Only works on 32-bit systems.
+
+...still pissed off about the sound situation with .NET. dismal.
+
+
+
+
+
+2.1.1:
+
+*Fixed DWM check on XP.
+*Fixed error regarding System.Drawing.HTML when loading Editor (missing reference)
+*made Tooltip in Editor window not obscure the mouse. (Will probably change to a separate, transparent-to-the-mouse window )
+
+
+
+
+Tuesday Feb 21st, 2012
+
+Just fixed a minor issue with the BlockEvents. Actually, I didn't even know my Trigger->Event architecture was working, this was a welcome surprise; I was able
+to create a SpawnerBlock with a Trigger set to a certain ID, and then had a set of blocks with a Destroy Event set to that ID. I also added a PlaySoundEvent trigger to the level itself.
+
+The SpawnerBlock passes the Trigger on to the enemy it creates, and when that enemy dies it invokes it's triggers. The result? The Blocks with that Destroy event are destroyed, and we get a sound.
+VERY awesome.
+
+I need to document the "architecture" for Triggers/Events in a blog post or something. Even I get confused about wtf the difference between a trigger and an event is.
+
+On a related note, implemented a broken "driver" interface class for DragonOgg (seems it doesn't like being threaded...), and placed the klang driver class (for IrrKlang) into a separate assembly and tested it; it works, but only on x86.
+Shame.
+
+Also ripped a bit out of MultiTypeManager/LoadedTypeManager; instead of taking a shitload of "Ignoreassemblies" and "includeassemblies" type parameters, it just takes a boolean predicate 
+
+There seem to be rare issues of contention with the timed Trigger; since it could occur any time and it is on another thread, the only way to prevent it from accessing 
+an object in use on another thread is with pessimistic locking. I do lock the objects in most places, so at least the issue is rare.
+
+Now that I know the triggers and TriggerEvents work a treat, I've added a few things (yet to finish, test and debug all of them)
+
+A few new Triggers; a event that when invoked will toggle an internal timer that is firing at an interval (a switchable repeating thing).
+
+
+And I set forth once again the distinction:
+
+Triggers are what causes the event- Events are what happens. In this case it's an event because what happens is the toggling of firing other triggers.
+The framework is rather difficult to explain.
+
+An enemyspawntrigger, that will spawn an enemy when invoked.
+
+
+
+Added Shell object, and mario-style death thing.
+
+further ideas: finish sand block. But don't implement it as an animated block; instead, implement it as a GameObject. Sort of like MC and how it
+has sand as a tileentity or something. 
+
+
+Thursday Feb 23rd 2012:
+
+refactored the Shell; now it derives from a separate PlatformEnemy class that implements all the checking for side hits, ground touching, and fixups of the location.
+
+refactored even further to make it possible for PlatformEnemies to have a higher level of interaction than others. (for example, if I was to implement, say, a goomba type enemy, it could
+be killed by shells but not damage the shells, and "bounce" off of other goombas)
+
+
+Had a sweet idea as well- why not make it possible to have a <player controlled> "platform" object- a "mario" if you will? Levels already support being played with no paddle (for use with game over, but would work here too).
+All we'd need is a invisible ball sitting somewhere (radius 0? speed 0,0) etc. then the GameCharacter object could be spawned in the level, and it initializes in it's first performframe by
+hooking the client object's various button presses.
+
+
+
+
+
+
+2.1.2:
+(* = bugfixes; + = Added stuff; - = removed stuff)
+*Attempted to resolve DPI-related issues. .NET/winforms was resizing things to fit the new DPI, but I needed "pixel perfect" calculations.
+ resolved by forcing the Game PictureBox to a specific pixel size in both the main game and the editor. The reason I make it a specific pixel size
+ is because larger images means hella-slow processing. It's GDI+, after all, not OpenGL. Also fixed some resizing issues on the splash.
+*Added Left Pane to the Editor. Has nothing, currently. Not sure what to add to it. a Toolbox of Blocks? maybe a Task pane?
+*made Editor more friendly to resizing. (Editor portion itself remains static, everything else sizes around it)
+*Installer now respects where you actually want the game installed.
+*changed default music to BASESTOMP instead of BASEC ("Ode to the square wave")
+*fixed delay being set wrongly on the LaserSpinBall (for the terminator behaviour)
+*fixed /FILELOG parameter, saved to appdata rather than executable directory. Oh by the way there is a /FILELOG parameter. Also switched
+ important segments of code to use Trace.WriteLine() rather than Debug.Print.
+*Enabled "ShieldPowerup" which creates a Strongblock beneath the paddle.
+*fixed "cLevel::DrawIntroBitmap", now it actually centers properly. Applied  this fix to other locations as well, and centralized
+ bitmap font size measurements.
+*changed terminator powerup to use paddle energy, as well as changing it's first-level to a more useful shotgun (rather than a pea shooter)
+*added Charger powerup whose explicit purpose is to charge the paddle. (Energy wise)
+*fixed odd behaviour from balls bouncing at a shallow angle to the right wall
+*now uses the Windows API Code pack to support things like win7 Taskbar progress bar (in splash screen).
+ also improved handling of errors during initialization.
+*tweaked StickyPaddleBehaviour; when shift is pressed, the vector for all the balls stuck to it are drawn rather  than the top one on the stack.
+*added a field for each level to set the maximum number of balls.
+*Terminator behaviour now uses up power
+*changed GamePowerup: powerups are not hard-coded but instead enumerated just blocks. Technically, they already were, I was just ignoring the enumerated values.
+ the powerup chances are acquired by calling a static "PowerupChance" method; if none is found, 1 is returned. (This will make it possible to add new powerups to the game via scripts).
+*hopefully fixed font clipping issues. You'd expect MeasureString() to actually measure the string but apparently not.
+*increased volume of "spitfire" sound effect
+*fixed Another XP/ non-composited oversight with the pause screen
+*Made cheat/value entry screens friendlier for single core machines (more cooperative)
+*changed FileDialogs to start in sensible locations (browsing for levelSet's starts you in the levelSet's folder)
+*better temporary file handling (creates a new folder in the system temp folder). also, deletes that folder on startup (if it exists)
+*fixed update library so that it only prompts when a newer version is found, not just a different version.
++Added Undo/Redo to the Editor. Rudimentary, but works OK. At least now I don't have to pull hair out when I accidentally delete a bunch of blocks...
++Added Icons to various elements. retitled Set Properties Window (frmCreatorProperties didn't really have the feel I was going for)
++added "Silent" property to InvincibleBlock (useful in editor for caging balls). 
++added a "Shell" item (mimics the koopa shell from SMB; breaks/damages  bricks to either side but slides along their top. Not sure what I'll use it for,
+but I could use it's code as a base for other "platform" type objects. 
++added a few Triggers/Events.
+-removed hard-coded references to "Consolas" font. Now refers to INI setting monospace in the "game" section comma delimited list, first entry found will be used.)
+-removed javascriptblock (commented it out, rather)- couldn't get it to work reasonably well, and JINT was not co-operating.
+
+
+-------------------------
+
+
+
+
+// Fix "Load from Editor" feature
+// make gamecharacter... better. (die from balls, maybe, too)
+
+BUGLIST:
+*After getting game over and then playing a new level, "Button_B" (Right-click) will invoke a new game from the original set.
+
+
+
+Tuesday March 27th 2012:
+Added several classes; one to act as a base class for powerups that can be collected by the GameCharacter (GameCharacterPowerup) a single class deriving from it to "test" it, MushroomPower, and
+am currently working on a block designed to "release" a powerup when hit, like a mario question block.
+
+Currently working on the transitory code so that the block can appear to "pop" upwards before releasing it's contents. The code for "emerging" is working well, though; it 
+sets the graphics clip so that the powerup doesn't draw over the block.
+
+
+Thursday March 29th 2012
+
+Powerup block and the powerups that come out are working, and are "collected" properly by the character to boot.
+All PlatformObjects can be "bounced" by hitting the block they are on, too.
+
+Now working on adding a model in which the GameCharacter can have a set of abilities. Specifically, I'm thinking of powerups like a invincibility powerup, which will
+need to be able to change the appearance of the player (say use a few randomly selected ImageAttributes to screw with it's colours) as well
+as a way to intercept when the gamecharacter hits something.
+
+Another ancillary "project" was the creation of a special bitmapped font to use, as well as the code, methods, etc to deal with measuring and drawing strings
+with that font.
+
+Also: finally taking some measures to tease various classes into separate files. cGameObject.cs has way too much stuff in it.
+split the GameCharacter stuff into it's own class; will probably do the same for GameEnemies as well as for the "standard" powerups (GameCharacter Powerup code is in the GameCharacter.cs file now)
+
+
+Friday March 30th 2012
+
+-Fixed Invincibility powerup item so it doesn't stop horizontal movement when it hits a ceiling
+-working on refactoring some of the code dealing with music changes. Primarily, some of the code was written before other code was integrated into the
+-Sound Manager itself; additionally, there are a few issues:
+
+1.Player get's invincibility powerup. Music changes to invincible music.
+2.Boss spawns. Music changes to boss music.
+3.player loses invincibility. PopMusic() is called which changes the music back to the standard level music.
+4. Boss dies, and changes music back to the star music.
+
+I'm not really sure how to work this out, at the moment.
+
+OK, I fixed it, I believe.
+
+Instead of a stack-based approach, I instead used a reference counting technique; powerups, and bosses, and other such objects will play their music using another function;
+this function will keep track of all the temporary musics that were played, and give them a reference count; it will then see which one is the maximum and
+play that, unless it is already playing.
+
+Sad Fact:
+
+I was just reading some of the code. Specifically the stuff that deals with the messages. It took me nearly _30 minutes_ to figure out how the hell it worked properly.
+I'm still not even sure I understand it. (this was because I wanted to look at what I did for those messages to make it so pausing the game would "stop" their timer, so that I could
+implement a Function that could be called to implement a delayed call.
+
+Specifically I wanted this for TimedCharacterAbility, since as it is it uses DateTime and current time which means that it counts the time while the game is paused.
+
+
+Sunday April 15th 2012 10:47 PM
+
+Re-visited the project (been working on Freelance projects, some of which I might turn into standalone utilities, too); I played it and noticed a few issues.
+Specifically there was an issue in the SoundDataListEditor- values weren't applied properly. now values are applied when the key is valid; for the Type argument they are applied instantly, as well.
+
+Wednesday April 18th 2012 11:47
+
+Tweaked some lower level code; added BuilderShotBehaviour (Paddle), BuilderShot (Projectile) and supporting classes. 
+Added code to support "Exclusive" powerups; that is, sets of powerups that are exclusive to one another.
+
+Tuesday April 24th 2012 12:06 AM
+
+Added new enemy: SpinnerGuy. Derives from eyeguy. shoots from one side, but it rotates when moving, as well.
+
+Working on new idea: Templates. Also had an idea for a ballbehaviour, where the ball only hits blocks that were already destroyed, bringing them back to life- the frustrator ball :P
+
+
+
+Adding FrustratorBallBehaviour. Not sure if it will expose the capabilities needed to force a ball to pass through all blocks, but I will try to add the required code to make Ball Behaviours more versatile if necessary.
+
+Other ideas: add cursor and character editing to Value Editor.
+
+
+Tuesday May 1st 2012
+
+"character" based editing now mostly works; still need to fix backspace but otherwise it is OK. Will need to experiment with the character at the insertion point, will probably use an underscore.
+Fixed a "bug" or rather accidental oversight involving the eyeguy, since it forces all the blocks to redraw every single frame, even when it didn't effect any blocks. I suspect the same is true for the attractrepel object; I tweaked about with that, but have yet to test the results.
+
+Additional changes: Changed NormalBlock so that it isn't a boring solid colour, and instead sort of looks... err.. glassy. Looks better. Also, the image is "dynamically" built, from the selected colour. (it caches the image, of course)
+
+Added "Orbs"; currently there is one for score (negative and positive) and there will be orbs for health (+ and -, again) as well as Energy.
+
+the Paddle now shows when it takes damage with some text.
+
+Wednesday May 2nd 2012
+
+Fixed a long-standing bug in one of the utility functions. I suspect I will have to deal with regressions from code using the function
+that attempted to hack a fix for the underlying problem on the assumption that the routine was working right when it clearly wasn't.
+Either that, or everything will work better.
+
+No problems from the above, fixed some more issues as well (some block events (the API side, not the BlockEvents/BlockTriggers stuff) weren't being fired in some situations.
+
+
+This "Orb" idea is actually pretty damn cool. It makes the game a bit funner trying to collect all these falling macguffins.
+
+Other changes I've not really mentioned:
+
+The problem with constantly having to make sure I don't screw up the enumerators is getting quite annoying. It was maintainable at first: just make sure I don't add or remove blocks in the block handling routines and instead use the provided parameters, same for balls, gameobjects, etc.
+
+However, now that some routines will actually call those methods in other contexts it is impossible to make assertions about whether or not we are within an enumeration. I still get rather frequent InvalidOperation Exceptions from the GameObject listing particularly.
+These problems are rather tricky to debug, since the error occurs when the Enumerator is next invoked- not when the enumeration is changed, making it damn near impossible to track where it was changed. I have found that when it is changed it's because of code that would normally not be called in that context.
+
+As it was some code works around this by creating a Proxy Game Object to try and manage other objects (remove paddle behaviours, balls, blocks, etc). However this was a bit unwieldy. 
+
+In order to help alleviate this, I added something simple that I should have long ago: some code at the start of the gameproc loop that empties a queue of delegates, by calling each and then removing it from that list.
+
+The idea is to provide two things:
+
+Certainty. the delegate iteration isn't iterating over Blocks, Balls, or any of those game objects, only the list of delegates (naturally this means that one cannot modify that list). This is good because it is now possible to make assumptions about
+what constructs can and cannot be safely used.
+
+Some other things that came up were the fact that some delayed code was using direct Timespans with DateTime.Now, which means that pausing the game would not pause that timer. I fixed that by placing all the delaying code in one place and having other code call that with the appropriate delegate to call when the time is up (which will take pausing into account too).
+
+The paddle currently takes 1 damage from each ball hit. This is offset by the fact that some portion of the falling orbs will be healing orbs that heal the paddle by one point.
+
+
+Thursday May 3rd 2012 2:29 PM
+
+"fixed" orb spawning code; basically created a more generic method for selecting from a listing based on weighted probabilities. Will probably
+refactor the powerup code to use it, as well.
+
+
+Tweaked the main entry point so that failure to check for updates doesn't show a messagebox and just fails silently.
+
+Added conditional compile constant for the moment that permanently disables the check for updates codepath.
+
+Bugs to fix: Highscore value entry seems bandoozled *fixed...
+
+added "Randomizer" power-up.
+
+Possible improvements: FrustratorBall causes slowdown on that bricks level, because there are so many blocks. ideally it would cache... something.
+Possibly make a listing of all blocks and hooking all their destroy events to keep that listing in sync? (the downside of course is that this would mean that blocks added
+after the frustratorball was created wouldn't be tracked...
+
+
+2.3.0 :D
+
+
+
+*fixed intermittent/rare NullReferenceException crash with FrustratorBlock. Oh multithreading, the only time a NullReferenceException 
+can occur immediately after you've confirmed the value you want to access isn't null.
+*tweaked Block Category Attributes so that base classes can be hidden and derived classes can be visible (rather than the base classes inheriting the invisibility).
+(They still inherit it, but it can be reversed with the BBEditorVisible attribute)
+*reduced default life of fireparticle and reduced number of fireparticles generates by temp balls.
+*reduced life of lightorbs as well
+*fixed SpawnerBlock to be more flexible (and allow for "instant" spawning, essentially acting as a "spawn location" marker for GameObjects
+*tweaked brickblock. Now uses a function to construct a 8x8 pattern bitmap, rather than relying on one existing. Now implements IGameInitializer, as well, to add the brick texture.
+*made some changes to the "protection". It still sucks but now it uses SecureString instead of normal strings so it won't be easy to simply see the key by inspecting memory.
+that need to spawn instantly.)
+*Fixed bug that occurs when generating "random" highscore values when different random scores end up the same.
+*_Removed Editor Save check, game is now completely "open" in that it doesn't require "registration". However, one will still need to click-through the nag screen :P)_
+*Fixed myriad issues dealing with music changes. Now works solidly.
+*Changed NormalBlock so it looks less stupid.
+*refactored quite a bit of the code to tease apart some of the files that were getting gigantic. (Block.cs was almost 200KB).
++Added "BuilderShot", which is a power-up that "shoots" a block; first click shoots the block, second expands the shot to grow into the block.
++Added code to make some paddle behaviours exclusive. This is the case for terminator and buildershot; if you have one and collect the other, it replaces it.
++Added frustratorball. This is spawned when you get a Frustrator Powerup. It acts like a standard ball, but only bounces off blocks that were destroyed. Yes, it's as confusing as it sounds.
+ Still trying to figure out a way to make it somehow worthwhile to keep it in the game field, or at least hard to get rid of (or at least harder than just letting it fall).
++New enemy, SpinnerGuy. Similiar to EyeGuy, but shoots bullets.
++Added GameCharacter, and platforming elements. Distributed installer has basic set of levels showing some of the capabilities.  Control with WASD and space jumps... I think.
+ GameCharacter can hit bricks by hitting them from below.
++Added Shell; kills GameCharacter, also, breaks/hits blocks when it impacts in the side.
++Added Powerupblock that dispenses the GameCharacter powerups. current powerups are extra life, a mushroom which just gives you points, and a invincibility star which does make the character invincible.
++Added Orbs. There are three kinds- Score Orbs, Healing Orbs, and MacGuffin Orbs. the MacGuffin Orbs are counted in the status pane. They do actually do something, and it is useful. You lose half your MacGuffins when you die, but they 
+ explode out of the paddle Sonic-Rings style. Orbs are spawned by almost any block when it is destroyed.
++Added OrbBlock, which dispenses 50 random Orbs when destroyed.
++Changed Paddle so it takes 1 damage from balls. Balls also increase speed as the game is played.
++Added "Randomizer" powerup, which randomizes the velocity of all balls in play.
++Highscore entry screen (and other entry screens) now support editing (arrow keys and backspace, currently).
++Added some cheats that I'm not going to tell you. (bah you can just use ILSpy to find out, I guess...
++The Paddle now shows when it takes damage. It also takes damage from bullets now (well obviously you cannot shoot yourself).
++Fixed EyeGuy (and by extension spinnerguy). They were forcing the entire frame to redraw every frame when they were alive when it was not necessary.
+-disabled automatic update mechanism. I cannot debug it due to circumstances so I've disabled it for the time being.
+
+Known bugs:
+*the "machine gun" modes of the Terminator Powerup are broken. Well, they... sorta work, but they are so fast you just end up shooting everything you have in one frame and then exploding. 
+Since I was only able to get that many Terminator Powerups by cheating, I've left it in for now.
+
+
+May 4th 2012
+
+Just finished adding framerate independence. Objects now move based on a desired framerate. currently 120. If the fps is 60 for example objects will move twice as fast to keep up with the movement
+that would have occured at 120. This is a million times better than before, where a higher framerate meant objects would quite literally move faster.
+
+
+*fixed bug in a cheat that had been bothering me.
+*orbs now bounce off the sides and top of the playing field.
+*Each level now has a list of powerups that are possible to spawn in it, which is also available for tweaking via the editor.
+*added another DebugHelper thing. (Shift-F3 to toggle)
+*changed application icon to reflect new NormalBlock
+*added some overloads to the NextFrameFunction architecture to make enqueuing delegates easier
+
+
+
+*wrestling with some bugs with QueuedSoundManager
+
+
+Still wrestling with the above bugs. The queuedSoundManager seems to work, in game the music changes, but if you die the first music starts again.
+Either the game isn't pausing and restarting the music properly or something goes south when the first one stops and the next one plays.
+
+Resolved above issue. The QueuedSoundManager was returning the playing sound from it's Play() routine, rather than itself.
+
+Added Control-Alt-H shortcut when highscores are displayed to reset the high score list for that level.
+Changed Text drawing to use the HighQuality SmoothingMode. Since most of the text is "pre-rendered" into bitmaps this doesn't have much of an impact on performance.
+high scores also have a bit of a drop shadow now.
+
+Added some code to allow for "portable" installations. It was already possible (if it didn't find an INI file in the appdata folder but it found it in it's directory)
+
+
+unrelated but I finally fixed my SVN install. Well actually that's a lie, it hasn't been working for ages and TortoiseSVN has been exploding in my face when I try, but I committed today
+and it worked fine. *shrugs*
+
+Another unrelated note, having been messing around with Python a bit recently, I wrote this conditional in C#:
+
+
+drawstring += "Portable!" ? BCBlockGameState.PortableMode : "";
+
+Which is obviously broken. But clearly derives from Python's implementation of a conditional, which in this case would look errily similar:
+drawstring = drawstring + "Portable!" if BCBlockGameState.PortableMode else "";
+
+
+-Added Game Explorer support.
+
+
+-Been re-writing the INIFile class in other languages to help learn them (I already wrote an involved Python script a while ago, but I forgot a lot of it. I was
+-able to rewrite it. Also working on a D implementation. The side of this that is relevant is that I also got to thinking of some features to add to the C# implementation.
+-Specifically, pointless enhancements such as a $INCLUDE "filename.ini" metacommand (and other metacommands). It also now detects and coalesces INI sections that have the same name.
+
+
+*fixed powerupcycleblock. Now it actually works, hooray.
+
+idea for another ball behaviour, like frustratorball. instead of restoring blocks, it changes the type of blocks it touches.
+
+
+*added templates to the editor. Still a work in progress, but it let's you choose from a dialog.
+ Templates are loaded from .BLF files present on the templates directory. The files must also have the "isTemplate" flag set in their data. This is set in the Creator Properties dialog.
+ 
+ Templates now work; category based display. This is achieved by a factory method of sorts. Each category basically just filters the full set of templates.
+ 
+ One caveat for templates is that they are loaded at startup. I may defer initialization of the TemplateManager class in a lazy fashion.
+ 
+ EDIT: done. TemplateManager should now only be initialized when needed the first time.
+ So only if templates are used at all.
+ 
+ *seems the SoundDataListEditor is wonky again.
+ 
+ *Fixed the SoundDataListEditor. It is usable once again.
+ *fixed Editor's recent list. It was only adding items that were saved, rather than both opened AND saved.
+ *holding Control key during startup should present a dialog allowing one to select a Sound engine.
+ 
+ Working on organizing the code into namespaces. Some of my code is already separated into different namespaces
+ but there needs to be more segregation.
+ *Enemies now give points.
+ *NormalBlock now has a field that determines what sides get a border.
+ *Template Form is now the Template browser, main interface lists template categories directly as part of the menu.
+ <todo: re-implement PopulateDropdownWithBlocks as static methods in Block class>
+ 
+ 
+ I have re-implemented a PopulateDropdownWithBlocks method as well as a PopulateDropDownWithBlocksCategorized method. 
+ I've yet to take the plunge and refactor the editor code to use them. The new code works exactly the same as the old,
+ but refactoring will allow me to also remove a few ugly hacks I'm using for ManyToOne Attribute data expansion.
+ 
+ Added a new ToolStripButton class so I can just plonk in a toolstrip button where I need blocks and just respond to the changing event. It manages the tooltip, multiblocktypes,
+ and the other hairy business, and I just inspect what I need from it's events (specifically, the Block object to clone in the given scenario).
+ 
+ Changed PlatformObject to work better under the new managed framerate code
+ 
+ fixed up vomitblock issues. refactored some base animatedblock code.
+ 
+ tweaked the Fireparticle colours.
+ fixed Release build
+ added outlines to some text elements so they will be more visible on dark
+ backgrounds
+ 
+ Working to remove code that uses DateTime comparisons for game time checking, such as tetherball
+ 
+ Added rather "major" thing; All PlatformObjects will "detect" the block they are on, and will "track" it.
+ For example, if the GameCharacter is standing on a creeperblock and it moves, or any block, and it moves, the gamecharacter will move with it.
+ The upshot of this is that many blocks can now double as moving platforms; a level could use the magnetattractor blocks, and require the player to
+ hit and stand on one of them before a shell hits the other one, at which point the player and the block will go towards each other, and the player will be able to access an area otherwise
+ impossible to reach.
+ 
+ Added MovingPlatformBlock. Also above comment is wrong: the magnetattractorblock doesn't actually move itself but rather it moves a Boxdestructor.
+ it's rather complex.
+ 
+ Resolved a bunch of issues, including some fixes to Assembly enumeration. Loading levels should be a bit faster now.
+ 
+ Finished Template functionality.
+ 
+ ImageClipBlock now runs faster, since it no longer clips it's image every time it is drawn, instead cacheing the
+ piece of the image it is. This data is updated when the various clip properties are changed.
+ 
+ After a quick excursion getting BCDodgerX bootstrapped (still a few issues before release), I've returned to BASeBlock.
+ 
+ -fixed Bug in editor; reopening the same level and then trying to save it sometimes caused an IndexOutOfRange Exception.
+ -fixed bug where BrickBlock was not showing in editor.
+ 
+ 
+ CHANGELOG FOR 2.4.0:
+ 
+ <ul></li>
+<li>*Changed code to be more framerate independent.</li>
+<li>*Fixed PowerupcycleBlock. It now works properly</li>
+<li>*Fixed tetherblock to use Game-based timing rather than absolute (pausing the game pauses it's timer)</li>
+<li>*same as above, for VomitBlock</li>
+<li>+Added Templates to the editor. Still a work in progress. Add .BLF files saved with the "Allow use as template" option checked in creatorproperties to %APPDATA%/BASeBlock/Templates folder</li>
+<li>*Fixed SoundDataListEditor (used for editing the list of "embedded" sounds.</li>
+<li>*Fixed Recent List MRU in Editor. (Adds items that are opened and saved, whereas before it only added files that were saved).</li>
+<li>*holding Control key during startup presents a dialog allowing the selection of a sound engine.<li></li>
+<li>*Enemies now give points when they die.</li>
+<li>*NormalBlock now has a property that determines which sides get a border.</li>
+<li>*Changed PlatformObject to work much better under new platform independent code.</li>
+<li>*Tweaked colours of the fireparticle.</li>
+<li>*changed many elements (text elements, particularly) to improve smoothing mode; also added outlines to those outlines to make sure they are visible regardless of background colour.</li>
+<li>*Changed platformObject to move with moving blocks, and added MovingPlatformBlock (observable in "Platforming7.blf" testing levelset included with the game).</li>
+<li>*improved ImageClipBlock so it caches it's "piece" of the larger image.</li>
+<li>*Fixed editor bug that caused a IndexOutofRangeException when reloading the same file and navigating through levels in the Levels tab.</li>
+<li>*Fixed bug where BrickBlock was invisible in the editor</li>
+<li>+Each level has a list of powerups that are possible to spawn in it, which can be changed in the editor.</li>
+<li>*Added a broken debughelper. use Shift-F3 to toggle. </li>
+<li>*Changed application icon to reflect new NormalBlock.</li>
+<li>*Orbs now bounce off the sides of a level</li>
+<li>*Fixed bug with QueuedSoundManager that was causing some Music bugs.</li>
+<li>+Added Control-Alt-H shortcut when highscores are displayed to reset the high-score list for the level. This does not prompt!</li>
+<li>+High scores listing has a "drop-shadow" effect.</li>
+<li>+Added a bit of code to make Portable installations possible. I need to document this more thoroughly; basically, put an INI file in the same directory as the executable to make it "portable". (the appropriate folders can be changed in that INI file to reflect the portable location).</li>
+<li>+Added Support for the Windows "Game Explorer". At least, I think I did...</li>
+<li>*Changed Frustrator Powerup; instead of causing the frustration effect of the block, it now spawns a FrustratorBall. a FrustratorBall is the opposite of a normalblock, and only bounces off destroyed blocks, causing them to respawn. (it's as disallusioning as it sounds)</li>
+<li>Probably added a bunch of other stuff that I didn't put in the devlog I'm basing this list on</li>
+</ul>
+
+
+Version 2.5.0
+
+
++added EllipseBlock (or, rather, <finished> EllipseBlock.)
+&still to do: make EllipseBlock and/or polygon block more "editor friendly"
+*changed AnimatedBlock to implement iEditorBlockExtension and delegate to baseBlock member if it supports the interface.
+*fixed more bugs in implementation of Polygon block, particularly in editor and serialization.
+*made a bunch of tweaks to undo/redo in the editor. Holding shift while opening the "Edit" menu will now make the Undo and Redo Items drop downs showing 
+ valid undo and redos that can be done.
+*changed caption of Select/Move in editor to Select & Move.
+*Editor now allows files to be dropped on it to open. 
+*Changed dirty confirmation dialog. Now asks to confirm for all operations that would load a new file.
+
+
+*tweaked editor, window ownership should work better.
+*switched more code to use the NextFrameCalls member of BCBlockGameState for adding and removing various game entities.
+*updated project to VS2010
+
+
+Dec 8th 2012 9 AM
+
+Well it's been some time since I wrote a devlog entry. I have not however, stopped development.
+
+I added 'Bosses' these are a static function on a GameEnemy that allows it to create a "boss" variant of  that enemy. Currently also changes music. You know, for a boss-like effect.
+Oh, it also makes it so the level doesn't finish until the boss dies. I added Game Statistics, though I've not fully tested them yet and there is not yet an interface where these are visible.
+made a change to the QueuedSoundManager which shuffles the music/sounds before it starts playing them. (I was getting sick of the exact same opening music for the splash screen).
+
+Rewrote the Sand Block. It now actually works. For the most part, at least.
+
+I've been focussing on the Editor. Specifically, the neglected iEditBlockFilter interface and associated code. I added a new interface that defines an Enumerator method that filters an input Enumeration of Blocks.
+I also made a iEditBlockFilter implementation that uses it. The idea is that it will have a Type, which defines an iEditBlockFilter to call directly, a Type that indicates the Filter to use (the new interface),
+and a type that indicates a iEditBlockFilter to call afterwards.
+
+One of the initial speedbumps when I went back to the code was I forgot all about how I wrote it. The actual filters are more or less stateless. Instead, I pass around and edit a specific iBlockFilterData implementation to the instance, which casts it and uses it as needed. This is important because those Objects need to be serializable and clonable.
+
+Dec 9th 2012
+
+Refactored some of the code- Moved Blocks to a new BASeBlock.Blocks namespace, to avoid polluting the entire BASeBlock namespace.
+Will likely do the same for some of the other more or less independent heirarchy's.
+
+BASeBlock.Blocks For Blocks. 
+BASeBlock.Balls For Balls and Ball Behaviours.
+BASeBlock.Triggers The Triggers framework. This also includes the Events, because they are quite coupled anyway.
+BASeBlock.Particles For Particles. Should be self-explanatory.
+
+
+Also, stuffs to be fixed:
+
+DestructionBlock constantly explodes (isn't being destroyed by explosions or something)
+Sound Editor still acts weird when editing Names
+SpawnEnemy Event doesn't allow Location to be changed.
+
+
+
+Since Latest release(2.5):
+*rewrote LaserShot. It now uses several segments, and allows for "bouncing" off of blocks.
+*refactored Editor to use static functions of Block to populate various MenuStrips.
+*Added Game Statistics (Tracks per levelset as well as globally)
+*Added Boss architecture, "Bosses" are created via a well-defined static method of a GameEnemy class implementation.
+*tweaked Highscores  being shown, now it will go faster if the mousebutton is pressed, similar to the score display.
+*removed the original startup sound (level startup) now the only two are the various Arkanoid reinstrumentations.
+*added numbounces field to temporary ball behaviour: ball now bounces a given number of times before suiciding itself. Naturally, this defaults to 1, so that all the code that
+ existed before works the same. Used initially for...
+*LaserSpin Powerup, and tweaked corresponding Terminator Behaviour. Ball moves slower and shoots lasers faster, which is fine since the lasers bounce, as indicated before. Has a rather negative impact on performance....
+
+Considering the following changes: certain powerups such as the laser may reduce or eliminate the ability for "macguffins" to spawn at all for blocks they destroy.
+
+Since 2.6:
+
+
+Added WoodBlock. It only get's damaged when hit on the side. Added IDamagableBlock interface, supported by StrongBlock and WoodenBlock, and Damage is now drawn by a 
+base method of Block that accepts the current damage and max damage of a block and draws the "crack" bitmaps as needed, as well as an overload that calls it that determines 
+if the instance is an IDamageableBlock and if so
+passes in the interface properties.
+
+Added PolygonObstacle. Balls bounce appropriately off of them, and cause them to move about semi-realistically.
+
+Finished off AdvancedLevelBuilder. Still needs tweaking, since it uses quite a few blocks that are a bit old and unused.
+
+Since 2.8 release:
+
+Changed deflector behaviour visual: now it animates.
+bugfix: releasing any button would cause any terminators to shoot due to a misplaced bracket.
+
+
+Fixed issue with powerup text popups.

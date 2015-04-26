@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="707e676e-6df5-4072-97ba-dcd4c47ab6cf" name="BC_Programming@TERATRON 2010-12-28 00:56:05" runUser="TERATRON\BC_Programming" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="a23eb23f-c60a-4200-b6ee-a3fda6880aaf">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Debug\TestResults\BC_Programming_TERATRON 2010-12-28 00_56_05" />
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-12-28T00:56:05.8704396-08:00" queuing="2010-12-28T00:56:06.5100407-08:00" start="2010-12-28T00:56:06.5724408-08:00" finish="2010-12-28T00:56:07.3056421-08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestUpdateClass" storage="c:\users\bc_programming\documents\visual studio 2008\projects\baseblocks\bblocktests\bin\debug\bblocktests.dll" id="dbfee751-d657-0dc0-59d9-9abf89f99cda">
+      <Css projectStructure="" iteration="" />
+      <Execution timeOut="1800000" id="381a2d5c-0340-4147-a9ef-189cbff8b5bd" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <TestMethod codeBase="C:/Users/BC_Programming/Documents/Visual Studio 2008/Projects/BASeBlocks/BBlocktests/bin/Debug/BBlocktests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter" className="BBlocktests.BBlocktests, BBlocktests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="TestUpdateClass" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="dbfee751-d657-0dc0-59d9-9abf89f99cda" executionId="381a2d5c-0340-4147-a9ef-189cbff8b5bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="381a2d5c-0340-4147-a9ef-189cbff8b5bd" testId="dbfee751-d657-0dc0-59d9-9abf89f99cda" testName="TestUpdateClass" computerName="TERATRON" duration="00:00:00.5695626" startTime="2010-12-28T00:56:06.6192409-08:00" endTime="2010-12-28T00:56:07.2588420-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method BBlocktests.BBlocktests.TestUpdateClass threw exception:  System.FormatException: Input string was not in a correct format..</Message>
+          <StackTrace>    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at BASeBlock.BCUpdate.UpdateInfo.SetParameters(String updatestring) in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\BCUpdate.cs:line 104
+   at BASeBlock.BCUpdate.UpdateInfo..ctor(String updatestring) in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\BCUpdate.cs:line 75
+   at BASeBlock.BCUpdate..ctor() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\BCUpdate.cs:line 150
+   at BBlocktests.BBlocktests.TestUpdateClass() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\BBlocktests.cs:line 75
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

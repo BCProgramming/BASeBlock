@@ -1,0 +1,88 @@
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\bin\Release\irrKlang.NET2.0.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Release\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Release\BASeBlock.Properties.Resources.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Release\BASeBlock.csproj.GenerateResource.Cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Release\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Release\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Release\BASeBlock.frmBaseBlock.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmBaseBlock.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.Properties.Resources.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.csproj.GenerateResource.Cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Bass.Net.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmhighscores.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Ionic.Zip.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.SplashScreen.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.FolderListView.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.exe.config
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.BallBehave.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmSoundDataListEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmCreatorPropertiesEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.ImageImport.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmChooser.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmImageDataListEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.ObjectPropertyEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.ColorPicker.ComboBoxColorPicker.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.ColorPicker.OfficeColorPicker.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.ColorPicker.ToolStripColorPicker.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.Util.ContextMenuForm.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.exe.config
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.exe
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Bass.Net.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Ionic.Zip.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\ResolveAssemblyReference.cache
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.BallBehave.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.ColorPicker.ComboBoxColorPicker.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.Util.ContextMenuForm.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.FolderListView.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmBaseBlock.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmImageDataListEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.ObjectPropertyEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmCreatorPropertiesEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmhighscores.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmSoundDataListEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.ImageImport.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmChooser.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.ColorPicker.OfficeColorPicker.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.Properties.Resources.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.SimpleTextEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.SplashScreen.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\OfficePickers.ColorPicker.ToolStripColorPicker.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.csproj.GenerateResource.Cache
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.exe
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.Resource1.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.SoundPluginSelector.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmLevelBrowser.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmScriptDataItemListEditor.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\System.Drawing.Html.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\System.Drawing.Html.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmLevelBrowser.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.frmScriptDataItemListEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.Resource1.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.SoundPluginSelector.resources
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\My Documents\visual studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.Debuggerform.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.Templates.frmFromTemplate.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.csprojResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.GenericObjectEditor.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\obj\Release\BASeBlock.SimpleTextEdit.resources

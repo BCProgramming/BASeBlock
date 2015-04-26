@@ -1,0 +1,15 @@
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\ProductKeyGenerator.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\ProductKeyGenerator.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\BCUpdateLib.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\BCUpdateLib.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\obj\Release\ProductKeyGenerator.frmKeyGen.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\obj\Release\ProductKeyGenerator.Properties.Resources.resources
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\obj\Release\ProductKeyGenerator.csproj.GenerateResource.Cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\obj\Release\ProductKeyGenerator.exe
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\obj\Release\ProductKeyGenerator.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\ProductKeyGenerator.exe.config
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\obj\Release\ProductKeyGenerator.csprojResolveAssemblyReference.cache
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\Microsoft.WindowsAPICodePack.dll
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
+C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\ProductKeyGenerator\bin\Release\Microsoft.WindowsAPICodePack.pdb

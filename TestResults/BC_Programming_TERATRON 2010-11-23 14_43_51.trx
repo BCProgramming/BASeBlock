@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b6fb89e3-46bb-487f-9e79-5fdeacdda76b" name="BC_Programming@TERATRON 2010-11-23 14:43:51" runUser="TERATRON\BC_Programming" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2006">
+  <TestRunConfiguration name="Local Test Run" id="a23eb23f-c60a-4200-b6ee-a3fda6880aaf">
+    <Description>This is a default test run configuration for a local test run.</Description>
+    <Deployment runDeploymentRoot="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\TestResults\BC_Programming_TERATRON 2010-11-23 14_43_51">
+      <DeploymentItem filename="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Release\BASeBlock.exe" />
+    </Deployment>
+    <TestTypeSpecific />
+  </TestRunConfiguration>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <Times creation="2010-11-23T14:43:51.0617105-08:00" queuing="2010-11-23T14:43:52.7728084-08:00" start="2010-11-23T14:43:52.9638193-08:00" finish="2010-11-23T14:43:53.7298631-08:00" />
+  <TestDefinitions>
+    <UnitTest name="TestLocalHiScores" storage="c:\users\bc_programming\documents\visual studio 2008\projects\baseblocks\bblocktests\bin\release\bblocktests.dll" id="bd10d4b7-ba71-216e-9b61-3ce8d18e4055">
+      <Css projectStructure="" iteration="" />
+      <Owners>
+        <Owner name="" />
+      </Owners>
+      <Execution id="795b72a4-15db-4e2d-85a2-bc8a542fb91d" />
+      <TestMethod codeBase="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\bin\Release\BBlocktests.dll" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BBlocktests.BBlocktests, BBlocktests" name="TestLocalHiScores" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="bd10d4b7-ba71-216e-9b61-3ce8d18e4055" executionId="795b72a4-15db-4e2d-85a2-bc8a542fb91d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="795b72a4-15db-4e2d-85a2-bc8a542fb91d" testId="bd10d4b7-ba71-216e-9b61-3ce8d18e4055" testName="TestLocalHiScores" computerName="TERATRON" duration="00:00:00.0701349" startTime="2010-11-23T14:43:53.0638250-08:00" endTime="2010-11-23T14:43:53.6308574-08:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d">
+      <Output>
+        <ErrorInfo>
+          <Message>Test method BBlocktests.BBlocktests.TestLocalHiScores threw exception:  System.ArgumentException: Illegal characters in path..</Message>
+          <StackTrace>    at System.IO.Path.CheckInvalidPathChars(String path)
+   at System.IO.Path.GetFileName(String path)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at BBlocktests.BBlocktests.TestLocalHiScores() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\BBlocktests\BBlocktests.cs:line 79
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>

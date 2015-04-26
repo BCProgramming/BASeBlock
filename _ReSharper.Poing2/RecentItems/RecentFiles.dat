@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BallBehave.Designer.cs" caret="2648" fromTop="14" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:AnimatedBlocks.cs" caret="124956" fromTop="21" />
+    <File id="C40AAD74-B465-449D-B953-1EF23374A45B/f:ProductKey.cs" caret="34768" fromTop="19" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:Extensions.cs" caret="9605" fromTop="24" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BBSettings.cs" caret="3902" fromTop="27" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BASSDriver.cs" caret="4475" fromTop="23" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:frmSoundDataListEditor.cs" caret="12818" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:DataManager.cs" caret="5027" fromTop="14" />
+    <File id="C40AAD74-B465-449D-B953-1EF23374A45B/f:GenericListViewSorter.cs" caret="11680" fromTop="20" />
+    <File id="C40AAD74-B465-449D-B953-1EF23374A45B/f:viewupdates.cs" caret="31236" fromTop="302" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:iGameState.cs" caret="194" fromTop="10" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:iGameClient.cs" caret="3502" fromTop="16" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:ImageImport.cs" caret="268" fromTop="6" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BackgroundDrawer.cs" caret="2085" fromTop="19" />
+    <File id="B991D056-5227-430B-B7FB-B57785559BFA/f:BBlocktests.cs" caret="3346" fromTop="20" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:LoadedTypeManager.cs" caret="1537" fromTop="19" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:frmBaseBlock.cs" caret="100257" fromTop="23" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:cGameObject.cs" caret="86063" fromTop="21" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:GameEnemy.cs" caret="24379" fromTop="20" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BuilderBlock.cs" caret="7467" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:HiScores.cs" caret="24800" fromTop="18" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:frmEditor.cs" caret="136348" fromTop="20" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BCEditBlockFilter.cs" caret="7256" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:GenericObjectEditor.cs" caret="442" fromTop="10" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BCBlockGameState.cs" caret="0" fromTop="0" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:ScriptManager.cs" caret="520" fromTop="7" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:cStreamProgress.cs" caret="3991" fromTop="39" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BBScript.cs" caret="20070" fromTop="15" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:EditorSet.cs" caret="34664" fromTop="26" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:Block.cs" caret="237864" fromTop="19" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:GameStatistics.cs" caret="6846" fromTop="19" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:DefaultLevelBuilder.cs" caret="7904" fromTop="8" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:cBall.cs" caret="41297" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:Terminators.cs" caret="12989" fromTop="19" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:devlog.txt" caret="106320" fromTop="22" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:Paddle.cs" caret="3783" fromTop="9" />
+    <File id="38940002-5EA5-43F8-8378-3B4D14319143/f:Program.cs" caret="1518" fromTop="17" />
+    <File id="C40AAD74-B465-449D-B953-1EF23374A45B/f:viewupdates.cs" caret="15196" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BlockProxy.cs" caret="3637" fromTop="27" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:cINIFile.cs" caret="5993" fromTop="4" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:LoadedTypeManager.cs" caret="1537" fromTop="16" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:frmSoundDataListEditor.cs" caret="12628" fromTop="14" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BBSettings.cs" caret="3887" fromTop="27" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:Extensions.cs" caret="9592" fromTop="22" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:DataManager.cs" caret="4822" fromTop="11" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BCBlockGameState.cs" caret="130260" fromTop="19" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:frmBaseBlock.cs" caret="245824" fromTop="21" />
+    <File id="C40AAD74-B465-449D-B953-1EF23374A45B/f:GenericListViewSorter.cs" caret="11457" fromTop="16" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BackgroundDrawer.cs" caret="1799" fromTop="14" />
+    <File id="B991D056-5227-430B-B7FB-B57785559BFA/f:BBlocktests.cs" caret="3257" fromTop="19" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:cGameObject.cs" caret="85879" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:GameEnemy.cs" caret="67697" fromTop="20" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:frmEditor.cs" caret="175046" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BuilderBlock.cs" caret="7467" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:HiScores.cs" caret="24122" fromTop="10" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BCEditBlockFilter.cs" caret="9583" fromTop="17" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:GenericObjectEditor.cs" caret="645" fromTop="18" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:BBScript.cs" caret="20070" fromTop="15" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:EditorSet.cs" caret="34608" fromTop="22" />
+    <File id="7CC30E5A-7187-4822-B94F-63DE980446BA/f:Block.cs" caret="237864" fromTop="19" />
+  </RecentEdits>
+</RecentFiles>

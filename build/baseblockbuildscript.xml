@@ -1,0 +1,19 @@
+<!---
+BASeBlock Build Script
+-->
+
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<!-- Version Tweaker runs before the build, in order to run first, it must be a dependency set on any possible build. -->
+
+<Target Name="Clean VersionTweaker">
+<RemoveDir Directories="..\..\VersionTweaker\VersionTweaker\bin" ContinueOnError="True" />
+</Target>
+<Target Name="BeforeBuild" DependsOnTargets="Clean VersionTweaker">
+<MSBuild Projects="..\VersionTweaker\VersionTweaker\VersionTweaker.csproj" />
+<Copy SourceFiles="..\VersionTweaker\VersionTweaker\Bin\Debug\VersionTweaker.exe" DestinationFolder="."/>
+<!--Commented out since I'm testing on Trunk and don't want to break other changes.-->
+
+</Target>
+<!--Library Targets. I'm separating these from the others just for organizational reasons.-->
+
+</Project>

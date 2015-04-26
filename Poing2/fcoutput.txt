@@ -1,0 +1,111 @@
+Comparing files AnimatedBlocks.cs and D:\OLDPORJ\BASEBLOCKS\POING2\ANIMATEDBLOCKS.CS
+FC: no differences encountered
+
+Comparing files BackgroundDrawer.cs and D:\OLDPORJ\BASEBLOCKS\POING2\BACKGROUNDDRAWER.CS
+FC: no differences encountered
+
+Comparing files BASSDriver.cs and D:\OLDPORJ\BASEBLOCKS\POING2\BASSDRIVER.CS
+FC: no differences encountered
+
+Comparing files BCBlockGameState.cs and D:\OLDPORJ\BASEBLOCKS\POING2\BCBLOCKGAMESTATE.CS
+FC: no differences encountered
+
+Comparing files Block.cs and D:\OLDPORJ\BASEBLOCKS\POING2\BLOCK.CS
+FC: no differences encountered
+
+Comparing files cBall.cs and D:\OLDPORJ\BASEBLOCKS\POING2\CBALL.CS
+FC: no differences encountered
+
+Comparing files cGameObject.cs and D:\OLDPORJ\BASEBLOCKS\POING2\CGAMEOBJECT.CS
+FC: no differences encountered
+
+Comparing files cINIFile.cs and D:\OLDPORJ\BASEBLOCKS\POING2\CINIFILE.CS
+FC: no differences encountered
+
+Comparing files cLevel.cs and D:\OLDPORJ\BASEBLOCKS\POING2\CLEVEL.CS
+FC: no differences encountered
+
+Comparing files cNewSoundManager.cs and D:\OLDPORJ\BASEBLOCKS\POING2\CNEWSOUNDMANAGER.CS
+FC: no differences encountered
+
+Comparing files cParticle.cs and D:\OLDPORJ\BASEBLOCKS\POING2\CPARTICLE.CS
+FC: no differences encountered
+
+Comparing files DefaultLevelBuilder.cs and D:\OLDPORJ\BASEBLOCKS\POING2\DEFAULTLEVELBUILDER.CS
+***** DefaultLevelBuilder.cs
+
+                //usepath.AddEllipse(50, 50, 400, 400);
+                //usepath.AddString(charsadd, new FontFamily("Lucida Handwriting"), (int)FontStyle.Regular, 48f, new PointF(),S
+***** D:\OLDPORJ\BASEBLOCKS\POING2\DEFAULTLEVELBUILDER.CS
+
+                usepath.AddEllipse(50, 50, 400, 400);
+                //usepath.AddString(charsadd, new FontFamily("Lucida Handwriting"), (int)FontStyle.Regular, 48f, new PointF(),S
+*****
+
+***** DefaultLevelBuilder.cs
+tringFormat.GenericDefault);
+                usepath.AddString("8", FontFamily.GenericMonospace, (int)FontStyle.Regular, 512f, new PointF(), StringFormat.Ge
+nericDefault);
+
+***** D:\OLDPORJ\BASEBLOCKS\POING2\DEFAULTLEVELBUILDER.CS
+tringFormat.GenericDefault);
+                
+
+*****
+
+Comparing files EnumerableComparer.cs and D:\OLDPORJ\BASEBLOCKS\POING2\ENUMERABLECOMPARER.CS
+FC: no differences encountered
+
+Comparing files fmoddriver.cs and D:\OLDPORJ\BASEBLOCKS\POING2\FMODDRIVER.CS
+FC: no differences encountered
+
+Comparing files frmBaseBlock.cs and D:\OLDPORJ\BASEBLOCKS\POING2\FRMBASEBLOCK.CS
+FC: no differences encountered
+
+Comparing files frmBaseBlock.Designer.cs and D:\OLDPORJ\BASEBLOCKS\POING2\FRMBASEBLOCK.DESIGNER.CS
+***** frmBaseBlock.Designer.cs
+            // 
+            //this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+***** D:\OLDPORJ\BASEBLOCKS\POING2\FRMBASEBLOCK.DESIGNER.CS
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+*****
+
+Comparing files GenericSoundManager.cs and D:\OLDPORJ\BASEBLOCKS\POING2\GENERICSOUNDMANAGER.CS
+FC: no differences encountered
+
+Comparing files HiScores.cs and D:\OLDPORJ\BASEBLOCKS\POING2\HISCORES.CS
+FC: no differences encountered
+
+Comparing files iGameClient.cs and D:\OLDPORJ\BASEBLOCKS\POING2\IGAMECLIENT.CS
+FC: no differences encountered
+
+Comparing files iLevelSetBuilder.cs and D:\OLDPORJ\BASEBLOCKS\POING2\ILEVELSETBUILDER.CS
+FC: no differences encountered
+
+Comparing files ImageManager.cs and D:\OLDPORJ\BASEBLOCKS\POING2\IMAGEMANAGER.CS
+FC: no differences encountered
+
+Comparing files klangdriver.cs and D:\OLDPORJ\BASEBLOCKS\POING2\KLANGDRIVER.CS
+FC: no differences encountered
+
+Comparing files LevelSet.cs and D:\OLDPORJ\BASEBLOCKS\POING2\LEVELSET.CS
+FC: no differences encountered
+
+Comparing files NullSound.cs and D:\OLDPORJ\BASEBLOCKS\POING2\NULLSOUND.CS
+FC: no differences encountered
+
+Comparing files Paddle.cs and D:\OLDPORJ\BASEBLOCKS\POING2\PADDLE.CS
+FC: no differences encountered
+
+Comparing files Program.cs and D:\OLDPORJ\BASEBLOCKS\POING2\PROGRAM.CS
+FC: no differences encountered
+
+Comparing files SerializeBrush.cs and D:\OLDPORJ\BASEBLOCKS\POING2\SERIALIZEBRUSH.CS
+FC: no differences encountered
+
+Comparing files SoundManager.cs and D:\OLDPORJ\BASEBLOCKS\POING2\SOUNDMANAGER.CS
+FC: no differences encountered
+

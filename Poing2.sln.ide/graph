@@ -1,0 +1,7 @@
+﻿<Solution Format="0.0.0.3">
+  <Version>2013-08-30T19:17:10.1996049Z</Version>
+  <Project Path="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\BASeBlock.csproj">
+    <Reference Path="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BCUpdateLib\BCUpdateLib.csproj" />
+  </Project>
+  <Project Path="C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BCUpdateLib\BCUpdateLib.csproj" />
+</Solution>

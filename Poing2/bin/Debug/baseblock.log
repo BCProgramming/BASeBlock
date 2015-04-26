@@ -1,0 +1,2131 @@
+
+ Begin Log:4/26/2011 at 6:19 PM
+Initializing BASeBlock- Version:1.3.0.0
+Random Number Generator initialized with seed:989163386
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levels\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iSoundEngineDriver Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iSoundEngineDriver Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iSoundEngineDriver Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iSoundEngineDriver Implementor:NullSound
+Found iSoundEngineDriver Implementor:BASSDriver
+Found iSoundEngineDriver Implementor:irrklangDriver
+Found 3 iSoundEngineDriver Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iSoundEngineDriver Implemented by:NullSound
+iSoundEngineDriver Implemented by:BASSDriver
+iSoundEngineDriver Implemented by:irrklangDriver
+Assembly enumeration complete. Removing duplicates...
+Creating temporary game data folder
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc.ogg
+Loading Sound:basec.ogg
+Loading Sound:bbounce.wav
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:boomer.mp3
+Loading Sound:bounce.ogg
+Loading Sound:comical.ogg
+Loading Sound:credits.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:csting.mp3
+Loading Sound:elecman.ogg
+Loading Sound:endlesschallenge.ogg
+Loading Sound:epoch.ogg
+Loading Sound:gameover.ogg
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mm2intro1.ogg
+Loading Sound:mm2intro2.ogg
+Loading Sound:mm2wily.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:powerup.ogg
+Loading Sound:ray.ogg
+Loading Sound:right.wav
+Loading Sound:smb3credits.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:stormeagle.mp3
+Loading Sound:street.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:wakka.wav
+Loading Sound:wrong.wav
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:blackhole.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:enemyspawn.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:invincible.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:property.png
+Loading image:rayblock.png
+Loading image:sidebar.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:tallypic.png
+Loading image:terminator.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iLevelSetBuilder Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iLevelSetBuilder Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iLevelSetBuilder Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Found 4 iLevelSetBuilder Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iLevelSetBuilder Implemented by:CreditLevelBuilder
+iLevelSetBuilder Implemented by:ArkanoidLevelBuilder
+iLevelSetBuilder Implemented by:LevelBuilderFromFile
+iLevelSetBuilder Implemented by:DefaultLevelBuilder
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iBBPlugin Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iBBPlugin Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iBBPlugin Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iEditBlockFilter Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iEditBlockFilter Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iEditBlockFilter Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Found iEditBlockFilter Implementor:MakeColourTest
+Found 2 iEditBlockFilter Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iEditBlockFilter Implemented by:BasicGradientColourizer
+iEditBlockFilter Implemented by:MakeColourTest
+Assembly enumeration complete. Removing duplicates...
+Click Image above to continu
+ Begin Log:4/26/2011 at 6:20 PM
+Initializing BASeBlock- Version:1.3.0.0
+Random Number Generator initialized with seed:989216021
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levels\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iSoundEngineDriver Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iSoundEngineDriver Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iSoundEngineDriver Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iSoundEngineDriver Implementor:NullSound
+Found iSoundEngineDriver Implementor:BASSDriver
+Found iSoundEngineDriver Implementor:irrklangDriver
+Found 3 iSoundEngineDriver Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iSoundEngineDriver Implemented by:NullSound
+iSoundEngineDriver Implemented by:BASSDriver
+iSoundEngineDriver Implemented by:irrklangDriver
+Assembly enumeration complete. Removing duplicates...
+Creating temporary game data folder
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc.ogg
+Loading Sound:basec.ogg
+Loading Sound:bbounce.wav
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:boomer.mp3
+Loading Sound:bounce.ogg
+Loading Sound:comical.ogg
+Loading Sound:credits.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:csting.mp3
+Loading Sound:elecman.ogg
+Loading Sound:endlesschallenge.ogg
+Loading Sound:epoch.ogg
+Loading Sound:gameover.ogg
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mm2intro1.ogg
+Loading Sound:mm2intro2.ogg
+Loading Sound:mm2wily.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:powerup.ogg
+Loading Sound:ray.ogg
+Loading Sound:right.wav
+Loading Sound:smb3credits.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:stormeagle.mp3
+Loading Sound:street.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:wakka.wav
+Loading Sound:wrong.wav
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:blackhole.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:enemyspawn.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:invincible.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:property.png
+Loading image:rayblock.png
+Loading image:sidebar.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:tallypic.png
+Loading image:terminator.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iLevelSetBuilder Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iLevelSetBuilder Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iLevelSetBuilder Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Found 4 iLevelSetBuilder Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iLevelSetBuilder Implemented by:CreditLevelBuilder
+iLevelSetBuilder Implemented by:ArkanoidLevelBuilder
+iLevelSetBuilder Implemented by:LevelBuilderFromFile
+iLevelSetBuilder Implemented by:DefaultLevelBuilder
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iBBPlugin Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iBBPlugin Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iBBPlugin Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iEditBlockFilter Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iEditBlockFilter Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iEditBlockFilter Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Found iEditBlockFilter Implementor:MakeColourTest
+Found 2 iEditBlockFilter Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iEditBlockFilter Implemented by:BasicGradientColourizer
+iEditBlockFilter Implemented by:MakeColourTest
+Assembly enumeration complete. Removing duplicates...
+Click Image above to continu
+ Begin Log:4/26/2011 at 6:21 PM
+Initializing BASeBlock- Version:1.3.0.0
+Random Number Generator initialized with seed:989277547
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levels\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iSoundEngineDriver Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iSoundEngineDriver Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iSoundEngineDriver Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iSoundEngineDriver Implementor:NullSound
+Found iSoundEngineDriver Implementor:BASSDriver
+Found iSoundEngineDriver Implementor:irrklangDriver
+Found 3 iSoundEngineDriver Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iSoundEngineDriver Implemented by:NullSound
+iSoundEngineDriver Implemented by:BASSDriver
+iSoundEngineDriver Implemented by:irrklangDriver
+Assembly enumeration complete. Removing duplicates...
+Creating temporary game data folder
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc.ogg
+Loading Sound:basec.ogg
+Loading Sound:bbounce.wav
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:boomer.mp3
+Loading Sound:bounce.ogg
+Loading Sound:comical.ogg
+Loading Sound:credits.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:csting.mp3
+Loading Sound:elecman.ogg
+Loading Sound:endlesschallenge.ogg
+Loading Sound:epoch.ogg
+Loading Sound:gameover.ogg
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mm2intro1.ogg
+Loading Sound:mm2intro2.ogg
+Loading Sound:mm2wily.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:powerup.ogg
+Loading Sound:ray.ogg
+Loading Sound:right.wav
+Loading Sound:smb3credits.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:stormeagle.mp3
+Loading Sound:street.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:wakka.wav
+Loading Sound:wrong.wav
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:blackhole.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:enemyspawn.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:invincible.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:property.png
+Loading image:rayblock.png
+Loading image:sidebar.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:tallypic.png
+Loading image:terminator.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iLevelSetBuilder Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iLevelSetBuilder Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iLevelSetBuilder Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Found 4 iLevelSetBuilder Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iLevelSetBuilder Implemented by:CreditLevelBuilder
+iLevelSetBuilder Implemented by:ArkanoidLevelBuilder
+iLevelSetBuilder Implemented by:LevelBuilderFromFile
+iLevelSetBuilder Implemented by:DefaultLevelBuilder
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iBBPlugin Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iBBPlugin Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iBBPlugin Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iEditBlockFilter Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iEditBlockFilter Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iEditBlockFilter Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Found iEditBlockFilter Implementor:MakeColourTest
+Found 2 iEditBlockFilter Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iEditBlockFilter Implemented by:BasicGradientColourizer
+iEditBlockFilter Implemented by:MakeColourTest
+Assembly enumeration complete. Removing duplicates...
+Click Image above to continu
+ Begin Log:4/26/2011 at 6:35 PM
+Initializing BASeBlock- Version:1.3.0.0
+Random Number Generator initialized with seed:990097192
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levels\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iSoundEngineDriver Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iSoundEngineDriver Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iSoundEngineDriver Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iSoundEngineDriver Implementor:NullSound
+Found iSoundEngineDriver Implementor:BASSDriver
+Found iSoundEngineDriver Implementor:irrklangDriver
+Found 3 iSoundEngineDriver Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iSoundEngineDriver Implemented by:NullSound
+iSoundEngineDriver Implemented by:BASSDriver
+iSoundEngineDriver Implemented by:irrklangDriver
+Assembly enumeration complete. Removing duplicates...
+Creating temporary game data folder
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc.ogg
+Loading Sound:basec.ogg
+Loading Sound:bbounce.wav
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:boomer.mp3
+Loading Sound:bounce.ogg
+Loading Sound:comical.ogg
+Loading Sound:credits.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:csting.mp3
+Loading Sound:elecman.ogg
+Loading Sound:endlesschallenge.ogg
+Loading Sound:epoch.ogg
+Loading Sound:gameover.ogg
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mm2intro1.ogg
+Loading Sound:mm2intro2.ogg
+Loading Sound:mm2wily.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:powerup.ogg
+Loading Sound:ray.ogg
+Loading Sound:right.wav
+Loading Sound:smb3credits.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:stormeagle.mp3
+Loading Sound:street.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:wakka.wav
+Loading Sound:wrong.wav
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:blackhole.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:enemyspawn.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:invincible.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:property.png
+Loading image:rayblock.png
+Loading image:sidebar.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:tallypic.png
+Loading image:terminator.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iLevelSetBuilder Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iLevelSetBuilder Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iLevelSetBuilder Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Found 4 iLevelSetBuilder Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iLevelSetBuilder Implemented by:CreditLevelBuilder
+iLevelSetBuilder Implemented by:ArkanoidLevelBuilder
+iLevelSetBuilder Implemented by:LevelBuilderFromFile
+iLevelSetBuilder Implemented by:DefaultLevelBuilder
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iBBPlugin Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iBBPlugin Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iBBPlugin Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iEditBlockFilter Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iEditBlockFilter Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iEditBlockFilter Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Found iEditBlockFilter Implementor:MakeColourTest
+Found 2 iEditBlockFilter Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iEditBlockFilter Implemented by:BasicGradientColourizer
+iEditBlockFilter Implemented by:MakeColourTest
+Assembly enumeration complete. Removing duplicates...
+Click Image above to continu
+ Begin Log:4/26/2011 at 6:59 PM
+Initializing BASeBlock- Version:1.3.0.0
+Random Number Generator initialized with seed:991553306
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levels\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iSoundEngineDriver Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iSoundEngineDriver Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iSoundEngineDriver Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iSoundEngineDriver Implementor:NullSound
+Found iSoundEngineDriver Implementor:BASSDriver
+Found iSoundEngineDriver Implementor:irrklangDriver
+Found 3 iSoundEngineDriver Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iSoundEngineDriver Implemented by:NullSound
+iSoundEngineDriver Implemented by:BASSDriver
+iSoundEngineDriver Implemented by:irrklangDriver
+Assembly enumeration complete. Removing duplicates...
+Creating temporary game data folder
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc.ogg
+Loading Sound:basec.ogg
+Loading Sound:bbounce.wav
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:boomer.mp3
+Loading Sound:bounce.ogg
+Loading Sound:comical.ogg
+Loading Sound:credits.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:csting.mp3
+Loading Sound:elecman.ogg
+Loading Sound:endlesschallenge.ogg
+Loading Sound:epoch.ogg
+Loading Sound:gameover.ogg
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mm2intro1.ogg
+Loading Sound:mm2intro2.ogg
+Loading Sound:mm2wily.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:powerup.ogg
+Loading Sound:ray.ogg
+Loading Sound:right.wav
+Loading Sound:smb3credits.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:stormeagle.mp3
+Loading Sound:street.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:wakka.wav
+Loading Sound:wrong.wav
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:blackhole.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:enemyspawn.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:invincible.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:property.png
+Loading image:rayblock.png
+Loading image:sidebar.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:tallypic.png
+Loading image:terminator.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iLevelSetBuilder Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iLevelSetBuilder Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iLevelSetBuilder Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Found 4 iLevelSetBuilder Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iLevelSetBuilder Implemented by:CreditLevelBuilder
+iLevelSetBuilder Implemented by:ArkanoidLevelBuilder
+iLevelSetBuilder Implemented by:LevelBuilderFromFile
+iLevelSetBuilder Implemented by:DefaultLevelBuilder
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iBBPlugin Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iBBPlugin Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iBBPlugin Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iEditBlockFilter Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iEditBlockFilter Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iEditBlockFilter Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Found iEditBlockFilter Implementor:MakeColourTest
+Found 2 iEditBlockFilter Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iEditBlockFilter Implemented by:BasicGradientColourizer
+iEditBlockFilter Implemented by:MakeColourTest
+Assembly enumeration complete. Removing duplicates...
+Click Image above to continu
+ Begin Log:4/26/2011 at 7:03 PM
+Initializing BASeBlock- Version:1.3.0.0
+Random Number Generator initialized with seed:991796262
+Using INI file:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\BASeBlock.ini
+using sound folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+using image folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Images\
+using Level folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Levels\
+using Plugin folders:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Plugins\
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iSoundEngineDriver Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iSoundEngineDriver Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iSoundEngineDriver Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iSoundEngineDriver Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iSoundEngineDriver Implementor:NullSound
+Found iSoundEngineDriver Implementor:BASSDriver
+Found iSoundEngineDriver Implementor:irrklangDriver
+Found 3 iSoundEngineDriver Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iSoundEngineDriver Implemented by:NullSound
+iSoundEngineDriver Implemented by:BASSDriver
+iSoundEngineDriver Implemented by:irrklangDriver
+Assembly enumeration complete. Removing duplicates...
+Creating temporary game data folder
+INI file Sound engine: NBASS
+SoundManager: using sound driver for NBASS
+Loading sounds from:C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Sounds\
+Loading Sound:1up.ogg
+Loading Sound:arkvc.ogg
+Loading Sound:basec.ogg
+Loading Sound:bbounce.wav
+Loading Sound:blach.ogg
+Loading Sound:blech.ogg
+Loading Sound:bomb.ogg
+Loading Sound:boomer.mp3
+Loading Sound:bounce.ogg
+Loading Sound:comical.ogg
+Loading Sound:credits.ogg
+Loading Sound:creditsong.ogg
+Loading Sound:csting.mp3
+Loading Sound:elecman.ogg
+Loading Sound:endlesschallenge.ogg
+Loading Sound:epoch.ogg
+Loading Sound:gameover.ogg
+Loading Sound:gameover1.ogg
+Loading Sound:gameover2.ogg
+Loading Sound:gren.ogg
+Loading Sound:grinder.ogg
+Loading Sound:metal1.ogg
+Loading Sound:metal2.ogg
+Loading Sound:metal3.ogg
+Loading Sound:mm1goal1.ogg
+Loading Sound:mm1goal2.ogg
+Loading Sound:mm1intro.ogg
+Loading Sound:mm2intro1.ogg
+Loading Sound:mm2intro2.ogg
+Loading Sound:mm2wily.ogg
+Loading Sound:mmintro3.ogg
+Loading Sound:poing2music.ogg
+Loading Sound:powerup.ogg
+Loading Sound:ray.ogg
+Loading Sound:right.wav
+Loading Sound:smb3credits.ogg
+Loading Sound:spitfire.ogg
+Loading Sound:splash.ogg
+Loading Sound:stormeagle.mp3
+Loading Sound:street.ogg
+Loading Sound:tallymusic.ogg
+Loading Sound:tallymusic1.ogg
+Loading Sound:tallymusic2.ogg
+Loading Sound:tallymusic3.ogg
+Loading Sound:tallymusic4.ogg
+Loading Sound:tallymusic5.ogg
+Loading Sound:tallytick.ogg
+Loading Sound:tflush.ogg
+Loading Sound:tpskill.ogg
+Loading Sound:wakka.wav
+Loading Sound:wrong.wav
+Loading sounds from:C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\bin\Debug\
+Reducing Quality of Loaded Images...
+Base temporary folder is "C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP"
+Reducing image addball.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image addballpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image blackhole.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image bomb.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image crazyblock.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image credits.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image demonblock2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image enemyspawn.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image faceattack1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceattack2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle1.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image faceidle2.pngSize:{Width=34, Height=34} to {Width=17, Height=17}
+Reducing image generic_1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image generic_4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image greenb.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image invincible.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image life3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image megagreen1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megagreen4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman1.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman2.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman3.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image megaman4.pngSize:{Width=56, Height=48} to {Width=28, Height=24}
+Reducing image paddleMinus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddleMinus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus3.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image paddlePlus4.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill1.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image pill2.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image rayblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image sidebar.pngSize:{Width=212, Height=427} to {Width=106, Height=213.5}
+Reducing image slimepower.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image speedball.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image star.pngSize:{Width=128, Height=128} to {Width=64, Height=64}
+Reducing image streetblock.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Reducing image strong1.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong2.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong3.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image strong5.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image tallypic.pngSize:{Width=449, Height=279} to {Width=224.5, Height=139.5}
+Reducing image Warp1.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp3.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image Warp4.pngSize:{Width=256, Height=256} to {Width=128, Height=128}
+Reducing image warpblock4.pngSize:{Width=256, Height=128} to {Width=128, Height=64}
+Reducing image water1.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water10.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water11.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water12.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water13.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water14.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water15.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water16.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water17.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water18.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water19.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water2.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water20.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water3.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water4.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water5.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water6.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water7.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water8.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image water9.pngSize:{Width=249, Height=119} to {Width=124.5, Height=59.5}
+Reducing image weaponpwr.pngSize:{Width=128, Height=64} to {Width=64, Height=32}
+Loading compatible images in C:\Users\BC_Programming\AppData\Local\Temp\BBLOCKZTEMP
+Loading image:addball.png
+Loading image:addballpwr.png
+Loading image:blackhole.png
+Loading image:blubba1.png
+Loading image:blubba2.png
+Loading image:bomb.png
+Loading image:crazyblock.png
+Loading image:credits.png
+Loading image:debris1.png
+Loading image:demonblock1.png
+Loading image:demonblock2.png
+Loading image:enemyspawn.png
+Loading image:eyeclose.png
+Loading image:eyemid.png
+Loading image:eyeopen.png
+Loading image:faceattack1.png
+Loading image:faceattack2.png
+Loading image:faceidle1.png
+Loading image:faceidle2.png
+Loading image:fireball1.png
+Loading image:fireball2.png
+Loading image:fireball3.png
+Loading image:fireball4.png
+Loading image:generic_1.png
+Loading image:generic_2.png
+Loading image:generic_3.png
+Loading image:generic_4.png
+Loading image:gobmp.png
+Loading image:greenb.png
+Loading image:invincible.png
+Loading image:life1.png
+Loading image:life2.png
+Loading image:life3.png
+Loading image:megagreen1.png
+Loading image:megagreen2.png
+Loading image:megagreen3.png
+Loading image:megagreen4.png
+Loading image:megaman1.png
+Loading image:megaman2.png
+Loading image:megaman3.png
+Loading image:megaman4.png
+Loading image:miniblock.png
+Loading image:paddle.png
+Loading image:paddleMinus1.png
+Loading image:paddleMinus2.png
+Loading image:paddleMinus3.png
+Loading image:paddleMinus4.png
+Loading image:paddlePlus1.png
+Loading image:paddlePlus2.png
+Loading image:paddlePlus3.png
+Loading image:paddlePlus4.png
+Loading image:pill1.png
+Loading image:pill2.png
+Loading image:property.png
+Loading image:rayblock.png
+Loading image:sidebar.png
+Loading image:slimeball.png
+Loading image:slimepower.png
+Loading image:speedball.png
+Loading image:star.png
+Loading image:sticky.png
+Loading image:streetblock.png
+Loading image:strong1.png
+Loading image:strong2.png
+Loading image:strong3.png
+Loading image:strong4.png
+Loading image:strong5.png
+Loading image:tallypic.png
+Loading image:terminator.png
+Loading image:testdebris1.png
+Loading image:testdebris2.png
+Loading image:Warp1.png
+Loading image:Warp3.png
+Loading image:Warp4.png
+Loading image:warpblock4.png
+Loading image:water1.png
+Loading image:water10.png
+Loading image:water11.png
+Loading image:water12.png
+Loading image:water13.png
+Loading image:water14.png
+Loading image:water15.png
+Loading image:water16.png
+Loading image:water17.png
+Loading image:water18.png
+Loading image:water19.png
+Loading image:water2.png
+Loading image:water20.png
+Loading image:water3.png
+Loading image:water4.png
+Loading image:water5.png
+Loading image:water6.png
+Loading image:water7.png
+Loading image:water8.png
+Loading image:water9.png
+Loading image:weaponpwr.png
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iLevelSetBuilder Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iLevelSetBuilder Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iLevelSetBuilder Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iLevelSetBuilder Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iLevelSetBuilder Implementor:CreditLevelBuilder
+Found iLevelSetBuilder Implementor:ArkanoidLevelBuilder
+Found iLevelSetBuilder Implementor:LevelBuilderFromFile
+Found iLevelSetBuilder Implementor:DefaultLevelBuilder
+Found 4 iLevelSetBuilder Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iLevelSetBuilder Implemented by:CreditLevelBuilder
+iLevelSetBuilder Implemented by:ArkanoidLevelBuilder
+iLevelSetBuilder Implemented by:LevelBuilderFromFile
+iLevelSetBuilder Implemented by:DefaultLevelBuilder
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iBBPlugin Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iBBPlugin Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iBBPlugin Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iBBPlugin Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Assembly enumeration complete. Removing duplicates...
+Load of bass.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:Bass.Net.dll
+Loaded Assembly:BCUpdateLib.dll
+Load of fmodex.dll failed- The module was expected to contain an assembly manifest. (Exception from HRESULT: 0x80131018)
+Loaded Assembly:FMODNet.dll
+Loaded Assembly:Interop.MSScriptControl.dll
+Loaded Assembly:Ionic.Zip.dll
+Loaded Assembly:irrKlang.NET2.0.dll
+Found 6 Assemblies.
+Inspecting Assembly:Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Found 0 iEditBlockFilter Implementations in Bass.Net, Version=2.4.6.8, Culture=neutral, PublicKeyToken=b7566c273e6ef480
+Inspecting Assembly:BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in BCUpdateLib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in FMODNet, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Found 0 iEditBlockFilter Implementations in Interop.MSScriptControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Inspecting Assembly:Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Found 0 iEditBlockFilter Implementations in Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c
+Inspecting Assembly:irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Found 0 iEditBlockFilter Implementations in irrKlang.NET2.0, Version=1.3.0.0, Culture=neutral, PublicKeyToken=a854741bd80517c7
+Inspecting Assembly:BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+Found iEditBlockFilter Implementor:BasicGradientColourizer
+Found iEditBlockFilter Implementor:MakeColourTest
+Found 2 iEditBlockFilter Implementations in BASeBlock, Version=1.3.0.0, Culture=neutral, PublicKeyToken=null
+iEditBlockFilter Implemented by:BasicGradientColourizer
+iEditBlockFilter Implemented by:MakeColourTest
+Assembly enumeration complete. Removing duplicates...
+Click Image above to continu
