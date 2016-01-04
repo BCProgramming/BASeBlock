@@ -6,12 +6,12 @@ using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
 

@@ -1,5 +1,5 @@
-﻿using BASeBlock.Controls;
-namespace BASeBlock
+﻿using BASeCamp.BASeBlock.Controls;
+namespace BASeCamp.BASeBlock
 {
     partial class Debuggerform
     {

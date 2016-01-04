@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using BASeCamp.Updating;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
 

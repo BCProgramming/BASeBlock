@@ -9,26 +9,36 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Windows.Forms;
+using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
   
 
-    public interface IBackgroundDrawer:ISerializable 
+    public interface IBackgroundDrawer:ISerializable,IXmlPersistable 
     {
         void DrawBackground(BCBlockGameState gamestate, Graphics g, Rectangle fullarea, bool pforce);
         void PerformFrame(BCBlockGameState gamestate);
         bool RequiresPerformFrame();
-
-
     }
-    public abstract class BackgroundDrawer : IBackgroundDrawer
+    public abstract class BackgroundDrawer : IBackgroundDrawer,IXmlPersistable
     {
         public abstract void DrawBackground(BCBlockGameState gamestate, Graphics g, Rectangle fullarea, bool pforce);
         public abstract bool RequiresPerformFrame();
         public abstract void PerformFrame(BCBlockGameState gamestate);
         public abstract void GetObjectData(SerializationInfo info,StreamingContext context);
-        
+
+        public abstract XElement GetXmlData(String pNodeName);
+        protected BackgroundDrawer(XElement source)
+        {
+
+        }
+        protected BackgroundDrawer()
+        {
+
+        }
         
     }
     [Serializable]
@@ -130,7 +140,26 @@ namespace BASeBlock
             info.AddValue("CurrentOffset", CurrentOffset);
             info.AddValue("RotateOrigin", RotateOrigin);
         }
-
+        public BackgroundColourImageDrawer(XElement Source):base(Source)
+        {
+            MoveVelocity = Source.ReadElement<PointF>("MoveVelocity", PointF.Empty);
+            BackgroundFrameKeys = Source.ReadList<String>("Backgroundframekeys", new List<String>()).ToArray();
+            CurrentOffset = Source.ReadElement<PointF>("CurrentOffset", PointF.Empty);
+            RotateOrigin = Source.ReadElement<PointF>("RotateOrigin", PointF.Empty);
+            RotateSpeed = Source.GetAttributeDouble("RotateSpeed", 0D);
+            CurrentRotation = Source.GetAttributeDouble("CurrentRotation", 0D);
+        }
+        public override XElement GetXmlData(string pNodeName)
+        {
+            XElement ResultNode = new XElement(pNodeName);
+            ResultNode.Add(StandardHelper.SaveElement(MoveVelocity,"MoveVelocity"));
+            ResultNode.Add(StandardHelper.SaveList(BackgroundFrameKeys.ToList(),"Backgroundframekeys"));
+            ResultNode.Add(new XAttribute("rotatespeed",RotateSpeed));
+            ResultNode.Add(new XAttribute("CurrentRotation",CurrentRotation));
+            ResultNode.Add(StandardHelper.SaveElement(CurrentOffset,"CurrentOffset"));
+            ResultNode.Add(StandardHelper.SaveElement(RotateOrigin,"RotateOrigin"));
+            return ResultNode;
+        }
 
         public Image[] Backgroundframes {
 

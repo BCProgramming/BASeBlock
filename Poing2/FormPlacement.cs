@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using BASeCamp.Configuration;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// FormPlacement.cs; used to save/load form position data using the GetWindowPlacement() and SetWindowPlacement() functions.

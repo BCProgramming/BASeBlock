@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
-using BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public interface iPaddleBehaviour
     {

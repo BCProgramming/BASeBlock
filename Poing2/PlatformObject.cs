@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //this interface is implemented by blocks that want to "see" when a PlatformObject touches them.
     public interface iPlatformBlockExtension

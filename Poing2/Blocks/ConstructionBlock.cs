@@ -6,7 +6,7 @@ using System.Drawing.Design;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [ImpactEffectBlockCategory]

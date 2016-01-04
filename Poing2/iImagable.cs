@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Drawing;
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// interface implemented by explodable things.

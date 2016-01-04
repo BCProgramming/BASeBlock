@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock.Projectiles
+namespace BASeCamp.BASeBlock.Projectiles
 {
     public class LaserShot   : Projectile
     {

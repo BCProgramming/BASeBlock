@@ -5,9 +5,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     class ObstacleSnake : GameEnemy,IMovingObject
     {

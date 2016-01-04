@@ -6,7 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     public abstract class CharacterAnimator

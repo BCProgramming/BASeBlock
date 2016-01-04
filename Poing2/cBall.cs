@@ -10,14 +10,17 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Particles;
-using BASeBlock.Projectiles;
+using System.Windows.Forms;
+using System.Xml.Linq;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Particles;
+using BASeCamp.BASeBlock.Projectiles;
+using BASeCamp.XMLSerialization;
 
 //using System.Xml.Serialization;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
 
@@ -180,7 +183,7 @@ namespace BASeBlock
 
 }
 
-public interface iBallBehaviour : ISerializable
+public interface iBallBehaviour : ISerializable,IXmlPersistable
     {
         //similar in concept to PaddleBehaviours
         //each ball will have a list of them; as an example, I could make a "fire" block, which, when hit, adds a "FireBallBehavior" to the behaviour list.
@@ -346,6 +349,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
 
         }
+        protected BaseBehaviour(XElement Source)
+        {
+
+        }
+        public abstract XElement GetXmlData(String pName);
         protected BaseBehaviour()
         {
 
@@ -468,7 +476,7 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             EmitParticleProc(ballobject, ParentGameState);
             return base.PerformFrame(ballobject, ParentGameState, ref ballsadded, ref ballsremove, out removethis);
         }
-        public ParticleEmitterBehaviour():this(null)
+        public ParticleEmitterBehaviour():this((EmitParticle)null)
         {
             EmitParticleProc = defaultemitter;
 
@@ -477,6 +485,16 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
             base.GetObjectData(info, context);
             info.AddValue("ParticleType",_ParticleType.Name);
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName,new XAttribute("ParticleType",_ParticleType.Name));
+        }
+        public ParticleEmitterBehaviour(XElement Source):this()
+        {
+            String sParticleType = Source.GetAttributeString("ParticleType","DustParticle");
+            _ParticleType = BCBlockGameState.FindClass(sParticleType);
+            if (_ParticleType == null) _ParticleType = typeof(DustParticle);
         }
         public ParticleEmitterBehaviour(SerializationInfo info, StreamingContext context):base(info,context)
         {
@@ -505,7 +523,20 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
             return new WaterBallBehaviour();
         }
+        public WaterBallBehaviour(XElement Source):base(Source)
+        {
 
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            return new XElement(pNodeName);
+        }
+
+        public WaterBallBehaviour()
+        {
+
+        }
         public override List<Block> PerformFrame(cBall ballobject, BCBlockGameState ParentGameState, ref List<cBall> ballsadded, ref List<cBall> ballsremove, out bool removethis)
         {
 
@@ -545,6 +576,15 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
             base.GetObjectData(info, context);
         }
+
+        public NonReboundableBallBehaviour(XElement Source)
+        {
+
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName);
+        }
         public NonReboundableBallBehaviour(SerializationInfo info, StreamingContext context)
         {
             //nothing here either...
@@ -583,6 +623,14 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
 
 
+        }
+        public LinearGravityBallBehaviour(XElement Source)
+        {
+            Acceleration = Source.GetAttributeDouble("Acceleration", 2);
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName,new XAttribute("Acceleration",Acceleration));
         }
         public LinearGravityBallBehaviour(LinearGravityBallBehaviour clonethis)
         {
@@ -640,6 +688,19 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             _useBehaviour = null;
             
         }
+        public TimedBehaviour(XElement Source)
+        {
+            Span = Source.ReadElement("Span", new TimeSpan(0, 0, 0, 1));
+            String grabtype = Source.GetAttributeString("useBehaviour");
+            useBehaviour = BCBlockGameState.FindClass(grabtype);
+        }
+
+        public override XElement GetXmlData(string pName)
+        {
+            String typeuse = useBehaviour.Name;
+            return new XElement(pName,StandardHelper.SaveElement(Span,"Span"),new XAttribute("useBehaviour",typeuse));
+        }
+
         public TimedBehaviour(Type usetype, TimeSpan usespan)
         {
             _Span = usespan;
@@ -768,6 +829,17 @@ public abstract class TimedBallBehaviour : BaseBehaviour
 
 
             return base.HitBlock(currentstate, ballobject, blockhit);
+        }
+
+        public override XElement GetXmlData(string pName)
+        {
+            return new XElement(pName,new XAttribute("TimesExploded",_TimesExploded),new XAttribute("NumExplosions",_NumExplosions),new XAttribute("MaxRadius",MaxRadius));
+        }
+        public LeapFrogExploderBehaviour(XElement Source)
+        {
+            _TimesExploded = Source.GetAttributeInt("TimesExploded", 0);
+            _NumExplosions = Source.GetAttributeInt("NumExplosions", 3);
+            _MaxRadius = Source.GetAttributeFloat("MaxRadius", 15);
         }
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -944,6 +1016,15 @@ public abstract class TimedBallBehaviour : BaseBehaviour
 
         }
         #region Serialization
+
+        public PausedBallBehaviour(XElement Source):base(Source)
+        {
+            waitTime = Source.ReadElement("waitTime", new TimeSpan(0, 0, 3));
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName,new XAttribute("waitTime",waitTime));
+        }
         public PausedBallBehaviour(SerializationInfo info, StreamingContext context)
         {
             waitTime = (TimeSpan)(info.GetValue("waitTime", typeof(TimeSpan)));
@@ -1026,12 +1107,20 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             _Interval = CoolDownTime;
 
         }
+        public LaserSpinBehaviour(XElement Source):base(Source)
+        {
 
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName);
+        }
         public LaserSpinBehaviour(SerializationInfo info, StreamingContext context)
         {
 
 
         }
+        
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
@@ -1147,6 +1236,14 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             
 
         }
+        public CrazyBallBehaviour(XElement Source):base(Source)
+        {
+
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName);
+        }
         public override void BehaviourAdded(cBall onBall, BCBlockGameState currstate)
         {
             onBall.Velocity = new PointF(onBall.Velocity.X*2,onBall.Velocity.Y*2);
@@ -1240,6 +1337,17 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         public PowerBallBehaviour()
         {
         }
+
+        public PowerBallBehaviour(XElement Source):base(Source)
+        {
+
+        }
+
+        public override XElement GetXmlData(string pName)
+        {
+            return new XElement(pName);
+        }
+
         public PowerBallBehaviour(SerializationInfo info, StreamingContext context):base(info,context)
         {
             //nothing...
@@ -1273,6 +1381,16 @@ public abstract class TimedBallBehaviour : BaseBehaviour
 
 
         }
+        public TempBallBehaviour(XElement Source)
+        {
+
+        }
+
+        public override XElement GetXmlData(string pName)
+        {
+            return new XElement(pName);
+        }
+
         public TempBallBehaviour(int numBounces)
         {
             _NumBounces = numBounces;

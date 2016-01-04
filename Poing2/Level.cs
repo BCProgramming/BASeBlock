@@ -16,12 +16,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 using Ionic.Zlib;
-using bcHighScores;
 using BASeCamp.XMLSerialization;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     [Serializable]
     public class BBImageSerializationData
@@ -211,10 +210,10 @@ namespace BASeBlock
         }
             public TimeSpan _ShowNameLength = new TimeSpan(0, 0, 0, 0); //default to the intro sound.
         
-            private BackgroundColourImageDrawer _Background;
+            private BackgroundDrawer _Background;
         [Editor(typeof(BASeBlock.ObjectTypeEditor), typeof(UITypeEditor))]
 
-            public BackgroundColourImageDrawer Background { get { EnsureLoaded(); return _Background; } set { EnsureLoaded(); _Background = value; } }
+            public BackgroundDrawer Background { get { EnsureLoaded(); return _Background; } set { EnsureLoaded(); _Background = value; } }
             [TypeConverter(typeof(TimeSpanConverter))]
         public TimeSpan ShowNameLength { 
                 get { EnsureLoaded(); 
@@ -363,10 +362,10 @@ namespace BASeBlock
             [Editor(typeof(TypeCheckboxItem<GamePowerUp>), typeof(UITypeEditor))]
             public List<Type> AvailablePowerups { get { return _AvailablePowerups; } set { _AvailablePowerups = value; } } 
 
-            private String _LevelName;
+            private String _LevelName="Level";
             private String _Description = "";
-            private String _TallyMusicName;
-            private String _TallyTickSound;
+            private String _TallyMusicName="tallymusic";
+            private String _TallyTickSound="tallytick";
             private String _TallyPicKey="TALLYPIC";
             private String _GameOverMusic;
             private int _NextLevel;
@@ -529,8 +528,8 @@ namespace BASeBlock
             result.Add(new XAttribute("IntroMusicName", IntroMusicName));
             result.Add(new XAttribute("NextLevel", NextLevel));
             result.Add(StandardHelper.SaveElement<TimeSpan>(ShowNameLength,"ShowNameLength"));
-            result.Add(StandardHelper.SaveList(levelblocks,"Blocks"));
-            result.Add(StandardHelper.SaveList(levelballs, "Balls"));
+            result.Add(StandardHelper.SaveList<Block>(levelblocks,"Blocks",true));
+            result.Add(StandardHelper.SaveList<cBall>(levelballs, "Balls"),true);
             result.Add(new XAttribute("NoPaddle",NoPaddle));
             result.Add(new XAttribute("PauseSound", PauseSound));
             result.Add(new XAttribute("DeathSound", DeathSound));
@@ -545,7 +544,7 @@ namespace BASeBlock
             List<String> AvailablePowers = BCBlockGameState.TypesToString(_AvailablePowerups).ToList();
             result.Add(StandardHelper.SaveList(AvailablePowers,"AvailablePowerups"));
             result.Add(StandardHelper.SaveElement(MessageData,"MessageData"));
-            result.Add(StandardHelper.SaveElement(Background,"Background"));
+            result.Add(StandardHelper.SaveElement(Background,"Background",true));
             result.Add(new XAttribute("ClearTitle",ClearTitle));
 
             return result;
@@ -575,11 +574,25 @@ namespace BASeBlock
             PauseSound = SourceNode.GetAttributeString("PauseSound");
             StartTrigger = SourceNode.GetAttributeInt("StartTrigger");
             DeathSound = SourceNode.GetAttributeString("DeathSound","mmdeath");
-            _SidebarColorMatrixValues = (float[][])SourceNode.ReadArray<float>("SideBarColorMatrix", null);
+            try
+            {
+                _SidebarColorMatrixValues = (float[][])SourceNode.ReadArray<float>("SideBarColorMatrix", null);
+            }
+            catch(InvalidCastException)
+            {
+
+            }
             SidebarImageKey = SourceNode.GetAttributeString("SidebarImageKey");
             SidebarTextColor = SourceNode.ReadElement<Color>("SidebarTextColor");
             PauseImageKey = SourceNode.GetAttributeString("PauseImageKey");
-            _PauseColorMatrixValues = (float[][])SourceNode.ReadArray<float>("PauseColorMatrix", null);
+            try
+            {
+                _PauseColorMatrixValues = (float[][])SourceNode.ReadArray<float>("PauseColorMatrix", null);
+            }
+            catch(InvalidCastException)
+            {
+
+            }
             PauseTextColor = SourceNode.ReadElement<Color>("PauseTextColor");
             PauseFont = SourceNode.ReadElement<Font>("PauseFont");
             LevelEvents = SourceNode.ReadList<TriggerEvent>("LevelEvents", null);
@@ -593,7 +606,7 @@ namespace BASeBlock
 
             try
             {
-                Background = SourceNode.ReadElement<BackgroundColourImageDrawer>("Background", new BackgroundColourImageDrawer(Color.White));
+                Background = SourceNode.ReadElement<BackgroundDrawer>("Background", new BackgroundColourImageDrawer(Color.White));
             }
             catch
             {

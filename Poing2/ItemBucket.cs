@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class ItemBucket<T>
     {

@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace BASeBlock.GameObjects.Orbs
+namespace BASeCamp.BASeBlock.GameObjects.Orbs
 {
     public class ScoreOrb : ColouredCollectibleOrb
     {

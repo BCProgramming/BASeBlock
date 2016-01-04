@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// PixelText: provides methods and data for drawing text using a custom pixel grid.

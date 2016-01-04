@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable()]
     [StandardBlockCategory]

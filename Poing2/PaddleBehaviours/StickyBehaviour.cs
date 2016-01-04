@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Events;
+using BASeCamp.BASeBlock.Events;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class StickyBehaviour : BasePaddleBehaviour
     {

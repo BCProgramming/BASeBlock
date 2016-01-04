@@ -13,7 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     class SerializationHelper
     {

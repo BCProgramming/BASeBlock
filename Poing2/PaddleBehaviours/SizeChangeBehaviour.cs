@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// class used to resize the paddle when a grow or shrink "item" is retrieved.

@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 
-namespace BASeBlock.GameObjects.Orbs
+namespace BASeCamp.BASeBlock.GameObjects.Orbs
 {
     public abstract class CollectibleOrb : AnimatedImageObject, IMovingObject, iLocatable
     {

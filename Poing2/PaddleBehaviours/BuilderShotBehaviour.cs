@@ -2,11 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.GameStates;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameStates;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// the "BuilderShot" is a projectile that is fired and spawns a block of a specific type and size at the destination location.

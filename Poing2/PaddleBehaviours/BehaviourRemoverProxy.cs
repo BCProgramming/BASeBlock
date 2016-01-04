@@ -1,6 +1,6 @@
 using System.Diagnostics;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class BehaviourRemoverProxy : ProxyObject
     {

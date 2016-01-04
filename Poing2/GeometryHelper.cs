@@ -7,7 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Windows;
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     [Serializable]
     public class Polygon :ICloneable ,ISerializable

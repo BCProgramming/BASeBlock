@@ -31,12 +31,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using BASeBlock.Blocks;
-using BASeBlock.Templates;
+using System.Xml.Linq;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Templates;
+using BASeCamp.XMLSerialization;
 using OfficePickers.ColorPicker;
 using vbAccelerator.Components.Controls;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     
@@ -65,7 +67,7 @@ namespace BASeBlock
         }
 
         [Serializable]
-        public class DrawGridData : ISerializable 
+        public class DrawGridData : IXmlPersistable
         {
             private DrawGridModeConstants _GridMode = DrawGridModeConstants.DrawGrid_Dots;
             private SizeF _GridSize= new SizeF(33,16);
@@ -90,7 +92,22 @@ namespace BASeBlock
                 
 
             }
-            
+            public XElement GetXmlData(string pNodeName)
+            {
+                XElement resultNode = new XElement(pNodeName);
+                resultNode.Add(new XAttribute("GridMode",(int)GridMode));
+                resultNode.Add(StandardHelper.SaveElement(GridSize,"Size"));
+                resultNode.Add(StandardHelper.SaveElement(Offset,"Offset"));
+                resultNode.Add(new XAttribute("LockToGrid",LockToGrid));
+                return resultNode;
+            }
+            public DrawGridData(XElement source)
+            {
+                GridMode = (DrawGridModeConstants)source.GetAttributeInt("GridMode");
+                GridSize = source.ReadElement<SizeF>("Size");
+                Offset = source.ReadElement<PointF>("Offset");
+                LockToGrid = source.GetAttributeBool("LockToGrid", false);
+            }
 
             public DrawGridModeConstants GridMode { set { _GridMode = value; InvokeChanged(); } get { return _GridMode; } }
 
@@ -136,8 +153,16 @@ namespace BASeBlock
 
 
             }
+            private void Validate()
+            {
+                if(GridSize.Width <=0 || GridSize.Height<= 0)
+                {
+                    GridSize = new SizeF(33, 16);
+                }
+            }
             public void Draw(Size totalsize,Graphics g)
             {
+                Validate();
                 //draw the grid.
                 switch(_GridMode)
                 {
@@ -174,6 +199,7 @@ namespace BASeBlock
             }
 
 
+        
         }
         private EditorStateConstants _editorState;
 
@@ -467,7 +493,7 @@ namespace BASeBlock
         private string getEditorConfigFile()
         {
             String folderuse = BCBlockGameState.AppDataFolder;
-            return Path.Combine(folderuse, "editor.dat");
+            return Path.Combine(folderuse, "editor.config");
 
 
 
@@ -480,9 +506,16 @@ namespace BASeBlock
             {
                 using (FileStream readconfig = new FileStream(readfrom, FileMode.Open))
                 {
-
-                    BinaryFormatter bff = new BinaryFormatter();
-                    ddgriddata = (DrawGridData)bff.Deserialize(readconfig);
+                    try
+                    {
+                        XDocument loaddoc = XDocument.Load(readconfig);
+                        ddgriddata = new DrawGridData(loaddoc.Root);
+                    }
+                    catch(Exception exx)
+                    {
+                        Debug.Print("failed to load Editor configuration.");
+                        ddgriddata = new DrawGridData(DrawGridModeConstants.DrawGrid_Dots,new SizeF(33,16),PointF.Empty);
+                    }
 
                 }
 
@@ -495,11 +528,8 @@ namespace BASeBlock
             String saveto = getEditorConfigFile();
             using (FileStream outstream = new FileStream(saveto, FileMode.Create))
             {
-                BinaryFormatter bff = new BinaryFormatter();
-                bff.Serialize(outstream, ddgriddata);
-
-
-
+                XDocument savedoc = new XDocument(ddgriddata.GetXmlData("EditSettings"));
+                savedoc.Save(outstream);
             }
 
 
@@ -1803,7 +1833,7 @@ namespace BASeBlock
         /// redraws  the tip bitmap 
         /// </summary>
 
-        private void UpdateTipbitmap()
+        private void UpdateTooltipImage()
         {
             String tiptext = "";
             if (CurrentEditMode == EditObjectConstants.Edit_Paths)
@@ -1879,7 +1909,6 @@ namespace BASeBlock
                 }
             }
             //texturebrush for background.
-            Image tallypicimage=BCBlockGameState.Imageman.getImageRandom("tallypic");
             ImageAttributes painttextureattributes = new ImageAttributes();
             painttextureattributes.SetColorMatrix(ColorMatrices.GetColourizer(0.5f,2.0f,0.9f,0.9f));
             //TextureBrush bgbrush = new TextureBrush(tallypicimage, new Rectangle(new Point(0, 0), tallypicimage.Size), painttextureattributes);
@@ -1944,7 +1973,7 @@ namespace BASeBlock
         private TimeSpan tipfadeintime = new TimeSpan(0, 0, 0, 0,750);
         private TimeSpan tipfadeouttime = new TimeSpan(0, 0, 0, 0,500);
         private TimeSpan tipvisibletime = new TimeSpan(0, 0, 0,2);
-        private Font useoverlayfont = BCBlockGameState.GetScaledFont(new Font("Arial", 14),16);
+        private Font useoverlayfont = new Font("Arial", 14);
         private Bitmap drawoverlayimage;
         private Graphics drawoverlay;
         private void PicEditor_MouseUp(object sender, MouseEventArgs e)
@@ -2178,7 +2207,7 @@ namespace BASeBlock
                     }
                     break;
             }
-            UpdateTipbitmap();
+            UpdateTooltipImage();
         }
 
         private void SelectAllSimilar(Block touchblock)
@@ -3577,6 +3606,10 @@ namespace BASeBlock
 
 
             }
+            else
+            {
+                redoToolStripMenuItem.Text = "(Can't Redo)";
+            }
 
             undoToolStripMenuItem.DropDown.Items.Clear();
             redoToolStripMenuItem.DropDown.Items.Clear();
@@ -3664,13 +3697,13 @@ namespace BASeBlock
                 //the currentoptions.ClipSize 
                 //add to the EditSet, the given image.
                 String CreatedKeyName = ("ImageGen" + EditingLevel.ToString()).ToUpper();
-                if(EditContext.CreateData.savedImages.ContainsKey(CreatedKeyName))
+                if(EditContext.CreateData.SavedImages.ContainsKey(CreatedKeyName))
                 {
-                    EditContext.CreateData.savedImages.Remove(CreatedKeyName);
+                    EditContext.CreateData.SavedImages.Remove(CreatedKeyName);
                     
 
                 }
-                EditContext.CreateData.savedImages.Add(CreatedKeyName,
+                EditContext.CreateData.SavedImages.Add(CreatedKeyName,
                                                            new CreatorProperties.ImageDataItem(CreatedKeyName, Imagedata));
                     ;
                 BCBlockGameState.Imageman.AddImage(CreatedKeyName,Imagedata);
@@ -4105,7 +4138,7 @@ namespace BASeBlock
         private void Hovered()
         {
 
-            UpdateTipbitmap();
+            UpdateTooltipImage();
             LastTipUpdate = DateTime.Now;
 
         }
@@ -4961,11 +4994,11 @@ namespace BASeBlock
 
 
                 }
-
-            }
-            Level.PopulateDropDown(EditContext.LevelData.Levels, LevelMenu.DropDown, (cl, ts) => { LevelMenus.Add(ts); return true; },
+                Level.PopulateDropDown(EditContext.LevelData.Levels, LevelMenu.DropDown, (cl, ts) => { LevelMenus.Add(ts); return true; },
                 (o, a) => { ChangeLevel(o); }, false);
 
+            }
+            
 
 
         }

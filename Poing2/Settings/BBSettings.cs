@@ -4,19 +4,59 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using BASeCamp.BASeBlock;
 using BASeCamp.Configuration;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
+ 
+    
+
     public class BBSettings
     {
-        private readonly INIFile _gameSettings = null;
+
+        public static String DefaultINIData = @"[folders]
+Sounds=%APPDATA%\BASeBlock\Sounds\
+Images=%APPDATA%\BASeBlock\Images\
+Levels=%APPDATA%\BASeBlock\LevelSets\
+Plugins=%APPDATA%\BASeBlock\Plugins\
+Scripts=%APPDATA%\Scripts\
+toolbarimages=%APPDATA%\BASeBlock\toolbar\
+templates=%APPDATA%\BASeBlock\Templates
+statistics=
+SoundPlugins=
+[game]
+ReduceQualityAmount=0.5
+ParticleGenerationFactor=0.4
+Monospace=Consolas,Courier New,Liberation Mono
+SoundEngine=NBASS
+;SoundEngine=IRRKLANG
+;SoundEngine=DragonOgg
+CollisionCode=new
+menu=Office2007Renderer
+[ignore]
+;these are Regular Expressions....
+;assemblies=Iron.*\..*,irrKlang\..*,Microsoft\..*,Mono\..*,lua51,LuaInterface,BASS.Net,Interop\..*,IronMath,IronPython,IronPython\..*
+;only match BASeBlock for now.
+;assemblies=^(?!BASeBlock).*$|.*DirectX.*
+assemblies=^(?!BASeBlock).*$
+[include]
+assemblies=DragonAdapter,_script,BASeBlock,irrklangadapter";
+
+       private readonly INIFile _gameSettings = null;
+
+       private String ReplaceVariable(String p)
+       {
+           foreach (var iterateentry in variables)
+           {
+               p = p.Replace(iterateentry.Key, iterateentry.Value);
+           }
+           return p;
+       }
         //BaseBlock Settings
         public BBSettings(INIFile settingsFile)
         {
             _gameSettings = settingsFile;
-
-
         }
         public List<String> SoundFolder
         {
@@ -25,8 +65,6 @@ namespace BASeBlock
             SetDataFolder("sound",value);
             
             }
-
-
         }
         public String IgnoreAssemblies { 
             get{
@@ -58,9 +96,7 @@ namespace BASeBlock
         {
             get
             {
-
                 return Path.Combine(BCBlockGameState.AppDataFolder, "default.blf");
-
             }
         }
             
@@ -98,6 +134,8 @@ namespace BASeBlock
         }
     
         private static readonly Dictionary<String, List<String>> CachedFolders = new Dictionary<string, List<string>>(); 
+        //TODO: xGetDataFolder should have logic to use defaults if they are not present in the file.
+
         private List<String> xGetDataFolder(String id)
         {
             if (!CachedFolders.ContainsKey(id))
@@ -138,12 +176,13 @@ namespace BASeBlock
             get
             {
                 String defaultstatfolder = Path.Combine(BCBlockGameState.AppDataFolder,"statistics");
-                String sfolder = BCBlockGameState.CanonicalizePath(_gameSettings["folders"]["statistics"].GetValue(defaultstatfolder), BCBlockGameState.AppDataFolder);
+                String sfolder = BCBlockGameState.CanonicalizePath(ReplaceVariable(_gameSettings["folders"]["statistics"].GetValue(defaultstatfolder)), BCBlockGameState.AppDataFolder);
                 return Path.Combine(sfolder, "Stats.dat");
 
             }
 
         }
+        //TODO: xGet
         // CanonicalizePath(GameSettings["folders"]["sound"].getArrayValue(),AppDataFolder).ToList();
         
         public List<String> SoundFolders
@@ -370,17 +409,37 @@ namespace BASeBlock
             get { return _gameSettings["editor"]["MaxUndoStack"].GetValue(10); }
             set { _gameSettings["editor"]["MaxUndoStack"].SetValue(value); }
         }
-
+        Dictionary<String, String> variables = new Dictionary<string, string>()
+            {
+                {"APPDATA",Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}
+            };
+       
 
         public List<String> GetDataFolder(String foldername)
         {
 
-            return _gameSettings["folders"][foldername].Value.Split(new string[] { "/:" }, StringSplitOptions.RemoveEmptyEntries).ToList();
+            return
+            (from p in _gameSettings["folders"][foldername].Value.Split(new string[] { "/:" }, StringSplitOptions.RemoveEmptyEntries) select ReplaceVariable(p)).ToList();
 
 
         }
+        Dictionary<String, String> FolderNameMap = null;
         public void SetDataFolder(String foldername,List<String> folders)
         {
+            //special logic (Dec 26th 2015) Let's preserve special folder names. We'll do this by 
+            if(FolderNameMap==null)
+            {
+                FolderNameMap = new Dictionary<string, string>()
+        {
+            {"APPDATA",Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)},
+            {"LOCALAPPDATA",Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)},
+            {"MYDOCUMENTS",Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)},
+        };
+            }
+            foreach(var kvp in FolderNameMap)
+            {
+                folders = (from f in folders select f.Replace(kvp.Value, "%" + kvp.Key + "%")).ToList();
+            }
             _gameSettings["folders"][foldername].Value = String.Join("/:", folders.ToArray());
 
 

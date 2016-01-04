@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //class used to watch a given stream to update a progressbar.
     public class StreamProgress : IDisposable 

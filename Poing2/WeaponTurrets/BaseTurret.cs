@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock.WeaponTurrets
+namespace BASeCamp.BASeBlock.WeaponTurrets
 {
     public abstract class BaseTurret:ITurret
     {

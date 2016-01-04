@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Blocks;
-using BASeBlock.Projectiles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Projectiles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class PolygonObstacle : GameEnemy,IMovingObject 
     {

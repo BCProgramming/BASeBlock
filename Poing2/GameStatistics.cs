@@ -7,7 +7,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using Ionic.Zlib;
 using System.Diagnostics;
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //idea is to be like the cNewSoundManager or ImageManager or various classes of that sort, and manage a set of statistics.
 
@@ -50,10 +50,17 @@ namespace BASeBlock
         }
         private void Read(Stream sStatStream)
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            using (ZlibStream zs = sStatStream is ZlibStream ? sStatStream as ZlibStream : new ZlibStream(sStatStream, CompressionMode.Decompress))
+            try
             {
-                StatIndex = (Dictionary<string, GameStatistics>) bf.Deserialize(zs);
+                BinaryFormatter bf = new BinaryFormatter();
+                using (ZlibStream zs = sStatStream is ZlibStream ? sStatStream as ZlibStream : new ZlibStream(sStatStream, CompressionMode.Decompress))
+                {
+                    StatIndex = (Dictionary<string, GameStatistics>)bf.Deserialize(zs);
+                }
+            }
+            catch (SerializationException exx)
+            {
+                StatIndex = new Dictionary<string, GameStatistics>();
             }
 
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //newerr implementation: attempts to use BASS directly, rather then through the BASS.NET API.
 

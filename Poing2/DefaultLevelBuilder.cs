@@ -7,10 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BASeBlock.Blocks;
-using bcHighScores;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.HighScores;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class InvisibleBuilderAttribute : Attribute
     {
@@ -364,9 +364,11 @@ namespace BASeBlock
         {
             Level builtlevel = new Level();
             builtlevel.LevelName = "Basic Level " + levelnumber;
-            builtlevel.Background.BackgroundFrameKeys = new string[] { "mainbg" };
-            builtlevel.Background.RotateSpeed = 0;
-            builtlevel.Background.MoveVelocity=PointF.Empty;
+            var usebg = new BackgroundColourImageDrawer(Color.Gray);
+            builtlevel.Background = usebg;
+            usebg.BackgroundFrameKeys = new string[] { "mainbg" };
+            usebg.RotateSpeed = 0;
+            usebg.MoveVelocity=PointF.Empty;
             cBall createdball = new cBall(new PointF(PicGame.Width / 2, PicGame.Height - 50), new PointF(-2f, -2f));
             //createdball.Behaviours.Add(new LinearGravityBallBehaviour(0.04));
             builtlevel.levelballs.Add(createdball);
@@ -746,6 +748,7 @@ namespace BASeBlock
             returnlevel.levelballs.Add(thepowerball);
             returnlevel.LevelName = "Level " + levelnumber.ToString();
             returnlevel.MusicName = "BASESTOMP";
+            returnlevel.ShowNameLength = new TimeSpan(0,0,0,5);
             returnlevel.Background = new BackgroundColourImageDrawer("mainbg");
             Type[] Softblocks = new Type[] {typeof(NormalBlock),typeof(AddBallBlock),typeof(SpeedBallBlock),typeof(BombBlock)};
             Type[] HardBlocks = new Type[]{typeof(InvincibleBlock),typeof(StrongBlock)};

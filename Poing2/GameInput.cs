@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using Microsoft.DirectX.DirectInput;
 using Action=Microsoft.DirectX.DirectInput.Action;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //GameInput classes... currently unused.
     class GameInput

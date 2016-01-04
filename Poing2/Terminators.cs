@@ -6,18 +6,18 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.GameObjects;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameObjects;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.PaddleBehaviours;
 using System.Threading;
-using BASeBlock.GameStates;
-using BASeBlock.Particles;
-using BASeBlock.Powerups;
-using BASeBlock.Projectiles;
+using BASeCamp.BASeBlock.GameStates;
+using BASeCamp.BASeBlock.Particles;
+using BASeCamp.BASeBlock.Powerups;
+using BASeCamp.BASeBlock.Projectiles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     public abstract class BaseTerminatorBehaviour : BasePaddleBehaviour

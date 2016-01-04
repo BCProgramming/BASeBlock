@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
-using BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
 
-namespace BASeBlock.GameObjects.Orbs
+namespace BASeCamp.BASeBlock.GameObjects.Orbs
 {
     public class HealingOrb : CollectibleOrb
     {

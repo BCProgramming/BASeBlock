@@ -4,8 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using bcHighScores;
-namespace BASeBlock
+using BASeCamp.BASeBlock.HighScores;
+
+namespace BASeCamp.BASeBlock
 {
 
    

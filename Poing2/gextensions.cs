@@ -22,7 +22,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     static partial class GraphicsExtension
     {

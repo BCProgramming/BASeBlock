@@ -10,7 +10,7 @@ using Microsoft.CSharp;
 using Microsoft.JScript;
 using Microsoft.VisualBasic;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// Does all the work to compile scripts and script groups into assemblies, which are then used by the BCBlockGameState.initGameState() and passed on to LoadedTypeManager.

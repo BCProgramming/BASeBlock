@@ -8,7 +8,7 @@ using System.Text;
 //using Microsoft.Scripting;
 //using Microsoft.Scripting.Hosting;
 //using Mono.CSharp;
-namespace BASeBlock.Scripting
+namespace BASeCamp.BASeBlock.Scripting
 {
 
 

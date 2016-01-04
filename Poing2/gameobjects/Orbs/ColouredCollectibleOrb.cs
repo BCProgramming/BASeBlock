@@ -1,7 +1,7 @@
 using System.Drawing;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.GameObjects.Orbs
+namespace BASeCamp.BASeBlock.GameObjects.Orbs
 {
     public abstract class ColouredCollectibleOrb : CollectibleOrb
     {

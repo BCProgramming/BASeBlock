@@ -15,10 +15,12 @@ using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 using Ionic.Zlib;
 using ProgressStream;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
  
@@ -53,7 +55,7 @@ namespace BASeBlock
    
 
     [Serializable]
-    public class CreatorProperties : ISerializable,IDeserializationCallback ,ICloneable
+    public class CreatorProperties : ISerializable,IDeserializationCallback ,ICloneable,IXmlPersistable
     {
 
 
@@ -183,7 +185,7 @@ namespace BASeBlock
         }
         #endregion
         [Serializable]
-        public class ImageDataItem : ISerializable, IDeserializationCallback,ICloneable 
+        public class ImageDataItem : ISerializable, IDeserializationCallback,ICloneable ,IXmlPersistable
         {
             public enum ImageDataItemFlagConstants
             {
@@ -288,8 +290,26 @@ namespace BASeBlock
              
 
             }
+            public ImageDataItem(XElement SourceItem)
+            {
+                //Name attribute...
+                String sName = SourceItem.GetAttributeString("Name");
+                Image sImage = (Image)SourceItem.ReadElement(typeof(Image), "ImageData", null);
+                if(sImage==null || sName==null)
+                    throw new InvalidDataException("Name or Image is null loading ImageDataItem");
 
+                Name = sName;
+                ImageData = sImage;
 
+            }
+
+            public XElement GetXmlData(string pNodeName)
+            {
+                XElement buildnode = new XElement(pNodeName);
+                buildnode.Add(new XAttribute("Name",Name));
+                buildnode.Add(StandardHelper.SaveElement(ImageData,"ImageData"));
+                return buildnode;
+            }
         }
 
         /// <summary>
@@ -461,13 +481,17 @@ namespace BASeBlock
         /// Determines whether the object to which this is a composite object in can be used as a template.
         /// </summary>
         public bool isTemplate { get; set; } //wether this can be used as a template. 
-        public String Author { get; set; }
-        public String Version { get; set; }
-        public String Comment { get; set; }
-        public String Description { get; set; }
+        private String _Author = String.Empty;
+        private String _Version = "0.0.0.0";
+        private String _Comment = String.Empty;
+        private String _Description = "<Not Set>";
+        public String Author { get { return _Author; } set { _Author = value; } }
+        public String Version { get { return _Version; } set { _Version = value; } }
+        public String Comment { get { return _Comment; } set { _Comment = value; } }
+        public String Description { get { return _Description; } set { _Description = value; } }
         private Dictionary<String, SoundDataItem> _SavedSounds;
         private Dictionary<String, ScriptDataItem> _SavedScripts;
-        public Dictionary<String, ImageDataItem> savedImages { get; set; }
+        public Dictionary<String, ImageDataItem> SavedImages { get; set; }
 
         [Editor(typeof(CreatorProperties.ScriptDataItemListEditor), typeof(UITypeEditor))]
         public Dictionary<String, ScriptDataItem> SavedScripts { get { return _SavedScripts; } set { _SavedScripts = value; } }
@@ -482,12 +506,12 @@ namespace BASeBlock
         /// <param name="otherprops"></param>
             public void MergeWith(CreatorProperties otherprops)
             {
-                foreach (var iterate in otherprops.savedImages)
+                foreach (var iterate in otherprops.SavedImages)
                 {
                     if (!SavedSounds.ContainsKey(iterate.Key))
-                        savedImages.Add(iterate.Key, iterate.Value);
+                        SavedImages.Add(iterate.Key, iterate.Value);
                     else
-                        savedImages[iterate.Key] = iterate.Value;
+                        SavedImages[iterate.Key] = iterate.Value;
                         
                     
 
@@ -505,13 +529,14 @@ namespace BASeBlock
 
 
             }
+        
         public CreatorProperties(String pAuthor, String pVersion, String pComment)
         {
 
             Author = pAuthor;
             Version = pVersion;
             Comment=pComment;
-            savedImages = new Dictionary<string, ImageDataItem>();
+            SavedImages = new Dictionary<string, ImageDataItem>();
             SavedSounds = new Dictionary<string, SoundDataItem>();
             SavedScripts = new Dictionary<string, ScriptDataItem>();
 
@@ -528,10 +553,10 @@ namespace BASeBlock
             Author = clonethis.Author;
             Version = clonethis.Version;
             Comment = clonethis.Version;
-            savedImages = new Dictionary<string, ImageDataItem>();
-            foreach (var iterate in clonethis.savedImages)
+            SavedImages = new Dictionary<string, ImageDataItem>();
+            foreach (var iterate in clonethis.SavedImages)
             {
-                savedImages.Add(iterate.Key, (ImageDataItem)iterate.Value.Clone());
+                SavedImages.Add(iterate.Key, (ImageDataItem)iterate.Value.Clone());
 
             }
             SavedSounds = new Dictionary<string, SoundDataItem>();
@@ -554,10 +579,10 @@ namespace BASeBlock
             Author = info.GetString("Author");
             Version = info.GetString("Version");
             Comment = info.GetString("Comment");
-            savedImages =
+            SavedImages =
                 (Dictionary<String, ImageDataItem>)
                 info.GetValue("SavedImages", typeof (Dictionary<String, ImageDataItem>));
-            Debug.Print("CreatorProperties: Loaded " + savedImages.Count.ToString() + " Images...");
+            Debug.Print("CreatorProperties: Loaded " + SavedImages.Count.ToString() + " Images...");
             _SavedSounds =
                 (Dictionary<String, SoundDataItem>)
                 info.GetValue("SavedSounds", typeof (Dictionary<String, SoundDataItem>));
@@ -588,19 +613,46 @@ namespace BASeBlock
             catch { isTemplate = false; }
         
     }
+        public CreatorProperties(XElement Source)
+        {
+            //retrieve Attributes...
+            Author = Source.GetAttributeString("Author", String.Empty);
+            Version = Source.GetAttributeString("Version", String.Empty);
+            Comment = Source.GetAttributeString("Comment", String.Empty);
+            isTemplate = Source.GetAttributeBool("isTemplate", false);
+            Description = Source.GetAttributeString("Description", Description);
+            SavedImages = Source.ReadDictionary("SavedImages", new Dictionary<String, ImageDataItem>());
+            SavedSounds = Source.ReadDictionary("SavedSounds", new Dictionary<String, SoundDataItem>());
+            SavedScripts = Source.ReadDictionary("SavedScripts", new Dictionary<String, ScriptDataItem>());
 
+        }
+        public XElement GetXmlData(string pNodeName)
+        {
+            XElement resultnode = new XElement(pNodeName);
+            resultnode.Add(new XAttribute("Author",Author));
+            resultnode.Add(new XAttribute("Version",Version));
+            resultnode.Add(new XAttribute("Comment",Comment));
+            resultnode.Add(new XAttribute("isTemplate",isTemplate));
+            resultnode.Add(new XAttribute("Description",Description));
+            
+            resultnode.Add(StandardHelper.SaveDictionary(SavedImages,"SavedImages"));
+            resultnode.Add(StandardHelper.SaveDictionary(_SavedSounds,"SavedSounds"));
+            resultnode.Add(StandardHelper.SaveDictionary(_SavedScripts,"SavedScripts"));
+
+            return resultnode;
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             info.AddValue("Author", Author);
             info.AddValue("Version", Version);
-            info.AddValue("Comment", Author);
+            info.AddValue("Comment", Comment);
             info.AddValue("isTemplate", isTemplate);
             
             
 
 
-            info.AddValue("SavedImages", savedImages);
-            Debug.Print("CreatorProperties: Saved " + savedImages.Count.ToString() + " Images...");
+            info.AddValue("SavedImages", SavedImages);
+            Debug.Print("CreatorProperties: Saved " + SavedImages.Count.ToString() + " Images...");
             info.AddValue("SavedSounds", _SavedSounds);
             info.AddValue("SavedScripts", _SavedScripts);
             info.AddValue("Description", Description);
@@ -613,7 +665,7 @@ namespace BASeBlock
             //make sure all the images in our dictionary are in the gamestate object.
             //this isn't necessary for the sounds, since the SoundDataItem manages this itself.
             /*
-            foreach (KeyValuePair<String, ImageDataItem> kvp in savedImages)
+            foreach (KeyValuePair<String, ImageDataItem> kvp in SavedImages)
             {
 
                 //if present, remove the existing item and replace it with this one (hello "texture packs"?)
@@ -632,6 +684,8 @@ namespace BASeBlock
         }
 
         #endregion
+
+      
     }
     /// <summary>
     /// SingleLevelContainer: contains some attributes much like the EditorSet, but for a Single Level File.
@@ -662,7 +716,7 @@ namespace BASeBlock
     /// and/or the editor. For example- Author name.
     /// </summary>
     [Serializable]
-    public class EditorSet : ISerializable
+    public class EditorSet : ISerializable,IXmlPersistable
     {
         public const long HeaderMagicNumber=0x8a5381033;
         public const long HeaderIndexedMagicNumber = 0x346475467;
@@ -737,44 +791,25 @@ namespace BASeBlock
             }
 
         }
- /*       public static String AddLevelImage(String keyprefix, Level levelobject, out Image createdimage)
+ 
+        public EditorSet(XElement Source)
         {
-            String builtname = "";
-            List<String> removekeys = new List<string>();
-            int i = 1;
-            while (CreateData.savedImages.ContainsKey(builtname))
-            {
-                builtname = keyprefix + i;
-                removekeys.Add(builtname);
-
-                i++;
-
-
-            }
-            foreach (String removethis in removekeys)
-            {
-                CreateData.savedImages.Remove(removethis);
-                
-            }
-            i = 0;
-           
-                //add image as "levelimageprefix##" where number is the level number.
-                //set it to be hidden so it doesn't show up (normally) in the image viewer portion of the editor
-                Image addimage = BCBlockGameState.DrawLevelToImage(levelobject);
-                String addkey = keyprefix + i;
-                CreateData.savedImages.Add(addkey, new CreatorProperties.ImageDataItem(addkey, addimage, CreatorProperties.ImageDataItem.ImageDataItemFlagConstants.Hidden));
-                levelobject.PreviewImageKey = addkey;
-                i++;
-                createdimage = addimage;
-                return addkey;
-
-
-
-            }
-
-
-      */  
-
+            String sVersion = Source.GetAttributeString("Version");
+            CreateData = Source.ReadElement<CreatorProperties>("CreatorProperties");
+            LevelData = Source.ReadElement<LevelSet>("LevelSet");
+            
+        }
+        public XElement GetXmlData(string pNodeName)
+        {
+            XElement newNode = new XElement(pNodeName);
+            newNode.Add(new XAttribute("Version",VersionInfo.GetApplicationVersion()));
+            RefreshPreviewImages();
+            newNode.Add(CreateData.GetXmlData("CreatorProperties"));
+            newNode.Add(LevelData.GetXmlData("LevelSet"));
+            //newNode.Add(LevelData.GetXmlData("LevelData"));
+            return newNode;
+            
+        }
         public void GetObjectData(SerializationInfo info,StreamingContext context)
         {
             
@@ -782,67 +817,64 @@ namespace BASeBlock
 
             //save version info too.
             info.AddValue("Version", VersionInfo.GetApplicationVersion());
-            
-            //make sure there is a image for each level, too. These can be used later, by being indexed
-            int i = 0;
-            //first, remove any images that start with '$LevelImage$'
-            String builtname = "";
-            const string levelimageprefix = "$LevelImage$";
-            //remove all keys that start with levelimageprefix...
-            List<String> removethese = new List<string>();
-            //BUGFIX: this foreach was erroring out, due to modifying the dictionary while iterating over it, after the initial save.
-            
-            foreach(var loopremove in from p in CreateData.savedImages.Keys where p.StartsWith(levelimageprefix) select p)
-            {
-                removethese.Add(loopremove);
-
-            }
-            foreach (String removekey in removethese)
-            {
-
-                CreateData.savedImages.Remove(removekey);
-            }
-
-
             try
             {
-                List<String> removekeys = new List<string>();
-                while (CreateData.savedImages.ContainsKey(builtname))
-                {
-                    builtname = levelimageprefix + i;
-                    removekeys.Add(builtname);
-                    
-                    i++;
-
-
-                }
-                foreach (String removethis in removekeys)
-                {
-                    CreateData.savedImages.Remove(removethis);
-
-                }
-                i = 0;
-                foreach (var looplevel in LevelData.Levels)
-                {
-                    //add image as "levelimageprefix##" where number is the level number.
-                    //set it to be hidden so it doesn't show up (normally) in the image viewer portion of the editor
-                    Image addimage = BCBlockGameState.DrawLevelToImage(looplevel);
-                    String addkey = levelimageprefix + i;
-                    CreateData.savedImages.Add(addkey, new CreatorProperties.ImageDataItem(addkey, addimage,CreatorProperties.ImageDataItem.ImageDataItemFlagConstants.Hidden));
-                    looplevel.PreviewImageKey = addkey;
-                    i++;
-
-                }
+                RefreshPreviewImages();
             }
             catch (SerializationException se)
             {
                 Debug.Print("SerializationException caught");
 
             }
-
             info.AddValue("CreateData", CreateData);
             info.AddValue("LevelData", LevelData);
+        }
 
+        private void RefreshPreviewImages()
+        {
+            //make sure there is a image for each level, too. These can be used later, by being indexed
+            //first, remove any images that start with '$LevelImage$'
+
+            //remove all keys that start with levelimageprefix...
+
+            //BUGFIX: this foreach was erroring out, due to modifying the dictionary while iterating over it, after the initial save.
+            
+          
+            String builtname = "";
+            const string levelimageprefix = "$LevelImage$";
+            int i=0;
+            List<String> removethese = new List<string>();
+            foreach (var loopremove in from p in CreateData.SavedImages.Keys where p.StartsWith(levelimageprefix) select p)
+            {
+                removethese.Add(loopremove);
+            }
+            foreach (String removekey in removethese)
+            {
+                CreateData.SavedImages.Remove(removekey);
+            }
+
+            List<String> removekeys = new List<string>();
+            while (CreateData.SavedImages.ContainsKey(builtname))
+            {
+                builtname = levelimageprefix + i;
+                removekeys.Add(builtname);
+                i++;
+            }
+            foreach (String removethis in removekeys)
+            {
+                CreateData.SavedImages.Remove(removethis);
+            }
+            i = 0;
+            foreach (var looplevel in LevelData.Levels)
+            {
+                //add image as "levelimageprefix##" where number is the level number.
+                //set it to be hidden so it doesn't show up (normally) in the image viewer portion of the editor
+                Image addimage = BCBlockGameState.DrawLevelToImage(looplevel);
+                String addkey = levelimageprefix + i;
+                CreateData.SavedImages.Add(addkey, new CreatorProperties.ImageDataItem(addkey, addimage, CreatorProperties.ImageDataItem.ImageDataItemFlagConstants.Hidden));
+                looplevel.PreviewImageKey = addkey;
+                i++;
+            }
         }
 
 
@@ -944,12 +976,15 @@ namespace BASeBlock
                     //uses CustomXmlFormatter to deserialize, and no compression.
                     using (StreamProgress sp = new StreamProgress(pcs, pcfunc))
                     {
-                        IFormatter useformatter = BCBlockGameState.getFormatter<EditorSet>(BCBlockGameState.DataSaveFormats.Format_XML);
+                        XDocument loaddocument = XDocument.Load(inputstream);
+                        EditorSet returnthis = new EditorSet(loaddocument.Root);
+                        return returnthis;
+                        /*IFormatter useformatter = BCBlockGameState.getFormatter<EditorSet>(BCBlockGameState.DataSaveFormats.Format_XML);
                         EditorSet returnthis = (EditorSet)useformatter.Deserialize(inputstream);
                         if (returnthis.CreateData.SavedSounds != null)
                             Debug.Print("returning EditorSet that contains " +
                                         returnthis.CreateData.SavedSounds.Count.ToString() + " Sounds.");
-                        return returnthis;
+                        return returnthis;*/
                     }
                 }
                     else
@@ -993,10 +1028,11 @@ namespace BASeBlock
         public void Save(String sTarget,SaveFormatInfo Format,StreamProgress.ProgressFunction pfunction)
         {
             //if(!File.Exists(sTarget)) throw new FileNotFoundException(sTarget);
-            using(FileStream fs = new FileStream(sTarget,FileMode.Create))
+            using (FileStream fs = new FileStream(sTarget, FileMode.Create))
             {
-                Save(fs,Format,pfunction);
+                Save(fs, Format, pfunction);
             }
+            
         }
         public void Save(Stream Target,SaveFormatInfo Format,StreamProgress.ProgressFunction pfunction)
         {
@@ -1038,9 +1074,17 @@ namespace BASeBlock
                         }
                         else if(Format is XmlSaveFormatInfo)
                         {
-                            IFormatter xmlformat = BCBlockGameState.getFormatter<EditorSet>(BCBlockGameState.DataSaveFormats.Format_XML);
                             Cursor.Current = Cursors.WaitCursor;
-                            xmlformat.Serialize(outstream,this);
+                            //almost forgot to change this code to save to XML properly. the SOAP stuff, we have to remove at some stage...
+                            XElement BuildElement = this.GetXmlData("EditorSet");
+                            XDocument buildDocument = new XDocument(BuildElement);
+
+                            buildDocument.Save(outstream,SaveOptions.OmitDuplicateNamespaces);
+
+
+                            /*IFormatter xmlformat = BCBlockGameState.getFormatter<EditorSet>(BCBlockGameState.DataSaveFormats.Format_XML);
+                            Cursor.Current = Cursors.WaitCursor;
+                            xmlformat.Serialize(outstream,this);*/
                         }
 
                     }
@@ -1068,5 +1112,7 @@ namespace BASeBlock
 
 
         }
+
+     
     }
 }

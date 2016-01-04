@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// Represents a Game State- Paused, Running, Showing Results screen, showing high scores, etc.

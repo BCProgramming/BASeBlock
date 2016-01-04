@@ -9,7 +9,7 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// Debug logging output class. Can automatically transform Debug output (Debug.Print) and save it to a properly dated and organized
@@ -130,10 +130,17 @@ namespace BASeBlock
 
         public override void Write(String LogMessage)
         {
-            lock (logStreamLock)
+            try
             {
-                LogStream.Write(DateTime.Now.ToString("hh:mm:ss") + ">>" + LogMessage);
-                LogStream.Flush();
+                lock (logStreamLock)
+                {
+
+                    LogStream.Write(DateTime.Now.ToString("hh:mm:ss") + ">>" + LogMessage);
+                    LogStream.Flush();
+                }
+            }catch(Exception exx)
+            {
+
             }
         }
 

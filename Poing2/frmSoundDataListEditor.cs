@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using BASeCamp.Updating;
 using Timer = System.Threading.Timer;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public partial class frmSoundDataListEditor : Form
     {

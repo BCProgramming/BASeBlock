@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [StandardBlockCategory]

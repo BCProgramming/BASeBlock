@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Reflection.BASeCamp;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     public class BlockDataManager
     {

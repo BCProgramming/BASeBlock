@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.PaddleBehaviours;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     /// <summary>
     /// Generic class used to create a powerup that gives the paddle a specific bnehaviour.

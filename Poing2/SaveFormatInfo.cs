@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public interface ISaveFormatInfo
     {

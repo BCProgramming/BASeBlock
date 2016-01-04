@@ -5,11 +5,11 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Powerups;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Powerups;
 
-namespace BASeBlock.Cheats
+namespace BASeCamp.BASeBlock.Cheats
 {
     
 

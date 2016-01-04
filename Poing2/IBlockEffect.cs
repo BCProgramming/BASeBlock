@@ -9,12 +9,12 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using BASeBlock.Blocks;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Particles;
 using BASeCamp.XMLSerialization;
 
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
 
 

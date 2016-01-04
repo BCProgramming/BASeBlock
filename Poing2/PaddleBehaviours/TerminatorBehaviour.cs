@@ -3,12 +3,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
-using BASeBlock.Events;
-using BASeBlock.GameStates;
-using BASeBlock.Particles;
-using BASeBlock.Projectiles;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameStates;
+using BASeCamp.BASeBlock.Particles;
+using BASeCamp.BASeBlock.Projectiles;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// Abstract base class for new set of Terminator behaviours.

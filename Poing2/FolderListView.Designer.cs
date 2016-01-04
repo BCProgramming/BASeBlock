@@ -1,4 +1,4 @@
-﻿namespace BASeBlock
+﻿namespace BASeCamp.BASeBlock
 {
     partial class FolderListView
     {

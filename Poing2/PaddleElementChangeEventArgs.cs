@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class PaddleElementChangeEventArgs<T> : EventArgs
     {

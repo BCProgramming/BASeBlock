@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
 using System.Runtime.Serialization;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     public class BuilderBlock : ImageBlock

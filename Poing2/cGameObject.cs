@@ -21,13 +21,13 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading;
-using BASeBlock.Blocks;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Particles;
-using BASeBlock.Projectiles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Particles;
+using BASeCamp.BASeBlock.Projectiles;
 using Img;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// abstract GameObject class, will be used to implement scores being displayed "in-place" in the game screen, bullets (probably) and so forth.

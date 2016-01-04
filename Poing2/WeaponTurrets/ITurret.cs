@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace BASeBlock.WeaponTurrets
+namespace BASeCamp.BASeBlock.WeaponTurrets
 {
     /// <summary>
     /// Interface that represents a Turret. A Turret is a special object that can be

@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using BASeBlock.Events;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// FrozenBehaviour- freezes Paddle in-place

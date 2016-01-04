@@ -13,16 +13,16 @@ using System.Reflection.BASeCamp;
 using System.Runtime.Serialization;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using BASeBlock.Events;
-using BASeBlock.GameStates;
-using BASeBlock.Particles;
-using BASeBlock.Powerups;
-using BASeBlock.Projectiles;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameStates;
+using BASeCamp.BASeBlock.Particles;
+using BASeCamp.BASeBlock.Powerups;
+using BASeCamp.BASeBlock.Projectiles;
 using BASeCamp.XMLSerialization;
 
 //using System.Xml.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     
 

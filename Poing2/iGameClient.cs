@@ -4,11 +4,11 @@ using System.Drawing;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.GameStates;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameStates;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {    [Flags]
     public enum ButtonConstants
     {
@@ -109,7 +109,8 @@ public interface iGameInput
         /// </summary>
         void ForceDeath();
         Object Invoke(Delegate routine);
-      
 
+        void RefreshDisplay();
+        void DrawShade(Graphics g, Color usecolor);
     }
 }

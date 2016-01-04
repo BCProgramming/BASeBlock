@@ -6,7 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using Timer = System.Threading.Timer;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     class ToolStripSpinMarquee:ToolStripControlHost
     {

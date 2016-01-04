@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.WeaponTurrets;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.WeaponTurrets;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     public class AttachedTurretPowerup<TurretBehaviour,TurretType> : TerminatorPaddlePowerup<TurretBehaviour>, ITurretOwner
         where TurretType : BaseTurret 

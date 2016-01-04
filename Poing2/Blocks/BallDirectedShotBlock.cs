@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// Same as BlockShotBlock, but will shoot in the same direction as the ball that hit it.

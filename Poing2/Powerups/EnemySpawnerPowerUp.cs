@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     public class EnemySpawnerPowerUp : GamePowerUp
     {

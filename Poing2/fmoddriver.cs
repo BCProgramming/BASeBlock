@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 /*
 using FMODNet;
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class fmodSoundSource : iSoundSourceObject,iActiveSoundObject
     {

@@ -9,10 +9,10 @@ using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 using Microsoft.Win32;
 
-namespace BASeBlock.Particles
+namespace BASeCamp.BASeBlock.Particles
 {
 
 

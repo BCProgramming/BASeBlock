@@ -4,10 +4,10 @@ using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public abstract class UndoStackItem:ICloneable 
     {

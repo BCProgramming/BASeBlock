@@ -10,7 +10,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //edit's any cloneable object. It needs to be cloneable, so that changes can be "cancelled"
     //I might make changes so it can accept serializable objects as well...

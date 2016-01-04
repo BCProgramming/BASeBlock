@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [BlockDescription("Block which draws as a bevel shape.")]
     [StandardBlockCategory]

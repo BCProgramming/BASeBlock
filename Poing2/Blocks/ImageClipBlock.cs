@@ -2,9 +2,9 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.Serialization;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// ImageClipBlock: shows a piece of a given image.

@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
-using BASeBlock.Events;
+using BASeCamp.BASeBlock.Events;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class MagnetBehaviour : BasePaddleBehaviour
     {

@@ -1,7 +1,7 @@
 using System.Drawing;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// Makes the paddle drip "blood"... well, really, water that is red, same diff though.

@@ -11,12 +11,12 @@ using System.Reflection;
 using System.Reflection.Emit;
 using System.Runtime.Serialization;
 using System.ComponentModel;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.Particles;
-using BASeBlock.Projectiles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.Particles;
+using BASeCamp.BASeBlock.Projectiles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     public class NoKillIncrementAttribute : System.Attribute

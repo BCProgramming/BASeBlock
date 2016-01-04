@@ -1,9 +1,9 @@
 using System;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.PaddleBehaviours;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     public class MagnetPowerup : PaddlePowerUp<PaddleBehaviours.MagnetBehaviour>
     {

@@ -13,7 +13,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public static class ObjectExtensions
     {

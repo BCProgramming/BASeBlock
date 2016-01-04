@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     //works with BCBlockGameState (both static and instance) to provide functionality that allows a 
     //piece of code to deal with time delays using game time, instead of real time.

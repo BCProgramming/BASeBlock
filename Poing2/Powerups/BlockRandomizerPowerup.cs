@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     public class BlockRandomizerPowerup : GamePowerUp
     {

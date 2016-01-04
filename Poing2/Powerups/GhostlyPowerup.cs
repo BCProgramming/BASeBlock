@@ -1,7 +1,7 @@
 using System;
 using System.Drawing;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     class GhostlyPowerUp : PaddlePowerUp<PaddleBehaviours.GhostlyBehaviour>
     {

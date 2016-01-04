@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     //Blocks in the game typically are arranged in a grid but sometimes are organized in other ways, such as beneath each other and whatnot.

@@ -7,7 +7,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public interface Animatable
     {

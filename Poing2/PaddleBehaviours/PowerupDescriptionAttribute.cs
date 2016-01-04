@@ -1,6 +1,6 @@
 using System;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class PowerupDescriptionAttribute :Attribute
     {

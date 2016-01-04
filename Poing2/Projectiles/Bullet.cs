@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
 
-namespace BASeBlock.Projectiles
+namespace BASeCamp.BASeBlock.Projectiles
 {
     /// <summary>
     /// "Bullet" object, which hits blocks. However, it doesn't actually impact the block (call the block's PerformBlockHit()) until

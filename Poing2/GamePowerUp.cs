@@ -3,9 +3,9 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// used to assign certain default behaviours to a GamePowerup, specifically 

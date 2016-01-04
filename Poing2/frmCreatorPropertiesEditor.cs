@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public partial class frmCreatorPropertiesEditor : Form
     {
@@ -19,7 +19,7 @@ namespace BASeBlock
             editthis = createprops;
             //editthis.Author 
             //editthis.Comment 
-            //editthis.savedImages 
+            //editthis.SavedImages 
             //editthis.SavedSounds 
             //editthis.Version 
 
@@ -65,11 +65,11 @@ namespace BASeBlock
 
         private void cmdImages_Click(object sender, EventArgs e)
         {
-            if (editthis.savedImages == null) editthis.savedImages = new Dictionary<string, CreatorProperties.ImageDataItem>();
-            frmImageDataListEditor imageedit = new frmImageDataListEditor(editthis.savedImages);
+            if (editthis.SavedImages == null) editthis.SavedImages = new Dictionary<string, CreatorProperties.ImageDataItem>();
+            frmImageDataListEditor imageedit = new frmImageDataListEditor(editthis.SavedImages);
             imageedit.ShowDialog(this);
             //force all images into the current state.
-            foreach (var loopimage in editthis.savedImages)
+            foreach (var loopimage in editthis.SavedImages)
             {
                 BCBlockGameState.Imageman.AddImage(loopimage.Value.Name.ToUpper(), loopimage.Value.ImageData);
 

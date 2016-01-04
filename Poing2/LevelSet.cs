@@ -14,17 +14,19 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
-using bcHighScores;
+using System.Xml.Linq;
+using BASeCamp.BASeBlock.HighScores;
+using BASeCamp.XMLSerialization;
 
 //using System.Windows.Markup;
 //using System.Windows.Media;
 //using System.Xml.Serialization;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     
     [Serializable] 
-    public class LevelSet : ISerializable
+    public class LevelSet : ISerializable,IXmlPersistable
     {
         public static string DefaultSetName = "Default Set";
         private String _SetName = DefaultSetName;
@@ -35,7 +37,7 @@ namespace BASeBlock
         public ObjectPathDataManager PathData = new ObjectPathDataManager();
         [Editor(typeof(BASeBlock.ObjectTypeEditor), typeof(UITypeEditor))]
         
-        public bcHighScores.LocalHighScores HighScores {
+        public HighScores.LocalHighScores HighScores {
 
 
             get { return BCBlockGameState.Scoreman[SetName]; }
@@ -256,18 +258,34 @@ namespace BASeBlock
         }
 
         public LevelSet(SerializationInfo info,StreamingContext ContextBoundObject):this()
-            {
-                SetName = info.GetString("Name");
-                Levels = (List<Level>)info.GetValue("Levels", typeof(List<Level>));
-                try { PathData = (ObjectPathDataManager)info.GetValue("PathData", typeof(ObjectPathDataManager)); }catch{PathData = new ObjectPathDataManager();}
-                Debug.Print("Loaded " + PathData.Count() + " Paths...");
-            //HighScores = (LocalHighScores)info.GetValue("HighScores", typeof(LocalHighScores));
+        {
+            SetName = info.GetString("Name");
+            Levels = (List<Level>)info.GetValue("Levels", typeof(List<Level>));
+            try { PathData = (ObjectPathDataManager)info.GetValue("PathData", typeof(ObjectPathDataManager)); }catch{PathData = new ObjectPathDataManager();}
+            Debug.Print("Loaded " + PathData.Count() + " Paths...");
+        //HighScores = (LocalHighScores)info.GetValue("HighScores", typeof(LocalHighScores));
 
 
-            }
+        }
 
+        
+
+
+        public XElement GetXmlData(String pNodeName)
+        {
+            XElement LevelData = new XElement(pNodeName);
+            LevelData.Add(new XAttribute("Name",SetName));
+            LevelData.Add(StandardHelper.SaveList(Levels,"Levels"));
+            LevelData.Add(PathData.GetXmlData("PathData"));
+            return LevelData;
+        }
+        public LevelSet(XElement Source)
+        {
+            SetName = Source.GetAttributeString("Name", "");
+            Levels = Source.ReadList("Levels", new List<Level>());
+            PathData = Source.ReadElement<ObjectPathDataManager>("PathData");
+        }
         #region ISerializable Members
-
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             //TODO: keep track of a single table of block images so that the file size doesn't bloat up like Oprah Winfrey every second month.

@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 	public class NullSound : iSoundEngineDriver 
 	{

@@ -35,26 +35,27 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Windows.Forms;
 using System.Windows;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.HighScores;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Particles;
 using BASeCamp.Configuration;
-using BASeBlock.Templates;
+using BASeCamp.BASeBlock.Templates;
 using Img;
-using bcHighScores;
 using Ionic.Zip;
 using Ionic.Zlib;
 using BASeCamp.Licensing;
+using BASeCamp.XMLSerialization;
 using Microsoft.JScript;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
-using Block = BASeBlock.Blocks.Block;
+using Block = BASeCamp.BASeBlock.Blocks.Block;
 using Convert = System.Convert;
 using Point = System.Drawing.Point;
 using Rectangle = System.Drawing.Rectangle;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
 
@@ -1635,10 +1636,23 @@ namespace BASeBlock
 
 
         }
+        //Optimization: Use/Keep a Lookup table for FindClass, indexed by classname.
+        private static Dictionary<String,Type> ClassLookupTable = new Dictionary<string, Type>(); 
+
         public static Type FindClass(String classname)
         {
+            if (ClassLookupTable.ContainsKey(classname)) return ClassLookupTable[classname];
             Type[] returnvalue = FindClasses(classname);
-            if (returnvalue.Length > 0) return returnvalue[0]; else return null;
+            if (returnvalue.Length > 0)
+            {
+                ClassLookupTable.Add(classname,returnvalue[0]);
+                return returnvalue[0];
+            }
+            else
+            {
+                ClassLookupTable.Add(classname, null);
+                return null;
+            }
 
 
         }
@@ -3057,6 +3071,9 @@ namespace BASeBlock
         }
         public static void Initgamestate(iManagerCallback datahook)
         {
+            //my XML Serialization library has a default implementation to find classes but
+            //we want to use BASeBlock's routine here.
+            StandardHelper.ClassFinder = BCBlockGameState.FindClass;
             initcallback = datahook;
             
             datahook.ShowMessage("Initializing BASeBlock- Version:" + GetExecutingVersion());
@@ -3124,7 +3141,7 @@ namespace BASeBlock
                 if (gotlength > 0)
                 {
                     Debug.Print("Existing Scorefile found (" + gotlength.ToString() + " bytes)");
-                    Scoreman = HighScoreManager.FromFile(Scorefile);
+                    Scoreman =  new HighScoreManager(Scorefile);
                     //if null, an error occured, so recreate it.
                     if (Scoreman == null)
                     {
@@ -3785,7 +3802,7 @@ namespace BASeBlock
             {
                 Screeng= Graphics.FromHwnd(GetDesktopWindow());
 
-
+                
             }
             return GetScaledFont(BasedOn,DesiredPixelHeight,Screeng);
 

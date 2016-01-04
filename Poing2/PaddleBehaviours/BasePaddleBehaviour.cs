@@ -4,10 +4,10 @@ using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.GameStates;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.GameStates;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public abstract class BasePaddleBehaviour : iPaddleBehaviour
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 
-namespace BASeBlock.Templates 
+namespace BASeCamp.BASeBlock.Templates 
 {
     //class that manages Templates.
     //templates are nothing more than .blf data files in a specific directory. These can be used to initialize a new level.

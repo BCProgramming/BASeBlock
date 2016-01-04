@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public partial class frmChooser<T> : Form
     {

@@ -10,7 +10,7 @@ using Jurassic;
 using Jurassic.Compiler;
 using Jurassic.Library;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     public class JSMultiData : ManyToOneBlockData

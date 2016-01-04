@@ -1,4 +1,4 @@
-﻿namespace BASeBlock.Templates
+﻿namespace BASeCamp.BASeBlock.Templates
 {
     partial class frmFromTemplate
     {

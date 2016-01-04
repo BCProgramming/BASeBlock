@@ -1,6 +1,6 @@
 using System;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     ///
     /// attribute for Ball behaviours to not be removed by the StickyBehaviour.

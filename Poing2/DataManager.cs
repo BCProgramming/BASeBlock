@@ -37,7 +37,7 @@ using Ionic.Zlib;
 
 
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
    

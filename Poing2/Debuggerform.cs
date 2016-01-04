@@ -7,10 +7,10 @@ using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BASeBlock.Blocks;
-using BASeBlock.Controls;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Controls;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public partial class Debuggerform : Form
     {

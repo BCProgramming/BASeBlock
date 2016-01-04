@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// BombBlock that explodes balls like the BombBlock, but at given angular increments.

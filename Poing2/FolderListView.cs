@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// FolderListView: given a set of arrays, displays those various arrays in lists and allows the user to remove and add new folders to each.

@@ -13,13 +13,13 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Xml.Linq;
-using BASeBlock;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
+using BASeCamp.BASeBlock;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
 using BASeCamp.XMLSerialization;
 using Timer = System.Threading.Timer;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /*the BASeBlock Trigger and Event framework!
 

@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class InfiniteEnergyBehaviour:BasePaddleBehaviour
     {

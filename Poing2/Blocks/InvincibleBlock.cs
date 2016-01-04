@@ -1,8 +1,10 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [StandardBlockCategory]
@@ -30,6 +32,17 @@ namespace BASeBlock.Blocks
 
 
         }
+        public InvincibleBlock(XElement Source):base(Source)
+        {
+            Silent = Source.GetAttributeBool("Silent", false);
+        }
+        public override XElement GetXmlData(string pNodeName)
+        {
+            XElement result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("Silent",Silent));
+            return result;
+        }
+
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);

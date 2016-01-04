@@ -34,7 +34,7 @@ using BASeCamp.Updating;
 using Microsoft.WindowsAPICodePack.ApplicationServices;
 
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class FileLogCallback : iManagerCallback
     {

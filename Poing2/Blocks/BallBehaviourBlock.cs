@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// BallBehaviourBlock: Generic class that can be used to create a block that gives a specific

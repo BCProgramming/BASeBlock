@@ -10,7 +10,7 @@ using Un4seen.Bass.AddOn.Mix;
 using Un4seen.Bass.Misc;
 using Un4seen.Bass.AddOn.Wma;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class BASSSound : iSoundSourceObject, iActiveSoundObject,IDisposable 
     {
@@ -124,8 +124,9 @@ namespace BASeBlock
         public float getLength()
         {
 
-            var len = Bass.BASS_ChannelGetLength(ActiveStream, BASSMode.BASS_POS_BYTES);
-            return (float)Bass.BASS_ChannelBytes2Seconds(ActiveStream, len);
+            var len = Bass.BASS_ChannelGetLength(ActiveStream,BASSMode.BASS_POS_BYTES);
+            float result = (float)Bass.BASS_ChannelBytes2Seconds(ActiveStream, len);
+            return result;
             //QWORD len = BASS_ChannelGetLength(channel, BASS_POS_BYTE); // the length in bytes
             //double time = BASS_ChannelBytes2Seconds(channel, len); // the length in seconds
         }
@@ -384,7 +385,7 @@ namespace BASeBlock
                 }
                 else
                 {
-                    stmake = Bass.BASS_StreamCreateFile(unmanagedPointer, 0, 0, BASSFlag.BASS_DEFAULT);
+                    stmake = Bass.BASS_StreamCreateFile(unmanagedPointer, 0, 0, BASSFlag.BASS_STREAM_PRESCAN);
                 }
             
             if (stmake != 0)

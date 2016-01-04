@@ -1,9 +1,9 @@
 using System;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Projectiles
+namespace BASeCamp.BASeBlock.Projectiles
 {
     //similar in some ways to the "RayShot" but performs a sort of angular Drunkards walk. It also branches off itself.
 

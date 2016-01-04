@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using BASeBlock.WeaponTurrets;
+using BASeCamp.BASeBlock.WeaponTurrets;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class AttachedTurretBehaviour : BaseTerminatorBehaviour,ITurretOwner
     {

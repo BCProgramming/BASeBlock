@@ -1,9 +1,9 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [BBEditorVisible]

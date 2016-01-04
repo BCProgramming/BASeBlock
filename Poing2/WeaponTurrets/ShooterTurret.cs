@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Powerups;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Powerups;
 
-namespace BASeBlock.WeaponTurrets
+namespace BASeCamp.BASeBlock.WeaponTurrets
 {
     public class ShooterTurret : BaseTurret
     {

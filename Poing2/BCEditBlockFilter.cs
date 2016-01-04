@@ -20,10 +20,10 @@ using System.Drawing.Design;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
-using BASeBlock;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     /// <summary>

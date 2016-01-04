@@ -31,16 +31,16 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Security;
 //using System.Windows.Media;
-using BASeBlock.Blocks;
-using BASeBlock.Cheats;
-using BASeBlock.Events;
-using BASeBlock.GameObjects;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Cheats;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameObjects;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Particles;
 using BASeCamp.Configuration;
-using bcHighScores;
-using BASeBlock.GameStates;
+using BASeCamp.BASeBlock.GameStates;
+using BASeCamp.BASeBlock.HighScores;
 using BASeCamp.Updating;
 using BASeCamp.Licensing;
 
@@ -51,7 +51,7 @@ using Pen=System.Drawing.Pen;
 using ThreadState=System.Threading.ThreadState;
 using Timer = System.Threading.Timer;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public partial class frmBaseBlock : Form,iGameClient ,iManagerCallback 
     {
@@ -98,19 +98,7 @@ namespace BASeBlock
 
         private int MaxParticles = 800;
 
-        public delegate void ValueInputProcedure(ref String itementered);
-        /// <summary>
-        /// Routine called to override default paint when acquiring a string from the user.
-        /// </summary>
-        /// <param name="g">graphics object.</param>
-        /// <param name="inputdata">current "inputdata" class reference.</param>
-        /// <param name="CurrentText">currently entered text.</param>
-        public delegate void ValuePaintProcedure(Graphics g,ValueInputData inputdata,ValueInputTextData CurrentTextData);
-
-        /// <summary>
-        /// called for each iteration during the gameproc while the ValueInput "dialog" is open.
-        /// </summary>
-        public delegate void ValueGameProcRoutine();
+       
 
         public class MenuModeMenuItem
         {
@@ -511,39 +499,10 @@ namespace BASeBlock
         }
 
 
-        public enum ValueInputPaintTypeConstants
-        {
-            paint_Pre, //call the routine before performing the default drawing stuff.
-            paint_Override, //call the routine, but perform no default behaviour.
-            paint_Post //call the routine after performing default drawing.
-
-
-        }
-        public class ValueInputData
-        {
-            //private ValueInputProcedure CompletionRoutine;
-            //private String TitleString;
-            public ValueInputProcedure CompletionRoutine { get; set; }
-            
-            public String TitleString { get; set; }
-            public ValuePaintProcedure PaintRoutine { get; set; }
-            public ValueInputPaintTypeConstants PaintType { get; set; }
-            public ValueGameProcRoutine GameProcRoutine { get; set; }
-            public ValueInputData(ValueInputProcedure pCompletionRoutine, String pTitleString,ValuePaintProcedure pPaintRoutine,ValueInputPaintTypeConstants pPaintType,ValueGameProcRoutine pGameProc)
-            {
-                CompletionRoutine = pCompletionRoutine;
-                TitleString = pTitleString;
-                PaintRoutine = pPaintRoutine;
-                PaintType = pPaintType;
-                GameProcRoutine = pGameProc;
-            }
-
-
-        }
         private String GameOverHiScores = "";
         private DateTime lastscoreshow;
         private int Nextshowhiscore = 1; //next hi score to be shown by the "Game Over" screen...
-        private ValueInputData inputdata=null;
+        
         private Graphics pcgraph;
         //private Image GameAreaImage; //used during level complete tally...
         private Bitmap BackBufferBitmap;
@@ -562,16 +521,12 @@ namespace BASeBlock
 
 
         }
-        public struct ValueInputTextData
-        {
-            public String Text;
-            public int SelStart;
-        }
+     
         private MenuModeData menudata;
         private Tallyscreendata tallydata;
         private IGameState statebeforepause;
         public Rectangle AvailableClientArea = new Rectangle(0, 0, 493, 427); //default client area. the HUD is drawn to the right this.
-        public ValueInputTextData VInput;
+        
         private IGameState _gamerunstate = new StateNotRunning();
         public IGameState gamerunstate { get { 
            
@@ -972,10 +927,8 @@ namespace BASeBlock
             if ((position = mPlayingSet.HighScores.Eligible(PlayerName,(int)mGameState.GameScore)) > 0)
             {
                 //score made! woop!
-                
-                VInput.Text=PlayerName;
-                VInput.SelStart = VInput.Text.Length;
-                HighScoreEntryMode(position);
+
+                HighScoreEntryMode(position,PlayerName);
                 
                 return true;
 
@@ -1490,8 +1443,13 @@ namespace BASeBlock
             {
                 if (playthislevel.ShowNameLength.Ticks == 0)
                 {
-
-                    playthislevel.ShowNameLength = BCBlockGameState.TimeSpanFromFloat(soundresult.Source.getLength());
+                    /*
+                     Are you FUCKING KIDDING ME? WHY THE FUCKING HELL IS THIS FUCKING BROKEN? IT WORKED A FUCKIN YEAR AGO...
+                     * This is a load of god-damned fucking bullshit is what it is. Commented this piece of shit out and now it just sets it to 5 fucking seconds, because FUCK YOU BASS.NET YOU GIGANTIC PILE OF FUCKING GARBAGE.
+                     * 
+                     */
+                    playthislevel.ShowNameLength = new TimeSpan(0,0,5);
+                    //playthislevel.ShowNameLength = BCBlockGameState.TimeSpanFromFloat(soundresult.Source.getLength());
 
                 }
             }
@@ -1798,21 +1756,9 @@ namespace BASeBlock
 
                         while (gamerunstate is StateValueInput)
                         {
-                            Application.DoEvents();
-                            Thread.Sleep(100);
-                            if (inputdata.GameProcRoutine != null)
-                            {
-
-                                inputdata.GameProcRoutine();
-
-                            }
-                            PicGame.Invoke((MethodInvoker) (() =>
-                                                                {
-                                                                    PicGame.Invalidate();
-                                                                    PicGame.Update();
-                                                                }))
-                                ;
-
+                            var result = gamerunstate.Run(mGameState);
+                            if (result != null) gamerunstate = result;
+                            
 
                         }
                     
@@ -2647,7 +2593,8 @@ namespace BASeBlock
 
         ButtonDown += frmBaseBlock_ButtonDown;
         ButtonUp += frmBaseBlock_ButtonUp;
-            PicGame.ClientSize = new Size(413+212+80, 427);
+            ClientSize = new Size(704, 427+menuStrip1.Height+6);
+            StandardSize = new Rectangle(0,0,ClientSize.Width,ClientSize.Height);
             PicGame.Location = new Point(0, menuStrip1.Bottom);
             ClientSize = new Size(PicGame.Size.Width,PicGame.Size.Height+menuStrip1.Height);
             //background is the full size of picgame, so that it can hold the sidebar bmp.
@@ -2681,13 +2628,30 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
             //initialize Game Controller Manager.
             gcm = new GameControllerManager(BCBlockGameState.MTypeManager[typeof(iGameInput)].ManagedTypes,this);
-
+            
             DoAutoLoad(Environment.CommandLine);
 
 
 
         }
+        void ResizeForm()
+        {
+            Rectangle WorkingArea = Screen.FromHandle(this.Handle).WorkingArea;
+            Size WorkSize = WorkingArea.Size;
+            int i = 1;
+            Size useSize = Size;
+            while(true)
+            {
+                Size testsize = new Size(Width*i,Height*i);
+                //if the testing size is too big, break.
+                if (testsize.Width > WorkSize.Width || testsize.Height > WorkSize.Height) break;
+                useSize = testsize;
+                i++;
+            }
 
+            Size = useSize;
+
+        }
         void frmBaseBlock_ButtonUp(object sender, ButtonEventArgs<bool> e)
         {
             //x |= Time.Past;
@@ -2950,7 +2914,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
                 }
                 Point uselocation = new Point(60, 362 - usesize);
-                Font macguffinfont= BCBlockGameState.GetScaledFont(new Font("Consolas", 16), usesize);
+                Font macguffinfont= BCBlockGameState.GetScaledFont(new Font("Consolas", DPIHelper.ScaleFontSize(16,SideBarImageCanvas)), usesize);
                 SideBarImageCanvas.DrawString("x " + mGameState.MacGuffins.ToString(), macguffinfont, new SolidBrush(usetextcolor), uselocation.X, uselocation.Y);
 
 
@@ -3043,7 +3007,8 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
         public LevelSet ActualPlaySet;
         public void setPaintHandler()
         {
-            
+            PicGame.Paint += PicGame_PaintNonDWM;
+            /*
             if (BCBlockGameState.hasDWM())
             {
                 PicGame.Paint -= PicGame_PaintNonDWM;
@@ -3057,7 +3022,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 PicGame.Paint += PicGame_PaintNonDWM;
 
             }
-
+            */
 
         }
         private Bitmap nonDWMBuffer = null;
@@ -3071,15 +3036,17 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 nonDWMBufferg = Graphics.FromImage(nonDWMBuffer);
             }
             nonDWMBufferg.Clear(Color.Transparent);
-            PaintEventArgs passargs = new PaintEventArgs(nonDWMBufferg, e.ClipRectangle);
+            //PaintEventArgs passargs = new PaintEventArgs(nonDWMBufferg, e.ClipRectangle);
+            PaintEventArgs passargs = new PaintEventArgs(nonDWMBufferg,PicGame.ClientRectangle);
             //delegate to the "DWM" paint routine...
             PicGame_PaintDWM(sender, passargs);
             //now we blit nonDWMBuffer to e.Graphics...
-            e.Graphics.DrawImageUnscaled(nonDWMBuffer, 0, 0);
+            e.Graphics.DrawImage(nonDWMBuffer, 0, 0,PicGame.ClientSize.Width,PicGame.ClientSize.Height);
 
 
 
         }
+        Rectangle StandardSize = new Rectangle(0, 0, 940, 526);
         private static Font LoadingFont = BCBlockGameState.GetScaledFont(new Font("Arial", 72), 80);
         private void PicGame_PaintDWM(object sender, PaintEventArgs e)
         {
@@ -3088,17 +3055,17 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             String LoadingText="Please Wait...";
             e.Graphics.PageUnit = GraphicsUnit.Pixel;
             e.Graphics.PixelOffsetMode = PixelOffsetMode.HighSpeed;
-
+            
             if (gamerunstate is StateLoading)
             {
-                Rectangle usearea = PicGame.ClientRectangle;
+                Rectangle usearea = StandardSize;
                 e.Graphics.SmoothingMode = SmoothingMode.HighQuality;
                 Image useimage = BCBlockGameState.Imageman.getLoadedImage("LOADINGBG");
                 /*
                 LinearGradientBrush lgb = new LinearGradientBrush(usearea, Color.Green, Color.Blue, LinearGradientMode.Horizontal);
                 e.Graphics.FillRectangle(lgb, usearea);
                  * */
-                e.Graphics.DrawImage(useimage, 0, 0,PicGame.ClientSize.Width,PicGame.ClientSize.Height);
+                e.Graphics.DrawImage(useimage, 0, 0,StandardSize.Width,StandardSize.Height);
                 Size gotsize = TextRenderer.MeasureText(LoadingText, LoadingFont);
 
                 Point drawhere = new Point(usearea.Width / 2 - gotsize.Width / 2, usearea.Height / 2 - gotsize.Height / 2);
@@ -3207,34 +3174,8 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
                 else if (gamerunstate is StateValueInput)
                 {
-                    if (inputdata.PaintRoutine == null)
-                        BaseInputDraw(g);
-                    else
-                    {
-
-                        if (inputdata.PaintType == ValueInputPaintTypeConstants.paint_Pre)
-                        {
-                            inputdata.PaintRoutine(g, inputdata, VInput);
-                            BaseInputDraw(g);
-                        }
-                        else if (inputdata.PaintType == ValueInputPaintTypeConstants.paint_Override)
-                        {
-
-                            inputdata.PaintRoutine(g, inputdata, VInput);
-                        }
-                        else if (inputdata.PaintType == ValueInputPaintTypeConstants.paint_Post)
-                        {
-                            BaseInputDraw(g);
-                            inputdata.PaintRoutine(g, inputdata, VInput);
-
-
-                        }
-
-
-
-
-
-                    }
+                    gamerunstate.DrawFrame(mGameState,g,PicGame.ClientSize);
+                    
                 }
                 #endregion
                 else
@@ -3522,7 +3463,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 }
                 if (!String.IsNullOrEmpty(InfoString))
                 {
-                    Font InfoTextFont = BCBlockGameState.GetScaledFont(new Font(BCBlockGameState.GetMonospaceFont(), 8),15,e.Graphics);
+                    Font InfoTextFont = BCBlockGameState.GetScaledFont(new Font(BCBlockGameState.GetMonospaceFont(), DPIHelper.ScaleFontSize(10,e.Graphics)),15,e.Graphics);
                     SizeF stattextsize = g.MeasureString(InfoString, InfoTextFont);
 
                     g.DrawString(InfoString, InfoTextFont, new SolidBrush(Color.FromArgb(240, Color.Black)), 0,
@@ -3583,7 +3524,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 else if (gamerunstate is StateLevelOutro)
                 {
                     //again, might be preferable to use a selectable font?
-                    System.Drawing.Font tallyfont = new Font(BCBlockGameState.GetMonospaceFont(), 28);
+                    System.Drawing.Font tallyfont = new Font(BCBlockGameState.GetMonospaceFont(), DPIHelper.ScaleFontSize(32,g));
                     RectangleF centered = GetCenteredRect(g.MeasureString(tallydata.TallyScreenString, tallyfont), AvailableClientArea);
                     RectangleF boxdraw = centered;
                     boxdraw.Inflate(5, 5);
@@ -3644,6 +3585,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             }
 
         }
+
         private ImageAttributes ProcessColourizer=null;
 
         Image _CachedPause = null;
@@ -3782,7 +3724,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
         }
 
-        private Color UseTitleColour = Color.Blue;
+       // private Color UseTitleColour = Color.Blue;
         private void SaveScreenshot(Image shotsave)
         {
             //save location:
@@ -3809,58 +3751,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
         }
 
-        private void BaseInputDraw(Graphics g)
-        {
-            DrawShade(g,Color.FromArgb(75,Color.DarkSlateGray));
-            String measureme = "################################";
-            //draw a white box near the center...
-            //RectangleF Inputboxcoordsf = new RectangleF(PicGame.ClientRectangle.Width/4,PicGame.ClientRectangle.Height/4,PicGame.ClientRectangle.Width/2,PicGame.ClientRectangle.Height/2);
-            Font cheatinputfont = BCBlockGameState.GetScaledFont(new Font(BCBlockGameState.GetMonospaceFont(), 12),32);
-            SizeF InputboxSize;
-            if (VInput.Text.Length > 0)
-                InputboxSize = BCBlockGameState.MeasureString(measureme, cheatinputfont);
-            else
-                InputboxSize = BCBlockGameState.MeasureString(measureme, cheatinputfont);
-
-
-            Rectangle cli = AvailableClientArea;
-            RectangleF IBox = new RectangleF(new PointF((cli.Width / 2f) - InputboxSize.Width / 2, (cli.Height / 2f) - (InputboxSize.Height / 2)), InputboxSize);
-
-            RectangleF titleBox = new RectangleF(IBox.Location, IBox.Size);
-            titleBox.Offset(0, -IBox.Height);
-
-            Brush useTitleBrush = new LinearGradientBrush(titleBox, UseTitleColour, UseTitleColour.Darken(64),LinearGradientMode.Horizontal);
-
-
-            g.FillRectangle(useTitleBrush, titleBox);
-            //g.DrawString("Enter Cheat Code:", new Font(BCBlockGameState.GetMonospaceFont(), 14), new SolidBrush(Color.White), titleBox, new StringFormat() { Alignment = StringAlignment.Center });
-            g.DrawString(inputdata.TitleString , BCBlockGameState.GetScaledFont(new Font(BCBlockGameState.GetMonospaceFont(), 14),20), new SolidBrush(Color.White), titleBox, new StringFormat() { Alignment = StringAlignment.Center });
-            g.FillRectangle(new SolidBrush(Color.FromArgb(230, Color.White)), IBox);
-
-            //base string to draw on currentcheatcharpos.
-            //if the length of the string is longer then the length of the box...
-            if (g.MeasureString(VInput.Text, cheatinputfont).Width > InputboxSize.Width)
-            {
-                //the length of the string to draw is longer then the length of the box to draw in.
-                //not sure what to do here yet....
-
-
-
-            }
-            Font usethisfont = new Font(BCBlockGameState.GetMonospaceFont(), 12);
-            String CursorChar = DateTime.Now.Millisecond < 500 ? "_" : " ";
-            //Region[] charranges = g.MeasureCharacterRanges(VInput.Text, usethisfont, IBox, StringFormat.GenericDefault);
-            if (VInput.SelStart > VInput.Text.Length) VInput.SelStart = VInput.Text.Length;
-            if(VInput.SelStart < 0) VInput.SelStart = 0 ;
-            String DrawThisText = VInput.Text.Substring(0, VInput.SelStart) + CursorChar + VInput.Text.Substring(VInput.SelStart);
-            //Debug.Print("drawing the string..." + VInput.Text);
-            g.DrawString(DrawThisText, usethisfont, new SolidBrush(Color.Black), IBox);
-            
-            if (mGameState.PlayerPaddle != null)
-                mGameState.PlayerPaddle.Draw(g);
-        }
-
-        private void DrawShade(Graphics g,Color usecolor)
+        public void DrawShade(Graphics g,Color usecolor)
         {
             g.DrawImageUnscaled(backgroundbitmap, 0, 0);
            
@@ -4144,14 +4035,22 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             Application.Exit();
 
         }
-
+        private PointF ScalePosition(PointF DisplayPos)
+        {
+            float useX = ((float)DisplayPos.X / (float)PicGame.ClientSize.Width) * (float)StandardSize.Width;
+            float useY = ((float)DisplayPos.Y / (float)PicGame.ClientSize.Height) * (float)StandardSize.Height;
+            return new PointF(useX, useY);
+        }
         private void PicGame_MouseMove(object sender, MouseEventArgs e)
         {
+
+            PointF ClickedPos = ScalePosition(new PointF(e.X, e.Y));
+
             //if we're not running... don't care...
             if (gamerunstate is StateMenu)
             {
 
-                var hitmenu = menudata.HitTest(mGameState, e.Location.ToPointF());
+                var hitmenu = menudata.HitTest(mGameState, ClickedPos);
                 if (hitmenu != null)
                 {
                     hitmenu.Selected = true;
@@ -4169,8 +4068,8 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             if (!DemoMode)
             {
                 
-                FireMoveAbsolute(new PointF((float) e.X, (float) e.Y));
-                InvokeOnMove(new PointF(e.X, e.Y));
+                FireMoveAbsolute(ClickedPos);
+                InvokeOnMove(ClickedPos);
             }
             //add light particles, for testing.
             /*
@@ -4305,11 +4204,12 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
         private void PicGame_MouseDown(object sender, MouseEventArgs e)
         {
+            PointF clickpos = ScalePosition(new PointF(e.X, e.Y));
             AccelerateCountdown = true;
             if (gamerunstate is  StateMenu)
             {
 
-                var hitmenu = menudata.HitTest(mGameState, e.Location.ToPointF());
+                var hitmenu = menudata.HitTest(mGameState, clickpos);
                 if (hitmenu != null)
                 {
                     hitmenu.InvokeItemChosen();
@@ -4325,7 +4225,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
             if (SpawnItemType != null)
             {
-                GameObject addobject = (GameObject)Activator.CreateInstance(SpawnItemType, new object[]{new PointF((float)e.Location.X,(float)e.Location.Y), new SizeF(16, 16)});  //new Shell(e.Location, new SizeF(16, 16));
+                GameObject addobject = (GameObject)Activator.CreateInstance(SpawnItemType, new object[]{clickpos, new SizeF(16, 16)});  //new Shell(e.Location, new SizeF(16, 16));
                 
                 mGameState.GameObjects.AddLast(addobject);
             }
@@ -4337,6 +4237,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
         private void PicGame_MouseClick(object sender, MouseEventArgs e)
         {
+            PointF clickpos = ScalePosition(new PointF(e.X, e.Y));
             //
             //quick test of the AnimatedSprite class...
             //AnimatedSprite testsprite = new AnimatedSprite(new PointF(e.X-8, e.Y-8), BCBlockGameState.Imageman.getImageFrames("testdebris"), 0, 5,3);
@@ -4344,7 +4245,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             if (hitscanner)
             {
 
-                HitscanBullet hsb = new HitscanBullet(new PointF(e.X, e.Y), new PointF(0, -2));
+                HitscanBullet hsb = new HitscanBullet(clickpos, new PointF(0, -2));
                 hsb.Penetrate = false;
 
                 mGameState.NextFrameCalls.Enqueue(new BCBlockGameState.NextFrameStartup(() => mGameState.GameObjects.AddLast(hsb)));
@@ -4369,7 +4270,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 {
                     if (BCBlockGameState.CheatSet(BCBlockGameState.BBlockCheatMode.Cheats_Ballability))
                     {
-                        cBall addme = new cBall(new PointF(e.X, e.Y), new PointF(1, 1));
+                        cBall addme = new cBall(clickpos, new PointF(1, 1));
                         mGameState.Balls.AddLast(addme);
                     }
                     else
@@ -4406,10 +4307,8 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
         private void CheatEntryMode()
         {
-            gamerunstate = new StateValueInput();
-            inputdata = new ValueInputData(CheatInputRoutine,"Enter Cheat Code",null,ValueInputPaintTypeConstants.paint_Pre,null);
-            VInput.SelStart = 0;
-            VInput.Text = "";
+            gamerunstate = new StateValueInput(new ValueInputData(CheatInputRoutine, "Enter Cheat Code", null, ValueInputPaintTypeConstants.paint_Pre, null), new ValueInputTextData() { Text = "", SelStart = 0 });
+            
             
         }
         private void HiScoreGameProc()
@@ -4417,9 +4316,12 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             Debug.Print("HiScoreGameProc");
             if ((DateTime.Now - lastHSProc).TotalMilliseconds >= 150)
             {
+                if (!(ActiveState is StateValueInput)) return;
+                StateValueInput svi = (StateValueInput)ActiveState;
+
                 currentHue = (currentHue+1)%240;
                 lastHSProc = DateTime.Now;
-                UseTitleColour = new HSLColor(((float)currentHue), 240f, 120f);
+                svi.TitleColour =  new HSLColor(((float)currentHue), 240f, 120f);
 
             }
 
@@ -4441,15 +4343,18 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
 
         }
-        private void HighScoreEntryMode(int Position)
+        private void HighScoreEntryMode(int Position,String sDefaultText,int sDefaultPosition = -1)
         {
+            if (sDefaultPosition == -1) sDefaultPosition = sDefaultText.Length;
             //stop the music...
+            var inputdata = new ValueInputData(HiscoreEntryCompletion, "High Score!(" + Position + ") Enter Your Name:",HiScorePaint,ValueInputPaintTypeConstants.paint_Post,HiScoreGameProc);
+            var DefaultSetting = new ValueInputTextData() { Text = sDefaultText, SelStart=sDefaultPosition };
             BCBlockGameState.Soundman.StopMusic();
             BCBlockGameState.Soundman.PlaySound("win", false);
-            gamerunstate = new StateValueInput();
+            gamerunstate = new StateValueInput(inputdata,DefaultSetting);
             HighScorePos = Position;
             EnterHiScore=mGameState.GameScore;
-            inputdata = new ValueInputData(HiscoreEntryCompletion, "High Score!(" + Position + ") Enter Your Name:",HiScorePaint,ValueInputPaintTypeConstants.paint_Post,HiScoreGameProc);
+            
 
 
 
@@ -4500,7 +4405,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 if (e.Alt && e.Control && e.KeyCode == Keys.C)
                 {
                     //pause the game thread...
-                    VInput.Text = "";
+                    
                     currentcheatsel = RecentCheats.Count + 1;
                     CheatEntryMode();
                     
@@ -4542,15 +4447,8 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             else if (gamerunstate is StateValueInput)
             {
                 //valid keys during cheat input- up and down to scroll through previous entries.
-
+                StateValueInput InputState = (StateValueInput)ActiveState;
            
-                  
-                     
-
-
-                    
-
-                
 
                 if(e.KeyCode == Keys.Up || e.KeyCode== Keys.Down)
                 {
@@ -4581,8 +4479,10 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                     {
                         currentcheatsel = BCBlockGameState.ClampValue(currentcheatsel, 0, RecentCheats.Count - 1);
                         String usetext = RecentCheats[currentcheatsel];
-                        VInput.Text = usetext;
-                        VInput.SelStart = VInput.Text.Length;
+                        
+                        InputState.CurrentValue.Text = usetext;
+                        InputState.CurrentValue.SelStart = usetext.Length;
+                        
                     }
 
 
@@ -4595,20 +4495,20 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                             //left arrow
                             //move back one position, unless the current position is already zero.
                             //play shootfail in that case.
-                            if (VInput.SelStart <= 0)
+                            if (InputState.CurrentValue.SelStart <= 0)
                                 BCBlockGameState.Soundman.PlaySound("SHOOTFAIL", 1.0f);
                             else
                             {
-                                VInput.SelStart--; //move back one.
+                                InputState.CurrentValue.SelStart--; //move back one.
                             }
 
                             break;
                         case Keys.Right:
                             //right arrow
-                            if (VInput.SelStart >= VInput.Text.Length)
+                            if (InputState.CurrentValue.SelStart >= InputState.CurrentValue.Text.Length)
                                 BCBlockGameState.Soundman.PlaySound("SHOOTFAIL", 1.0f);
                             else
-                                VInput.SelStart++;
+                                InputState.CurrentValue.SelStart++;
                             break;
                     }
 
@@ -4624,19 +4524,19 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             if(DemoMode) return;
             if (gamerunstate is StateValueInput)
             {
-                
+                StateValueInput InputState = (StateValueInput)ActiveState;
                 if (((int) e.KeyChar) == 8)
                 {
 
                     //backspace...
                     Debug.Print("Backspace pressed.");
-                    if (VInput.Text.Length > 0 && VInput.SelStart > 0)  //idiot check. (can't remove a char from an empty string...)
+                    if (InputState.CurrentValue.Text.Length > 0 && InputState.CurrentValue.SelStart > 0)  //idiot check. (can't remove a char from an empty string...)
                         //delete the character behind the selection.
-                        if(VInput.SelStart < VInput.Text.Length)
-                            VInput.Text = VInput.Text.Substring(0, VInput.SelStart - 1) + VInput.Text.Substring(VInput.SelStart + 1);
+                        if (InputState.CurrentValue.SelStart < InputState.CurrentValue.Text.Length)
+                            InputState.CurrentValue.Text = InputState.CurrentValue.Text.Substring(0, InputState.CurrentValue.SelStart - 1) + InputState.CurrentValue.Text.Substring(InputState.CurrentValue.SelStart + 1);
                         else
-                            VInput.Text = VInput.Text.Substring(0, VInput.Text.Length - 1);
-                    VInput.SelStart--; //move selection back one.
+                            InputState.CurrentValue.Text = InputState.CurrentValue.Text.Substring(0, InputState.CurrentValue.Text.Length - 1);
+                    InputState.CurrentValue.SelStart--; //move selection back one.
 
                 }
                 else if ((((int)e.KeyChar) == 13)||(((int)e.KeyChar) == 10))
@@ -4651,8 +4551,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                         BCBlockGameState.Soundman.PlaySound("wrong", 1.0f);
                     VInput.Text = "";
                     * */
-
-                    inputdata.CompletionRoutine(ref VInput.Text);
+                    InputState.InputData.CompletionRoutine(ref InputState.CurrentValue.Text);
 
                     //if(!ControlPressed) gamerunstate = GameRunStateConstants.Game_Running;
                     
@@ -4660,14 +4559,14 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                 }
                 else
                 {
-                    if(VInput.SelStart < 0) VInput.SelStart = 0 ;
-                    if (VInput.SelStart > VInput.Text.Length) VInput.SelStart = VInput.Text.Length; 
+                    if (InputState.CurrentValue.SelStart < 0) InputState.CurrentValue.SelStart = 0;
+                    if (InputState.CurrentValue.SelStart > InputState.CurrentValue.Text.Length) InputState.CurrentValue.SelStart = InputState.CurrentValue.Text.Length; 
                     //insert at appropriate position.
-                    VInput.Text = VInput.Text.Substring(0, VInput.SelStart) + e.KeyChar.ToString() + VInput.Text.Substring(VInput.SelStart);
+                    InputState.CurrentValue.Text = InputState.CurrentValue.Text.Substring(0, InputState.CurrentValue.SelStart) + e.KeyChar.ToString() + InputState.CurrentValue.Text.Substring(InputState.CurrentValue.SelStart);
                     //VInput.Text += e.KeyChar;
-                    Debug.Print("VInput.Text=" + VInput.Text + " char pressed was code " + ((int)e.KeyChar).ToString());
+                    Debug.Print("VInput.Text=" + InputState.CurrentValue.Text + " char pressed was code " + ((int)e.KeyChar).ToString());
                     //increment position as well.
-                    VInput.SelStart++;
+                    InputState.CurrentValue.SelStart++;
 
                 }
             }
@@ -5460,6 +5359,14 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
         #region iGameClient Members
 
+        public void RefreshDisplay()
+        {
+            PicGame.Invoke((MethodInvoker)(() =>
+            {
+                PicGame.Invalidate();
+                PicGame.Update();
+            }));
+        }
         public Bitmap getBackgroundBitmap()
         {
             return backgroundbitmap;
@@ -5922,14 +5829,12 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
 
             if (gamerunstate is StateValueInput)
             {
+                StateValueInput InputState = (StateValueInput)gamerunstate;
                 if (e.KeyCode == Keys.Escape)
                 {
-                    VInput.SelStart = 0;
-                    VInput.Text = "";
-                    
-
+                    InputState.CurrentValue.SelStart = 0;
+                    InputState.CurrentValue.Text = "";
                 }
-
             }
 
             if (e.KeyCode == Keys.F12)

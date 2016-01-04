@@ -1,17 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-using System.Collections.Generic;
-using System.Net;
-using System.IO;
-using System.Diagnostics;
-using BASeBlock;
-using Ionic.Zlib;
+using System.Threading;
+using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 
-namespace bcHighScores
+namespace BASeCamp.BASeBlock.HighScores
 {
     //HighScores class
     //interfaces with http://bc-programming.com/HighScore/HighScores.php to retrieve eligible scores
@@ -44,7 +44,7 @@ namespace bcHighScores
     /// existing entry here; this class creates new LocalHighScores when nonexistent names are requested.
     /// </summary>
     [Serializable]
-    public class HighScoreManager : ISerializable
+    public class HighScoreManager
     {
 
         private Dictionary<String,LocalHighScores> ManagedScores = new Dictionary<String,LocalHighScores>();
@@ -108,104 +108,61 @@ namespace bcHighScores
 
 
         }
-            public static HighScoreManager FromFile(String sfilename)
-        {
-            BinaryFormatter ibin = new BinaryFormatter();
-            try
-            {
-                using (FileStream fstream = new FileStream(sfilename, FileMode.Open))
-                {
-
-                    GZipStream gzs = new GZipStream(fstream, CompressionMode.Decompress);
-                    HighScoreManager returnthis = (HighScoreManager)ibin.Deserialize(gzs);
-
-                    returnthis.sFilename = sfilename;
-                    gzs.Close();
-                    return returnthis;
-                }
-            }
-            catch
-            {
-                Debug.Print("Error during Score deserialization...");
-                return null; //null to indicate error...
-            }
-
-
-
-        }
+        
             public void Save()
             {
                 Save(sFilename);
 
             }
-        /*
-            public static HighScoreManager Load(String filename)
-            {
-                //loading function...
-                Debug.Print("Loading scores from " + filename);
-                BinaryFormatter ibin = new BinaryFormatter();
-                try
-                {
-                    FileStream fstream = new FileStream(filename, FileMode.Open);
-                    GZipStream gzs = new GZipStream(fstream, CompressionMode.Decompress);
-                    ibin = new BinaryFormatter();
-                    HighScoreManager hsm = (HighScoreManager)ibin.Deserialize(gzs);
-
-                }
-                catch(Exception ex)
-                {
-                    return null; //return null to indicate error. We might change this to rethrow...
-
-                }
-            }
-        */ 
+       
         //woopsee I duplicated FromFile in Load...
         public void Save(String psfilename)
             {
-            if(psfilename ==null) return;
+                if (psfilename == null) return;
+                XDocument ScoreDocument = new XDocument();
+
+                XElement ScoreSet = new XElement("ScoreSet");
                 Debug.Print("Saving Scores to " + psfilename);
                 Debug.Print("Score Lists:" + ManagedScores.Count.ToString());
 
                 foreach (var loopscore in ManagedScores)
                 {
                     Debug.Print("key:" + loopscore.Key + " #" + loopscore.Value.GetScores().Count());
-
-
+                    XElement SavedScores = loopscore.Value.Save();
+                    SavedScores.Add(new XAttribute("Key",loopscore.Key));
+                    ScoreSet.Add(SavedScores);
                 }
+            ScoreDocument.Add(ScoreSet);
+            ScoreDocument.Save(psfilename);
             
-            BinaryFormatter ibin = new BinaryFormatter();
-                FileStream fstream = new FileStream(psfilename, FileMode.Create);
-
-                GZipStream gzstream = new GZipStream(fstream, CompressionMode.Compress);
-                //ibin.Serialize(fstream, this);
-                ibin.Serialize(gzstream, this);
-                gzstream.Close();
+           
 
             }
         public HighScoreManager(String pfilename)
         {
             sFilename = pfilename;
+            try
+            {
+                XDocument readdoc = XDocument.Load(pfilename);
+                XElement ScoreSet = readdoc.Root;
 
-
+                foreach (XElement iteratescore in ScoreSet.Descendants("Scores"))
+                {
+                    String sKey = iteratescore.GetAttributeString("Key");
+                    LocalHighScores openscore = new LocalHighScores(iteratescore);
+                    ManagedScores.Add(sKey, openscore);
+                }
+            }
+            catch(Exception exx)
+            {
+                Debug.Print("Unexpected Exception: " + exx.ToString());
+            }
         }
 
-        #region ISerializable Members
-        public HighScoreManager(SerializationInfo info, StreamingContext context)
-        {
-            ManagedScores = (Dictionary<String,LocalHighScores>)info.GetValue("ScoreList", typeof(Dictionary<String,LocalHighScores>));
-
-
-        }
-
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            info.AddValue("ScoreList", ManagedScores);
-        }
-
-        #endregion
+       
     }
-    [Serializable]
-    public class HighScoreEntry : ISerializable, IComparable<HighScoreEntry>,ICloneable 
+  
+    public class HighScoreEntry : IComparable<HighScoreEntry>,ICloneable 
     {
 
         public String Name;
@@ -227,30 +184,13 @@ namespace bcHighScores
 
         }
 
-        public HighScoreEntry(SerializationInfo info, StreamingContext context)
-        {
-            Name = info.GetString("Name").Trim();
-            Score = info.GetInt32("Score");
-            DateSet = info.GetDateTime("DateSet");
-        }
-
 
         public override string ToString()
         {
             return Name + "," + Score;
         }
 
-        #region ISerializable Members
-
-        public void GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            info.AddValue("Name", Name);
-            info.AddValue("Score", Score);
-            info.AddValue("DateSet", DateSet);
-        }
-
-        #endregion
-
+      
         #region IComparable<HighScoreEntry> Members
 
         public int CompareTo(HighScoreEntry other)
@@ -517,6 +457,49 @@ namespace bcHighScores
 
             
 
+        }
+        private String sDateFormat = "MM//dd//yyyy@@hh:mm:ss";
+        private void LoadFromXElement(XElement Source)
+        {
+            Scores = new SortedList<HighScoreEntry, HighScoreEntry>();
+            if(Source.Name=="Scores")
+            {
+                foreach(var iteratenode in Source.Descendants("ScoreEntry"))
+                {
+                    String ScoreName = iteratenode.GetAttributeString("Name", "");
+                    int ScoreValue = iteratenode.GetAttributeInt("Value", 0);
+                    String scoredate = iteratenode.GetAttributeString("DateSet", "");
+                    DateTime ScoreDate = DateTime.ParseExact(scoredate, sDateFormat,Thread.CurrentThread.CurrentCulture);
+                    HighScoreEntry newentry = new HighScoreEntry(ScoreName, ScoreValue, ScoreDate);
+                    Scores.Add(newentry,newentry);
+                }
+            }
+        }
+        public LocalHighScores(XElement Source)
+        {
+            LoadFromXElement(Source);
+        }
+        public LocalHighScores(String Source)
+        {
+            XDocument readdoc = XDocument.Load(Source);
+            LoadFromXElement(readdoc.Root);
+        }
+        public XElement Save()
+        {
+            XElement ScoresNode = new XElement("Scores");
+            foreach(HighScoreEntry hse in Scores.Values)
+            {
+                XElement ScoreEntry = new XElement("ScoreEntry",
+                    new XAttribute("Name", hse.Name), new XAttribute("Value", hse.Score), new XAttribute("DateSet", hse.DateSet.ToString()));
+                ScoresNode.Add(ScoreEntry);
+            }
+            return ScoresNode;
+        }
+        public void SaveToFile(String sFileName)
+        {
+            XElement SaveThis = Save();
+            XDocument xdoc = new XDocument(SaveThis);
+            xdoc.Save(sFileName);
         }
         //save highscores.
         public void GetObjectData(SerializationInfo info, StreamingContext context)

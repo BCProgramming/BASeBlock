@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.PaddleBehaviours;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     public class BallSplitterPowerup : GamePowerUp
     {

@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// BlockShotBlock, shoots a BoxDestructor when impacted in the given direction.

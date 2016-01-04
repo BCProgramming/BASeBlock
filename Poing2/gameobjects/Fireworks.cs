@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.GameObjects
+namespace BASeCamp.BASeBlock.GameObjects
 {
    
     public abstract class FireworkTrail : GameObject,iProjectile

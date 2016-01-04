@@ -1,6 +1,6 @@
 using System.Drawing;
 
-namespace BASeBlock.Powerups
+namespace BASeCamp.BASeBlock.Powerups
 {
     public class LifeUpPowerUp : GamePowerUp
     {

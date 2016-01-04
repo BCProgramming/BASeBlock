@@ -27,9 +27,9 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using BASeBlock.Events;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.Particles;
 using BASeCamp.XMLSerialization;
 
 /*
@@ -42,7 +42,7 @@ using BASeCamp.XMLSerialization;
  * */
 
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
 
 
@@ -2570,29 +2570,61 @@ End Function
             _AutoRespawn = bool.Parse(Source.Attribute("AutoRespawn").Value);
             _Destructable = bool.Parse(Source.Attribute("Destructable").Value);
             BlockEffects = StandardHelper.ReadList<IBlockEffect>(Source.Element("BlockEffects"));
-            List<String> PowerupNames = StandardHelper.ReadList<String>(Source.Element("powerupChance"));
             BlockTriggers = StandardHelper.ReadList<BlockTrigger>(Source.Element("BlockTriggers"));
             BlockEvents = StandardHelper.ReadList<BlockEvent>(Source.Element("BlockEvents"));
-            Powerups = (from p in PowerupNames select BCBlockGameState.FindClass(p)).ToArray();
+            ReadPowerupXML(Source.Element("Powerups"));
 
+        }
+        /// <summary>
+        /// function which saves the PowerupChance information stored in Powerups and the Powerupchance information.
+        /// </summary>
+        /// <param name="pNodeName">Name to assign to the XElement node that will be created.</param>
+        /// <returns>XElement Node representing the information for the Powerup spawning information of this block.</returns>
+        protected XElement GetPowerupXML(String pNodeName)
+        {
+            //Powerupchance
+            //Powerups 
+            XElement BuildPowerup = new XElement(pNodeName);
+            for(int i=0;i<Powerups.Length;i++)
+            {
+                XElement ChangeItem = new XElement("ChanceItem",new XAttribute("Type",Powerups[i].FullName),new XAttribute("Chance",Powerupchance[i]));
+                BuildPowerup.Add(ChangeItem);
+            }
+            return BuildPowerup;
+        }
+        //This function appears to make loading blocks be incredibly slow.
+        //most of the effort is expended using the FindClass function.
+        protected void ReadPowerupXML(XElement Source)
+        {
+            //assumes given XElement is XML created by GetPowerupXML.
+            //TODO: More exception handling and logging here...
+            int numelements = Source.Descendants("ChanceItem").Count();
+            //initialize the two arrays.
+            Powerups = new Type[numelements];
+            Powerupchance = new float[numelements];
+            int currelement = 0;
+            foreach(var iterateElement in Source.Descendants("ChanceItem"))
+            {
+                String TypeAttribute = iterateElement.Attribute("Type").Value;
+                String ChanceAttribute = iterateElement.Attribute("Chance").Value;
+                Powerups[currelement] = BCBlockGameState.FindClass(TypeAttribute);
+                float parsedChance = 0;
+                float.TryParse(ChanceAttribute, out parsedChance);
+                Powerupchance[currelement] = parsedChance;
+            }
+            mPowerupChanceSum = Powerupchance.Sum((w) => w);
         }
         public virtual XElement GetXmlData(String pNodeName)
         {
-            List<String> TypeFullnames = new List<string>();
-            foreach (var iterate in Powerups)
-            {
-                if (iterate != null)
-                    TypeFullnames.Add(iterate.FullName);
-            }
+
             XElement Result = new XElement(pNodeName,null);
             Result.Add(StandardHelper.SaveElement(BlockRectangle, "BlockRectangle"));
             Result.Add(new XAttribute("AutoRespawn", _AutoRespawn));
             Result.Add(new XAttribute("Destructable", _Destructable));
             Result.Add(StandardHelper.SaveList(BlockEffects, "BlockEffects"));
-            Result.Add(StandardHelper.SaveList(TypeFullnames,"PowerupChance"));
             Result.Add(StandardHelper.SaveList(BlockTriggers, "BlockTriggers"));
             Result.Add(StandardHelper.SaveList(BlockEvents,"BlockEvents"));
-
+            Result.Add(GetPowerupXML("Powerups"));
             return Result;
 
          
@@ -2960,7 +2992,14 @@ End Function
         #endregion
 
         #region ISerializable Members
+        public ProxyBallBehaviour(XElement Source)
+        {
 
+        }
+        public XElement GetXmlData(String pNodeName)
+        {
+            return new XElement(pNodeName);
+        }
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             //nothing, so far.

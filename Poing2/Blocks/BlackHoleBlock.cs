@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [BlockDescription("Attracts or Repels Balls.")]
     [Serializable]
@@ -26,6 +28,15 @@ namespace BASeBlock.Blocks
             {
                 BallMass = clonethis.BallMass;
 
+            }
+            public GravityBlockBallBehaviour(XElement Source):base(Source)
+            {
+                BallMass = Source.GetAttributeDouble("BallMass", 1);
+            }
+            public override XElement GetXmlData(String pNodeName)
+            {
+
+                return new XElement(pNodeName, new XAttribute("BallMass", BallMass));
             }
             public override object Clone()
             {

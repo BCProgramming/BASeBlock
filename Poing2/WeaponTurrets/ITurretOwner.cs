@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock.WeaponTurrets
+namespace BASeCamp.BASeBlock.WeaponTurrets
 {
     /// <summary>
     /// interface implemented by classes that can have attached Turrets.

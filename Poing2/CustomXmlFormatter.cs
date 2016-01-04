@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Xml;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// The <see cref="CustomXmlFormatter"/> class implements a custom CustomXmlFormatter

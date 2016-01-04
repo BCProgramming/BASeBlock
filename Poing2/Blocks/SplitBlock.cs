@@ -2,9 +2,9 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [BlockDescription("When hit, splits in half along the major axis of the block. Destroyed when it reaches a minimum size.")]

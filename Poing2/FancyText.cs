@@ -6,7 +6,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     class FancyText
     {

@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [BlockDescription("Grabs balls that come close in a perpendicular direction and spins them a bit before releasing them.")]

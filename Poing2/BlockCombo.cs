@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
     /// <summary>

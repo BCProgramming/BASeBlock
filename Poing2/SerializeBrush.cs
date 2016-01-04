@@ -9,7 +9,7 @@ using System.Runtime.Serialization;
 using System.Text;
 
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     [Serializable]
     public class SerializePen : ISerializable

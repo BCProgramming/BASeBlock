@@ -5,10 +5,10 @@ using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 using Ionic.Zip;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public class MinecraftBlockAttribute : BlockCategoryAttribute
     {

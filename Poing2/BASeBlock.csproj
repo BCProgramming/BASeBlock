@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,9 +8,9 @@
     <ProjectGuid>{7CC30E5A-7187-4822-B94F-63DE980446BA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BASeBlock</RootNamespace>
+    <RootNamespace>BASeCamp.BASeBlock</RootNamespace>
     <AssemblyName>BASeBlock</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ApplicationIcon>Appicon.ico</ApplicationIcon>
@@ -46,6 +46,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -58,6 +59,7 @@
     <UseVSHostingProcess>true</UseVSHostingProcess>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
@@ -120,7 +122,9 @@
     <Compile Include="BBClipboard.cs" />
     <Compile Include="BBEditorUndo.cs" />
     <Compile Include="BBScript.cs" />
-    <Compile Include="BBSettings.cs" />
+    <Compile Include="DPIHelper.cs" />
+    <Compile Include="HighScores\HiScores.cs" />
+    <Compile Include="Settings\BBSettings.cs" />
     <Compile Include="BBTypeConverters.cs" />
     <Compile Include="BCEditBlockFilter.cs" />
     <Compile Include="BlockCategoryAttribute.cs" />
@@ -177,6 +181,7 @@
     <Compile Include="cGameObject.cs" />
     <Compile Include="Cheats.cs" />
     <Compile Include="cINIFile.cs" />
+    <Compile Include="DrawingHelpers.cs" />
     <Compile Include="GameStates\IGameState.cs" />
     <Compile Include="GameStates\StateDeath.cs" />
     <Compile Include="GameStates\StateLevelIntro.cs" />
@@ -366,7 +371,6 @@
     <Compile Include="frmSoundDataListEditor.Designer.cs">
       <DependentUpon>frmSoundDataListEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="HiScores.cs" />
     <Compile Include="iBBPlugin.cs" />
     <Compile Include="iGameClient.cs" />
     <Compile Include="iLevelSetBuilder.cs" />

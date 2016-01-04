@@ -3,7 +3,7 @@ using System.Drawing;
 using System.Reflection;
 using System.Threading;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// hold data about blocks; used by BlockDataManager.

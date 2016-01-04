@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock.Events
+namespace BASeCamp.BASeBlock.Events
 {
     //Func<ButtonConstants, bool>
     public class ButtonEventArgs<TResult> : EventArgs

@@ -12,12 +12,12 @@ using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 using Img;
 using Microsoft.WindowsAPICodePack.Taskbar;
 using Timer=System.Threading.Timer;
 using BASeCamp.Updating;
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     
     public partial class SplashScreen : Form, iManagerCallback

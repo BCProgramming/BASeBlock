@@ -1,4 +1,4 @@
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// interface implemented by PaddleBehaviours that want to be notified when another Behaviour of their kind

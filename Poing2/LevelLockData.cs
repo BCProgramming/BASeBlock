@@ -8,7 +8,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using Ionic.Zlib;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// sets/returns data regarding locked levels.

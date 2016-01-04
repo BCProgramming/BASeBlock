@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Runtime.Serialization;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [BlockDescription("Block that can spawn a GameCharacterPowerup. This is geared towards the platforming implementation. Some stub powerups exists to spawn things like macguffins.")]

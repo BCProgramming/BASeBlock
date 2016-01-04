@@ -5,10 +5,10 @@ using System.Drawing.Design;
 using System.Drawing.Imaging;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 using BASeCamp.XMLSerialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable()]
     [BlockDescription("Commonly used base class for blocks that are depicted using Image Data.")]
@@ -97,7 +97,7 @@ namespace BASeBlock.Blocks
 
 
         }
-        protected ImageBlock(XElement Source):base(Source)
+        public ImageBlock(XElement Source):base(Source)
         {
             BlockImageKey = Source.GetAttributeString("BlockImageKey");
         }
@@ -105,7 +105,7 @@ namespace BASeBlock.Blocks
         public override XElement GetXmlData(string pNodeName)
         {
             XElement result = base.GetXmlData(pNodeName);
-            result.Add(new XAttribute("BlockImageKey",BlockImage));
+            result.Add(new XAttribute("BlockImageKey",BlockImageKey));
             return result;
         }
 

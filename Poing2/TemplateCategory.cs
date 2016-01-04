@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using OfficePickers.ColorPicker;
 
-namespace BASeBlock.Templates
+namespace BASeCamp.BASeBlock.Templates
 {
 
     /// <summary>

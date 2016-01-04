@@ -7,11 +7,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
-using BASeBlock;
+using BASeCamp.BASeBlock;
 using BASeCamp.Updating;
 
 
-namespace BASeBlock.Templates
+namespace BASeCamp.BASeBlock.Templates
 {
     public partial class frmFromTemplate : Form
     {

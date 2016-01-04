@@ -7,9 +7,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Windows.Forms;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     
     [Serializable]

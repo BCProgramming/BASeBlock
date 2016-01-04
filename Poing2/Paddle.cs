@@ -19,13 +19,13 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using BASeBlock.Blocks;
-using BASeBlock.Events;
-using BASeBlock.PaddleBehaviours;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Blocks;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.PaddleBehaviours;
+using BASeCamp.BASeBlock.Particles;
 using Microsoft.Win32.SafeHandles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
    
 

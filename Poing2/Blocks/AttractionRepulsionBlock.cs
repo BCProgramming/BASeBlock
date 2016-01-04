@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 using System.Xml.Linq;
 using BASeCamp.XMLSerialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     /// <summary>
     /// has a given colour. When activated, will see if there is another activated

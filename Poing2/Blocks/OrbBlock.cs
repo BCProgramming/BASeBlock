@@ -1,10 +1,10 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
-using BASeBlock.Events;
-using BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.Events;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable()]
     [PowerupEffectCategory]

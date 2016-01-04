@@ -5,10 +5,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using BASeBlock;
-using BASeBlock.Blocks;
+using BASeCamp.BASeBlock;
+using BASeCamp.BASeBlock.Blocks;
 
-namespace BASeBlock.Controls
+namespace BASeCamp.BASeBlock.Controls
 {
      [DefaultEvent("BlockSelected"),
     Description("ToolStripItem that allows selecting a color from a color picker control."),

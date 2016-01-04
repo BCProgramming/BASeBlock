@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.Serialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [BlockDescription("Street1 has become a Silent Keyboard.  http://www.legacy.com/obituaries/savannah/obituary.aspx?page=lifestory&pid=139870551")]

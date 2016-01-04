@@ -5,9 +5,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Runtime.Serialization;
-using BASeBlock.Events;
+using BASeCamp.BASeBlock.Events;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     public class SpawnerBlock : ImageBlock,IEditorBlockExtensions

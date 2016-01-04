@@ -2,8 +2,9 @@ using System;
 using System.Drawing;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable()]
     [PowerupEffectCategory]
@@ -35,9 +36,18 @@ namespace BASeBlock.Blocks
         }
         public AddBallBlock(XElement Source):base(Source)
         {
+            spawnvelocity = Source.GetAttributeFloat("SpawnVelocity", 3);
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            XElement baseresult = base.GetXmlData(pNodeName);
+            baseresult.Add(new XAttribute("SpawnVelocity",spawnvelocity));
+
+            return baseresult;
 
         }
-        
+
         public override object Clone()
         {
             return new AddBallBlock(this);

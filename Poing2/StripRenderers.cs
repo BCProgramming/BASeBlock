@@ -6,7 +6,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
 
         public class ButtonStripRenderer : ToolStripRenderer

@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// Abstract class implemented by PaddleBehaviours that only last a limited time.

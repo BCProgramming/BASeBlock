@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 
-namespace BASeBlock.GameStates
+namespace BASeCamp.BASeBlock.GameStates
 {
     public class StateDeath:GameState
     {

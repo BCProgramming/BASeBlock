@@ -2,10 +2,10 @@ using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
-using BASeBlock.GameObjects.Orbs;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.GameObjects.Orbs;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     /// <summary>
     /// This behaviour forces Powerups and Macguffins to deflect off the paddle rather than being collected.

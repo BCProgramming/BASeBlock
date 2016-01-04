@@ -7,8 +7,10 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Xml.Linq;
+using BASeCamp.XMLSerialization;
 
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     /// <summary>
     /// Class that holds a collection of ObjectPathData objects, and manages them in the context of the game and editor.
@@ -17,7 +19,7 @@ namespace BASeBlock
     
     [Serializable]
     
-    public class ObjectPathDataManager:Dictionary<String,ObjectPathData>,  ISerializable
+    public class ObjectPathDataManager:Dictionary<String,ObjectPathData>,  ISerializable,IXmlPersistable
     {
        // private Dictionary<String, ObjectPathData> _PathData = new Dictionary<string, ObjectPathData>();
         
@@ -42,6 +44,23 @@ namespace BASeBlock
 
 
 
+        }
+        public ObjectPathDataManager(XElement Source)
+        {
+
+        }
+        public XElement GetXmlData(String pNodeName)
+        {
+            List<KeyValuePair<String,ObjectPathData>> Contents = this.AsEnumerable().ToList();
+            XElement ResultNode = new XElement(pNodeName);
+            foreach(var kvpitem in Contents)
+            {
+                //<PathData Key="Name"><ObjectPathData /></PathData>
+                XElement BuildNode = new XElement("PathData",new XAttribute("Key",kvpitem.Key));
+                BuildNode.Add(kvpitem.Value.GetXmlData("PathPoints"));
+            }
+            return ResultNode;
+            //return StandardHelper.SaveList<ObjectPathData>()
         }
         public override void OnDeserialization(object sender)
         {
@@ -204,7 +223,7 @@ namespace BASeBlock
     }
     
     [Serializable]
-    public class ObjectPathDataPoint : ISerializable, ICloneable
+    public class ObjectPathDataPoint : ISerializable, ICloneable,IXmlPersistable
     {
         
         private PointF _Location;
@@ -284,6 +303,20 @@ namespace BASeBlock
 
 
         }
+        public ObjectPathDataPoint(XElement Source)
+        {
+            XElement LocationNode = (XElement)Source.FirstNode;
+            _Location = StandardHelper.ReadElement<PointF>(LocationNode);
+            _Label = Source.Attribute("Label").Value;
+            
+        }
+        public XElement GetXmlData(String pNodeName)
+        {
+            XElement result = new XElement(pNodeName);
+            result.Add(StandardHelper.SaveElement(_Location,"Location",false));
+            result.Add(new XAttribute("Label",_Label));
+            return result;
+        }
         public static explicit operator PointF(ObjectPathDataPoint source)
         {
             return source._Location;
@@ -304,7 +337,7 @@ namespace BASeBlock
 
     /// provides methods for hittesting, acquiring all selected points, unselecting, etc.
     [Serializable]
-    public class ObjectPathData :ISerializable,ICloneable 
+    public class ObjectPathData :ISerializable,ICloneable ,IXmlPersistable 
     {
         internal delegate void ObjectPathChangeEventDelegate(String PropertyName, Object newValue);
 
@@ -516,6 +549,17 @@ namespace BASeBlock
             info.AddValue("Name", _Name);
             info.AddValue("PathPoints", _PathPoints);
 
+
+        }public XElement GetXmlData(String pNodeName)
+        {
+            XElement resultnode = new XElement(pNodeName,new XAttribute("Name",_Name));
+            resultnode.Add(StandardHelper.SaveList<ObjectPathDataPoint>(_PathPoints,"PathPoints",false));
+            return resultnode;
+        }
+        public ObjectPathData(XElement Source)
+        {
+            _Name = Source.Attribute("Name").Value;
+            _PathPoints = StandardHelper.ReadList<ObjectPathDataPoint>((XElement)Source.FirstNode);
 
         }
 

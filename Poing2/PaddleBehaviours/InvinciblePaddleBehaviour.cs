@@ -1,8 +1,8 @@
 using System;
 using System.Drawing;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 
-namespace BASeBlock.PaddleBehaviours
+namespace BASeCamp.BASeBlock.PaddleBehaviours
 {
     public class InvinciblePaddleBehaviour : TimedPaddleBehaviour
     {

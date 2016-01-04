@@ -4,10 +4,10 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
-using BASeBlock.Particles;
+using BASeCamp.BASeBlock.Particles;
 using BASeCamp.XMLSerialization;
 
-namespace BASeBlock.Blocks
+namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable()]
     [StandardBlockCategory]
@@ -151,10 +151,12 @@ namespace BASeBlock.Blocks
 
         public NormalBlock(XElement Source) :base(Source)
         {
-            _Color = StandardHelper.ReadElement<Color>(Source.Element("Fill"));
+            
             _PenColor = StandardHelper.ReadElement<Color>(Source.Element("Line"));
             BlockOutlineSides = (BlockOutline)Source.GetAttributeInt("BlockOutline", (int)BlockOutline.Outline_All);
             Gummy = Source.GetAttributeBool("Gummy", true);
+            BlockColor = StandardHelper.ReadElement<Color>(Source.Element("Fill"));
+            OnBlockRectangleChange += new Action<RectangleF>(NormalBlock_OnBlockRectangleChange);
         }
         public NormalBlock(SerializationInfo info, StreamingContext context)
             : base(info, context)

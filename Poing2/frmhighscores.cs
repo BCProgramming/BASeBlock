@@ -6,9 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using bcHighScores;
+using BASeCamp.BASeBlock.HighScores;
 using BASeCamp.Updating;
-namespace BASeBlock
+namespace BASeCamp.BASeBlock
 {
     public partial class frmhighscores : Form
     {
