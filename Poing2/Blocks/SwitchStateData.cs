@@ -4,11 +4,13 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
-    public class SwitchStateData : ISerializable
+    public class SwitchStateData : ISerializable,IXmlPersistable 
     {
         public Image StateImage;
         public Color StateColor = Color.Red;
@@ -63,8 +65,26 @@ namespace BASeCamp.BASeBlock.Blocks
             catch { }
             try { HitSound = info.GetString("HitSound"); }
             catch { }
+            try
+            {
+                StateColor = info.GetValue<Color>("StateColor");
+            }
+            catch { }
 
-
+        }
+        public SwitchStateData(XElement Source)
+        {
+            InvokeID = Source.GetAttributeInt("InvokeID");
+            HitSound = Source.GetAttributeString("HitSound");
+            StateColor = Color.FromArgb(Source.GetAttributeInt("StateColor"));
+        }
+        public XElement GetXmlData(String pNodeName)
+        {
+            XElement Result = new XElement(pNodeName);
+            Result.Add(new XAttribute("InvokeID",InvokeID));
+            Result.Add("HitSound",HitSound);
+            Result.Add("StateColor",StateColor.ToArgb());
+            return Result;
         }
 
 

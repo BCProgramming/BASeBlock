@@ -2,7 +2,9 @@ using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -71,6 +73,18 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
+        public ImageClipBlock(XElement Source)
+        {
+            cliprect = Source.ReadElement<RectangleF>("ClipRect");
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(StandardHelper.SaveElement(cliprect,"ClipRect"));
+            return result;
+        }
+
         public override object Clone()
         {
             return new ImageClipBlock(this);

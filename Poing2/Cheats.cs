@@ -188,6 +188,23 @@ namespace BASeCamp.BASeBlock.Cheats
 
 
     }
+    public class SuperKrozCheat : Cheat
+    {
+        public override string Name
+        {
+            get {
+                return "Super Kroz Cheat";
+            }
+        }
+
+
+        public override bool ApplyCheat(BCBlockGameState gState, int ParameterCount, string[] Parameters)
+        {
+            if (gState.PlayerPaddle != null)
+                gState.PlayerPaddle.Behaviours.Add(new InvinciblePaddleBehaviour());
+            return true;
+        }
+    }
     public class imboredCheat : Cheat
     {
         public override string Name

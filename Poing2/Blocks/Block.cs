@@ -30,7 +30,7 @@ using System.Xml.Linq;
 using BASeCamp.BASeBlock.Events;
 using BASeCamp.BASeBlock.GameObjects.Orbs;
 using BASeCamp.BASeBlock.Particles;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 /*
  * Block Ideas
@@ -610,18 +610,18 @@ new ManyToOneTestBlockData(typeof(ManyToOneTestBlock),"A Green Block",Color.Gree
         public void DrawDamage(Graphics g, IDamageableBlock forblock)
         {
             DrawDamage(g, forblock.Damage, forblock.Health);
-
-
-
         }
+        Image[] BlockCrackOverlay = null;
         public void DrawDamage(Graphics g, float CurrentDamage, float MaxDamage)
         {
 
             //draws the damage item for this block.
             //first, get all the "Crack" sprites....
-
+            //if we have no damage, then we cahn early exit.
+            if (CurrentDamage <= 0) return;
             int FrameCount;
-            Image[] getcracked = BCBlockGameState.Imageman.getImageFrames("CRACK", out FrameCount);
+            if(BlockCrackOverlay==null)
+                BlockCrackOverlay = BCBlockGameState.Imageman.getImageFrames("CRACK", out FrameCount);
 
             //acquire the appropriate index...
             //we use max+1 because we need to account for having no cracked image overlay at all.
@@ -630,12 +630,8 @@ new ManyToOneTestBlockData(typeof(ManyToOneTestBlock),"A Green Block",Color.Gree
             chosenIndex--;
             if (chosenIndex <= 0) return;
             //grab that image...
-            Image drawthis = getcracked[chosenIndex];
+            Image drawthis = BlockCrackOverlay[chosenIndex];
             g.DrawImage(drawthis, BlockRectangle.Left, BlockRectangle.Top, BlockRectangle.Width, BlockRectangle.Height);
-
-
-
-
         }
         
 
@@ -1074,10 +1070,12 @@ new ManyToOneTestBlockData(typeof(ManyToOneTestBlock),"A Green Block",Color.Gree
 
             }
 
+            Type usetype = null;
 
-
-            Type usetype = BCBlockGameState.Select(ChooseFrom, chancevalues);
-
+            while (usetype == null || usetype.ContainsGenericParameters)
+            {
+                usetype = BCBlockGameState.Select(ChooseFrom, chancevalues);
+            }
 
 
 

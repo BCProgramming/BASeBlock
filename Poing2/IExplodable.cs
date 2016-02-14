@@ -11,7 +11,7 @@ namespace BASeCamp.BASeBlock
     /// </summary>
     interface IExplodable
     {
-        void ExplosionInteract(Object sender, PointF Origin, double Strength);
+        void ExplosionInteract(Object sender, PointF Origin, PointF Vector);
 
 
     }

@@ -7,7 +7,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -141,6 +143,21 @@ namespace BASeCamp.BASeBlock.Blocks
         }
         private bool _Init = false;
         private bool flInitialized { get { return _Init; } set { _Init = value; if (_Init) RebuildImages(); } }
+
+        public SwitchBlockMulti(XElement Source):base(Source)
+        {
+            State = Source.GetAttributeInt("State");
+            SwitchData = Source.ReadList<SwitchStateData>("SwitchData", new List<SwitchStateData>());
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("State",State));
+            result.Add(StandardHelper.SaveList<SwitchStateData>(SwitchData, "SwitchData"));
+            return result;
+        }
+
         public SwitchBlockMulti(SerializationInfo info, StreamingContext context):base(info,context)
         {
             State = info.GetInt32("State");
@@ -343,6 +360,29 @@ namespace BASeCamp.BASeBlock.Blocks
 
             
 
+        }
+        public SwitchBlock(XElement Source)
+        {
+            ActiveSound = Source.GetAttributeString("ActiveSound");
+            InactiveSound = Source.GetAttributeString("InactiveSound");
+            ActiveColor = Color.FromArgb(Source.GetAttributeInt("ActiveColor"));
+            InactiveColor = Color.FromArgb(Source.GetAttributeInt("InactiveColor"));
+            Active = Source.GetAttributeBool("Active");
+            AllActiveID = Source.GetAttributeInt("AllActiveID");
+            AllInactiveID = Source.GetAttributeInt("AllInactiveID");
+        }
+        public override XElement GetXmlData(String pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("ActiveSound",ActiveSound));
+            result.Add(new XAttribute("InactiveSound", InactiveSound));
+            result.Add(new XAttribute("ActiveColor", ActiveColor.ToArgb()));
+            result.Add(new XAttribute("InactiveColor", InactiveColor.ToArgb()));
+            result.Add(new XAttribute("Active", Active));
+            result.Add(new XAttribute("SwitchMode", (int)SwitchMode));
+            result.Add(new XAttribute("AllActiveID", (int)AllActiveID));
+            result.Add(new XAttribute("AllInactiveID", (int)AllInactiveID));
+            return result;
         }
     void  SwitchBlock_OnBlockRectangleChange(RectangleF obj)
     {

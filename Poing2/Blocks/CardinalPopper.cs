@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [ImpactEffectBlockCategory]
-    
+    //Note: Feb 5th 2016- I like the name of this one, haha...
     public class CardinalPopperBlock : ImageBlock,IDamageableBlock
     {
         
@@ -41,6 +43,19 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("Damage",Damage);
             info.AddValue("Health", Health);
 
+        }
+        public CardinalPopperBlock(XElement Source):base(Source)
+        {
+            Damage = Source.GetAttributeInt("Damage");
+            Health = Source.GetAttributeInt("Health");
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("Damage",Damage));
+            result.Add(new XAttribute("Health",Health));
+            return result;
         }
 
         public override object Clone()

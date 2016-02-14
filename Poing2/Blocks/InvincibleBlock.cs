@@ -2,7 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {

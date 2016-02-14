@@ -16,7 +16,7 @@ using BASeCamp.BASeBlock.Blocks;
 using BASeCamp.BASeBlock.PaddleBehaviours;
 using BASeCamp.BASeBlock.Particles;
 using BASeCamp.BASeBlock.Projectiles;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 //using System.Xml.Serialization;
 
@@ -2629,9 +2629,9 @@ public abstract class TimedBallBehaviour : BaseBehaviour
 
         #endregion
 
-        public void ExplosionInteract(object sender, PointF Origin, double Strength)
+        public void ExplosionInteract(object sender, PointF Origin, PointF Vector)
         {
-            
+            double Strength = Math.Sqrt(Vector.X * Vector.X + Vector.Y * Vector.Y);
             //get the angle between the center point and ourselves.
             double angletest = BCBlockGameState.GetAngle(Origin, Location);
             PointF svector = new PointF((float)(Math.Sin(angletest) * Strength/25), (float)(Math.Cos(angletest) * Strength/25));

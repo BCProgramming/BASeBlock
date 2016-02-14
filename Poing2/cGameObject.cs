@@ -1025,7 +1025,7 @@ namespace BASeCamp.BASeBlock
                             {
                                 var currobjects = gamestate.GameObjects;
                                 gamestate.GameObjects = new LinkedList<GameObject>();
-                                BCBlockGameState.Block_Hit(gamestate, iterateblock);
+                                BCBlockGameState.Block_Hit(gamestate, iterateblock,Velocity);
                                 //AddObjects.AddRange(gamestate.GameObjects);
                                 //gamestate.Defer(()=>gamestate.GameObjects.A
                                 gamestate.GameObjects = currobjects;
@@ -2538,7 +2538,9 @@ namespace BASeCamp.BASeBlock
                         foreach (var iterateresult in result)
                         {
                             
-                            iterateresult.ExplosionInteract(this, Location, Math.Max(1, Velocity.Magnitude()));
+                            PointF useVelocityEffect = new PointF(Math.Max(1,Velocity.X),Math.Max(1,Velocity.Y));
+
+                            iterateresult.ExplosionInteract(this, Location, useVelocityEffect);
 
                         }
 
@@ -2589,8 +2591,12 @@ namespace BASeCamp.BASeBlock
                         {
                             foreach (Block removeit in removethese)
                             {
-
-                                cBall tempball = new cBall(removeit.CenterPoint(), new PointF(0.05f, 0.05f));
+                                //get angle between the center of the explosion and the block's center.
+                                double Angle = BCBlockGameState.GetAngle(CenterPoint(), removeit.CenterPoint());
+                                int useSpeed = BCBlockGameState.ClampValue((int)_MaxRadius / 2, 1, 5);
+                                PointF useVelocity = BCBlockGameState.GetVelocity(useSpeed, Angle);
+                                cBall tempball = new cBall(new PointF(removeit.CenterPoint().X-useVelocity.X,removeit.CenterPoint().Y-useVelocity.Y), useVelocity);
+                                tempball.PreviousVelocity = useVelocity;
                                 tempball.Behaviours.Add(new TempBallBehaviour());
                                 //add a proxy behaviour to remove it as well.
                                 //tempball.Behaviours.Add(new ProxyBallBehaviour("ExplosionEffect", null, proxyperformframe, null, null, null, null, null, null));

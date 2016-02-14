@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
 
 namespace BASeCamp.BASeBlock.Blocks
@@ -36,6 +37,7 @@ namespace BASeCamp.BASeBlock.Blocks
             
             return new FrustratorBlock(this);
         }
+
         public override bool MustDestroy()
         {
             return false;
@@ -227,6 +229,12 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
         }
 
+        public FrustratorBlock(XElement Source):base(Source)
+        { }
 
+        public override XElement GetXmlData(string pNodeName)
+        {
+            return base.GetXmlData(pNodeName);
+        }
     }
 }

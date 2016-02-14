@@ -1,12 +1,13 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [ImpactEffectBlockCategory]
-    [BlockDescription("Gives the ball that hits it the given Behaviour.")]
+    [BlockDescription("Gives the ball that hits it the Crazy Ball Behaviour.")]
     public class CrazyBlock : BallBehaviourBlock<CrazyBallBehaviour>
     {
 
@@ -42,6 +43,14 @@ namespace BASeCamp.BASeBlock.Blocks
         {
 
 
+        }
+        public CrazyBlock(XElement Source):base(Source)
+        {
+
+        }
+        public override XElement GetXmlData(string pNodeName)
+        {
+            return base.GetXmlData(pNodeName);
         }
 
         public override object Clone()

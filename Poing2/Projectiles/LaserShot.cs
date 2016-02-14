@@ -268,7 +268,7 @@ namespace BASeCamp.BASeBlock.Projectiles
                 .Any((p) => BCBlockGameState.LiangBarsky(checkrect, p.Value, p.Next.Value) != null);
         }
         private int MaxPoints = 10;
-            
+        Type[] DamagableEnemies = new Type[]{typeof(EyeGuy)};
         private bool stoppedadvance = false;
         public override bool PerformFrame(BCBlockGameState gamestate)
         {
@@ -299,6 +299,14 @@ namespace BASeCamp.BASeBlock.Projectiles
                         Velocity = Velocity.Mirror(diffPoint);
                     }
                 }
+                else if(iterate is GameEnemy)
+                {
+                    GameEnemy ge = (GameEnemy)iterate;
+                    if(DamagableEnemies.Contains(ge.GetType()) && LaserIntersects(ge.GetRectangle()))
+                    {
+                        ge.HitPoints -= 1;
+                    }
+                }
             }
 
             if (numpoints == 0) return true;
@@ -319,11 +327,7 @@ namespace BASeCamp.BASeBlock.Projectiles
                 }
                 else
                 {
-                    if (firstblocker is PolygonBlock)
-                    {
-                        Debug.Print("BREAK...");
-
-                    }
+                    
                     //otherwise, we bounce off firstblocker.
                     Polygon grabpoly = firstblocker.GetPoly();
                     LineSegment ls;

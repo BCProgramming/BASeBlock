@@ -16,7 +16,7 @@ using System.Xml.Linq;
 using BASeCamp.BASeBlock;
 using BASeCamp.BASeBlock.Blocks;
 using BASeCamp.BASeBlock.Events;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 using Timer = System.Threading.Timer;
 
 namespace BASeCamp.BASeBlock

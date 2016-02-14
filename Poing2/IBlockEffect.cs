@@ -11,7 +11,7 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using BASeCamp.BASeBlock.Blocks;
 using BASeCamp.BASeBlock.Particles;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 
 namespace BASeCamp.BASeBlock.Blocks

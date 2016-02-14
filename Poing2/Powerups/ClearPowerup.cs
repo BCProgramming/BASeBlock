@@ -13,7 +13,7 @@ namespace BASeCamp.BASeBlock.Powerups
                 gamestate.PlayerPaddle.Behaviours.Clear();
             return true;
         }
-        public ClearPowerup(Point Location,SizeF ObjectSize)
+        public ClearPowerup(PointF Location,SizeF ObjectSize)
             :base(Location,ObjectSize,new Image[]{BCBlockGameState.Imageman.getLoadedImage("powerclear")},10,null)
         {
             usefunction = clearpowercallback;

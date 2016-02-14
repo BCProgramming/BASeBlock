@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
 
 namespace BASeCamp.BASeBlock.Blocks
@@ -34,6 +35,16 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             Debug.Print("GetObjectData");
             base.GetObjectData(info, context);
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            return result;
+        }
+        public SnowBlock(XElement Source):base(Source)
+        {
+            BlockImageKey = BCBlockGameState.GenerateSnowImage(BlockRectangle);
         }
         public override object Clone()
         {

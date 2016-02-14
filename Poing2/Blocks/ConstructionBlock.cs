@@ -5,6 +5,8 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -81,6 +83,16 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("EffectRadius", _EffectRadius);
         }
 
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result =  base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("EffectRadius",_EffectRadius));
+            return result;
+        }
+        public ConstructionBlock(XElement Source):base(Source)
+        {
+            _EffectRadius = Source.GetAttributeFloat("EffectRadius", 64);
+        }
         protected Queue<List<Block>> BlocksAdd = new Queue<List<Block>>();
         public Block ConstructionRoutine(BCBlockGameState gstate, RectangleF creationSpot)
         {

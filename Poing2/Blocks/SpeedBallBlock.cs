@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -39,12 +40,14 @@ namespace BASeCamp.BASeBlock.Blocks
         }
         protected SpeedBallBlock(XElement Source):base(Source)
         {
-
+            speedfactor = (PointF)Source.ReadElement<PointF>("SpeedFactor");
         }
 
         public override XElement GetXmlData(string pNodeName)
         {
-            return base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName);
+            result.Add(StandardHelper.SaveElement<PointF>(speedfactor,"SpeedFactor"));
+            return result;
         }
 
         public override void GetObjectData(SerializationInfo info, StreamingContext context)

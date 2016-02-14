@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using BASeCamp.Elementizer;
 using Microsoft.CSharp;
 using Microsoft.JScript;
 using Microsoft.VisualBasic;
@@ -542,7 +543,8 @@ namespace BASeCamp.BASeBlock
             String[] assemblyNames = new String[] { "system.dll","System.Design.dll",
                 "system.xml.dll",
                 "system.data.dll",
-                "system.windows.forms.dll","system.drawing.dll",
+                "system.xml.linq.dll",
+                "system.windows.forms.dll","system.drawing.dll",typeof(IXmlPersistable).Assembly.Location,
                 Assembly.GetExecutingAssembly().Location};
             
             CompilerParameters cp = new CompilerParameters(assemblyNames);
@@ -556,16 +558,16 @@ namespace BASeCamp.BASeBlock
             switch (extensiontest)
             {
                 case ".cs":
-                    CSharpCodeProvider prov = new CSharpCodeProvider();
+                CSharpCodeProvider prov = new CSharpCodeProvider(new Dictionary<String, String> { { "CompilerVersion", "v4.0" } });
 
                     cr = prov.CompileAssemblyFromFile(cp, new string[] { scriptFile });
                     
-
+                
 
 
                     break;
                 case ".vb":
-                    Microsoft.VisualBasic.VBCodeProvider vbprov = new VBCodeProvider();
+                    Microsoft.VisualBasic.VBCodeProvider vbprov = new VBCodeProvider(new Dictionary<String, String> { { "CompilerVersion", "v4.0" } });
                     cr = vbprov.CompileAssemblyFromFile(cp, new string[] { scriptFile });
                     break;
                 case ".js":
@@ -589,30 +591,32 @@ namespace BASeCamp.BASeBlock
 
                 //create a new file, if the script was scriptfile.csx, create scriptfile.csx.log
                 String newfile = scriptFile + ".log";
-                FileStream logfsstream = new FileStream(newfile, FileMode.Create);
-                StreamWriter logstream = new StreamWriter(logfsstream);
-
-                int warningsCount = 0, errorsCount = 0;
                 List<CompilerError> warnings = new List<CompilerError>(), errors = new List<CompilerError>();
-                foreach (CompilerError cerror in cr.Errors)
+                using (FileStream logfsstream = new FileStream(newfile, FileMode.Create))
                 {
-                    if (cerror.IsWarning)
+                    StreamWriter logstream = new StreamWriter(logfsstream);
+
+                    int warningsCount = 0, errorsCount = 0;
+                    
+                    foreach (CompilerError cerror in cr.Errors)
                     {
-                        warningsCount++;
-                        warnings.Add(cerror);
-                        logstream.WriteLine("Warning:" + cerror.ToString());
+                        if (cerror.IsWarning)
+                        {
+                            warningsCount++;
+                            warnings.Add(cerror);
+                            logstream.WriteLine("Warning:" + cerror.ToString());
+
+                        }
+
+                        else
+                        {
+                            errorsCount++;
+                            errors.Add(cerror);
+                            logstream.WriteLine("Error:" + cerror.ToString());
+                        }
 
                     }
-
-                    else
-                    {
-                        errorsCount++;
-                        errors.Add(cerror);
-                        logstream.WriteLine("Error:" + cerror.ToString());
-                    }
-
                 }
-                
                 ScriptCompileFailureException scf = new ScriptCompileFailureException(scriptFile,
                     errors, warnings);
                 throw scf;

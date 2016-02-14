@@ -16,7 +16,7 @@ using System.Web.Script.Serialization;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Xml.Linq;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 using Ionic.Zlib;
 using ProgressStream;
 
@@ -1094,7 +1094,7 @@ namespace BASeCamp.BASeBlock
             }
             catch (Exception e)
             {
-                Debug.Print("Exception in EditorSet.Save:" + e.Message);
+                Debug.Print("Exception in EditorSet.Save:" + e.ToString());
 
 
 

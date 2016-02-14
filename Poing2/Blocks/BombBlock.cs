@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -97,6 +99,19 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("ShotDirection", mShotDirections, typeof(BombBlockShotDirections));
 
 
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("ShotDirection",(int)mShotDirections));
+            return result;
+        }
+
+        public BombBlock(XElement Source):base(Source)
+        {
+            mShotDirections = (BombBlockShotDirections)Source.GetAttributeInt("ShotDirection");
+            BlockImageKey = "BOMB";
         }
         public override bool PerformBlockHit(BCBlockGameState parentstate, cBall ballhit)
         {

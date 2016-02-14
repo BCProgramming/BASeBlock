@@ -34,7 +34,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using BASeCamp.BASeBlock.Blocks;
 using BASeCamp.BASeBlock.Templates;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 using OfficePickers.ColorPicker;
 using vbAccelerator.Components.Controls;
 

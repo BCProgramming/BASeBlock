@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Events;
 using BASeCamp.BASeBlock.GameObjects.Orbs;
 
@@ -96,6 +97,16 @@ namespace BASeCamp.BASeBlock.Blocks
             HookEvent();
 
         }
+        public OrbBlock(XElement Source):base(Source)
+        {
+            HookEvent();
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            return base.GetXmlData(pNodeName);
+        }
+
         public OrbBlock(SerializationInfo info, StreamingContext context):base(info,context)
         {
             //no special code here.

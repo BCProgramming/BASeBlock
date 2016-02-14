@@ -11,7 +11,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock
 {
@@ -66,7 +66,7 @@ namespace BASeCamp.BASeBlock
             [TypeConverter(typeof(FloatFConverter))]
             public PointF CurrentOffset { get { return _currentOffset; } set { _currentOffset = value; AcquireBrushes(); } }
             
-            private String[] _backgroundFrameKeys=null;
+            private String[] _backgroundFrameKeys={};
             [Editor(typeof(ImageKeyEditor),typeof(UITypeEditor))]
             public String FirstFrameKey
             {
@@ -153,7 +153,7 @@ namespace BASeCamp.BASeBlock
         {
             XElement ResultNode = new XElement(pNodeName);
             ResultNode.Add(StandardHelper.SaveElement(MoveVelocity,"MoveVelocity"));
-            ResultNode.Add(StandardHelper.SaveList(BackgroundFrameKeys.ToList(),"Backgroundframekeys"));
+            ResultNode.Add(StandardHelper.SaveList((BackgroundFrameKeys??new String[]{}).ToList(),"Backgroundframekeys"));
             ResultNode.Add(new XAttribute("rotatespeed",RotateSpeed));
             ResultNode.Add(new XAttribute("CurrentRotation",CurrentRotation));
             ResultNode.Add(StandardHelper.SaveElement(CurrentOffset,"CurrentOffset"));

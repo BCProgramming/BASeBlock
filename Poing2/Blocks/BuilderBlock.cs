@@ -6,7 +6,9 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -82,6 +84,26 @@ namespace BASeCamp.BASeBlock.Blocks
          info.AddValue("Built", _Built);
          info.AddValue("BuildDirection", _BuildDirection);
          info.AddValue("BuildBlock", _BuildBlock.Name);
+        }
+        public BuilderBlock(XElement Source):base(Source)
+        {
+            _MaxBuilds = Source.GetAttributeInt("MaxBuilds",_MaxBuilds);
+            _Built = Source.GetAttributeInt("Built", _Built);
+            _BuildDirection = (BuilderBlockDirection)Source.GetAttributeInt("BuildDirection");
+            String sFindType = Source.GetAttributeString("BuildBlock", typeof(NormalBlock).Name);
+            BuildBlock = BCBlockGameState.FindClass(sFindType);
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var Result = base.GetXmlData(pNodeName);
+
+            Result.Add(new XAttribute("MaxBuilds",_MaxBuilds));
+            Result.Add(new XAttribute("Built",_Built));
+            Result.Add(new XAttribute("BuildDirection",(int)_BuildDirection));
+            Result.Add(new XAttribute("BuildBlock", _BuildBlock.Name));
+
+            return Result;
         }
 
         public override bool MustDestroy()

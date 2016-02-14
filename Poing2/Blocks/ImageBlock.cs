@@ -6,7 +6,7 @@ using System.Drawing.Imaging;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {

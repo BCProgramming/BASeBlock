@@ -18,7 +18,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using BASeCamp.BASeBlock.Blocks;
 using Ionic.Zlib;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock
 {

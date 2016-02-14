@@ -2,6 +2,8 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -127,8 +129,16 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             FillColors = (Color[])info.GetValue("FillColors",typeof(Color[]));
         }
-        
+        public BevelBlock(XElement Source):base(Source)
+        {
+            FillColors = (Color[])Source.ReadArray<Color>("FillColors", null);
+        }
 
-
+        public override XElement GetXmlData(string pNodeName)
+        {
+            XElement Result = base.GetXmlData(pNodeName);
+            Result.Add(StandardHelper.SaveArray(FillColors,"FillColors"));
+            return Result;
+        }
     }
 }

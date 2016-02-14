@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -309,6 +311,21 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             return false;
         }
+        public PowerupBlock(XElement Source):base(Source)
+        {
+            String sType = Source.GetAttributeString("PowerupType");
+            _releaseCount = Source.GetAttributeInt("ReleaseCount");
+            PowerupType = BCBlockGameState.FindClass(sType);
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("PowerupType",_PowerupType.Name));
+            result.Add(new XAttribute("ReleaseCount",_releaseCount));
+            return result;
+        }
+
         public PowerupBlock(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {

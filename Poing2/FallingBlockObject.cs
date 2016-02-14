@@ -235,10 +235,10 @@ namespace BASeCamp.BASeBlock
         }
 
         Size iImagable.Size { get; set; }
-        public void ExplosionInteract(object sender, PointF Origin, double Strength)
+        public void ExplosionInteract(object sender, PointF Origin, PointF Vector)
         {
             //same as normal, get angle and nudge us in the appropriate direction.
-
+            double Strength = Vector.Magnitude();
             double usea = BCBlockGameState.GetAngle(Origin, CenterPoint());
             PointF usevector = new PointF((float)(Math.Sin(usea) * Strength), (float)(Math.Cos(usea)));
             Velocity = new PointF(Velocity.X + usevector.X, Velocity.Y + usevector.Y);

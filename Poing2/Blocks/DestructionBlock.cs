@@ -1,6 +1,8 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -34,10 +36,19 @@ namespace BASeCamp.BASeBlock.Blocks
             : base(clonethis)
         {
             _EffectRadius = clonethis.EffectRadius;
-
-
         }
 
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("EffectRadius",_EffectRadius));
+            return result;
+        }
+
+        public DestructionBlock(XElement Source)
+        {
+            _EffectRadius = Source.GetAttributeFloat("EffectRadius");
+        }
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);

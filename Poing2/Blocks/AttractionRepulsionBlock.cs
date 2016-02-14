@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -60,16 +60,15 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
+        public override void GetObjectData(SerializationInfo info, StreamingContext context)
+        {
+            base.GetObjectData(info, context);
+            info.AddValue("BlockColor", BlockColor);
+        }
         public AttractionRepulsionBlock(XElement source):base(source)
         {
             BlockColor = source.ReadElement<Color>("BlockColor");
         }
-        public override void  GetObjectData(SerializationInfo info, StreamingContext context)
-        {
-            base.GetObjectData(info, context);
-            info.AddValue("BlockColor",BlockColor);
-        }
-
         public override XElement GetXmlData(string pNodeName)
         {
             XElement result = base.GetXmlData(pNodeName);

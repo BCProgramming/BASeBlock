@@ -1,7 +1,9 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -75,6 +77,23 @@ namespace BASeCamp.BASeBlock.Blocks
             totalstrength = ourImages.Length - 1;
 
 
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(StandardHelper.SaveArray(ourImages,"ourImages"));
+            result.Add(new XAttribute("numhits",numhits));
+
+
+            return result;
+        }
+
+        public StrongBlock(XElement Source):base(Source)
+        {
+            ourImages = (String[])Source.ReadArray<String>("ourImages", new String[] { });
+            numhits = Source.GetAttributeInt("numhits");
+            totalstrength = ourImages.Length - 1;
         }
         protected override Particle AddStandardSprayParticle(BCBlockGameState parentstate, cBall ballhit)
         {

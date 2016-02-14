@@ -3,7 +3,9 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Design;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -58,6 +60,31 @@ namespace BASeCamp.BASeBlock.Blocks
             catch { _ShootProjectileType = typeof(ProjectileBall); }
 
         }
+        public RayBlock(XElement Source):base(Source)
+        {
+            mFireDirection = (RayFireDirection) Source.GetAttributeInt("FireDirection");
+            LaunchVelocity = Source.GetAttributeFloat("LaunchVelocity");
+            LaunchPosition = (PointF)Source.ReadElement<PointF>("LaunchPosition");
+            try { _ShootProjectileTypeString = Source.GetAttributeString("ShootProjectileType");
+            }
+            catch(Exception exx)
+            {
+                _ShootProjectileType = typeof(ProjectileBall);
+            }
+            
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("FireDirection",(int) mFireDirection));
+            result.Add(StandardHelper.SaveElement(LaunchPosition,"LaunchPosition"));
+            result.Add(new XAttribute("LaunchVelocity",LaunchVelocity));
+            result.Add(new XAttribute("ShootProjectileType",_ShootProjectileType.Name));
+            return result;
+
+        }
+
         public RayBlock(RectangleF blockrect)
             : this(blockrect, new PointF(0, -3), new PointF(blockrect.Width / 2, 0))
         {

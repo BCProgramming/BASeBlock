@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -67,8 +69,19 @@ namespace BASeCamp.BASeBlock.Blocks
         public TetherBlock(SerializationInfo info, StreamingContext context)
             : base(info, context)
         {
+            _TetherRadius = info.GetSingle("TetherRadius");
 
+        }
+        public TetherBlock(XElement Source)
+        {
+            TetherRadius = Source.GetAttributeFloat("TetherRadius");
+        }
 
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("TetherRadius",TetherRadius));
+            return result;
         }
 
         public TetherBlock(TetherBlock clonethis)

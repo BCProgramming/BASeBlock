@@ -1,6 +1,7 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
 
 namespace BASeCamp.BASeBlock.Blocks
@@ -63,6 +64,16 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             base.GetObjectData(info, context);
         }
+        public BrickBlock(XElement Source):base(Source)
+        {
+
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            return base.GetXmlData(pNodeName);
+        }
+
         public override bool PerformBlockHit(BCBlockGameState parentstate, cBall ballhit)
         {
             BCBlockGameState.Soundman.PlaySound("brickbreak");

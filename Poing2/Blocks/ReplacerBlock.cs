@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Design;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -53,11 +54,16 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
             info.AddValue("SearchFor", SearchBlockType.Name);
             info.AddValue("ReplaceWith", ReplaceWithBlockType.Name);
-
-
-
-
         }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var Result = base.GetXmlData(pNodeName);
+            Result.Add(new XAttribute("SearchFor",SearchBlockType.Name));
+            Result.Add(new XAttribute("ReplaceWith",ReplaceWithBlockType.Name));
+            return Result;
+        }
+
         public override object Clone()
         {
             return new ReplacerBlock(this);

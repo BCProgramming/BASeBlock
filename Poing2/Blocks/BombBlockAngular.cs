@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -36,6 +38,7 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
+        
         public override object Clone()
         {
 
@@ -62,6 +65,23 @@ namespace BASeCamp.BASeBlock.Blocks
             _EmissionCount = info.GetSingle("EmissionCount");
 
         }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(StandardHelper.SaveList(PassBehaviours,"PassBehaviours",true));
+            result.Add(new XAttribute("StartAngle",_StartAngle));
+            result.Add(new XAttribute("EmissionCount",_EmissionCount));
+            return result;
+        }
+        public BombBlockAngular(XElement Source):base(Source)
+        {
+            PassBehaviours = Source.ReadList<iBallBehaviour>("PassBehaviours", new List<iBallBehaviour>());
+            _StartAngle = Source.GetAttributeFloat("StartAngle");
+            _EmissionCount = Source.GetAttributeInt("EmissionCount", 5);
+
+        }
+
         public override bool PerformBlockHit(BCBlockGameState parentstate, cBall ballhit)
         {
             //spawn the appropriate number of new items, giving each a clone of the items in PassBehaviours.

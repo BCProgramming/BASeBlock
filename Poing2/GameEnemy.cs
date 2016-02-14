@@ -205,9 +205,9 @@ namespace BASeCamp.BASeBlock
                 return buildit;
         }
 
-        public virtual void ExplosionInteract(object sender, PointF Origin, double Strength)
+        public virtual void ExplosionInteract(object sender, PointF Origin, PointF Vector)
         {
-            HitPoints -= (int)Strength;
+            HitPoints -= (int)Vector.Magnitude();
         }
 
         //System.Threading.Timer usetimer;
@@ -1460,7 +1460,7 @@ namespace BASeCamp.BASeBlock
             HitPoints *= 2;
             //setup code is similar to the EyeGuy...
             DoBlockChecks = false;
-            counterdelay = 4;
+            counterdelay = 8;
             //choose a Colour
             ColorMatrix[] possiblecolours = new ColorMatrix[] { BASeBlock.ColorMatrices.GetColourizer(3, 1, 1), BASeBlock.ColorMatrices.GetColourizer(1, 1, 3), ColorMatrices.GetColourizer(1, 3, 1) };
             Location = pPosition;
@@ -1802,8 +1802,8 @@ namespace BASeCamp.BASeBlock
             EyeGuy eyeboss = new EyeGuy(pPosition, new SizeF(64, 64));
             eyeboss.DoBlockChecks = false;
             eyeboss.idlewaittime = 20;
-            eyeboss.counterdelay = 10;
-            eyeboss.HitPoints *= 25;
+            eyeboss.counterdelay = 25;
+            eyeboss.HitPoints *= 15;
             
             //BCBlockGameState.Soundman.PlayMusic("D:\\mycovers\\thedecisivebattle.mp3", true);
             eyeboss.OnShoot += eyeboss_OnShoot;

@@ -18,7 +18,7 @@ using BASeCamp.BASeBlock.GameStates;
 using BASeCamp.BASeBlock.Particles;
 using BASeCamp.BASeBlock.Powerups;
 using BASeCamp.BASeBlock.Projectiles;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 //using System.Xml.Serialization;
 

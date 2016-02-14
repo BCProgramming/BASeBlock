@@ -1,6 +1,8 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -46,6 +48,18 @@ namespace BASeCamp.BASeBlock.Blocks
         {
 
         }
+        public BlockShotBlock(XElement Source):base(Source)
+        {
+            _ShotVelocity = Source.ReadElement<PointF>("ShotVelocity", PointF.Empty);
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var Result = base.GetXmlData(pNodeName);
+            Result.Add(StandardHelper.SaveElement(_ShotVelocity,"ShotVelocity"));
+            return Result;
+        }
+
         #region ISerializable stuff
         public BlockShotBlock(SerializationInfo info, StreamingContext context):base(info,context)
         {

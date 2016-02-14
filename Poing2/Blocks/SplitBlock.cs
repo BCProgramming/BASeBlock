@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
 using BASeCamp.BASeBlock.Particles;
 
 namespace BASeCamp.BASeBlock.Blocks
@@ -30,6 +31,15 @@ namespace BASeCamp.BASeBlock.Blocks
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
             base.GetObjectData(info, context);
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            return base.GetXmlData(pNodeName);
+        }
+        public SplitBlock(XElement Source):base(Source)
+        {
+
         }
         public override Object Clone()
         {

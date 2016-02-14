@@ -16,7 +16,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using BASeCamp.BASeBlock.HighScores;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 //using System.Windows.Markup;
 //using System.Windows.Media;

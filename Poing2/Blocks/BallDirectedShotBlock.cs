@@ -1,6 +1,8 @@
 using System;
 using System.Drawing;
 using System.Runtime.Serialization;
+using System.Xml.Linq;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -56,6 +58,16 @@ namespace BASeCamp.BASeBlock.Blocks
 
             base.GetObjectData(info, context);
             info.AddValue("ShootSpeed", _ShootSpeed);
+        }
+        public BallDirectedShotBlock(XElement Source):base(Source)
+        {
+            _ShootSpeed = Source.GetAttributeFloat("ShootSpeed");
+        }
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var result = base.GetXmlData(pNodeName);
+            result.Add(new XAttribute("ShootSpeed",_ShootSpeed));
+            return result;
         }
 
         public override object Clone()

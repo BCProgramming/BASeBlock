@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Xml.Linq;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock.Blocks
 {
@@ -151,6 +151,8 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
 
             }
 
+            
+
             #endregion
         }
 
@@ -175,6 +177,18 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
             Mass = info.GetSingle("Mass");
 
         }
+        public BlackHoleBlock(XElement Source):base(Source)
+        {
+            Mass = Source.GetAttributeDouble("Mass");
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var Result = base.GetXmlData(pNodeName);
+            Result.Add(new XAttribute("Mass",Mass));
+            return Result;
+        }
+
         public override bool PerformBlockHit(BCBlockGameState parentstate, cBall ballhit)
         {
             //if our mass is positive....

@@ -47,7 +47,7 @@ using Img;
 using Ionic.Zip;
 using Ionic.Zlib;
 using BASeCamp.Licensing;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 using Microsoft.JScript;
 using Microsoft.WindowsAPICodePack.Shell.PropertySystem;
 using Block = BASeCamp.BASeBlock.Blocks.Block;
@@ -2052,7 +2052,7 @@ namespace BASeCamp.BASeBlock
             //defer all of the things.
               gamestate.NextFrameCalls.Enqueue(new NextFrameStartup(()=> {
             cBall addedball = new cBall(hitthisblock.CenterPoint(), impactvector);
-
+            addedball.PreviousVelocity = impactvector;
             //set the position...
             addedball.Location = new PointF(addedball.Location.X - impactvector.X, addedball.Location.Y - impactvector.Y);
 
