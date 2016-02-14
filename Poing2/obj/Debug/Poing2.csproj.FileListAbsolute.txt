@@ -1,9 +1,0 @@
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\bin\Debug\Poing2.exe
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\bin\Debug\Poing2.pdb
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\bin\Debug\irrKlang.NET2.0.dll
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Debug\ResolveAssemblyReference.cache
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Debug\Poing2.frmPoing.resources
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Debug\Poing2.Properties.Resources.resources
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Debug\Poing2.csproj.GenerateResource.Cache
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Debug\Poing2.exe
-C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\Poing2\Poing2\obj\Debug\Poing2.pdb
