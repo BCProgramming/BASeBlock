@@ -125,6 +125,10 @@
       <Project>{C40AAD74-B465-449D-B953-1EF23374A45B}</Project>
       <Name>BCUpdateLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LicenseLib\LicenseLib.csproj">
+      <Project>{703d842e-5eb3-4f9e-ad56-757443c266ca}</Project>
+      <Name>LicenseLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -544,4 +544,26 @@ namespace BASeCamp.BASeBlock.Cheats
         }
 
     }
+
+    public class ActivateTriggerCheat : Cheat
+    {
+        public override string Name
+        {
+            get { return "Activate Trigger"; }
+        }
+
+        public override bool ApplyCheat(BCBlockGameState gState, int ParameterCount, string[] Parameters)
+        {
+            if(Parameters.Length==0)
+            {
+                return false;
+            }
+            String triggerIDStr = Parameters.First();
+            int TriggerID;
+            if (!int.TryParse(triggerIDStr, out TriggerID)) return false;
+            gState.TriggerEvent(TriggerID,gState);
+            return true;
+            
+        }
+    }
 }

@@ -48,7 +48,7 @@ namespace BASeCamp.BASeBlock
         protected bool Nocollisions = false;
         private PointF _Velocity;
         public PointF Velocity { get { return _Velocity; } set { _Velocity = value; } }
-        protected float FallSpeedLimit = 5;
+        protected float FallSpeedLimit = 8;
         public static PointF DefaultGravityEffect = new PointF(0, 60f);
         public static PointF GetScaledGravityEffect(float factor)
         {

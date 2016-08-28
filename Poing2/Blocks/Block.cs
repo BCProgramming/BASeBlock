@@ -571,8 +571,8 @@ new ManyToOneTestBlockData(typeof(ManyToOneTestBlock),"A Green Block",Color.Gree
         private List<BlockTrigger> _BlockTriggers = new List<BlockTrigger>();
 
         //[MergableProperty(true)]
-        //[Editor(typeof(BlockTriggerCollectionEditor), typeof(UITypeEditor))]
-        [Editor(typeof(ItemTypeEditor<BlockTrigger>),typeof(UITypeEditor))]
+        [Editor(typeof(BlockTriggerCollectionEditor), typeof(UITypeEditor))]
+        //[Editor(typeof(ItemTypeEditor<BlockTrigger>),typeof(UITypeEditor))]
         public List<BlockTrigger> BlockTriggers
         {
             get { return _BlockTriggers; }
@@ -582,8 +582,8 @@ new ManyToOneTestBlockData(typeof(ManyToOneTestBlock),"A Green Block",Color.Gree
         //[Editor(typeof(ObjectTypeEditor), typeof(UITypeEditor))]
 
         //[MergableProperty(true)]
-        //[Editor(typeof(BlockTriggerEventCollectionEditor), typeof(UITypeEditor))]
-        [Editor(typeof(ItemTypeEditor<BlockEvent>), typeof(UITypeEditor))]
+        [Editor(typeof(BlockTriggerEventCollectionEditor), typeof(UITypeEditor))]
+        //[Editor(typeof(ItemTypeEditor<BlockEvent>), typeof(UITypeEditor))]
         public List<BlockEvent> BlockEvents
         {
             get { return _BlockEvents; }
@@ -2585,8 +2585,11 @@ End Function
             XElement BuildPowerup = new XElement(pNodeName);
             for(int i=0;i<Powerups.Length;i++)
             {
-                XElement ChangeItem = new XElement("ChanceItem",new XAttribute("Type",Powerups[i].FullName),new XAttribute("Chance",Powerupchance[i]));
-                BuildPowerup.Add(ChangeItem);
+                if (Powerups[i] != null)
+                {
+                    XElement ChangeItem = new XElement("ChanceItem", new XAttribute("Type", Powerups[i].FullName), new XAttribute("Chance", Powerupchance[i]));
+                    BuildPowerup.Add(ChangeItem);
+                }
             }
             return BuildPowerup;
         }
@@ -2596,12 +2599,12 @@ End Function
         {
             //assumes given XElement is XML created by GetPowerupXML.
             //TODO: More exception handling and logging here...
-            int numelements = Source.Descendants("ChanceItem").Count();
+            int numelements = Source.Elements("ChanceItem").Count();
             //initialize the two arrays.
             Powerups = new Type[numelements];
             Powerupchance = new float[numelements];
             int currelement = 0;
-            foreach(var iterateElement in Source.Descendants("ChanceItem"))
+            foreach(var iterateElement in Source.Elements("ChanceItem"))
             {
                 String TypeAttribute = iterateElement.Attribute("Type").Value;
                 String ChanceAttribute = iterateElement.Attribute("Chance").Value;

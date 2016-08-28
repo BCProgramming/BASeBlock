@@ -483,7 +483,8 @@ namespace BASeCamp.BASeBlock
         }
 
         private List<Particle> DrawParticles = new List<Particle>();
-
+        private Point FirstBobberPos;
+        private Point SecondBobberPos;
         private void DrawFrame()
         {
             try
@@ -497,9 +498,9 @@ namespace BASeCamp.BASeBlock
                     g.Clear(Color.Transparent);
                     g.ResetTransform();
                     //g.DrawImage(panImage.BackgroundImage, 0, 0, panImage.ClientSize.Width, panImage.ClientSize.Height);
-                    Bobber.Draw(g, 320, 157);
+                    Bobber.Draw(g, FirstBobberPos.X, FirstBobberPos.Y);
                     g.ResetTransform();
-                    Bobber2.Draw(g, 70, 157);
+                    Bobber2.Draw(g, SecondBobberPos.X, SecondBobberPos.Y);
                     List<Particle> removeparts = new List<Particle>();
                     foreach (Particle drawpart in DrawParticles)
                     {
@@ -707,7 +708,11 @@ namespace BASeCamp.BASeBlock
             //first, initialize image panel to 431, 260
             panImage.Location = new Point(0, 0);
             //change this if the image is changed...
-            panImage.Size = new Size(431, 260);
+            Size UseSize = new Size(431, 260);
+            PointF ScaleValue = DPIHelper.GetDPIScaling(this);
+            UseSize = new Size((int)((float)UseSize.Width*ScaleValue.X),(int)((float)UseSize.Height*ScaleValue.Y));
+
+            panImage.Size = UseSize;
             Size = new Size(panImage.Width, panImage.Height + panProgress.Height);
             //clear the background of the panImage to speed drawing
             //panImage.BackgroundImage=null;
@@ -763,6 +768,13 @@ namespace BASeCamp.BASeBlock
             float randomAngle = (float) (2*Math.PI*rgen.NextDouble());
             Brush bobtextbrush = new LinearGradientBrush(new RectangleF(0, 0, bobtextsize.Width, bobtextsize.Height),
                                                          RandomColor1, RandomColor2, randomAngle, true);
+
+         
+              FirstBobberPos = new Point((int)(320f*ScaleValue.X),(int)(157f*ScaleValue.Y));
+              SecondBobberPos = new Point((int)(70f * ScaleValue.X), (int)(157f * ScaleValue.Y));
+         
+
+
             Bobber =
                 (Animatable)
                 new BobbingTextAnimator(randombobtext, 35, bobberfont, 0.25f, 0.35f, 0.007f, -35, bobtextbrush);

@@ -42,7 +42,7 @@ namespace ProductKeyGenerator
             ProductKey.Products useproduct = (ProductKey.Products)Enum.Parse(typeof(ProductKey.Products), (String)cboProducts.SelectedItem);
             pk.Product = useproduct;
             //pk.Product = (ProductKey.Products)cboProducts.SelectedIndex;
-            txtProductCode.Text = ProductKey.insertdashes(pk.GetProductCode());
+            txtProductCode.Text = CryptHelper.InsertDashes(pk.GetProductCode());
         }
 
         private void frmKeyGen_Load(object sender, EventArgs e)

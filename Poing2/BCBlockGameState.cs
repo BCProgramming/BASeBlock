@@ -57,12 +57,7 @@ using Rectangle = System.Drawing.Rectangle;
 
 namespace BASeCamp.BASeBlock
 {
-
-
     
-    
-
-
     public interface IMovingObject
     {
         PointF Velocity { get; set; }
@@ -89,8 +84,7 @@ namespace BASeCamp.BASeBlock
 
     public static class ColorMatrices
     {
-
-        private static float[][] _colorMatrixElements = { 
+   private static float[][] _colorMatrixElements = { 
    new float[] {1,  0,  0,  0, 0},        // red scaling factor of 2
    new float[] {0,  1,  0,  0, 0},        // green scaling factor of 1
    new float[] {0,  0,  2,  0, 0},        // blue scaling factor of 1
@@ -605,33 +599,37 @@ namespace BASeCamp.BASeBlock
          ";IS THE \nMONKEY ACTIVE?","Go, \nCHARMANDER!","Contains \n\"Free\"\nEditor!","Not From\nConcentrate!","Classic\nFormula.","Possum\nfree","Swing Low, \nSweet Bear",
         "Written\nin\nC#","Not a\nJava Program","Object Oriented!","This message is\n an error","Refreshing","3 Hits\nOn Youtube!",
         "Come \nGet Some!","Groovy!","20% Cooler","Does Death\nWear Blue?","In this town\n I am the law","My Circuit's\n Slow","Only Nu\ncan prevent\nForest fires",
-        "Mess with\nThe Best\nDie Like\n the rest","Watch out\nfor Acid Burn!","They don't \ncall her \nRainbow Dash\n for nothing!","Guaranteed\nNot to\nCause Mumps","TROLL \nHARD",
+        "Mess with\nThe Best\nDie Like\n the rest","Watch out\nfor Acid Burn!","Life begins and end with Nu","Guaranteed\nNot to\nCause Mumps","TROLL \nHARD",
         "forgetting that \nyou forgot\ncan be bliss.","easy\n as \nquicksand","not designed\nfor sad onions","Booleans:\nTrue,\nFalse\nFILE_NOT_FOUND","Fully\nScriptable!",
-        "Smile,Smile,Smile","Beam,\nBeam,Beam!","Grin,\nGrin,Grin","Rainbows\nAre\nSPICY","Batteries\n Not Included","That Spells\n DNA","Buy Cosmo now!","Easy to Crack!",
-        "GOD is REAL\n(unless declared INTEGER)","This text\nis really long\nand might not fit\n or be visible!","Hail Celestia","Friendship\nis\nMagic","Tomorrow\nIs\n%weekday+1%",
+        "It's GOLD, Jerry,\nGOLD!","Beam,\nBeam,Beam!","Grin,\nGrin,Grin","Rainbows\nAre\nSPICY","Batteries\n Not Included","That Spells\n DNA","Buy Cosmo now!","Easy to Crack!",
+        "GOD is REAL\n(unless declared INTEGER)","This text\nis really long\nand might not fit\n or be visible!","Tomorrow\nIs\n%weekday+1%",
         "Hello,\n%username%!","%usedmem%MB \nREADY.","./make\n./configure\n./make install","Try\nBCSearch!","Not a \nSubstitute\n For Exercise",
         "Colliding Polys","Don't Mess\nWith\nMagnetman"};
 
+        
         public static string[] ExpandIntroStrings()
         {
-
+            
             List<String> buildlisting = new List<string>();
             String availableram = Math.Round(new PerformanceCounter("Memory", "Available Bytes").NextValue() / 1024 / 1024, 2).ToString();
+            Dictionary<String, String> VariableReplacements = new Dictionary<string, string>()
+            {
+                {"weekday",DateTime.Now.DayOfWeek.ToString() },
+                {"weekday+1",DateTime.Now.AddDays(1f).DayOfWeek.ToString() },
+                {"username",CurrentUserName },
+                {"usedmem",availableram }
+            };
             foreach (String intro in IntroStrings)
             {
                 //replace "speshul" variables.
-                
-                String addintro = intro.Replace("%weekday%", DateTime.Now.DayOfWeek.ToString());
-                addintro = addintro.Replace("%weekday+1%", DateTime.Now.AddDays(1f).DayOfWeek.ToString());
-                addintro = addintro.Replace("%username%", CurrentUserName);
-                addintro = addintro.Replace("%usedmem%", availableram);
+                String addintro = intro;
+                foreach(var Replacement in VariableReplacements)
+                {
+                    addintro = addintro.Replace("%" + Replacement.Key + "%", Replacement.Value);
+                }
                 buildlisting.Add(addintro);
-
-
             }
             return buildlisting.ToArray();
-
-
         }
         internal static List<DeletionHelper> pendingdeletions = new List<DeletionHelper>();
 
@@ -3273,8 +3271,9 @@ namespace BASeCamp.BASeBlock
 
             //Debug.Print("keystates:" + (GetKeyState((int)Keys.Control).ToString() + "," + (GetKeyState((int)Keys.Shift).ToString())));
            // bool ispressed = KeyboardInfo.GetKeyState(Keys.ShiftKey).IsPressed && KeyboardInfo.GetKeyState(Keys.ControlKey).IsPressed;
+#if false
             bool ispressed = (KeyboardInfo.GetAsyncKeyState((int)Keys.ShiftKey) != 0);
-            if (ispressed)
+            if (ispressed && Environment.UserInteractive)
             {
                 //show the "config" form.
                 //convert Soundfolders and imagefolders string arrays to directoryInfo[] arrays..
@@ -3328,9 +3327,10 @@ namespace BASeCamp.BASeBlock
                 FolderListView flview = new FolderListView(new string[] {"Sound","Image","Levels","Plugins"},new DirectoryInfo[][] { sfolders.ToArray(),imgfolders.ToArray(),lvlfolders.ToArray(),pluginfolderslist.ToArray()});
                 flview.Text = "Data Folders";
                 flview.ShowDialog();
-
+            
 
             }
+#endif
             #endregion
             //set tempdeleter class, so that when app is unloaded folder is destroyed.
             Type[] TypesToEnum = new Type[] {

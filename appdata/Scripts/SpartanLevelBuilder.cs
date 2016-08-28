@@ -10,8 +10,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
 using BASeBlock;
+using BASeBlock.Blocks;
 using bcHighScores;
-
+using BASeBlock.Particles;
 namespace SpartanLevel
 {
 
@@ -45,9 +46,12 @@ namespace SpartanLevel
 				
 				for(int y=0; y < PicGame.Height /3; y+=16)
 				{
-				returnlevel.levelblocks.Add(new NormalBlock(new RectangleF(x,y,33,16), 
+				Block createdblock = new NormalBlock(new RectangleF(x,y,33,16), 
 					new SolidBrush(RandomColor()),
-					new Pen(Color.Black,1)));
+					new Pen(Color.Black,1));
+				//createdblock.BlockEffects.Add(new ParticleEmanationEffect() {SpawnType=typeof(AnimatedImageParticle)});
+				//createdblock.BlockEffects.Add(new LinearGlintEffect());
+				returnlevel.levelblocks.Add(createdblock);
 				
 				}
 			

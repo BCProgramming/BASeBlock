@@ -95,6 +95,13 @@ namespace BASeCamp.BASeBlock.Blocks
                 {
                     BlackHoleBlock casted = (BlackHoleBlock)loopblock;
                     double distance = Distance(loopblock.CenterPoint(), ballobject.Location);
+                    if(!casted.Interactive)
+                    {
+                        if(distance < casted.EventHorizon)
+                        {
+                            casted.PerformBlockHit(ParentGameState, ballobject);
+                        }
+                    }
                     // double Force = G * BallMass * casted.Mass / ((distance * distance));
                     double Force = BallMass * casted.Mass / ((distance * distance));
                     Force /= -3;
@@ -145,19 +152,21 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
             public GravityBlockBallBehaviour(SerializationInfo info, StreamingContext context)
             {
                 BallMass = info.GetSingle("Mass");
-
-
-
-
             }
 
-            
-
+         
             #endregion
         }
 
 
         public double Mass { get; set; }
+        /// <summary>
+        /// whether this block will be drawn and interact as a block.
+        /// if false, it will not appear at all, and effectively be invisible.
+        /// </summary>
+        public bool Interactive { get; set; }
+        private int _EventHorizon = 3;
+        public int EventHorizon { get { return _EventHorizon;} set {_EventHorizon = value;} }
         private bool firstframecalled = false;
 
         public BlackHoleBlock(RectangleF blockrect)
@@ -175,17 +184,22 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
             : base(info, context)
         {
             Mass = info.GetSingle("Mass");
+            Interactive = info.GetBoolean("Interactive");
+            EventHorizon = info.GetInt32("EventHorizon");
 
         }
         public BlackHoleBlock(XElement Source):base(Source)
         {
             Mass = Source.GetAttributeDouble("Mass");
+            
         }
 
         public override XElement GetXmlData(string pNodeName)
         {
             var Result = base.GetXmlData(pNodeName);
             Result.Add(new XAttribute("Mass",Mass));
+            Result.Add(new XAttribute("Interactive",Interactive));
+            Result.Add(new XAttribute("EventHorizon",EventHorizon));
             return Result;
         }
 
@@ -194,6 +208,7 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
             //if our mass is positive....
             if (Mass > 0)
             {
+                if(!Interactive) return false;
                 //we are a "black hole" block; thus any balls that hit us are swallowed up.
                 if (parentstate.Balls.Count((w) => !w.isTempBall) > 1)
                     parentstate.RemoveBalls.Add(ballhit);
@@ -209,6 +224,8 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
         {
             base.GetObjectData(info, context);
             info.AddValue("Mass", Mass);
+            info.AddValue("Interactive",Interactive);
+            info.AddValue("EventHorizon",EventHorizon);
         }
         public override object Clone()
         {

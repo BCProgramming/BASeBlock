@@ -146,8 +146,11 @@ namespace BASeCamp.BASeBlock
             Type[] returnitems = (from p in base.CreateNewItemTypes() where p== typeof(BlockEvent) ||  p.IsSubclassOf(typeof(BlockEvent)) select p).ToArray();
             return returnitems;
         }
-        
 
+        protected override string GetDisplayText(object value)
+        {
+            return value.ToString();
+        }
     }
     public class TriggerCollectionEditor : BaseMultiEditor 
     {
@@ -233,8 +236,12 @@ namespace BASeCamp.BASeBlock
             return BCBlockGameState.BlockTriggerTypes.ManagedTypes.ToArray();
  	         
         }
-
-
+        protected override string GetDisplayText(object value)
+        {
+            BlockTrigger bt = value as BlockTrigger;
+            return base.GetDisplayText(value);
+        }
+        
     }
     /// <summary>
     /// event that kills all enemies.
@@ -433,7 +440,7 @@ namespace BASeCamp.BASeBlock
     
 
     [Serializable]
-    public abstract class TriggerEvent:ISerializable,IComparable<TriggerEvent>,ICloneable ,IEditorExtensions
+    public abstract class TriggerEvent:ISerializable,IComparable<TriggerEvent>,ICloneable ,IEditorExtensions,IXmlPersistable
     {
         //TriggerEvent represents an event that is performed 
         
@@ -487,7 +494,16 @@ namespace BASeCamp.BASeBlock
         }
 
         #endregion
-
+        public virtual XElement GetXmlData(string pNodeName)
+        {
+            XElement result = new XElement(pNodeName);
+            result.Add(new XAttribute("ID", this.ID));
+            return result;
+        }
+        protected TriggerEvent(XElement Source)
+        {
+            this.ID = Source.GetAttributeInt("ID", -1);
+        }
         public int CompareTo(TriggerEvent other)
         {
             return ID.CompareTo(other.ID);
@@ -520,6 +536,8 @@ namespace BASeCamp.BASeBlock
         {
             return this.GetType().Name + ":" + this.ID;
         }
+
+      
     }
     /// <summary>
     /// Event that provides a thin wrapper to allow for detection of Events being fired.
@@ -540,7 +558,10 @@ namespace BASeCamp.BASeBlock
         {
             return new EventDetector(this);
         }
+        public EventDetector(XElement Source):base(Source)
+        {
 
+        }
 
     }
 
@@ -566,6 +587,25 @@ namespace BASeCamp.BASeBlock
             
 
 
+        }
+
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var Result = base.GetXmlData(pNodeName);
+            Result.Add(new XAttribute("EnemyType",EnemyType.Name));
+            Result.Add(StandardHelper.SaveElement(SpawnLocation,"SpawnLocation"));
+            Result.Add(StandardHelper.SaveElement(SpawnSize,"SpawnSize"));
+            return Result;
+        }
+        public SpawnEnemyEvent(XElement Source):base(Source)
+        {
+            String EnemyTypeStr = Source.GetAttributeString("EnemyType", null);
+            if(EnemyTypeStr!=null)
+            {
+                EnemyType = BCBlockGameState.FindClass(EnemyTypeStr);
+            }
+            SpawnLocation = (PointF)Source.ReadElement<PointF>("SpawnLocation");
+            SpawnSize = (SizeF)Source.ReadElement<SizeF>("SpawnSize");
         }
         public override void GetObjectData(SerializationInfo info, StreamingContext context)
         {
@@ -691,9 +731,19 @@ namespace BASeCamp.BASeBlock
                 info.AddValue("SoundPlay", _SoundPlay);
                 info.AddValue("IsMusic", _IsMusic);
             }
+            public PlaySoundEvent(XElement Source):base(Source)
+            {
+                _SoundPlay = Source.GetAttributeString("SoundPlay");
+                _IsMusic = Source.GetAttributeBool("IsMusic");
+            }
 
-
-
+            public override XElement GetXmlData(string pNodeName)
+            {
+                var Result = base.GetXmlData(pNodeName);
+                Result.Add(new XAttribute("SoundPlay",_SoundPlay));
+                Result.Add(new XAttribute("IsMusic",_IsMusic));
+                return Result;
+            }
     }
 
     [Serializable]
@@ -755,6 +805,16 @@ namespace BASeCamp.BASeBlock
 
         }
 
+        public override XElement GetXmlData(string pNodeName)
+        {
+            var Result = base.GetXmlData(pNodeName);
+            Result.Add(new XAttribute("EventType",(int)BlockEventType));
+            return Result;
+        }
+        public BlockEvent(XElement Source):base(Source)
+        {
+            BlockEventType = (BlockEventTypeConstants)Source.GetAttributeInt("EventType");
+        }
         public BlockEvent(SerializationInfo info, StreamingContext context):base(info,context)
         {
             BlockEventType = (BlockEventTypeConstants)info.GetValue("BlockEventType", typeof(BlockEventTypeConstants));
@@ -1433,9 +1493,9 @@ namespace BASeCamp.BASeBlock
 
 
             }
+            var TriggeredBlocks = (from q in stateuse.Blocks where q.BlockEvents.Any((p) => p.ID == IDInvoke) select q).ToList();
 
-
-            foreach(Block loopblock in (from q in stateuse.Blocks where q.BlockEvents.Any((p)=>p.ID==IDInvoke) select q))
+            foreach(Block loopblock in TriggeredBlocks)
             {
                 foreach (BlockEvent loopevent in loopblock.BlockEvents)
                 {
@@ -1619,7 +1679,7 @@ namespace BASeCamp.BASeBlock
         }
         public BlockTrigger(XElement Source) :base(Source)
         {
-            BlockTriggerType = (BlockTriggerTypeConstants) int.Parse(Source.Attribute("BlockTriggerType").Value);
+            BlockTriggerType = (BlockTriggerTypeConstants) Source.GetAttributeInt("BlockTriggerType");
         }
         public BlockTrigger(int pID, TimeSpan pTriggerDelay,Block blockowner)
         {
@@ -1738,11 +1798,11 @@ namespace BASeCamp.BASeBlock
         #endregion
 
         #region ICloneable Members
-        public BlockTrigger(BlockTrigger clonethis):base(clonethis)
+        public BlockTrigger(BlockTrigger clonethis)
+            : base(clonethis)
         {
             OwnerBlock = clonethis.OwnerBlock;
-
-
+            this.BlockTriggerType = clonethis.BlockTriggerType;
         }
 
         public override object Clone()

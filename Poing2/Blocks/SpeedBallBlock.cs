@@ -8,6 +8,7 @@ namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [ImpactEffectBlockCategory]
+    [BBEditorInvisible] //will probably deprecate for a SpeedEffectBlock or something similar.
     [BlockDescription("Imparts extra speed to the ball that hit it when it is destroyed.")]
     public class SpeedBallBlock : GenericImageBlock
     {

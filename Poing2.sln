@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B0118C0-D388-4F6C-8379-36ACD3F4D4E9}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductKeyGenerator", "ProductKeyGenerator\ProductKeyGenerator.csproj", "{986B3DB4-269B-4D43-AD3F-D73C9AF8DE68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elementizer", "XMLSerialization\Elementizer.csproj", "{850A1563-AC23-4B60-BBCF-503B2BB69547}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicenseLib", "LicenseLib\LicenseLib.csproj", "{703D842E-5EB3-4F9E-AD56-757443C266CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,12 +83,21 @@ Global
 		{850A1563-AC23-4B60-BBCF-503B2BB69547}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{850A1563-AC23-4B60-BBCF-503B2BB69547}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{850A1563-AC23-4B60-BBCF-503B2BB69547}.Release|x86.ActiveCfg = Release|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Debug|x86.Build.0 = Debug|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Release|x86.ActiveCfg = Release|Any CPU
+		{703D842E-5EB3-4F9E-AD56-757443C266CA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(Performance) = preSolution
-		HasPerformanceSessions = true
 	EndGlobalSection
 	GlobalSection(TestCaseManagementSettings) = postSolution
 		CategoryFile = Poing2.vsmdi

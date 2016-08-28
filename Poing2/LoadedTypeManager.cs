@@ -9,7 +9,9 @@ using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
+using BASeCamp.BASeBlock;
 using Microsoft.CSharp;
+using Microsoft.JScript;
 using Microsoft.VisualBasic;
 
 public static class StringExtensions
@@ -509,8 +511,12 @@ namespace System.Reflection.BASeCamp
             {
                 if (!loadeddata.ContainsKey(index))
                 {
+                    if(index==typeof(BlockTrigger))
+                    {
+                        Debug.Print("Testbreak");
+                    }
                     //add it...
-                    loadeddata.Add(index, new LoadedTypeManager(useassemblies, index, null));
+                    loadeddata.Add(index, new LoadedTypeManager(useassemblies,index, null));
                     //throw new ApplicationException("Type " + index.FullName + " not enumerated...");
                 }
                 return loadeddata[index];
@@ -928,8 +934,15 @@ namespace System.Reflection.BASeCamp
             if (looptype == null || TypeManage == null) return false;
             int CountInFile = 0;
 
+            
+
             if (!looptype.IsAbstract)
             {
+                //if this is the type we want already, then we add it.
+                //Seems a class cannot be a "Subclass" of itself. Realistically if the Type we are looking for is itself
+                //instantiable we want to include it.
+                if (looptype == TypeManage)
+                    return true;
                 //added more recently: check wether it is a class derived from the given type.
                 if (looptype.IsSubclassOf(TypeManage))
                 {

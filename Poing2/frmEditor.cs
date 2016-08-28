@@ -2411,7 +2411,7 @@ namespace BASeCamp.BASeBlock
 
         private void behavioursToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SelectedBalls == null && SelectedBalls.Count == 0) return;
+            if (SelectedBalls == null || SelectedBalls.Count == 0) return;
             BallBehave usebehave = new BallBehave(SelectedBalls[0]);
             usebehave.ShowDialog();
 

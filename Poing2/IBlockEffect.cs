@@ -55,7 +55,7 @@ namespace BASeCamp.BASeBlock.Blocks
         }
         public LinearGlintEffect(XElement Source)
         {
-            foreach(XElement checkelements in Source.Descendants())
+            foreach(XElement checkelements in Source.Elements())
             {
                 if(checkelements.Name=="Origin")
                 {

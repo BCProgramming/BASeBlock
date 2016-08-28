@@ -1,4 +1,9 @@
-Compilation of script, "C:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs resulted in 0 Warnings & 2 Errors.
-Errors:
-'SpartanLevel.SpartanLevelBuilder.BuildLevelSet(System.Drawing.RectangleF)': no suitable method found to override #CS0115 Line 91 Column 29 in file: c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs
-'SpartanLevel.SpartanLevelBuilder' does not implement inherited abstract member 'BASeBlock.BaseLevelBuilder.BuildLevelSet(System.Drawing.RectangleF, System.Windows.Forms.IWin32Window)' #CS0534 Line 18 Column 15 in file: c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(12,7) : error CS0246: The type or namespace name 'BASeBlock' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(13,7) : error CS0246: The type or namespace name 'BASeBlock' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(14,7) : error CS0246: The type or namespace name 'bcHighScores' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(15,7) : error CS0246: The type or namespace name 'BASeBlock' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(19,37) : error CS0246: The type or namespace name 'BaseLevelBuilder' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(22,11) : error CS0246: The type or namespace name 'IHighScoreList' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(32,11) : error CS0246: The type or namespace name 'cLevel' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(64,10) : error CS0246: The type or namespace name 'LevelSet' could not be found (are you missing a using directive or an assembly reference?)
+Error:c:\Users\BC_Programming\AppData\Roaming\BASeBlock\Scripts\SpartanLevelBuilder.cs(95,20) : error CS0246: The type or namespace name 'LevelSet' could not be found (are you missing a using d

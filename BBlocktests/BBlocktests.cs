@@ -14,15 +14,17 @@ using System.Collections.Generic;
 using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Web.UI.WebControls;
 using System.Xml.Linq;
 using BASeCamp.BASeBlock.Blocks;
 using BASeCamp.CommandLineParser;
 using BASeCamp.Licensing;
-using BASeCamp.XMLSerialization;
+using BASeCamp.Elementizer;
 using BASeCamp.Updating;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BASeCamp.BASeBlock;
 using BASeCamp.BASeBlock.HighScores;
+using Image = System.Drawing.Image;
 
 
 namespace BBlocktests
@@ -67,6 +69,15 @@ namespace BBlocktests
             }
         }
 
+
+
+        [TestMethod]
+        public void TestStringArray()
+        {
+            String[] TestSave = new String[] { "STRONG1", "STRONG2", "STRONG3" };
+            XElement SavedItem = StandardHelper.SaveArray(TestSave, "Strong");
+
+        }
         [TestMethod]
         public void TestArrayXML()
         {
@@ -89,8 +100,9 @@ namespace BBlocktests
             };
             XElement sq1Result = StandardHelper.SaveArray(sq1, "MultiDim");
             XElement sq2Result = StandardHelper.SaveArray(sq2, "MultiArray");
-
-
+            
+            int[,] First = (int[,])(new XElement("Test",sq1Result).ReadArray<int>("MultiDim"));
+            int[][] Second = (int[][])(new XElement("Test",sq2Result).ReadArray<int[]>("MultiArray"));
             ColorMatrix sample = ColorMatrices.GrayScale();
             XElement CMatrix = StandardHelper.SaveElement(sample, "CMatrix");
             XDocument savedoc = new XDocument(new XElement("Root", sq1Result, sq2Result, CMatrix));
@@ -211,32 +223,41 @@ namespace BBlocktests
 
                 if (TestBlock != null)
                 {
-                    TestContext.WriteLine("Successfully instantiated type " + iteratetype.Name);
-                    //now serialize.
-                    TestContext.WriteLine("Serializing to an XML Element...");
-                    XElement createelement = TestBlock.GetXmlData("TestBlock");
-                    TestContext.WriteLine("Serialization Completed.");
-                    String TargetPath = Path.Combine(TestDataLocation, iteratetype.Name + ".xml");
-                    XDocument writedocument = new XDocument(createelement);
-                    writedocument.Save(TargetPath);
-                    TestContext.WriteLine("Saved XML element to " + TargetPath);
-                    TestContext.WriteLine("Attempting to deserialized XElement...");
-                    Block result = null;
                     try
                     {
-                        result = (Block) StandardHelper.ReadElement(iteratetype, createelement);
-                        if (result == null)
+                        TestContext.WriteLine("Successfully instantiated type " + iteratetype.Name);
+                        //now serialize.
+                        TestContext.WriteLine("Serializing to an XML Element...");
+
+                        XElement createelement = TestBlock.GetXmlData("TestBlock");
+
+                        TestContext.WriteLine("Serialization Completed.");
+                        String TargetPath = Path.Combine(TestDataLocation, iteratetype.Name + ".xml");
+                        XDocument writedocument = new XDocument(createelement);
+                        writedocument.Save(TargetPath);
+                        TestContext.WriteLine("Saved XML element to " + TargetPath);
+                        TestContext.WriteLine("Attempting to deserialized XElement...");
+                        Block result = null;
+                        try
                         {
-                            TestContext.WriteLine("No result...");
+                            result = (Block)StandardHelper.ReadElement(iteratetype, createelement);
+                            if (result == null)
+                            {
+                                TestContext.WriteLine("No result...");
+                            }
+                            else
+                            {
+                                TestContext.WriteLine("Deserialization successful. Result:" + result.GetType());
+                            }
                         }
-                        else
+                        catch (Exception exx)
                         {
-                            TestContext.WriteLine("Deserialization successful. Result:" + result.GetType());
+                            TestContext.WriteLine("Deserialization failed for type " + iteratetype.Name + " " + exx.ToString());
                         }
                     }
-                    catch (Exception exx)
+                    catch(Exception exx)
                     {
-                        TestContext.WriteLine("Deserialization failed for type " + iteratetype.Name + " " + exx.ToString());
+                        TestContext.WriteLine("Serialization failed for type:" + iteratetype.Name + " " + exx.ToString());
                     }
                 }
             }

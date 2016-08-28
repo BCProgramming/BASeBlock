@@ -49,8 +49,8 @@
             this.pandetails = new System.Windows.Forms.Panel();
             this.tabDetails = new System.Windows.Forms.TabControl();
             this.tabAssemblies = new System.Windows.Forms.TabPage();
-            this.tabPlugins = new System.Windows.Forms.TabPage();
             this.lvwAssemblies = new System.Windows.Forms.ListView();
+            this.tabPlugins = new System.Windows.Forms.TabPage();
             this.panProgress.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PanelAbout)).BeginInit();
             this.PanelAbout.SuspendLayout();
@@ -65,17 +65,19 @@
             this.panProgress.Controls.Add(this.cmdCopy);
             this.panProgress.Controls.Add(this.txtprogress);
             this.panProgress.Controls.Add(this.panWin31);
-            this.panProgress.Location = new System.Drawing.Point(1, 256);
+            this.panProgress.Location = new System.Drawing.Point(1, 315);
+            this.panProgress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panProgress.Name = "panProgress";
-            this.panProgress.Size = new System.Drawing.Size(431, 56);
+            this.panProgress.Size = new System.Drawing.Size(575, 69);
             this.panProgress.TabIndex = 1;
             this.panProgress.Resize += new System.EventHandler(this.panProgress_Resize);
             // 
             // cmdCopy
             // 
-            this.cmdCopy.Location = new System.Drawing.Point(362, 3);
+            this.cmdCopy.Location = new System.Drawing.Point(483, 4);
+            this.cmdCopy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmdCopy.Name = "cmdCopy";
-            this.cmdCopy.Size = new System.Drawing.Size(66, 46);
+            this.cmdCopy.Size = new System.Drawing.Size(88, 57);
             this.cmdCopy.TabIndex = 1;
             this.cmdCopy.Text = "&Copy";
             this.cmdCopy.UseVisualStyleBackColor = true;
@@ -85,10 +87,11 @@
             // txtprogress
             // 
             this.txtprogress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtprogress.Location = new System.Drawing.Point(3, 3);
+            this.txtprogress.Location = new System.Drawing.Point(4, 4);
+            this.txtprogress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtprogress.Multiline = true;
             this.txtprogress.Name = "txtprogress";
-            this.txtprogress.Size = new System.Drawing.Size(356, 50);
+            this.txtprogress.Size = new System.Drawing.Size(474, 61);
             this.txtprogress.TabIndex = 0;
             this.txtprogress.WordWrap = false;
             this.txtprogress.TextChanged += new System.EventHandler(this.txtprogress_TextChanged);
@@ -98,9 +101,10 @@
             // panWin31
             // 
             this.panWin31.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panWin31.BackgroundImage")));
-            this.panWin31.Location = new System.Drawing.Point(6, 55);
+            this.panWin31.Location = new System.Drawing.Point(8, 68);
+            this.panWin31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panWin31.Name = "panWin31";
-            this.panWin31.Size = new System.Drawing.Size(422, 501);
+            this.panWin31.Size = new System.Drawing.Size(563, 617);
             this.panWin31.TabIndex = 2;
             this.panWin31.Visible = false;
             // 
@@ -108,9 +112,10 @@
             // 
             this.PanelAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.PanelAbout.Controls.Add(this.chkShowLoaded);
-            this.PanelAbout.Location = new System.Drawing.Point(106, 74);
+            this.PanelAbout.Location = new System.Drawing.Point(141, 91);
+            this.PanelAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelAbout.Name = "PanelAbout";
-            this.PanelAbout.Size = new System.Drawing.Size(427, 231);
+            this.PanelAbout.Size = new System.Drawing.Size(569, 284);
             this.PanelAbout.TabIndex = 2;
             this.PanelAbout.TabStop = false;
             // 
@@ -119,9 +124,10 @@
             this.chkShowLoaded.Appearance = System.Windows.Forms.Appearance.Button;
             this.chkShowLoaded.AutoSize = true;
             this.chkShowLoaded.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.chkShowLoaded.Location = new System.Drawing.Point(50, 7);
+            this.chkShowLoaded.Location = new System.Drawing.Point(67, 9);
+            this.chkShowLoaded.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkShowLoaded.Name = "chkShowLoaded";
-            this.chkShowLoaded.Size = new System.Drawing.Size(138, 23);
+            this.chkShowLoaded.Size = new System.Drawing.Size(179, 27);
             this.chkShowLoaded.TabIndex = 4;
             this.chkShowLoaded.Text = "Show Loaded Assemblies";
             this.chkShowLoaded.UseVisualStyleBackColor = true;
@@ -135,17 +141,19 @@
             // panStandard
             // 
             this.panStandard.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panStandard.BackgroundImage")));
-            this.panStandard.Location = new System.Drawing.Point(438, 263);
+            this.panStandard.Location = new System.Drawing.Point(584, 324);
+            this.panStandard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panStandard.Name = "panStandard";
-            this.panStandard.Size = new System.Drawing.Size(431, 260);
+            this.panStandard.Size = new System.Drawing.Size(575, 320);
             this.panStandard.TabIndex = 4;
             this.panStandard.Visible = false;
             // 
             // panImage
             // 
-            this.panImage.Location = new System.Drawing.Point(4, -1);
+            this.panImage.Location = new System.Drawing.Point(5, -1);
+            this.panImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panImage.Name = "panImage";
-            this.panImage.Size = new System.Drawing.Size(428, 258);
+            this.panImage.Size = new System.Drawing.Size(571, 318);
             this.panImage.TabIndex = 5;
             this.panImage.TabStop = false;
             this.panImage.Click += new System.EventHandler(this.panImage_Click);
@@ -154,72 +162,80 @@
             // rdash
             // 
             this.rdash.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("rdash.BackgroundImage")));
-            this.rdash.Location = new System.Drawing.Point(156, 42);
+            this.rdash.Location = new System.Drawing.Point(208, 52);
+            this.rdash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdash.Name = "rdash";
-            this.rdash.Size = new System.Drawing.Size(83, 39);
+            this.rdash.Size = new System.Drawing.Size(111, 48);
             this.rdash.TabIndex = 7;
             this.rdash.Visible = false;
             // 
             // ttoaster
             // 
             this.ttoaster.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ttoaster.BackgroundImage")));
-            this.ttoaster.Location = new System.Drawing.Point(177, 139);
+            this.ttoaster.Location = new System.Drawing.Point(236, 171);
+            this.ttoaster.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ttoaster.Name = "ttoaster";
-            this.ttoaster.Size = new System.Drawing.Size(80, 37);
+            this.ttoaster.Size = new System.Drawing.Size(107, 46);
             this.ttoaster.TabIndex = 9;
             this.ttoaster.Visible = false;
             // 
             // panStandard2
             // 
             this.panStandard2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panStandard2.BackgroundImage")));
-            this.panStandard2.Location = new System.Drawing.Point(441, 12);
+            this.panStandard2.Location = new System.Drawing.Point(588, 15);
+            this.panStandard2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panStandard2.Name = "panStandard2";
-            this.panStandard2.Size = new System.Drawing.Size(431, 260);
+            this.panStandard2.Size = new System.Drawing.Size(575, 320);
             this.panStandard2.TabIndex = 5;
             this.panStandard2.Visible = false;
             // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Location = new System.Drawing.Point(257, 42);
+            this.panel1.Location = new System.Drawing.Point(343, 52);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(83, 39);
+            this.panel1.Size = new System.Drawing.Size(111, 48);
             this.panel1.TabIndex = 10;
             this.panel1.Visible = false;
             // 
             // panStandard3
             // 
             this.panStandard3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panStandard3.BackgroundImage")));
-            this.panStandard3.Location = new System.Drawing.Point(438, 126);
+            this.panStandard3.Location = new System.Drawing.Point(584, 155);
+            this.panStandard3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panStandard3.Name = "panStandard3";
-            this.panStandard3.Size = new System.Drawing.Size(431, 260);
+            this.panStandard3.Size = new System.Drawing.Size(575, 320);
             this.panStandard3.TabIndex = 11;
             this.panStandard3.Visible = false;
             // 
             // panstandard4
             // 
             this.panstandard4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panstandard4.BackgroundImage")));
-            this.panstandard4.Location = new System.Drawing.Point(350, 112);
+            this.panstandard4.Location = new System.Drawing.Point(467, 138);
+            this.panstandard4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panstandard4.Name = "panstandard4";
-            this.panstandard4.Size = new System.Drawing.Size(431, 260);
+            this.panstandard4.Size = new System.Drawing.Size(575, 320);
             this.panstandard4.TabIndex = 12;
             this.panstandard4.Visible = false;
             // 
             // panstandard5
             // 
             this.panstandard5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panstandard5.BackgroundImage")));
-            this.panstandard5.Location = new System.Drawing.Point(411, 95);
+            this.panstandard5.Location = new System.Drawing.Point(548, 117);
+            this.panstandard5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panstandard5.Name = "panstandard5";
-            this.panstandard5.Size = new System.Drawing.Size(431, 260);
+            this.panstandard5.Size = new System.Drawing.Size(575, 320);
             this.panstandard5.TabIndex = 14;
             this.panstandard5.Visible = false;
             // 
             // pandetails
             // 
             this.pandetails.Controls.Add(this.tabDetails);
-            this.pandetails.Location = new System.Drawing.Point(12, 4);
+            this.pandetails.Location = new System.Drawing.Point(16, 5);
+            this.pandetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pandetails.Name = "pandetails";
-            this.pandetails.Size = new System.Drawing.Size(423, 268);
+            this.pandetails.Size = new System.Drawing.Size(564, 330);
             this.pandetails.TabIndex = 15;
             this.pandetails.Visible = false;
             this.pandetails.Resize += new System.EventHandler(this.pandetails_Resize);
@@ -228,48 +244,52 @@
             // 
             this.tabDetails.Controls.Add(this.tabAssemblies);
             this.tabDetails.Controls.Add(this.tabPlugins);
-            this.tabDetails.Location = new System.Drawing.Point(3, 17);
+            this.tabDetails.Location = new System.Drawing.Point(4, 21);
+            this.tabDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabDetails.Name = "tabDetails";
             this.tabDetails.SelectedIndex = 0;
-            this.tabDetails.Size = new System.Drawing.Size(414, 248);
+            this.tabDetails.Size = new System.Drawing.Size(552, 305);
             this.tabDetails.TabIndex = 0;
             this.tabDetails.Resize += new System.EventHandler(this.tabDetails_Resize);
             // 
             // tabAssemblies
             // 
             this.tabAssemblies.Controls.Add(this.lvwAssemblies);
-            this.tabAssemblies.Location = new System.Drawing.Point(4, 22);
+            this.tabAssemblies.Location = new System.Drawing.Point(4, 25);
+            this.tabAssemblies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabAssemblies.Name = "tabAssemblies";
-            this.tabAssemblies.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAssemblies.Size = new System.Drawing.Size(406, 222);
+            this.tabAssemblies.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAssemblies.Size = new System.Drawing.Size(544, 276);
             this.tabAssemblies.TabIndex = 0;
             this.tabAssemblies.Text = "Assemblies";
             this.tabAssemblies.UseVisualStyleBackColor = true;
             this.tabAssemblies.Resize += new System.EventHandler(this.tabAssemblies_Resize);
             // 
+            // lvwAssemblies
+            // 
+            this.lvwAssemblies.Location = new System.Drawing.Point(3, 21);
+            this.lvwAssemblies.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvwAssemblies.Name = "lvwAssemblies";
+            this.lvwAssemblies.Size = new System.Drawing.Size(529, 244);
+            this.lvwAssemblies.TabIndex = 8;
+            this.lvwAssemblies.UseCompatibleStateImageBehavior = false;
+            // 
             // tabPlugins
             // 
-            this.tabPlugins.Location = new System.Drawing.Point(4, 22);
+            this.tabPlugins.Location = new System.Drawing.Point(4, 25);
+            this.tabPlugins.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPlugins.Name = "tabPlugins";
-            this.tabPlugins.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPlugins.Size = new System.Drawing.Size(406, 236);
+            this.tabPlugins.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPlugins.Size = new System.Drawing.Size(544, 276);
             this.tabPlugins.TabIndex = 1;
             this.tabPlugins.Text = "Plugins";
             this.tabPlugins.UseVisualStyleBackColor = true;
             // 
-            // lvwAssemblies
-            // 
-            this.lvwAssemblies.Location = new System.Drawing.Point(2, 17);
-            this.lvwAssemblies.Name = "lvwAssemblies";
-            this.lvwAssemblies.Size = new System.Drawing.Size(398, 199);
-            this.lvwAssemblies.TabIndex = 8;
-            this.lvwAssemblies.UseCompatibleStateImageBehavior = false;
-            // 
             // SplashScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(868, 502);
+            this.ClientSize = new System.Drawing.Size(1157, 618);
             this.ControlBox = false;
             this.Controls.Add(this.pandetails);
             this.Controls.Add(this.panstandard5);
@@ -287,6 +307,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SplashScreen";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "BASeBlock Starting...";

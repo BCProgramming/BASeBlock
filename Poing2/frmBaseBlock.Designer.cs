@@ -86,20 +86,20 @@
             this.newGameToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newghostToolStripMenuItem});
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.newGameToolStripMenuItem.Text = "New Game";
             this.newGameToolStripMenuItem.DropDownOpening += new System.EventHandler(this.newGameToolStripMenuItem_DropDownOpening);
             // 
             // newghostToolStripMenuItem
             // 
             this.newghostToolStripMenuItem.Name = "newghostToolStripMenuItem";
-            this.newghostToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.newghostToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.newghostToolStripMenuItem.Text = "Newghost";
             // 
             // demoModeToolStripMenuItem
             // 
             this.demoModeToolStripMenuItem.Name = "demoModeToolStripMenuItem";
-            this.demoModeToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.demoModeToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.demoModeToolStripMenuItem.Text = "Demo Mode";
             this.demoModeToolStripMenuItem.Visible = false;
             this.demoModeToolStripMenuItem.Click += new System.EventHandler(this.demoModeToolStripMenuItem_Click);
@@ -107,47 +107,47 @@
             // stopGameToolStripMenuItem
             // 
             this.stopGameToolStripMenuItem.Name = "stopGameToolStripMenuItem";
-            this.stopGameToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.stopGameToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.stopGameToolStripMenuItem.Text = "Stop Game";
             this.stopGameToolStripMenuItem.Click += new System.EventHandler(this.stopGameToolStripMenuItem_Click);
             // 
             // editorToolStripMenuItem
             // 
             this.editorToolStripMenuItem.Name = "editorToolStripMenuItem";
-            this.editorToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.editorToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.editorToolStripMenuItem.Text = "Editor";
             this.editorToolStripMenuItem.Click += new System.EventHandler(this.editorToolStripMenuItem_Click);
             // 
             // highScoresToolStripMenuItem
             // 
             this.highScoresToolStripMenuItem.Name = "highScoresToolStripMenuItem";
-            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.highScoresToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.highScoresToolStripMenuItem.Text = "High Scores";
             this.highScoresToolStripMenuItem.Click += new System.EventHandler(this.highScoresToolStripMenuItem_Click);
             // 
             // checkForUpdatesToolStripMenuItem
             // 
             this.checkForUpdatesToolStripMenuItem.Name = "checkForUpdatesToolStripMenuItem";
-            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.checkForUpdatesToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.checkForUpdatesToolStripMenuItem.Text = "Check For Updates";
             this.checkForUpdatesToolStripMenuItem.Click += new System.EventHandler(this.checkForUpdatesToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(198, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(204, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(201, 24);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // BrowserToolStripItem
             // 
             this.BrowserToolStripItem.Name = "BrowserToolStripItem";
-            this.BrowserToolStripItem.Size = new System.Drawing.Size(201, 24);
+            this.BrowserToolStripItem.Size = new System.Drawing.Size(207, 26);
             this.BrowserToolStripItem.Text = "Level Browser";
             this.BrowserToolStripItem.Click += new System.EventHandler(this.BrowserToolStripItem_Click);
             // 
@@ -163,14 +163,14 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // keyToolStripMenuItem
             // 
             this.keyToolStripMenuItem.Name = "keyToolStripMenuItem";
-            this.keyToolStripMenuItem.Size = new System.Drawing.Size(119, 24);
+            this.keyToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.keyToolStripMenuItem.Text = "Key";
             this.keyToolStripMenuItem.Visible = false;
             this.keyToolStripMenuItem.Click += new System.EventHandler(this.keyToolStripMenuItem_Click);
@@ -200,7 +200,6 @@
             this.Controls.Add(this.PicGame);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.MainMenuStrip = this.menuStrip1;

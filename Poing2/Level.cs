@@ -525,11 +525,12 @@ namespace BASeCamp.BASeBlock
             result.Add(new XAttribute("TallyTickSound", TallyTickSound));
             result.Add(new XAttribute("TallyPicKey", TallyPicKey));
             result.Add(new XAttribute("GameOverMusic", GameOverMusic));
+            result.Add(new XAttribute("GameOverPicKey",GameOverPicKey));
             result.Add(new XAttribute("IntroMusicName", IntroMusicName));
             result.Add(new XAttribute("NextLevel", NextLevel));
             result.Add(StandardHelper.SaveElement<TimeSpan>(ShowNameLength,"ShowNameLength"));
             result.Add(StandardHelper.SaveList<Block>(levelblocks,"Blocks",true));
-            result.Add(StandardHelper.SaveList<cBall>(levelballs, "Balls"),true);
+            result.Add(StandardHelper.SaveList<cBall>(levelballs, "Balls",true));
             result.Add(new XAttribute("NoPaddle",NoPaddle));
             result.Add(new XAttribute("PauseSound", PauseSound));
             result.Add(new XAttribute("DeathSound", DeathSound));
@@ -540,7 +541,7 @@ namespace BASeCamp.BASeBlock
             result.Add(StandardHelper.SaveArray(_PauseColorMatrixValues,"PauseColorMatrix"));
             result.Add(StandardHelper.SaveElement(_PauseTextColor,"PauseTextColor"));
             result.Add(StandardHelper.SaveElement(PauseFont,"PauseFont"));
-            result.Add(StandardHelper.SaveList(LevelEvents,"LevelEvents"));
+            result.Add(StandardHelper.SaveList(LevelEvents,"LevelEvents",true));
             List<String> AvailablePowers = BCBlockGameState.TypesToString(_AvailablePowerups).ToList();
             result.Add(StandardHelper.SaveList(AvailablePowers,"AvailablePowerups"));
             result.Add(StandardHelper.SaveElement(MessageData,"MessageData"));
@@ -576,7 +577,7 @@ namespace BASeCamp.BASeBlock
             DeathSound = SourceNode.GetAttributeString("DeathSound","mmdeath");
             try
             {
-                _SidebarColorMatrixValues = (float[][])SourceNode.ReadArray<float>("SideBarColorMatrix", null);
+                _SidebarColorMatrixValues = (float[][])SourceNode.ReadArray<float[]>("SideBarColorMatrix", null);
             }
             catch(InvalidCastException)
             {
@@ -587,7 +588,7 @@ namespace BASeCamp.BASeBlock
             PauseImageKey = SourceNode.GetAttributeString("PauseImageKey");
             try
             {
-                _PauseColorMatrixValues = (float[][])SourceNode.ReadArray<float>("PauseColorMatrix", null);
+                _PauseColorMatrixValues = (float[][])SourceNode.ReadArray<float[]>("PauseColorMatrix", null);
             }
             catch(InvalidCastException)
             {

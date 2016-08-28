@@ -146,7 +146,7 @@ namespace BASeCamp.BASeBlock.HighScores
                 XDocument readdoc = XDocument.Load(pfilename);
                 XElement ScoreSet = readdoc.Root;
 
-                foreach (XElement iteratescore in ScoreSet.Descendants("Scores"))
+                foreach (XElement iteratescore in ScoreSet.Elements("Scores"))
                 {
                     String sKey = iteratescore.GetAttributeString("Key");
                     LocalHighScores openscore = new LocalHighScores(iteratescore);
@@ -464,7 +464,7 @@ namespace BASeCamp.BASeBlock.HighScores
             Scores = new SortedList<HighScoreEntry, HighScoreEntry>();
             if(Source.Name=="Scores")
             {
-                foreach(var iteratenode in Source.Descendants("ScoreEntry"))
+                foreach(var iteratenode in Source.Elements("ScoreEntry"))
                 {
                     String ScoreName = iteratenode.GetAttributeString("Name", "");
                     int ScoreValue = iteratenode.GetAttributeInt("Value", 0);

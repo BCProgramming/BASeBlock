@@ -9,6 +9,7 @@ namespace BASeCamp.BASeBlock.Blocks
 {
     [Serializable]
     [StandardBlockCategory]
+    [BBEditorInvisible] //pointless block, disable it for the moment until we can think of something useful for it to do...
     [BlockDescription("Generally pointless block that breaks into non-interactive snow particles that look suspiciously like asterisks.")]
     public class SnowBlock : ImageBlock
     {

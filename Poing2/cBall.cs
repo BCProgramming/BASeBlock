@@ -1622,7 +1622,7 @@ public abstract class TimedBallBehaviour : BaseBehaviour
     }
 
     [Serializable]
-    public class cBall: ExpandableObjectConverter, ICloneable,ISerializable,iLocatable ,iProjectile ,IExplodable
+    public class cBall: ExpandableObjectConverter, ICloneable,ISerializable,iLocatable ,iProjectile ,IExplodable,IXmlPersistable
     {
         internal struct TrailItemData
         {
@@ -2607,7 +2607,26 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         #endregion
 
         
-
+        public XElement GetXmlData(String pNodeName)
+        {
+            XElement BuildResult = new XElement(pNodeName);
+            BuildResult.Add(StandardHelper.SaveElement(DrawColor,"Color"));
+            BuildResult.Add(new XAttribute("Radius",Radius));
+            BuildResult.Add(StandardHelper.SaveElement(Location,"Location"));
+            BuildResult.Add(StandardHelper.SaveElement(Velocity, "Velocity"));
+            BuildResult.Add(new XAttribute("Visible",Visible));
+            BuildResult.Add(StandardHelper.SaveList<iBallBehaviour>(Behaviours, "Behaviours", true));
+            return BuildResult;
+        }
+        public cBall(XElement Source)
+        {
+            Radius = Source.GetAttributeFloat("Radius");
+            Visible = Source.GetAttributeBool("Visible");
+            DrawColor = Source.ReadElement<Color>("Color", Color.Red);
+            Location = Source.ReadElement<PointF>("Location", new PointF(25, 25));
+            Velocity = Source.ReadElement<PointF>("Velocity", new PointF(3, 3));
+            Behaviours = Source.ReadList<iBallBehaviour>("Behaviours", new List<iBallBehaviour>());
+        }
         #region ISerializable Members
 
         public virtual void GetObjectData(SerializationInfo info, StreamingContext context)

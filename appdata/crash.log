@@ -1,8 +1,7 @@
-System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
-   at BASeBlock.GameStatistics.get_Deaths() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\GameStatistics.cs:line 126
-   at BASeBlock.frmBaseBlock.PostLifeLost() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\frmBaseBlock.cs:line 1118
-   at BASeBlock.frmBaseBlock.gameproc() in C:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\frmBaseBlock.cs:line 1670
+System.InvalidCastException: Unable to cast object of type 'BASeBlock.GameStates.StateLevelOutroGameOver' to type 'BASeBlock.GameStates.StateValueInput'.
+   at BASeBlock.frmBaseBlock.HiScoreGameProc() in c:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\frmBaseBlock.cs:line 4319
+   at BASeBlock.GameStates.StateValueInput.Run(BCBlockGameState GameInfo) in c:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\GameStates\StateValueInput.cs:line 47
+   at BASeBlock.frmBaseBlock.gameproc() in c:\Users\BC_Programming\Documents\Visual Studio 2008\Projects\BASeBlocks\Poing2\frmBaseBlock.cs:line 1759
    at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
    at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)

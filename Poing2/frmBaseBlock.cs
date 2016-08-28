@@ -2701,7 +2701,7 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             
             if (SideBarImageCanvas == null)
             {
-                SideBarImageBitmap = new Bitmap(PicGame.ClientRectangle.Width-AvailableClientArea.Width,PicGame.ClientRectangle.Height);
+                SideBarImageBitmap = new Bitmap(BackBufferBitmap.Width-AvailableClientArea.Width,BackBufferBitmap.Height);
                 SideBarImageCanvas = Graphics.FromImage(SideBarImageBitmap);
 
             }
@@ -3041,8 +3041,14 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
             //delegate to the "DWM" paint routine...
             PicGame_PaintDWM(sender, passargs);
             //now we blit nonDWMBuffer to e.Graphics...
+            var PrevMode = e.Graphics.CompositingMode;
+            var PrevQuality = e.Graphics.CompositingQuality;
+            e.Graphics.CompositingMode = CompositingMode.SourceCopy;
+            e.Graphics.CompositingQuality = CompositingQuality.HighSpeed;
+            e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
             e.Graphics.DrawImage(nonDWMBuffer, 0, 0,PicGame.ClientSize.Width,PicGame.ClientSize.Height);
-
+            e.Graphics.CompositingMode = PrevMode;
+            e.Graphics.CompositingQuality = PrevQuality;
 
 
         }
@@ -3096,11 +3102,12 @@ BCBlockGameState.setMenuRenderer(BCBlockGameState.GameSettings);
                     //Dorefreshstats is set when the score, lives, or level is changed.
                     Dorefreshstats = false; //set to false- the point of this is to prevent having to draw the status info every single frame!
                     g.Clear(Color.White);
+                    
                     //clear the entire thing.
                     //redraw the status:
                     PaintSideBarstats();
                     //draw it to the backbuffer. clear the clip first, so we can draw outside any defined clip:
-                    g.SetClip(PicGame.ClientRectangle); //use clip that is the entire size.
+                    g.SetClip(new Rectangle(Point.Empty,BackBufferBitmap.Size)); //use clip that is the entire size.
                     //draw the image of the  sidebar to the backbuffer (g is the backbuffer)
                     g.DrawImageUnscaled(SideBarImageBitmap, AvailableClientArea.Width, 0);
                     //re set the clip,
