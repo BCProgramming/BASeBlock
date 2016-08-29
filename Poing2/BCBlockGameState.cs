@@ -3906,6 +3906,15 @@ namespace BASeCamp.BASeBlock
             return (System.Attribute.GetCustomAttributes(typecheck).Any((p) => p.GetType() == checkforattribute));
 
         }
+        public static Image ResizeImage(Image Source,int DesiredWidth,int DesiredHeight)
+        {
+
+            Bitmap Result = new Bitmap(DesiredWidth, DesiredHeight);
+            Graphics PaintSized = Graphics.FromImage(Result);
+            PaintSized.DrawImage(Source,0,0,DesiredWidth,DesiredHeight);
+            return Result;
+            
+        }
         private static void ReduceImages(String sourcefolder,String DestFolder,float factor,iManagerCallback datahook)
         {
 

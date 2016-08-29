@@ -924,7 +924,37 @@ namespace BASeCamp.BASeBlock
             }
             return sb.ToString();
         }
+        private Image[] SplashImages = null;
+        
+        private void GetSplashImages()
+        {
+            if(SplashImages==null)
+            {
+                List<Image> PrepareList = new List<Image>();
+                //get the Appdata location.
+                String SplashLocation = Path.Combine(BCBlockGameState.AppDataFolder, "Splash");
+                if(!Directory.Exists(SplashLocation)) throw new DirectoryNotFoundException("Failed to find Splash folder " + SplashLocation);
+                int SuffixNumber = 0;
+                while(true)
+                {
+                    String Suffix = SuffixNumber == 0 ? "" : SuffixNumber.ToString();
+                    String GrabFile = Path.Combine(SplashLocation, "splash" + Suffix + ".png");
+                    if (!File.Exists(GrabFile)) break;
 
+                    using (FileStream fs = new FileStream(GrabFile, FileMode.Open, FileAccess.Read))
+                    {
+                        Image LoadImage = Image.FromStream(fs);
+                        LoadImage = BCBlockGameState.ResizeImage(LoadImage, 431, 256);
+                        PrepareList.Add(LoadImage);
+                    }
+                    SuffixNumber++;
+                }
+                SplashImages = PrepareList.ToArray();
+
+
+
+            }
+        }
         private void chooseimage()
         {
             //April 6th, birthday of windows 3.1
@@ -936,13 +966,9 @@ namespace BASeCamp.BASeBlock
             else
             {
                 //select a random start image from the available start images.
-                Image[] selectfrom = new Image[] 
-                { panStandard.BackgroundImage, 
-                    panStandard2.BackgroundImage,
-                    panStandard3.BackgroundImage,
-                    panstandard4.BackgroundImage,
-                    panstandard5.BackgroundImage};
-
+                GetSplashImages();
+                Image[] selectfrom = SplashImages;
+                
                 Image useimage = selectfrom[rgen.Next(selectfrom.Length)];
 
 
