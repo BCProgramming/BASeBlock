@@ -45,7 +45,7 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        protected BallBehaviourBlock(XElement Source):base(Source)
+        protected BallBehaviourBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
@@ -54,9 +54,9 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            return base.GetXmlData(pNodeName);
+            return base.GetXmlData(pNodeName,pPersistenceData);
         }
 
         public BallBehaviourBlock(PointF pLocation, SizeF pSize, String puseImageKey)

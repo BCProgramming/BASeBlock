@@ -44,15 +44,15 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("Health", Health);
 
         }
-        public CardinalPopperBlock(XElement Source):base(Source)
+        public CardinalPopperBlock(XElement Source,Object pPersistenceData):base(Source,pPersistenceData)
         {
             Damage = Source.GetAttributeInt("Damage");
             Health = Source.GetAttributeInt("Health");
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("Damage",Damage));
             result.Add(new XAttribute("Health",Health));
             return result;

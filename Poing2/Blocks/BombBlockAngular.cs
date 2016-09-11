@@ -66,15 +66,15 @@ namespace BASeCamp.BASeBlock.Blocks
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(StandardHelper.SaveList(PassBehaviours,"PassBehaviours",true));
             result.Add(new XAttribute("StartAngle",_StartAngle));
             result.Add(new XAttribute("EmissionCount",_EmissionCount));
             return result;
         }
-        public BombBlockAngular(XElement Source):base(Source)
+        public BombBlockAngular(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             PassBehaviours = Source.ReadList<iBallBehaviour>("PassBehaviours", new List<iBallBehaviour>());
             _StartAngle = Source.GetAttributeFloat("StartAngle");

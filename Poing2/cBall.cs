@@ -349,11 +349,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
 
         }
-        protected BaseBehaviour(XElement Source)
+        protected BaseBehaviour(XElement Source, Object pPersistenceData)
         {
 
         }
-        public abstract XElement GetXmlData(String pName);
+        public abstract XElement GetXmlData(String pName, Object pPersistenceData);
         protected BaseBehaviour()
         {
 
@@ -486,11 +486,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             base.GetObjectData(info, context);
             info.AddValue("ParticleType",_ParticleType.Name);
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName,new XAttribute("ParticleType",_ParticleType.Name));
         }
-        public ParticleEmitterBehaviour(XElement Source):this()
+        public ParticleEmitterBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             String sParticleType = Source.GetAttributeString("ParticleType","DustParticle");
             _ParticleType = BCBlockGameState.FindClass(sParticleType);
@@ -523,12 +523,12 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
             return new WaterBallBehaviour();
         }
-        public WaterBallBehaviour(XElement Source):base(Source)
+        public WaterBallBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName);
         }
@@ -577,11 +577,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             base.GetObjectData(info, context);
         }
 
-        public NonReboundableBallBehaviour(XElement Source)
+        public NonReboundableBallBehaviour(XElement Source, Object pPersistenceData)
         {
 
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName);
         }
@@ -624,11 +624,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
 
 
         }
-        public LinearGravityBallBehaviour(XElement Source)
+        public LinearGravityBallBehaviour(XElement Source, Object pPersistenceData)
         {
             Acceleration = Source.GetAttributeDouble("Acceleration", 2);
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName,new XAttribute("Acceleration",Acceleration));
         }
@@ -688,17 +688,17 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             _useBehaviour = null;
             
         }
-        public TimedBehaviour(XElement Source)
+        public TimedBehaviour(XElement Source, Object pPersistenceData)
         {
             Span = Source.ReadElement("Span", new TimeSpan(0, 0, 0, 1));
             String grabtype = Source.GetAttributeString("useBehaviour");
             useBehaviour = BCBlockGameState.FindClass(grabtype);
         }
 
-        public override XElement GetXmlData(string pName)
+        public override XElement GetXmlData(String pName, Object pPersistenceData)
         {
             String typeuse = useBehaviour.Name;
-            return new XElement(pName,StandardHelper.SaveElement(Span,"Span"),new XAttribute("useBehaviour",typeuse));
+            return new XElement(pName,StandardHelper.SaveElement(Span,"Span",pPersistenceData),new XAttribute("useBehaviour",typeuse));
         }
 
         public TimedBehaviour(Type usetype, TimeSpan usespan)
@@ -831,11 +831,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             return base.HitBlock(currentstate, ballobject, blockhit);
         }
 
-        public override XElement GetXmlData(string pName)
+        public override XElement GetXmlData(String pName, Object pPersistenceData)
         {
             return new XElement(pName,new XAttribute("TimesExploded",_TimesExploded),new XAttribute("NumExplosions",_NumExplosions),new XAttribute("MaxRadius",MaxRadius));
         }
-        public LeapFrogExploderBehaviour(XElement Source)
+        public LeapFrogExploderBehaviour(XElement Source, Object pPersistenceData):base(Source,pPersistenceData)
         {
             _TimesExploded = Source.GetAttributeInt("TimesExploded", 0);
             _NumExplosions = Source.GetAttributeInt("NumExplosions", 3);
@@ -1017,11 +1017,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         }
         #region Serialization
 
-        public PausedBallBehaviour(XElement Source):base(Source)
+        public PausedBallBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             waitTime = Source.ReadElement("waitTime", new TimeSpan(0, 0, 3));
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName,new XAttribute("waitTime",waitTime));
         }
@@ -1107,11 +1107,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             _Interval = CoolDownTime;
 
         }
-        public LaserSpinBehaviour(XElement Source):base(Source)
+        public LaserSpinBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName);
         }
@@ -1236,11 +1236,11 @@ public abstract class TimedBallBehaviour : BaseBehaviour
             
 
         }
-        public CrazyBallBehaviour(XElement Source):base(Source)
+        public CrazyBallBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName);
         }
@@ -1338,12 +1338,12 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         {
         }
 
-        public PowerBallBehaviour(XElement Source):base(Source)
+        public PowerBallBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
 
-        public override XElement GetXmlData(string pName)
+        public override XElement GetXmlData(String pName, Object pPersistenceData)
         {
             return new XElement(pName);
         }
@@ -1381,12 +1381,12 @@ public abstract class TimedBallBehaviour : BaseBehaviour
 
 
         }
-        public TempBallBehaviour(XElement Source)
+        public TempBallBehaviour(XElement Source, Object pPersistenceData):base(Source,pPersistenceData)
         {
 
         }
 
-        public override XElement GetXmlData(string pName)
+        public override XElement GetXmlData(String pName, Object pPersistenceData)
         {
             return new XElement(pName);
         }
@@ -2607,18 +2607,18 @@ public abstract class TimedBallBehaviour : BaseBehaviour
         #endregion
 
         
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement BuildResult = new XElement(pNodeName);
-            BuildResult.Add(StandardHelper.SaveElement(DrawColor,"Color"));
+            BuildResult.Add(StandardHelper.SaveElement(DrawColor,"Color",pPersistenceData));
             BuildResult.Add(new XAttribute("Radius",Radius));
-            BuildResult.Add(StandardHelper.SaveElement(Location,"Location"));
-            BuildResult.Add(StandardHelper.SaveElement(Velocity, "Velocity"));
+            BuildResult.Add(StandardHelper.SaveElement(Location,"Location",pPersistenceData));
+            BuildResult.Add(StandardHelper.SaveElement(Velocity, "Velocity",pPersistenceData));
             BuildResult.Add(new XAttribute("Visible",Visible));
             BuildResult.Add(StandardHelper.SaveList<iBallBehaviour>(Behaviours, "Behaviours", true));
             return BuildResult;
         }
-        public cBall(XElement Source)
+        public cBall(XElement Source, Object pPersistenceData)
         {
             Radius = Source.GetAttributeFloat("Radius");
             Visible = Source.GetAttributeBool("Visible");

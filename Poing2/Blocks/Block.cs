@@ -2562,14 +2562,14 @@ End Function
 
 
         #region ISerializable Members
-        public Block(XElement Source) 
+        public Block(XElement Source, Object pPersistenceData) 
         {
-            BlockRectangle = StandardHelper.ReadElement<RectangleF>(Source.Element("BlockRectangle"));
+            BlockRectangle = StandardHelper.ReadElement<RectangleF>(Source.Element("BlockRectangle"),pPersistenceData);
             _AutoRespawn = bool.Parse(Source.Attribute("AutoRespawn").Value);
             _Destructable = bool.Parse(Source.Attribute("Destructable").Value);
-            BlockEffects = StandardHelper.ReadList<IBlockEffect>(Source.Element("BlockEffects"));
-            BlockTriggers = StandardHelper.ReadList<BlockTrigger>(Source.Element("BlockTriggers"));
-            BlockEvents = StandardHelper.ReadList<BlockEvent>(Source.Element("BlockEvents"));
+            BlockEffects = StandardHelper.ReadList<IBlockEffect>(Source.Element("BlockEffects"),pPersistenceData);
+            BlockTriggers = StandardHelper.ReadList<BlockTrigger>(Source.Element("BlockTriggers"),pPersistenceData);
+            BlockEvents = StandardHelper.ReadList<BlockEvent>(Source.Element("BlockEvents"),pPersistenceData);
             ReadPowerupXML(Source.Element("Powerups"));
 
         }
@@ -2578,7 +2578,7 @@ End Function
         /// </summary>
         /// <param name="pNodeName">Name to assign to the XElement node that will be created.</param>
         /// <returns>XElement Node representing the information for the Powerup spawning information of this block.</returns>
-        protected XElement GetPowerupXML(String pNodeName)
+        protected XElement GetPowerupXML(String pNodeName,Object pPersistenceData)
         {
             //Powerupchance
             //Powerups 
@@ -2615,17 +2615,17 @@ End Function
             }
             mPowerupChanceSum = Powerupchance.Sum((w) => w);
         }
-        public virtual XElement GetXmlData(String pNodeName)
+        public virtual XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
 
             XElement Result = new XElement(pNodeName,null);
-            Result.Add(StandardHelper.SaveElement(BlockRectangle, "BlockRectangle"));
+            Result.Add(StandardHelper.SaveElement(BlockRectangle, "BlockRectangle",pPersistenceData));
             Result.Add(new XAttribute("AutoRespawn", _AutoRespawn));
             Result.Add(new XAttribute("Destructable", _Destructable));
-            Result.Add(StandardHelper.SaveList(BlockEffects, "BlockEffects"));
-            Result.Add(StandardHelper.SaveList(BlockTriggers, "BlockTriggers"));
-            Result.Add(StandardHelper.SaveList(BlockEvents,"BlockEvents"));
-            Result.Add(GetPowerupXML("Powerups"));
+            Result.Add(StandardHelper.SaveList(BlockEffects, "BlockEffects",pPersistenceData));
+            Result.Add(StandardHelper.SaveList(BlockTriggers, "BlockTriggers",pPersistenceData));
+            Result.Add(StandardHelper.SaveList(BlockEvents,"BlockEvents",pPersistenceData));
+            Result.Add(GetPowerupXML("Powerups",pPersistenceData));
             return Result;
 
          
@@ -2993,11 +2993,11 @@ End Function
         #endregion
 
         #region ISerializable Members
-        public ProxyBallBehaviour(XElement Source)
+        public ProxyBallBehaviour(XElement Source, Object pPersistenceData)
         {
 
         }
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName);
         }

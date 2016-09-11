@@ -101,14 +101,14 @@ namespace BASeCamp.BASeBlock.Blocks
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("ShotDirection",(int)mShotDirections));
             return result;
         }
 
-        public BombBlock(XElement Source):base(Source)
+        public BombBlock(XElement Source,Object pPersistenceData):base(Source, pPersistenceData)
         {
             mShotDirections = (BombBlockShotDirections)Source.GetAttributeInt("ShotDirection");
             BlockImageKey = "BOMB";

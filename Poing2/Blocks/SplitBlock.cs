@@ -33,11 +33,11 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            return base.GetXmlData(pNodeName);
+            return base.GetXmlData(pNodeName,pPersistenceData);
         }
-        public SplitBlock(XElement Source):base(Source)
+        public SplitBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }

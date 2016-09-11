@@ -72,14 +72,14 @@ namespace BASeCamp.BASeBlock.Blocks
             _TetherRadius = info.GetSingle("TetherRadius");
 
         }
-        public TetherBlock(XElement Source)
+        public TetherBlock(XElement Source, Object pPersistenceData):base(Source,pPersistenceData)
         {
             TetherRadius = Source.GetAttributeFloat("TetherRadius");
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("TetherRadius",TetherRadius));
             return result;
         }

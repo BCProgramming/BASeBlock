@@ -49,8 +49,8 @@ namespace BBlocktests
         {
             Rectangle BuildRect = new Rectangle(32, 32, 100, 100);
 
-            XElement readRect = StandardHelper.SaveElement(BuildRect, "TestRectangle");
-            Rectangle testdupe = StandardHelper.ReadElement<Rectangle>(readRect);
+            XElement readRect = StandardHelper.SaveElement(BuildRect, "TestRectangle",null);
+            Rectangle testdupe = StandardHelper.ReadElement<Rectangle>(readRect,null);
             if (!BuildRect.Equals(testdupe)) throw new AssertFailedException("Retrieved Rectangle doesn't match input rectangle.");
         }
 
@@ -59,8 +59,8 @@ namespace BBlocktests
         {
             //just go for Int right now.
             List<int> buildint = Enumerable.Range(0, 500).ToList();
-            XElement intList = StandardHelper.SaveList<int>(buildint, "Integers");
-            List<int> reconstituted = StandardHelper.ReadList<int>(intList);
+            XElement intList = StandardHelper.SaveList<int>(buildint, "Integers",null);
+            List<int> reconstituted = StandardHelper.ReadList<int>(intList,null);
 
             for (int i = 0; i < buildint.Count; i++)
             {
@@ -75,7 +75,7 @@ namespace BBlocktests
         public void TestStringArray()
         {
             String[] TestSave = new String[] { "STRONG1", "STRONG2", "STRONG3" };
-            XElement SavedItem = StandardHelper.SaveArray(TestSave, "Strong");
+            XElement SavedItem = StandardHelper.SaveArray(TestSave, "Strong",null);
 
         }
         [TestMethod]
@@ -98,13 +98,13 @@ namespace BBlocktests
                 new[] {21, 22, 23, 24, 25},
                 new[] {26, 27, 28, 29, 30}
             };
-            XElement sq1Result = StandardHelper.SaveArray(sq1, "MultiDim");
-            XElement sq2Result = StandardHelper.SaveArray(sq2, "MultiArray");
+            XElement sq1Result = StandardHelper.SaveArray(sq1, "MultiDim",null);
+            XElement sq2Result = StandardHelper.SaveArray(sq2, "MultiArray",null);
             
             int[,] First = (int[,])(new XElement("Test",sq1Result).ReadArray<int>("MultiDim"));
             int[][] Second = (int[][])(new XElement("Test",sq2Result).ReadArray<int[]>("MultiArray"));
             ColorMatrix sample = ColorMatrices.GrayScale();
-            XElement CMatrix = StandardHelper.SaveElement(sample, "CMatrix");
+            XElement CMatrix = StandardHelper.SaveElement(sample, "CMatrix",null);
             XDocument savedoc = new XDocument(new XElement("Root", sq1Result, sq2Result, CMatrix));
             savedoc.Save("D:\\testdocument.xml");
         }
@@ -118,7 +118,7 @@ namespace BBlocktests
                 if (iteratetype.IsSubclassOf(typeof (Block)))
                 {
                     //does it expose a constructor that takes a "XElement"?
-                    ConstructorInfo coninfo = iteratetype.GetConstructor(BindingFlags.NonPublic | BindingFlags.Public, null, new Type[] {typeof (XElement)}, null);
+                    ConstructorInfo coninfo = iteratetype.GetConstructor(BindingFlags.NonPublic | BindingFlags.Public, null, new Type[] {typeof (XElement),typeof(Object)}, null);
                     if (coninfo == null)
                     {
                         Debug.Print(iteratetype.Name + " Does not have a XElement accepting constructor.");
@@ -127,7 +127,7 @@ namespace BBlocktests
                     else
                     {
                         //check for GetXmlData method.
-                        MethodInfo xmlData = iteratetype.GetMethod("GetXmlData", BindingFlags.NonPublic | BindingFlags.Public, null, new Type[] {typeof (String)}, null);
+                        MethodInfo xmlData = iteratetype.GetMethod("GetXmlData", BindingFlags.NonPublic | BindingFlags.Public, null, new Type[] {typeof (String),typeof(Object)}, null);
                         if (xmlData == null)
                         {
                             Debug.Print(iteratetype.Name + " Does not have a GetXmlData method.");
@@ -156,10 +156,10 @@ namespace BBlocktests
                 }
             }
             //Save the level to the XML Element.
-            XElement LevelXML = CreateLevel.GetXmlData("LevelData");
+            XElement LevelXML = CreateLevel.GetXmlData("LevelData",null);
             //now recreate the level from the XML data.
             //now reconstitute it. Just add water...
-            Level Reconstitute = new Level(LevelXML);
+            Level Reconstitute = new Level(LevelXML,null);
             //now compare the NormalBlocks in this reconstituted instance to the original.
             for (int i = 0; i < Reconstitute.levelblocks.Count;i++)
             {
@@ -182,13 +182,13 @@ namespace BBlocktests
             DefaultLevelBuilder dl = new DefaultLevelBuilder();
             es.LevelData = dl.BuildLevelSet(new RectangleF(0,0,450f, 800f), null);
 
-            XElement result = es.GetXmlData("EditData");
+            XElement result = es.GetXmlData("EditData",null);
             using(FileStream fs = new FileStream("D:\\result.txt",FileMode.Create))
             {
                 XDocument newdoc = new XDocument(result);
                 newdoc.Save(fs);
             }
-            EditorSet reread = new EditorSet(result);
+            EditorSet reread = new EditorSet(result,null);
 
         }
         [TestMethod]
@@ -229,7 +229,7 @@ namespace BBlocktests
                         //now serialize.
                         TestContext.WriteLine("Serializing to an XML Element...");
 
-                        XElement createelement = TestBlock.GetXmlData("TestBlock");
+                        XElement createelement = TestBlock.GetXmlData("TestBlock",null);
 
                         TestContext.WriteLine("Serialization Completed.");
                         String TargetPath = Path.Combine(TestDataLocation, iteratetype.Name + ".xml");
@@ -240,7 +240,7 @@ namespace BBlocktests
                         Block result = null;
                         try
                         {
-                            result = (Block)StandardHelper.ReadElement(iteratetype, createelement);
+                            result = (Block)StandardHelper.ReadElement(iteratetype, createelement,null);
                             if (result == null)
                             {
                                 TestContext.WriteLine("No result...");
@@ -278,16 +278,16 @@ namespace BBlocktests
 
             TextureBrush tb = new TextureBrush(b, new Rectangle(0, 0, 50, 50));
 
-            XElement lgmxml = StandardHelper.SaveElement(tb, "Texture");
+            XElement lgmxml = StandardHelper.SaveElement(tb, "Texture",null);
             XDocument builddoc = new XDocument(lgmxml);
             builddoc.Save("D:\\texture.xml");
-            TextureBrush restored = StandardHelper.ReadElement<TextureBrush>(lgmxml);
+            TextureBrush restored = StandardHelper.ReadElement<TextureBrush>(lgmxml,null);
 
             AddBallBlock abb = new AddBallBlock(new RectangleF(0, 0, 33, 16));
-            XElement AddBallElement = abb.GetXmlData("AddBallBlock");
+            XElement AddBallElement = abb.GetXmlData("AddBallBlock",null);
             XDocument SaveAddBallBlock = new XDocument(AddBallElement);
             SaveAddBallBlock.Save("D:\\AddBall.xml");
-            AddBallBlock RestoredAddBallBlock = (AddBallBlock) StandardHelper.ReadElement(typeof (AddBallBlock), AddBallElement);
+            AddBallBlock RestoredAddBallBlock = (AddBallBlock) StandardHelper.ReadElement(typeof (AddBallBlock), AddBallElement,null);
         }
 
         [TestMethod]
@@ -305,13 +305,13 @@ namespace BBlocktests
                     usePen.Dispose();
                 }
                 //testImage is now a test image... as the name would seem to imply, really.
-                XElement Target = StandardHelper.SaveElement(testImage, "Image");
+                XElement Target = StandardHelper.SaveElement(testImage, "Image",null);
                 XDocument builddoc = new XDocument(Target);
                 builddoc.Save("D:\\somefile.dat");
 
                 XDocument readdoc = XDocument.Load("D:\\somefile.dat");
                 XElement grabfrom = readdoc.Root;
-                Image readimagedata = StandardHelper.ReadElement<Image>(grabfrom);
+                Image readimagedata = StandardHelper.ReadElement<Image>(grabfrom,null);
             }
             catch (Exception exx)
             {
@@ -417,7 +417,7 @@ namespace BBlocktests
             NormalBlock nb = new NormalBlock(new RectangleF(64, 64, 33, 16));
             nb.BlockColor = Color.Blue;
             nb.PenColor = Color.Yellow;
-            XElement NormalBlockData = nb.GetXmlData("Block");
+            XElement NormalBlockData = nb.GetXmlData("Block",null);
 
             XDocument builddoc = new XDocument(NormalBlockData);
             builddoc.Save("D:\\normalblock.xml");
@@ -456,9 +456,9 @@ namespace BBlocktests
 
             //load them back up...
 
-            Dictionary<String, String> LoadStringDictionary = StandardHelper.ReadDictionary<String, String>(SaveStringElement);
-            Dictionary<String, int> LoadIntDictionary = StandardHelper.ReadDictionary<String, int>(SaveIntElement);
-            IDictionary LoadListDictionary = StandardHelper.ReadDictionary(SaveListElement);
+            Dictionary<String, String> LoadStringDictionary = StandardHelper.ReadDictionary<String, String>(SaveStringElement,null);
+            Dictionary<String, int> LoadIntDictionary = StandardHelper.ReadDictionary<String, int>(SaveIntElement,null);
+            IDictionary LoadListDictionary = StandardHelper.ReadDictionary(SaveListElement,null);
 
 
 
@@ -490,8 +490,8 @@ namespace BBlocktests
                     failcount++;
                 }*/
                 //now, verify it has a "XElement" Constructor
-                var xelementconstructor = iteratetype.GetConstructor(new Type[] { typeof(XElement) });
-                var GetXmlDataMethod = iteratetype.GetMethod("GetXmlData", new Type[] { typeof(String) });
+                var xelementconstructor = iteratetype.GetConstructor(new Type[] { typeof(XElement),typeof(Object) });
+                var GetXmlDataMethod = iteratetype.GetMethod("GetXmlData", new Type[] { typeof(String),typeof(Object) });
                 if(xelementconstructor == null || GetXmlDataMethod==null)
                 {
 

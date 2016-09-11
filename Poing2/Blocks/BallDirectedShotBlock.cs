@@ -59,13 +59,13 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
             info.AddValue("ShootSpeed", _ShootSpeed);
         }
-        public BallDirectedShotBlock(XElement Source):base(Source)
+        public BallDirectedShotBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             _ShootSpeed = Source.GetAttributeFloat("ShootSpeed");
         }
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("ShootSpeed",_ShootSpeed));
             return result;
         }

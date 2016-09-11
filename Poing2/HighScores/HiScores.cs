@@ -149,7 +149,7 @@ namespace BASeCamp.BASeBlock.HighScores
                 foreach (XElement iteratescore in ScoreSet.Elements("Scores"))
                 {
                     String sKey = iteratescore.GetAttributeString("Key");
-                    LocalHighScores openscore = new LocalHighScores(iteratescore);
+                    LocalHighScores openscore = new LocalHighScores(iteratescore,null);
                     ManagedScores.Add(sKey, openscore);
                 }
             }
@@ -475,7 +475,7 @@ namespace BASeCamp.BASeBlock.HighScores
                 }
             }
         }
-        public LocalHighScores(XElement Source)
+        public LocalHighScores(XElement Source, Object pPersistenceData)
         {
             LoadFromXElement(Source);
         }

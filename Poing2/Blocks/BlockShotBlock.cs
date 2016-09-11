@@ -48,15 +48,15 @@ namespace BASeCamp.BASeBlock.Blocks
         {
 
         }
-        public BlockShotBlock(XElement Source):base(Source)
+        public BlockShotBlock(XElement Source,Object pPersistenceData):base(Source, pPersistenceData)
         {
             _ShotVelocity = Source.ReadElement<PointF>("ShotVelocity", PointF.Empty);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var Result = base.GetXmlData(pNodeName);
-            Result.Add(StandardHelper.SaveElement(_ShotVelocity,"ShotVelocity"));
+            var Result = base.GetXmlData(pNodeName,pPersistenceData);
+            Result.Add(StandardHelper.SaveElement(_ShotVelocity,"ShotVelocity",pPersistenceData ));
             return Result;
         }
 

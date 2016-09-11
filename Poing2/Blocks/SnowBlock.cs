@@ -38,12 +38,12 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             return result;
         }
-        public SnowBlock(XElement Source):base(Source)
+        public SnowBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             BlockImageKey = BCBlockGameState.GenerateSnowImage(BlockRectangle);
         }

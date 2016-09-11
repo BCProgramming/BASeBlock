@@ -50,7 +50,7 @@ namespace BASeCamp.BASeBlock.Blocks
             refreshtexture();
 
         }
-        public TexturedBlock(XElement source):base(source)
+        public TexturedBlock(XElement source, Object pPersistenceData) :base(source,pPersistenceData)
         {
             refreshtexture();
         }

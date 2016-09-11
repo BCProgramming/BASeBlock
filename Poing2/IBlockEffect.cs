@@ -53,21 +53,21 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public LinearGlintEffect(XElement Source)
+        public LinearGlintEffect(XElement Source,Object pPersistenceData)
         {
             foreach(XElement checkelements in Source.Elements())
             {
                 if(checkelements.Name=="Origin")
                 {
-                    _Origin = StandardHelper.ReadElement<PointF>(checkelements);
+                    _Origin = StandardHelper.ReadElement<PointF>(checkelements,pPersistenceData);
                 }
                 else if(checkelements.Name=="OriginSpeed")
                 {
-                    _OriginSpeed = StandardHelper.ReadElement<PointF>(checkelements);
+                    _OriginSpeed = StandardHelper.ReadElement<PointF>(checkelements,pPersistenceData);
                 }
                 else if (checkelements.Name == "useTexture")
                 {
-                    _useTexture = StandardHelper.ReadElement<Image>(checkelements);
+                    _useTexture = StandardHelper.ReadElement<Image>(checkelements,pPersistenceData);
                 }
             }
             foreach(XAttribute checkattributes in Source.Attributes())
@@ -84,14 +84,14 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("AngleSpeed", _AngleSpeed);
             info.AddValue("useTexture", _useTexture);
         }
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName,
-                StandardHelper.SaveElement(_Origin,"Origin"),
-                StandardHelper.SaveElement(_OriginSpeed,"OriginSpeed"),
+                StandardHelper.SaveElement(_Origin,"Origin",pPersistenceData),
+                StandardHelper.SaveElement(_OriginSpeed,"OriginSpeed",pPersistenceData),
                 new XAttribute("Angle",_Angle),
                 new XAttribute("AngleSpeed",_AngleSpeed),
-                StandardHelper.SaveElement(_useTexture,"useTexture"));
+                StandardHelper.SaveElement(_useTexture,"useTexture",pPersistenceData));
         }
         public object Clone()
         {
@@ -166,7 +166,7 @@ namespace BASeCamp.BASeBlock.Blocks
         {
 
         }
-        public ParticleEmanationEffect(XElement source)
+        public ParticleEmanationEffect(XElement source, Object pPersistenceData)
         {
             foreach(XAttribute lookAttribute in source.Attributes())
             {
@@ -184,7 +184,7 @@ namespace BASeCamp.BASeBlock.Blocks
                 }
             }
         }
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName,
             new XAttribute("SpawnRate", _SpawnRate),

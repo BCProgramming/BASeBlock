@@ -79,17 +79,17 @@ namespace BASeCamp.BASeBlock.Blocks
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
-            result.Add(StandardHelper.SaveArray(ourImages,"ourImages"));
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
+            result.Add(StandardHelper.SaveArray(ourImages,"ourImages",pPersistenceData ));
             result.Add(new XAttribute("numhits",numhits));
 
 
             return result;
         }
 
-        public StrongBlock(XElement Source):base(Source)
+        public StrongBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             ourImages = (String[])Source.ReadArray<String>("ourImages", new String[] { });
             numhits = Source.GetAttributeInt("numhits");

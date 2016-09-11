@@ -16,7 +16,7 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        protected GenericImageBlock(XElement source):base(source)
+        protected GenericImageBlock(XElement source, Object pPersistenceData) :base(source,pPersistenceData)
         {
 
         }
@@ -34,9 +34,9 @@ namespace BASeCamp.BASeBlock.Blocks
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            return base.GetXmlData(pNodeName);
+            return base.GetXmlData(pNodeName,pPersistenceData);
         }
 
         public abstract override object Clone();

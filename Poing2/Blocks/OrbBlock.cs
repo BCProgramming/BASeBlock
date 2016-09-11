@@ -97,14 +97,14 @@ namespace BASeCamp.BASeBlock.Blocks
             HookEvent();
 
         }
-        public OrbBlock(XElement Source):base(Source)
+        public OrbBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             HookEvent();
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            return base.GetXmlData(pNodeName);
+            return base.GetXmlData(pNodeName,pPersistenceData);
         }
 
         public OrbBlock(SerializationInfo info, StreamingContext context):base(info,context)

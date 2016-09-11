@@ -65,14 +65,14 @@ namespace BASeCamp.BASeBlock.Blocks
             base.GetObjectData(info, context);
             info.AddValue("BlockColor", BlockColor);
         }
-        public AttractionRepulsionBlock(XElement source):base(source)
+        public AttractionRepulsionBlock(XElement source,Object pPersistenceData):base(source,pPersistenceData)
         {
             BlockColor = source.ReadElement<Color>("BlockColor");
         }
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement result = base.GetXmlData(pNodeName);
-            result.Add(StandardHelper.SaveElement(this.BlockColor,"BlockColor"));
+            XElement result = base.GetXmlData(pNodeName,pPersistenceData);
+            result.Add(StandardHelper.SaveElement(this.BlockColor,"BlockColor",pPersistenceData ));
             return result;
         }
 

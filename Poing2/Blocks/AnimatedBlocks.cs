@@ -155,14 +155,14 @@ namespace BASeCamp.BASeBlock.Blocks
             
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement result = base.GetXmlData(pNodeName);
+            XElement result = base.GetXmlData(pNodeName,null);
             result.Add(new XAttribute("BlocKType",baseBlock.GetType().FullName));
-            result.Add(StandardHelper.SaveElement(baseBlock,"baseBlock"));
+            result.Add(StandardHelper.SaveElement(baseBlock,"baseBlock",pPersistenceData));
             return result;
         }
-        protected AnimatedBlock(XElement pSource)
+        protected AnimatedBlock(XElement pSource, Object pPersistenceData) :base(pSource,pPersistenceData)
         {
             String BlockType = pSource.Attribute("BlockType").Value;
             Type blocktype = BCBlockGameState.FindClass(BlockType);
@@ -287,17 +287,17 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public BoundedMovingBlock(XElement Source):base(Source)
+        public BoundedMovingBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             Velocity = Source.ReadElement<PointF>("Velocity");
             MovementBounds = Source.ReadElement<RectangleF>("MovementBounds");
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement result = base.GetXmlData(pNodeName);
-            result.Add(StandardHelper.SaveElement(Velocity,"Velocity"));
-            result.Add(StandardHelper.SaveElement(MovementBounds,"MovementBounds"));
+            XElement result = base.GetXmlData(pNodeName,pPersistenceData);
+            result.Add(StandardHelper.SaveElement(Velocity,"Velocity",pPersistenceData));
+            result.Add(StandardHelper.SaveElement(MovementBounds,"MovementBounds",pPersistenceData));
             return result;
         }
 

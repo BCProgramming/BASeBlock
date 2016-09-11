@@ -38,14 +38,14 @@ namespace BASeCamp.BASeBlock.Blocks
             _EffectRadius = clonethis.EffectRadius;
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("EffectRadius",_EffectRadius));
             return result;
         }
 
-        public DestructionBlock(XElement Source)
+        public DestructionBlock(XElement Source, Object pPersistenceData):base(Source,pPersistenceData)
         {
             _EffectRadius = Source.GetAttributeFloat("EffectRadius");
         }

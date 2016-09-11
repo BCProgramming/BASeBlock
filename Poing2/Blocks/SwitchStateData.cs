@@ -72,13 +72,13 @@ namespace BASeCamp.BASeBlock.Blocks
             catch { }
 
         }
-        public SwitchStateData(XElement Source)
+        public SwitchStateData(XElement Source, Object pPersistenceData)
         {
             InvokeID = Source.GetAttributeInt("InvokeID");
             HitSound = Source.GetAttributeString("HitSound");
             StateColor = Color.FromArgb(Source.GetAttributeInt("StateColor"));
         }
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement Result = new XElement(pNodeName);
             Result.Add(new XAttribute("InvokeID",InvokeID));

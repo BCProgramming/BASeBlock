@@ -144,17 +144,17 @@ namespace BASeCamp.BASeBlock.Blocks
         private bool _Init = false;
         private bool flInitialized { get { return _Init; } set { _Init = value; if (_Init) RebuildImages(); } }
 
-        public SwitchBlockMulti(XElement Source):base(Source)
+        public SwitchBlockMulti(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             State = Source.GetAttributeInt("State");
             SwitchData = Source.ReadList<SwitchStateData>("SwitchData", new List<SwitchStateData>());
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("State",State));
-            result.Add(StandardHelper.SaveList<SwitchStateData>(SwitchData, "SwitchData"));
+            result.Add(StandardHelper.SaveList<SwitchStateData>(SwitchData, "SwitchData",pPersistenceData));
             return result;
         }
 
@@ -361,7 +361,7 @@ namespace BASeCamp.BASeBlock.Blocks
             
 
         }
-        public SwitchBlock(XElement Source)
+        public SwitchBlock(XElement Source, Object pPersistenceData):base(Source,pPersistenceData)
         {
             ActiveSound = Source.GetAttributeString("ActiveSound");
             InactiveSound = Source.GetAttributeString("InactiveSound");
@@ -371,9 +371,9 @@ namespace BASeCamp.BASeBlock.Blocks
             AllActiveID = Source.GetAttributeInt("AllActiveID");
             AllInactiveID = Source.GetAttributeInt("AllInactiveID");
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("ActiveSound",ActiveSound));
             result.Add(new XAttribute("InactiveSound", InactiveSound));
             result.Add(new XAttribute("ActiveColor", ActiveColor.ToArgb()));

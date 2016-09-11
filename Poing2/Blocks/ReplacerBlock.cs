@@ -56,9 +56,9 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("ReplaceWith", ReplaceWithBlockType.Name);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var Result = base.GetXmlData(pNodeName);
+            var Result = base.GetXmlData(pNodeName,pPersistenceData);
             Result.Add(new XAttribute("SearchFor",SearchBlockType.Name));
             Result.Add(new XAttribute("ReplaceWith",ReplaceWithBlockType.Name));
             return Result;

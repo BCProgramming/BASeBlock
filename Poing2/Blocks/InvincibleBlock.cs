@@ -32,13 +32,13 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public InvincibleBlock(XElement Source):base(Source)
+        public InvincibleBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             Silent = Source.GetAttributeBool("Silent", false);
         }
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement result = base.GetXmlData(pNodeName);
+            XElement result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("Silent",Silent));
             return result;
         }

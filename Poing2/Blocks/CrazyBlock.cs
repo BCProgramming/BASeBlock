@@ -44,13 +44,13 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public CrazyBlock(XElement Source):base(Source)
+        public CrazyBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            return base.GetXmlData(pNodeName);
+            return base.GetXmlData(pNodeName,pPersistenceData);
         }
 
         public override object Clone()

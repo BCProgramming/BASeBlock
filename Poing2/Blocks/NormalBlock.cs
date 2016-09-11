@@ -139,23 +139,23 @@ namespace BASeCamp.BASeBlock.Blocks
             UseGummyImage = BCBlockGameState.GetGummyImage(_Color, this.BlockSize.ToSize());
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement baseNode = base.GetXmlData(pNodeName);
-            baseNode.Add(StandardHelper.SaveElement(_Color,"Fill"));
-            baseNode.Add(StandardHelper.SaveElement(_PenColor, "Line"));
+            XElement baseNode = base.GetXmlData(pNodeName,pPersistenceData);
+            baseNode.Add(StandardHelper.SaveElement(_Color,"Fill",pPersistenceData));
+            baseNode.Add(StandardHelper.SaveElement(_PenColor, "Line",pPersistenceData));
             baseNode.Add(new XAttribute("BlockOutline", (int)BlockOutlineSides));
             baseNode.Add(new XAttribute("Gummy",Gummy));
             return baseNode;
         }
 
-        public NormalBlock(XElement Source) :base(Source)
+        public NormalBlock(XElement Source,Object pPersistenceData) :base(Source,pPersistenceData)
         {
             
-            _PenColor = StandardHelper.ReadElement<Color>(Source.Element("Line"));
+            _PenColor = StandardHelper.ReadElement<Color>(Source.Element("Line"),pPersistenceData);
             BlockOutlineSides = (BlockOutline)Source.GetAttributeInt("BlockOutline", (int)BlockOutline.Outline_All);
             Gummy = Source.GetAttributeBool("Gummy", true);
-            BlockColor = StandardHelper.ReadElement<Color>(Source.Element("Fill"));
+            BlockColor = StandardHelper.ReadElement<Color>(Source.Element("Fill"),pPersistenceData);
             OnBlockRectangleChange += new Action<RectangleF>(NormalBlock_OnBlockRectangleChange);
         }
         public NormalBlock(SerializationInfo info, StreamingContext context)

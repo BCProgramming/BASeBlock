@@ -670,7 +670,7 @@ namespace BASeCamp.BASeBlock
             //draw "registered" or "unregistered" based on Program.isLicensed.
             if(RegUnregImage!=null) return;
             String drawstring = Program.isLicensed ? "Registered\n" : "Unregistered\n";
-            drawstring += BCBlockGameState.PortableMode ? "Portable!" : ""; //add in "portable" too.
+            drawstring += BCBlockGameState.PortableMode ? " Portable!" : ""; //add in "portable" too.
             //Bitmap measureit = new Bitmap(1, 1);
             //Graphics measureg = Graphics.FromImage(measureit);
             SizeF textsize = BCBlockGameState.MeasureString(drawstring, Regunregfont);

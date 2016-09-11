@@ -30,8 +30,8 @@ namespace BASeCamp.BASeBlock
         public abstract void PerformFrame(BCBlockGameState gamestate);
         public abstract void GetObjectData(SerializationInfo info,StreamingContext context);
 
-        public abstract XElement GetXmlData(String pNodeName);
-        protected BackgroundDrawer(XElement source)
+        public abstract XElement GetXmlData(String pNodeName,Object pPersistenceData);
+        protected BackgroundDrawer(XElement source, Object pPersistenceData)
         {
 
         }
@@ -140,7 +140,7 @@ namespace BASeCamp.BASeBlock
             info.AddValue("CurrentOffset", CurrentOffset);
             info.AddValue("RotateOrigin", RotateOrigin);
         }
-        public BackgroundColourImageDrawer(XElement Source):base(Source)
+        public BackgroundColourImageDrawer(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             MoveVelocity = Source.ReadElement<PointF>("MoveVelocity", PointF.Empty);
             BackgroundFrameKeys = Source.ReadList<String>("Backgroundframekeys", new List<String>()).ToArray();
@@ -149,15 +149,15 @@ namespace BASeCamp.BASeBlock
             RotateSpeed = Source.GetAttributeDouble("RotateSpeed", 0D);
             CurrentRotation = Source.GetAttributeDouble("CurrentRotation", 0D);
         }
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement ResultNode = new XElement(pNodeName);
-            ResultNode.Add(StandardHelper.SaveElement(MoveVelocity,"MoveVelocity"));
-            ResultNode.Add(StandardHelper.SaveList((BackgroundFrameKeys??new String[]{}).ToList(),"Backgroundframekeys"));
+            ResultNode.Add(StandardHelper.SaveElement(MoveVelocity,"MoveVelocity",pPersistenceData));
+            ResultNode.Add(StandardHelper.SaveList((BackgroundFrameKeys??new String[]{}).ToList(),"Backgroundframekeys",pPersistenceData));
             ResultNode.Add(new XAttribute("rotatespeed",RotateSpeed));
             ResultNode.Add(new XAttribute("CurrentRotation",CurrentRotation));
-            ResultNode.Add(StandardHelper.SaveElement(CurrentOffset,"CurrentOffset"));
-            ResultNode.Add(StandardHelper.SaveElement(RotateOrigin,"RotateOrigin"));
+            ResultNode.Add(StandardHelper.SaveElement(CurrentOffset,"CurrentOffset",pPersistenceData));
+            ResultNode.Add(StandardHelper.SaveElement(RotateOrigin,"RotateOrigin",pPersistenceData));
             return ResultNode;
         }
 

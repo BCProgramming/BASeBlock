@@ -311,16 +311,16 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             return false;
         }
-        public PowerupBlock(XElement Source):base(Source)
+        public PowerupBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             String sType = Source.GetAttributeString("PowerupType");
             _releaseCount = Source.GetAttributeInt("ReleaseCount");
             PowerupType = BCBlockGameState.FindClass(sType);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("PowerupType",_PowerupType.Name));
             result.Add(new XAttribute("ReleaseCount",_releaseCount));
             return result;

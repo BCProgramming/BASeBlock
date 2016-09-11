@@ -85,7 +85,7 @@ namespace BASeCamp.BASeBlock.Blocks
          info.AddValue("BuildDirection", _BuildDirection);
          info.AddValue("BuildBlock", _BuildBlock.Name);
         }
-        public BuilderBlock(XElement Source):base(Source)
+        public BuilderBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             _MaxBuilds = Source.GetAttributeInt("MaxBuilds",_MaxBuilds);
             _Built = Source.GetAttributeInt("Built", _Built);
@@ -94,9 +94,9 @@ namespace BASeCamp.BASeBlock.Blocks
             BuildBlock = BCBlockGameState.FindClass(sFindType);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var Result = base.GetXmlData(pNodeName);
+            var Result = base.GetXmlData(pNodeName,pPersistenceData);
 
             Result.Add(new XAttribute("MaxBuilds",_MaxBuilds));
             Result.Add(new XAttribute("Built",_Built));

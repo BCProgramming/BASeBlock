@@ -336,7 +336,6 @@
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="JavascriptBlock.cs" />
     <Compile Include="LevelbackupManager.cs" />
     <Compile Include="LevelLockData.cs" />
     <Compile Include="MinecraftBlock.cs" />

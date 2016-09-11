@@ -494,13 +494,13 @@ namespace BASeCamp.BASeBlock
         }
 
         #endregion
-        public virtual XElement GetXmlData(string pNodeName)
+        public virtual XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement result = new XElement(pNodeName);
             result.Add(new XAttribute("ID", this.ID));
             return result;
         }
-        protected TriggerEvent(XElement Source)
+        protected TriggerEvent(XElement Source, Object pPersistenceData)
         {
             this.ID = Source.GetAttributeInt("ID", -1);
         }
@@ -558,7 +558,7 @@ namespace BASeCamp.BASeBlock
         {
             return new EventDetector(this);
         }
-        public EventDetector(XElement Source):base(Source)
+        public EventDetector(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
@@ -589,15 +589,15 @@ namespace BASeCamp.BASeBlock
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var Result = base.GetXmlData(pNodeName);
+            var Result = base.GetXmlData(pNodeName,pPersistenceData);
             Result.Add(new XAttribute("EnemyType",EnemyType.Name));
-            Result.Add(StandardHelper.SaveElement(SpawnLocation,"SpawnLocation"));
-            Result.Add(StandardHelper.SaveElement(SpawnSize,"SpawnSize"));
+            Result.Add(StandardHelper.SaveElement(SpawnLocation,"SpawnLocation",pPersistenceData));
+            Result.Add(StandardHelper.SaveElement(SpawnSize,"SpawnSize",pPersistenceData));
             return Result;
         }
-        public SpawnEnemyEvent(XElement Source):base(Source)
+        public SpawnEnemyEvent(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             String EnemyTypeStr = Source.GetAttributeString("EnemyType", null);
             if(EnemyTypeStr!=null)
@@ -731,15 +731,15 @@ namespace BASeCamp.BASeBlock
                 info.AddValue("SoundPlay", _SoundPlay);
                 info.AddValue("IsMusic", _IsMusic);
             }
-            public PlaySoundEvent(XElement Source):base(Source)
+            public PlaySoundEvent(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
             {
                 _SoundPlay = Source.GetAttributeString("SoundPlay");
                 _IsMusic = Source.GetAttributeBool("IsMusic");
             }
 
-            public override XElement GetXmlData(string pNodeName)
+            public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
             {
-                var Result = base.GetXmlData(pNodeName);
+                var Result = base.GetXmlData(pNodeName,pPersistenceData);
                 Result.Add(new XAttribute("SoundPlay",_SoundPlay));
                 Result.Add(new XAttribute("IsMusic",_IsMusic));
                 return Result;
@@ -805,13 +805,13 @@ namespace BASeCamp.BASeBlock
 
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var Result = base.GetXmlData(pNodeName);
+            var Result = base.GetXmlData(pNodeName,pPersistenceData);
             Result.Add(new XAttribute("EventType",(int)BlockEventType));
             return Result;
         }
-        public BlockEvent(XElement Source):base(Source)
+        public BlockEvent(XElement Source, Object pPersistenceData) :base(Source, pPersistenceData)
         {
             BlockEventType = (BlockEventTypeConstants)Source.GetAttributeInt("EventType");
         }
@@ -1047,7 +1047,7 @@ namespace BASeCamp.BASeBlock
 
 
             }
-            public XElement GetXmlData(String pNodeName)
+            public XElement GetXmlData(String pNodeName,Object pPersistenceData)
             {
                 return new XElement(pNodeName,new XAttribute("TimeDelay",_timedelay.Ticks),new XAttribute("TriggerID",TriggerID));
             }
@@ -1103,15 +1103,15 @@ namespace BASeCamp.BASeBlock
             
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement baseNode = base.GetXmlData(pNodeName);
-            baseNode.Add(StandardHelper.SaveList(_TriggerData,"TriggerData"));
+            XElement baseNode = base.GetXmlData(pNodeName,pPersistenceData);
+            baseNode.Add(StandardHelper.SaveList(_TriggerData,"TriggerData",pPersistenceData));
             return baseNode;
         }
-        public TimedTriggers(XElement Source) :base(Source)
+        public TimedTriggers(XElement Source,Object pPersistenceData) :base(Source,pPersistenceData)
         {
-            _TriggerData = StandardHelper.ReadList<TimedTriggerData>(Source);
+            _TriggerData = StandardHelper.ReadList<TimedTriggerData>(Source,pPersistenceData);
         }
         public TimedTriggers(SerializationInfo info, StreamingContext context):base(info,context)
         {
@@ -1218,14 +1218,14 @@ namespace BASeCamp.BASeBlock
 
             }
         }
-        public SoundStopTrigger(XElement Source) :base(Source)
+        public SoundStopTrigger(XElement Source,Object pPersistenceData) :base(Source,pPersistenceData)
         {
             SoundWatch = Source.Attribute("SoundWatch").Value;
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement baseNode = base.GetXmlData(pNodeName);
+            XElement baseNode = base.GetXmlData(pNodeName,pPersistenceData);
             baseNode.Add(new XAttribute("SoundWatch",SoundWatch));
             return baseNode;
         }
@@ -1293,13 +1293,13 @@ namespace BASeCamp.BASeBlock
             info.AddValue("ID", ID);
             info.AddValue("TriggerDelay", TriggerDelay);
         }
-        public virtual XElement GetXmlData(String pNodeName)
+        public virtual XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             return new XElement(pNodeName,
                 new XAttribute("ID", ID),
                 new XAttribute("TriggerDelay", TriggerDelay.Ticks));
         }
-        protected Trigger(XElement Source)
+        protected Trigger(XElement Source,Object pPersistenceData)
         {
             foreach(XAttribute lookattribute in Source.Attributes())
             {
@@ -1621,11 +1621,11 @@ namespace BASeCamp.BASeBlock
             base.GetObjectData(info, context);
 
         }
-        public override XElement GetXmlData(String pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            return base.GetXmlData(pNodeName);
+            return base.GetXmlData(pNodeName,pPersistenceData);
         }
-        public EnemyTrigger(XElement Source) :base(Source)
+        public EnemyTrigger(XElement Source,Object pPersistenceData) :base(Source,pPersistenceData)
         {
 
         }
@@ -1664,9 +1664,9 @@ namespace BASeCamp.BASeBlock
             
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement basenode = base.GetXmlData(pNodeName);
+            XElement basenode = base.GetXmlData(pNodeName,pPersistenceData);
             basenode.Add(new XAttribute("BlockTriggerType",(int)BlockTriggerType));
 
             return basenode;
@@ -1677,7 +1677,7 @@ namespace BASeCamp.BASeBlock
             Debug.Print("BlockTrigger::Serialization Constructor");
             BlockTriggerType = (BlockTriggerTypeConstants)info.GetValue("BlockTriggerType", typeof(BlockTriggerTypeConstants));
         }
-        public BlockTrigger(XElement Source) :base(Source)
+        public BlockTrigger(XElement Source,Object pPersistenceData) :base(Source,pPersistenceData)
         {
             BlockTriggerType = (BlockTriggerTypeConstants) Source.GetAttributeInt("BlockTriggerType");
         }

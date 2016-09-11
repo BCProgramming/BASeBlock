@@ -34,14 +34,14 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public AddBallBlock(XElement Source):base(Source)
+        public AddBallBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             spawnvelocity = Source.GetAttributeFloat("SpawnVelocity", 3);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement baseresult = base.GetXmlData(pNodeName);
+            XElement baseresult = base.GetXmlData(pNodeName,pPersistenceData);
             baseresult.Add(new XAttribute("SpawnVelocity",spawnvelocity));
 
             return baseresult;

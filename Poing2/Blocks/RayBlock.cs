@@ -60,7 +60,7 @@ namespace BASeCamp.BASeBlock.Blocks
             catch { _ShootProjectileType = typeof(ProjectileBall); }
 
         }
-        public RayBlock(XElement Source):base(Source)
+        public RayBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             mFireDirection = (RayFireDirection) Source.GetAttributeInt("FireDirection");
             LaunchVelocity = Source.GetAttributeFloat("LaunchVelocity");
@@ -74,11 +74,11 @@ namespace BASeCamp.BASeBlock.Blocks
             
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("FireDirection",(int) mFireDirection));
-            result.Add(StandardHelper.SaveElement(LaunchPosition,"LaunchPosition"));
+            result.Add(StandardHelper.SaveElement(LaunchPosition,"LaunchPosition",pPersistenceData));
             result.Add(new XAttribute("LaunchVelocity",LaunchVelocity));
             result.Add(new XAttribute("ShootProjectileType",_ShootProjectileType.Name));
             return result;

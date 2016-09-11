@@ -83,13 +83,13 @@ namespace BASeCamp.BASeBlock.Blocks
             info.AddValue("EffectRadius", _EffectRadius);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result =  base.GetXmlData(pNodeName);
+            var result =  base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("EffectRadius",_EffectRadius));
             return result;
         }
-        public ConstructionBlock(XElement Source):base(Source)
+        public ConstructionBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             _EffectRadius = Source.GetAttributeFloat("EffectRadius", 64);
         }

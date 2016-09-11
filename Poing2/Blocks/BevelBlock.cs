@@ -129,15 +129,15 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             FillColors = (Color[])info.GetValue("FillColors",typeof(Color[]));
         }
-        public BevelBlock(XElement Source):base(Source)
+        public BevelBlock(XElement Source,Object pPersistenceData):base(Source,pPersistenceData)
         {
-            FillColors = (Color[])Source.ReadArray<Color>("FillColors", null);
+            FillColors = (Color[])Source.ReadArray<Color>("FillColors",null,pPersistenceData);
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement Result = base.GetXmlData(pNodeName);
-            Result.Add(StandardHelper.SaveArray(FillColors,"FillColors"));
+            XElement Result = base.GetXmlData(pNodeName,pPersistenceData);
+            Result.Add(StandardHelper.SaveArray(FillColors,"FillColors",pPersistenceData));
             return Result;
         }
     }

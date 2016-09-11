@@ -97,14 +97,14 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public ImageBlock(XElement Source):base(Source)
+        public ImageBlock(XElement Source,Object pPersistenceData):base(Source,pPersistenceData)
         {
             BlockImageKey = Source.GetAttributeString("BlockImageKey");
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            XElement result = base.GetXmlData(pNodeName);
+            XElement result = base.GetXmlData(pNodeName,pPersistenceData);
             result.Add(new XAttribute("BlockImageKey",BlockImageKey));
             return result;
         }

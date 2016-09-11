@@ -303,11 +303,11 @@ namespace BASeCamp.BASeBlock
 
             }
 
-            public XElement GetXmlData(string pNodeName)
+            public XElement GetXmlData(String pNodeName,Object pPersistenceData)
             {
                 XElement buildnode = new XElement(pNodeName);
                 buildnode.Add(new XAttribute("Name",Name));
-                buildnode.Add(StandardHelper.SaveElement(ImageData,"ImageData"));
+                buildnode.Add(StandardHelper.SaveElement(ImageData,"ImageData",pPersistenceData));
                 return buildnode;
             }
         }
@@ -613,7 +613,7 @@ namespace BASeCamp.BASeBlock
             catch { isTemplate = false; }
         
     }
-        public CreatorProperties(XElement Source)
+        public CreatorProperties(XElement Source, Object pPersistenceData)
         {
             //retrieve Attributes...
             Author = Source.GetAttributeString("Author", String.Empty);
@@ -626,7 +626,7 @@ namespace BASeCamp.BASeBlock
             SavedScripts = Source.ReadDictionary("SavedScripts", new Dictionary<String, ScriptDataItem>());
 
         }
-        public XElement GetXmlData(string pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement resultnode = new XElement(pNodeName);
             resultnode.Add(new XAttribute("Author",Author));
@@ -792,20 +792,20 @@ namespace BASeCamp.BASeBlock
 
         }
  
-        public EditorSet(XElement Source)
+        public EditorSet(XElement Source, Object pPersistenceData)
         {
             String sVersion = Source.GetAttributeString("Version");
-            CreateData = Source.ReadElement<CreatorProperties>("CreatorProperties");
-            LevelData = Source.ReadElement<LevelSet>("LevelSet");
+            CreateData = Source.ReadElement<CreatorProperties>("CreatorProperties",null, pPersistenceData);
+            LevelData = Source.ReadElement<LevelSet>("LevelSet",null,pPersistenceData);
             
         }
-        public XElement GetXmlData(string pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement newNode = new XElement(pNodeName);
             newNode.Add(new XAttribute("Version",VersionInfo.GetApplicationVersion()));
             RefreshPreviewImages();
-            newNode.Add(CreateData.GetXmlData("CreatorProperties"));
-            newNode.Add(LevelData.GetXmlData("LevelSet"));
+            newNode.Add(CreateData.GetXmlData("CreatorProperties",pPersistenceData));
+            newNode.Add(LevelData.GetXmlData("LevelSet",pPersistenceData));
             //newNode.Add(LevelData.GetXmlData("LevelData"));
             return newNode;
             
@@ -977,7 +977,7 @@ namespace BASeCamp.BASeBlock
                     using (StreamProgress sp = new StreamProgress(pcs, pcfunc))
                     {
                         XDocument loaddocument = XDocument.Load(inputstream);
-                        EditorSet returnthis = new EditorSet(loaddocument.Root);
+                        EditorSet returnthis = new EditorSet(loaddocument.Root,null);
                         return returnthis;
                         /*IFormatter useformatter = BCBlockGameState.getFormatter<EditorSet>(BCBlockGameState.DataSaveFormats.Format_XML);
                         EditorSet returnthis = (EditorSet)useformatter.Deserialize(inputstream);
@@ -1076,7 +1076,7 @@ namespace BASeCamp.BASeBlock
                         {
                             Cursor.Current = Cursors.WaitCursor;
                             //almost forgot to change this code to save to XML properly. the SOAP stuff, we have to remove at some stage...
-                            XElement BuildElement = this.GetXmlData("EditorSet");
+                            XElement BuildElement = this.GetXmlData("EditorSet",null);
                             XDocument buildDocument = new XDocument(BuildElement);
 
                             buildDocument.Save(outstream,SaveOptions.OmitDuplicateNamespaces);

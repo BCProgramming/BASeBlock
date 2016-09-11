@@ -29,11 +29,11 @@ namespace BASeCamp.BASeBlock.Blocks
                 BallMass = clonethis.BallMass;
 
             }
-            public GravityBlockBallBehaviour(XElement Source):base(Source)
+            public GravityBlockBallBehaviour(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
             {
                 BallMass = Source.GetAttributeDouble("BallMass", 1);
             }
-            public override XElement GetXmlData(String pNodeName)
+            public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
             {
 
                 return new XElement(pNodeName, new XAttribute("BallMass", BallMass));
@@ -188,15 +188,15 @@ Read more: http://wiki.answers.com/Q/The_amount_of_gravitational_force_between_o
             EventHorizon = info.GetInt32("EventHorizon");
 
         }
-        public BlackHoleBlock(XElement Source):base(Source)
+        public BlackHoleBlock(XElement Source,Object pPersistenceData):base(Source,pPersistenceData)
         {
             Mass = Source.GetAttributeDouble("Mass");
             
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var Result = base.GetXmlData(pNodeName);
+            var Result = base.GetXmlData(pNodeName,pPersistenceData);
             Result.Add(new XAttribute("Mass",Mass));
             Result.Add(new XAttribute("Interactive",Interactive));
             Result.Add(new XAttribute("EventHorizon",EventHorizon));

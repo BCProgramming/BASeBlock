@@ -92,16 +92,16 @@ namespace BASeCamp.BASeBlock
                 
 
             }
-            public XElement GetXmlData(string pNodeName)
+            public XElement GetXmlData(String pNodeName,Object pPersistenceData)
             {
                 XElement resultNode = new XElement(pNodeName);
                 resultNode.Add(new XAttribute("GridMode",(int)GridMode));
-                resultNode.Add(StandardHelper.SaveElement(GridSize,"Size"));
-                resultNode.Add(StandardHelper.SaveElement(Offset,"Offset"));
+                resultNode.Add(StandardHelper.SaveElement(GridSize,"Size",pPersistenceData));
+                resultNode.Add(StandardHelper.SaveElement(Offset,"Offset",pPersistenceData));
                 resultNode.Add(new XAttribute("LockToGrid",LockToGrid));
                 return resultNode;
             }
-            public DrawGridData(XElement source)
+            public DrawGridData(XElement source, Object pPersistenceData)
             {
                 GridMode = (DrawGridModeConstants)source.GetAttributeInt("GridMode");
                 GridSize = source.ReadElement<SizeF>("Size");
@@ -509,7 +509,7 @@ namespace BASeCamp.BASeBlock
                     try
                     {
                         XDocument loaddoc = XDocument.Load(readconfig);
-                        ddgriddata = new DrawGridData(loaddoc.Root);
+                        ddgriddata = new DrawGridData(loaddoc.Root,null);
                     }
                     catch(Exception exx)
                     {
@@ -528,7 +528,7 @@ namespace BASeCamp.BASeBlock
             String saveto = getEditorConfigFile();
             using (FileStream outstream = new FileStream(saveto, FileMode.Create))
             {
-                XDocument savedoc = new XDocument(ddgriddata.GetXmlData("EditSettings"));
+                XDocument savedoc = new XDocument(ddgriddata.GetXmlData("EditSettings",null));
                 savedoc.Save(outstream);
             }
 

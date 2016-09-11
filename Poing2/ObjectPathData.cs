@@ -45,11 +45,11 @@ namespace BASeCamp.BASeBlock
 
 
         }
-        public ObjectPathDataManager(XElement Source)
+        public ObjectPathDataManager(XElement Source, Object pPersistenceData)
         {
 
         }
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             List<KeyValuePair<String,ObjectPathData>> Contents = this.AsEnumerable().ToList();
             XElement ResultNode = new XElement(pNodeName);
@@ -57,7 +57,7 @@ namespace BASeCamp.BASeBlock
             {
                 //<PathData Key="Name"><ObjectPathData /></PathData>
                 XElement BuildNode = new XElement("PathData",new XAttribute("Key",kvpitem.Key));
-                BuildNode.Add(kvpitem.Value.GetXmlData("PathPoints"));
+                BuildNode.Add(kvpitem.Value.GetXmlData("PathPoints",pPersistenceData));
             }
             return ResultNode;
             //return StandardHelper.SaveList<ObjectPathData>()
@@ -303,14 +303,14 @@ namespace BASeCamp.BASeBlock
 
 
         }
-        public ObjectPathDataPoint(XElement Source)
+        public ObjectPathDataPoint(XElement Source,Object pPersistenceData)
         {
             XElement LocationNode = (XElement)Source.FirstNode;
-            _Location = StandardHelper.ReadElement<PointF>(LocationNode);
+            _Location = StandardHelper.ReadElement<PointF>(LocationNode,pPersistenceData);
             _Label = Source.Attribute("Label").Value;
             
         }
-        public XElement GetXmlData(String pNodeName)
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement result = new XElement(pNodeName);
             result.Add(StandardHelper.SaveElement(_Location,"Location",false));
@@ -550,16 +550,16 @@ namespace BASeCamp.BASeBlock
             info.AddValue("PathPoints", _PathPoints);
 
 
-        }public XElement GetXmlData(String pNodeName)
+        }public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement resultnode = new XElement(pNodeName,new XAttribute("Name",_Name));
             resultnode.Add(StandardHelper.SaveList<ObjectPathDataPoint>(_PathPoints,"PathPoints",false));
             return resultnode;
         }
-        public ObjectPathData(XElement Source)
+        public ObjectPathData(XElement Source,Object pPersistenceData)
         {
             _Name = Source.Attribute("Name").Value;
-            _PathPoints = StandardHelper.ReadList<ObjectPathDataPoint>((XElement)Source.FirstNode);
+            _PathPoints = StandardHelper.ReadList<ObjectPathDataPoint>((XElement)Source.FirstNode,pPersistenceData);
 
         }
 

@@ -39,15 +39,15 @@ namespace BASeCamp.BASeBlock.Blocks
         {
             speedfactor = clonethis.speedfactor;
         }
-        protected SpeedBallBlock(XElement Source):base(Source)
+        protected SpeedBallBlock(XElement Source, Object pPersistenceData) :base(Source,pPersistenceData)
         {
             speedfactor = (PointF)Source.ReadElement<PointF>("SpeedFactor");
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
-            result.Add(StandardHelper.SaveElement<PointF>(speedfactor,"SpeedFactor"));
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
+            result.Add(StandardHelper.SaveElement<PointF>(speedfactor,"SpeedFactor",pPersistenceData));
             return result;
         }
 

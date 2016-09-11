@@ -73,15 +73,15 @@ namespace BASeCamp.BASeBlock.Blocks
 
 
         }
-        public ImageClipBlock(XElement Source)
+        public ImageClipBlock(XElement Source, Object pPersistenceData):base(Source,pPersistenceData)
         {
             cliprect = Source.ReadElement<RectangleF>("ClipRect");
         }
 
-        public override XElement GetXmlData(string pNodeName)
+        public override XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
-            var result = base.GetXmlData(pNodeName);
-            result.Add(StandardHelper.SaveElement(cliprect,"ClipRect"));
+            var result = base.GetXmlData(pNodeName,pPersistenceData);
+            result.Add(StandardHelper.SaveElement(cliprect,"ClipRect",pPersistenceData));
             return result;
         }
 

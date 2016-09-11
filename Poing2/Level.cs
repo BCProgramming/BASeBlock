@@ -9,15 +9,12 @@ using System.Drawing.Imaging;
 using System.Drawing.Text;
 using System.IO;
 using System.Linq;
-using System.Net.Mime;
 using System.Runtime.Serialization;
-using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using BASeCamp.BASeBlock.Blocks;
-using Ionic.Zlib;
 using BASeCamp.Elementizer;
 
 namespace BASeCamp.BASeBlock
@@ -25,110 +22,106 @@ namespace BASeCamp.BASeBlock
     [Serializable]
     public class BBImageSerializationData
     {
-        private float [][] _ColorMatrixValues = null;
+        private float[][] _ColorMatrixValues = null;
 
         public ColorMatrix ColorMatrixValues
         {
-            get {
+            get
+            {
                 if (_ColorMatrixValues == null) _ColorMatrixValues = ColorMatrices.GetIdentity();
-            
+
                 return new ColorMatrix(_ColorMatrixValues);
             }
-            
-
         }
 
         public String ImageKey { get; set; }
-        
-
-
     }
-    /// <summary>
-    /// Holds the level template data.
-    /// These are (or rather, will be) loaded for LTF (Level Template File's) files in a Templates folder.
-    /// </summary>
-    /// 
-    /*[Serializable]
-    public class LevelTemplateData
-    {
-        private Level _LevelData;
-        public Level LevelData { get { return _LevelData; } set { _LevelData = value; } }
 
-
-        /// <summary>
-        /// assigns/clones the template data to the given level.
-        /// </summary>
-        /// <param name="leveldata"></param>
-        public void AssignTo(Level leveldata)
-        {
-
-
-
-
-
-
-        }
-
-        public static LevelTemplateData FromFile(String pFilename)
-        {
-            LevelTemplateData retrievedata = null;
-
-            FileStream fs = new FileStream(pFilename,FileMode.Open);
-            DeflateStream dstream = new DeflateStream(fs, CompressionMode.Decompress);
-            retrievedata = FromStream(dstream);
-            return retrievedata;
-
-
-        }
-        public static LevelTemplateData FromStream(Stream datastream)
-        {
-            LevelTemplateData returnobject = new LevelTemplateData();
-            //read from a stream.
-            BinaryFormatter bf = new BinaryFormatter();
-            returnobject.LevelData = (Level)bf.Deserialize(datastream);
-
-            return returnobject;
-
-        }
-        public static void ToStream(LevelTemplateData filedata, Stream data)
-        {
-            BinaryFormatter bf = new BinaryFormatter();
-            bf.Serialize(data, filedata);
-
-
-        }
-        public static void ToFile(LevelTemplateData filedata, String pFilename)
-        {
-            FileStream fs = new FileStream(pFilename, FileMode.Create);
-            DeflateStream ds = new DeflateStream(fs, CompressionMode.Compress);
-            ToStream(filedata, ds);
-
-
-
-        }
-
-    }
-    */
     [Serializable]
-    public class Level : ISerializable ,IDeserializationCallback,IXmlPersistable
+    public class Level : ISerializable, IDeserializationCallback, IXmlPersistable
     {
         //holds level data. 
         private static Font IntroDefaultFont = new Font(BCBlockGameState.GetMonospaceFont(), 24);
-        public bool NoPaddle=false;
 
-        
-        public String PreviewImageKey=null;
-        private List<TriggerEvent> _Events=new List <TriggerEvent>();
-       
-        [Editor(typeof(EventCollectionEditor), typeof(UITypeEditor))]
-        public List<TriggerEvent> LevelEvents { get { return _Events; } set { _Events = value; } }
-        public int StartTrigger = 0;
-        public List<Block> levelblocks = new List<Block>();
-        public List<cBall> levelballs = new List<cBall>();
-        private float[][] _SidebarColorMatrixValues=null;
-        private float[][] _PauseColorMatrixValues = null;
+
+        private List<Type> _AvailablePowerups = GamePowerUp.GetPowerUpTypes().ToList();
+
+        private BackgroundDrawer _Background;
         private String _ClearTitle = "       SCORE     \n";
-        public String ClearTitle { get { return _ClearTitle; } set { _ClearTitle = value; } }
+
+        private String _DeathSound = "MMDEATH";
+        private String _Description = "";
+        private List<TriggerEvent> _Events = new List<TriggerEvent>();
+        private String _GameOverMusic;
+
+        private String _GameOverPicKey = "TALLYPIC";
+        private String _IntroMusicName = "INTRO";
+
+        private String _LevelCompleteString = "Level Complete!";
+
+        private String _LevelName = "Level";
+        private Font _LevelNameIntroFont = IntroDefaultFont;
+        private int _MaxBalls; //maximum number of balls allowed in play.
+        private List<PlayMessageData> _MessageData = new List<PlayMessageData>();
+        private String _MusicName = "BASESTOMP";
+        private int _NextLevel;
+        private float[][] _PauseColorMatrixValues = null;
+
+        private Font _PauseFont = new Font("Arial", 24);
+
+        private String _PauseImageKey = "paused";
+        private SizeF _PauseImageScale = new SizeF(4f, 4f);
+
+        private String _PauseSound = "PAUSE";
+
+
+        private Color _PauseTextColor = Color.Black;
+
+        public TimeSpan _ShowNameLength = new TimeSpan(0, 0, 0, 0); //default to the intro sound.
+        private float[][] _SidebarColorMatrixValues = null;
+
+        private String _SidebarImageKey = "";
+
+        private Color _SidebarTextColor = Color.Black;
+        private String _TallyMusicName = "tallymusic";
+        private String _TallyPicKey = "TALLYPIC";
+        private String _TallyTickSound = "tallytick";
+
+
+        private BCBlockGameState.DeferredLevelLoadProc<Level> DeferredLoader = null;
+        private bool isloaded = false;
+        public List<cBall> levelballs = new List<cBall>();
+        public List<Block> levelblocks = new List<Block>();
+        public Queue<PlayMessageData> MessageQueue;
+        public bool NoPaddle = false;
+
+
+        public String PreviewImageKey = null;
+
+        public int StartTrigger = 0;
+
+        #region IDeserializationCallback Members
+
+        public void OnDeserialization(object sender)
+        {
+            InitMessageStack();
+        }
+
+        #endregion
+
+        [Editor(typeof(EventCollectionEditor), typeof(UITypeEditor))]
+        public List<TriggerEvent> LevelEvents
+        {
+            get { return _Events; }
+            set { _Events = value; }
+        }
+
+        public String ClearTitle
+        {
+            get { return _ClearTitle; }
+            set { _ClearTitle = value; }
+        }
+
         public ColorMatrix PauseColorMatrixValues
         {
             get
@@ -136,11 +129,8 @@ namespace BASeCamp.BASeBlock
                 if (_PauseColorMatrixValues == null) _PauseColorMatrixValues = ColorMatrices.GetIdentity();
 
                 return new ColorMatrix(_PauseColorMatrixValues);
-
-
             }
         }
-        private SizeF _PauseImageScale = new SizeF(4f, 4f);
 
 
         public SizeF PauseImageScale
@@ -149,18 +139,17 @@ namespace BASeCamp.BASeBlock
             set { _PauseImageScale = value; }
         }
 
-        private String _PauseImageKey = "paused";
-
         public String PauseImageKey
         {
             get { return _PauseImageKey; }
             set { _PauseImageKey = value; }
         }
 
-        private String _GameOverPicKey = "TALLYPIC";
-        public String GameOverPicKey { get { return _GameOverPicKey;} set {_GameOverPicKey = value;}}
-
-        private Font _PauseFont = new Font("Arial", 24);
+        public String GameOverPicKey
+        {
+            get { return _GameOverPicKey; }
+            set { _GameOverPicKey = value; }
+        }
 
         public Font PauseFont
         {
@@ -168,9 +157,6 @@ namespace BASeCamp.BASeBlock
             set { _PauseFont = value; }
         }
 
-
-        private Color _PauseTextColor = Color.Black;
-        
         public Color PauseTextColor
         {
             get { return _PauseTextColor; }
@@ -182,84 +168,288 @@ namespace BASeCamp.BASeBlock
             get
             {
                 if (_SidebarColorMatrixValues == null)
-                {//identity...
+                {
+//identity...
                     _SidebarColorMatrixValues = ColorMatrices.GetIdentity();
 
 
-                        ;
-                   
-
+                    ;
                 }
 
-            return new ColorMatrix(_SidebarColorMatrixValues);
-
+                return new ColorMatrix(_SidebarColorMatrixValues);
             }
         }
-        private String _SidebarImageKey = "";
+
         public String SidebarImageKey
         {
             get { return _SidebarImageKey; }
             set { _SidebarImageKey = value; }
-
         }
-        private Color _SidebarTextColor=Color.Black;
+
         public Color SidebarTextColor
         {
             get { return _SidebarTextColor; }
             set { _SidebarTextColor = value; }
         }
-            public TimeSpan _ShowNameLength = new TimeSpan(0, 0, 0, 0); //default to the intro sound.
-        
-            private BackgroundDrawer _Background;
-        [Editor(typeof(BASeBlock.ObjectTypeEditor), typeof(UITypeEditor))]
 
-            public BackgroundDrawer Background { get { EnsureLoaded(); return _Background; } set { EnsureLoaded(); _Background = value; } }
-            [TypeConverter(typeof(TimeSpanConverter))]
-        public TimeSpan ShowNameLength { 
-                get { EnsureLoaded(); 
-                    
-                    
-                    return _ShowNameLength; } 
-                set { EnsureLoaded(); _ShowNameLength = value; } }
+        [Editor(typeof(ObjectTypeEditor), typeof(UITypeEditor))]
+        public BackgroundDrawer Background
+        {
+            get
+            {
+                EnsureLoaded();
+                return _Background;
+            }
+            set
+            {
+                EnsureLoaded();
+                _Background = value;
+            }
+        }
 
-            private String _PauseSound = "PAUSE";
-            private String _IntroMusicName = "INTRO";
-            private String _MusicName = "BASESTOMP";
-            public String PauseSound { get { EnsureLoaded(); return _PauseSound; } set { EnsureLoaded(); _PauseSound = value; } }
-            public string IntroMusicName { get { EnsureLoaded(); return _IntroMusicName; } set { EnsureLoaded(); _IntroMusicName = value; } }
-            public String MusicName { get { EnsureLoaded(); return _MusicName; } set { EnsureLoaded(); _MusicName = value; } }
+        [TypeConverter(typeof(TimeSpanConverter))]
+        public TimeSpan ShowNameLength
+        {
+            get
+            {
+                EnsureLoaded();
 
-        private String _DeathSound = "MMDEATH";
+
+                return _ShowNameLength;
+            }
+            set
+            {
+                EnsureLoaded();
+                _ShowNameLength = value;
+            }
+        }
+
+        public String PauseSound
+        {
+            get
+            {
+                EnsureLoaded();
+                return _PauseSound;
+            }
+            set
+            {
+                EnsureLoaded();
+                _PauseSound = value;
+            }
+        }
+
+        public string IntroMusicName
+        {
+            get
+            {
+                EnsureLoaded();
+                return _IntroMusicName;
+            }
+            set
+            {
+                EnsureLoaded();
+                _IntroMusicName = value;
+            }
+        }
+
+        public String MusicName
+        {
+            get
+            {
+                EnsureLoaded();
+                return _MusicName;
+            }
+            set
+            {
+                EnsureLoaded();
+                _MusicName = value;
+            }
+        }
 
         public String DeathSound
         {
-            get { EnsureLoaded(); if (_DeathSound == null) _DeathSound = "MMDEATH"; //if null, use a default.
-                    return _DeathSound;
+            get
+            {
+                EnsureLoaded();
+                if (_DeathSound == null) _DeathSound = "MMDEATH"; //if null, use a default.
+                return _DeathSound;
+            }
+            set
+            {
+                EnsureLoaded();
+                _DeathSound = value;
+            }
         }
-            set { EnsureLoaded(); _DeathSound = value; }
-        }
-        private String _LevelCompleteString="Level Complete!";
-        public String EndLevelString { get { return _LevelCompleteString; } set { _LevelCompleteString = value; } }
-            public Color LevelNameIntroTextPenColor { get; set; }
-        public Color LevelNameIntroTextFillColor { get; set; }
-        private Font _LevelNameIntroFont=IntroDefaultFont;
-        private List<PlayMessageData> _MessageData = new List<PlayMessageData>();
-        public Queue<PlayMessageData> MessageQueue;
-        
 
-        public static void PopulateDropDown(List<Level> levels, ToolStripDropDown ts, Func<Level,ToolStripMenuItem,bool> AddFunction=null,Action<Level,ToolStripItem> LevelClicked=null,bool doClear=true)
+        public String EndLevelString
+        {
+            get { return _LevelCompleteString; }
+            set { _LevelCompleteString = value; }
+        }
+
+        public Color LevelNameIntroTextPenColor { get; set; }
+        public Color LevelNameIntroTextFillColor { get; set; }
+
+        public List<PlayMessageData> MessageData
+        {
+            get
+            {
+                EnsureLoaded();
+                return _MessageData;
+            }
+            set
+            {
+                EnsureLoaded();
+                _MessageData = value;
+                InitMessageStack();
+            }
+        }
+
+        public Font LevelnameIntroFont
+        {
+            get
+            {
+                EnsureLoaded();
+                if (_LevelNameIntroFont == null) _LevelNameIntroFont = IntroDefaultFont;
+                return _LevelNameIntroFont;
+            }
+            set { _LevelNameIntroFont = value; }
+        }
+
+
+        [Editor(typeof(TypeCheckboxItem<GamePowerUp>), typeof(UITypeEditor))]
+        public List<Type> AvailablePowerups
+        {
+            get { return _AvailablePowerups; }
+            set { _AvailablePowerups = value; }
+        }
+
+        public String LevelName
+        {
+            get
+            {
+                EnsureLoaded();
+                return _LevelName;
+            }
+            set
+            {
+                EnsureLoaded();
+                _LevelName = value;
+            }
+        }
+
+        public String Description
+        {
+            get
+            {
+                EnsureLoaded();
+                return _Description;
+            }
+            set
+            {
+                EnsureLoaded();
+                _Description = value;
+            }
+        }
+
+        public String TallyMusicName
+        {
+            get
+            {
+                EnsureLoaded();
+                return _TallyMusicName;
+            }
+            set
+            {
+                EnsureLoaded();
+                _TallyMusicName = value;
+            }
+        }
+
+        public String TallyTickSound
+        {
+            get
+            {
+                EnsureLoaded();
+                return _TallyTickSound;
+            }
+            set
+            {
+                EnsureLoaded();
+                _TallyTickSound = value;
+            }
+        }
+
+        public String TallyPicKey
+        {
+            get
+            {
+                EnsureLoaded();
+                return _TallyPicKey;
+            }
+            set
+            {
+                EnsureLoaded();
+                _TallyPicKey = value;
+            }
+        }
+
+        public string GameOverMusic
+        {
+            get
+            {
+                EnsureLoaded();
+                return _GameOverMusic;
+            }
+            set
+            {
+                EnsureLoaded();
+                _GameOverMusic = value;
+            }
+        }
+
+        public int NextLevel
+        {
+            get
+            {
+                EnsureLoaded();
+                return _NextLevel;
+            }
+            set
+            {
+                EnsureLoaded();
+                _NextLevel = value;
+            }
+        }
+
+        public int MaxBalls
+        {
+            get
+            {
+                EnsureLoaded();
+                return _MaxBalls;
+            }
+            set
+            {
+                EnsureLoaded();
+                _MaxBalls = value;
+            }
+        }
+
+
+        public static void PopulateDropDown(List<Level> levels, ToolStripDropDown ts, Func<Level, ToolStripMenuItem, bool> AddFunction = null, Action<Level, ToolStripItem> LevelClicked = null, bool doClear = true)
         {
             if (levels.Count == 0) return;
             ts.Items.Clear();
             foreach (var iterlevel in levels)
             {
                 Image drawresult = BCBlockGameState.DrawLevelToImage(iterlevel, new Size(32, 32));
-                ToolStripMenuItem createditem = new ToolStripMenuItem(iterlevel.LevelName +"(" + iterlevel.levelblocks.Count + " Blocks)", drawresult)
-                                                    {
-                                                        Tag
-                                                            =
-                                                            iterlevel
-                                                    };
+                ToolStripMenuItem createditem = new ToolStripMenuItem(iterlevel.LevelName + "(" + iterlevel.levelblocks.Count + " Blocks)", drawresult)
+                {
+                    Tag
+                        =
+                        iterlevel
+                };
 
 
                 if (AddFunction == null || AddFunction(iterlevel, createditem))
@@ -270,12 +460,7 @@ namespace BASeCamp.BASeBlock
                         createditem.Click += (obj, ev) => LevelClicked(closedLevel, createditem);
                     }
                 }
-                
-
             }
-
-
-
         }
 
 
@@ -287,29 +472,18 @@ namespace BASeCamp.BASeBlock
 
             foreach (var sortitem in _MessageData)
             {
-                 MessageQueue.Enqueue(sortitem);
-
+                MessageQueue.Enqueue(sortitem);
             }
-
-
-            
-
-            
-
-
-
         }
 
         public Image GetLevelThumbnail()
         {
-
             return BCBlockGameState.DrawLevelToImage(this);
         }
+
         public Image GetLevelThumbnail(Size imagesize)
         {
             return BCBlockGameState.DrawLevelToImage(this, imagesize);
-
-
         }
 
 
@@ -321,67 +495,18 @@ namespace BASeCamp.BASeBlock
             foreach (var sortitem in _MessageData)
             {
                 tempsort.Add(sortitem.TimeIndex, sortitem);
-
             }
 
             foreach (var sorteditem in tempsort)
             {
-                returnresult.Enqueue((PlayMessageData)sorteditem.Value.Clone());
-
+                returnresult.Enqueue((PlayMessageData) sorteditem.Value.Clone());
             }
 
             return returnresult;
-
-        }
-        public List<PlayMessageData> MessageData
-        {
-            get { EnsureLoaded(); return _MessageData; }
-            set
-        {
-            EnsureLoaded();
-            _MessageData = value;
-            InitMessageStack();
-        
-        } }
-            public Font LevelnameIntroFont
-        {
-            get
-            {
-                EnsureLoaded();
-                if (_LevelNameIntroFont == null) _LevelNameIntroFont = IntroDefaultFont;
-                return _LevelNameIntroFont;
-                
-            }
-            set { _LevelNameIntroFont = value; }
         }
 
 
-            private List<Type> _AvailablePowerups = GamePowerUp.GetPowerUpTypes().ToList();
-
-
-            [Editor(typeof(TypeCheckboxItem<GamePowerUp>), typeof(UITypeEditor))]
-            public List<Type> AvailablePowerups { get { return _AvailablePowerups; } set { _AvailablePowerups = value; } } 
-
-            private String _LevelName="Level";
-            private String _Description = "";
-            private String _TallyMusicName="tallymusic";
-            private String _TallyTickSound="tallytick";
-            private String _TallyPicKey="TALLYPIC";
-            private String _GameOverMusic;
-            private int _NextLevel;
-            private int _MaxBalls; //maximum number of balls allowed in play.
-        
-            public String LevelName { get { EnsureLoaded(); return _LevelName; } set { EnsureLoaded(); _LevelName = value; } }
-            public String Description { get { EnsureLoaded(); return _Description; } set { EnsureLoaded(); _Description = value; } }
-            public String TallyMusicName { get { EnsureLoaded(); return _TallyMusicName; } set { EnsureLoaded(); _TallyMusicName = value; } }
-            public String TallyTickSound { get { EnsureLoaded(); return _TallyTickSound; } set { EnsureLoaded(); _TallyTickSound = value; } }
-            public String TallyPicKey { get { EnsureLoaded(); return _TallyPicKey; } set { EnsureLoaded(); _TallyPicKey = value; } }
-            public string GameOverMusic { get { EnsureLoaded(); return _GameOverMusic; } set { EnsureLoaded(); _GameOverMusic = value; } }
-            public int NextLevel { get { EnsureLoaded(); return _NextLevel; } set { EnsureLoaded(); _NextLevel = value; } }
-            public int MaxBalls { get { EnsureLoaded(); return _MaxBalls; } set { EnsureLoaded(); _MaxBalls = value; } }
-       
-       
-            /// <summary>
+        /// <summary>
         /// Creates a bitmap containing the Introductory text, or other elements
         /// </summary>
         /// <param name="forlevel">level whose introductory textbitmap is to be rendered </param>
@@ -396,19 +521,17 @@ namespace BASeCamp.BASeBlock
 
             Graphics gotgraphics = Graphics.FromImage(createme);
             gotgraphics.PageUnit = GraphicsUnit.Point;
-            SizeF measureit = gotgraphics.MeasureString(forlevel.LevelName, intfont,PointF.Empty,StringFormat.GenericTypographic);
-            
+            SizeF measureit = gotgraphics.MeasureString(forlevel.LevelName, intfont, PointF.Empty, StringFormat.GenericTypographic);
+
             gotgraphics.Dispose();
             measureit = new SizeF(measureit.Width, measureit.Height);
             //destroy the graphics and recreate it..
             //add height and width for stroke.
 
-            
 
             if (measureit.Width != 0 && measureit.Height != 0)
             {
-
-                createme = new Bitmap((int)Math.Ceiling(measureit.Width), (int)Math.Ceiling(measureit.Height),PixelFormat.Format32bppArgb);
+                createme = new Bitmap((int) Math.Ceiling(measureit.Width), (int) Math.Ceiling(measureit.Height), PixelFormat.Format32bppArgb);
                 //adds ten pixels... for... well no reason, really.
                 gotgraphics = Graphics.FromImage(createme);
                 gotgraphics.CompositingQuality = CompositingQuality.HighQuality;
@@ -418,34 +541,29 @@ namespace BASeCamp.BASeBlock
                 GraphicsPath drawtextpath = new GraphicsPath();
                 //add the text 
                 drawtextpath.AddString(forlevel.LevelName, intfont, new Point(0, 0),
-                                       StringFormat.GenericTypographic);
+                    StringFormat.GenericTypographic);
                 gotgraphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
-               
+
                 gotgraphics.Clear(Color.Transparent);
                 //gotgraphics.DrawRectangle(new Pen(Color.Black, 5), new Rectangle(0, 0, (int)measureit.Width, (int)measureit.Height));
                 //gotgraphics.FillRectangle(new SolidBrush(Color.Red), 0, 0, createme.Width, createme.Height);
                 gotgraphics.FillPath(new SolidBrush(forlevel.LevelNameIntroTextFillColor), drawtextpath);
                 gotgraphics.DrawPath(new Pen(forlevel.LevelNameIntroTextPenColor, 1), drawtextpath);
-
             }
             else
             {
                 //create blank 1x1 intro bitmap.
                 createme = new Bitmap(1, 1);
                 gotgraphics = Graphics.FromImage(createme);
-
             }
             thebitmap = createme;
-            
+
             thegraphics = gotgraphics;
-
         }
-
 
 
         //public Type[] PowerUps = new Type[] {typeof(PaddlePlusPowerup),typeof(PaddleMinusPowerup)};
         //public float[] PowerUpsChance = new float[] {1,1}; //currently, the chance for all powerups are equal.
- 
 
 
         /// <summary>
@@ -454,28 +572,17 @@ namespace BASeCamp.BASeBlock
         /// <returns></returns>
         public TimeSpan CalculateParTime()
         {
-
-            TimeSpan TotalSum=new TimeSpan();
+            TimeSpan TotalSum = new TimeSpan();
 
 
             foreach (Block iterateblock in levelblocks)
             {
-
                 TotalSum += iterateblock.TimeScore;
-
-
             }
 
             return TotalSum;
-
-
-
         }
 
-
-        
-        private BCBlockGameState.DeferredLevelLoadProc<Level> DeferredLoader = null;
-        private bool isloaded = false;
         private void EnsureLoaded()
         {
             if (DeferredLoader != null)
@@ -483,12 +590,10 @@ namespace BASeCamp.BASeBlock
                 DeferredLoader(this);
                 isloaded = true;
             }
-
-
         }
 
-
         #region ISerializable Members
+
         public Level()
         {
             Background = new BackgroundColourImageDrawer(Color.Gray);
@@ -499,68 +604,68 @@ namespace BASeCamp.BASeBlock
             IntroMusicName = "ARKVC";
             PauseSound = "PAUSE";
             _MaxBalls = 250;
-            LevelNameIntroTextFillColor=Color.White;
-            LevelNameIntroTextPenColor=Color.Black;
+            LevelNameIntroTextFillColor = Color.White;
+            LevelNameIntroTextPenColor = Color.Black;
             LevelnameIntroFont = new Font(BCBlockGameState.GetMonospaceFont(), 48);
             isloaded = true; //we aren't deferred....
         }
-       
+
         public Level(BCBlockGameState.DeferredLevelLoadProc<Level> loadingproc)
         {
             isloaded = false;
             DeferredLoader = loadingproc;
-
-
         }
-        public XElement GetXmlData(String pNodeName)
+
+        public XElement GetXmlData(String pNodeName,Object pPersistenceData)
         {
             XElement result = new XElement(pNodeName);
-            result.Add(new XAttribute("MusicName",MusicName));
-            result.Add(new XAttribute("Levelname",LevelName));
-            result.Add(new XAttribute("MaxBalls",MaxBalls));
-            result.Add(StandardHelper.SaveElement<Color>(LevelNameIntroTextFillColor,"LevelNameIntroTextFillColor"));
-            result.Add(StandardHelper.SaveElement<Color>(LevelNameIntroTextPenColor, "LevelNameIntroTextPenColor"));
-            result.Add(StandardHelper.SaveElement<Font>(LevelnameIntroFont, "LevelNameIntroFont"));
-            result.Add(new XAttribute("TallyMusic",TallyMusicName));
+            result.Add(new XAttribute("MusicName", MusicName));
+            result.Add(new XAttribute("Levelname", LevelName));
+            result.Add(new XAttribute("MaxBalls", MaxBalls));
+            result.Add(StandardHelper.SaveElement<Color>(LevelNameIntroTextFillColor, "LevelNameIntroTextFillColor",pPersistenceData));
+            result.Add(StandardHelper.SaveElement<Color>(LevelNameIntroTextPenColor, "LevelNameIntroTextPenColor",pPersistenceData));
+            result.Add(StandardHelper.SaveElement<Font>(LevelnameIntroFont, "LevelNameIntroFont",pPersistenceData));
+            result.Add(new XAttribute("TallyMusic", TallyMusicName));
             result.Add(new XAttribute("TallyTickSound", TallyTickSound));
             result.Add(new XAttribute("TallyPicKey", TallyPicKey));
             result.Add(new XAttribute("GameOverMusic", GameOverMusic));
-            result.Add(new XAttribute("GameOverPicKey",GameOverPicKey));
+            result.Add(new XAttribute("GameOverPicKey", GameOverPicKey));
             result.Add(new XAttribute("IntroMusicName", IntroMusicName));
             result.Add(new XAttribute("NextLevel", NextLevel));
-            result.Add(StandardHelper.SaveElement<TimeSpan>(ShowNameLength,"ShowNameLength"));
-            result.Add(StandardHelper.SaveList<Block>(levelblocks,"Blocks",true));
-            result.Add(StandardHelper.SaveList<cBall>(levelballs, "Balls",true));
-            result.Add(new XAttribute("NoPaddle",NoPaddle));
+            result.Add(StandardHelper.SaveElement<TimeSpan>(ShowNameLength, "ShowNameLength",pPersistenceData));
+            result.Add(StandardHelper.SaveList<Block>(levelblocks, "Blocks", true));
+            result.Add(StandardHelper.SaveList<cBall>(levelballs, "Balls", true));
+            result.Add(new XAttribute("NoPaddle", NoPaddle));
             result.Add(new XAttribute("PauseSound", PauseSound));
             result.Add(new XAttribute("DeathSound", DeathSound));
-            result.Add(StandardHelper.SaveArray(_SidebarColorMatrixValues,"SideBarColorMatrix"));
-            result.Add(new XAttribute("SidebarImageKey",_SidebarImageKey));
-            result.Add(StandardHelper.SaveElement(SidebarTextColor,"SidebarTextColor") );
-            result.Add(new XAttribute("PauseImageKey",_PauseImageKey));
-            result.Add(StandardHelper.SaveArray(_PauseColorMatrixValues,"PauseColorMatrix"));
-            result.Add(StandardHelper.SaveElement(_PauseTextColor,"PauseTextColor"));
-            result.Add(StandardHelper.SaveElement(PauseFont,"PauseFont"));
-            result.Add(StandardHelper.SaveList(LevelEvents,"LevelEvents",true));
+            result.Add(StandardHelper.SaveArray(_SidebarColorMatrixValues, "SideBarColorMatrix",pPersistenceData));
+            result.Add(new XAttribute("SidebarImageKey", _SidebarImageKey));
+            result.Add(StandardHelper.SaveElement(SidebarTextColor, "SidebarTextColor",pPersistenceData));
+            result.Add(new XAttribute("PauseImageKey", _PauseImageKey));
+            result.Add(StandardHelper.SaveArray(_PauseColorMatrixValues, "PauseColorMatrix",pPersistenceData));
+            result.Add(StandardHelper.SaveElement(_PauseTextColor, "PauseTextColor",pPersistenceData));
+            result.Add(StandardHelper.SaveElement(PauseFont, "PauseFont",pPersistenceData));
+            result.Add(StandardHelper.SaveList(LevelEvents, "LevelEvents", true));
             List<String> AvailablePowers = BCBlockGameState.TypesToString(_AvailablePowerups).ToList();
-            result.Add(StandardHelper.SaveList(AvailablePowers,"AvailablePowerups"));
-            result.Add(StandardHelper.SaveElement(MessageData,"MessageData"));
-            result.Add(StandardHelper.SaveElement(Background,"Background",true));
-            result.Add(new XAttribute("ClearTitle",ClearTitle));
+            result.Add(StandardHelper.SaveList(AvailablePowers, "AvailablePowerups",pPersistenceData));
+            result.Add(StandardHelper.SaveElement(MessageData, "MessageData",pPersistenceData));
+            result.Add(StandardHelper.SaveElement(Background, "Background", true));
+            result.Add(new XAttribute("ClearTitle", ClearTitle));
 
             return result;
         }
-        public Level(XElement SourceNode)
+
+        public Level(XElement SourceNode, Object pPersistenceData)
         {
             isloaded = true;
             Debug.Print("cLevel XML constructor");
-            MusicName = SourceNode.GetAttributeString("MusicName",null);
+            MusicName = SourceNode.GetAttributeString("MusicName", null);
             LevelName = SourceNode.GetAttributeString("LevelName", "Default");
             Description = SourceNode.GetAttributeString("Description", "Default");
-            MaxBalls = SourceNode.GetAttributeInt("MaxBalls",-1);
+            MaxBalls = SourceNode.GetAttributeInt("MaxBalls", -1);
             LevelNameIntroTextFillColor = SourceNode.ReadElement("LevelNameIntroTextFillColor", Color.Black);
             LevelNameIntroTextPenColor = SourceNode.ReadElement("LevelnameIntroTextPenColor", Color.DodgerBlue);
-            _LevelNameIntroFont = SourceNode.ReadElement("LevelNameIntroFont", new Font(BCBlockGameState.GetMonospaceFont(),18));
+            _LevelNameIntroFont = SourceNode.ReadElement("LevelNameIntroFont", new Font(BCBlockGameState.GetMonospaceFont(), 18));
             TallyMusicName = SourceNode.GetAttributeString("TallyMusic");
             TallyTickSound = SourceNode.GetAttributeString("TallyTickSound");
             TallyPicKey = SourceNode.GetAttributeString("TallyPicKey");
@@ -569,45 +674,46 @@ namespace BASeCamp.BASeBlock
             IntroMusicName = SourceNode.GetAttributeString("IntroMusicName");
             NextLevel = SourceNode.GetAttributeInt("NextLevel", -1);
             ShowNameLength = SourceNode.ReadElement<TimeSpan>("ShowNameLength");
-            levelblocks = StandardHelper.ReadList<Block>(SourceNode.Element("Blocks"));
-            levelballs = StandardHelper.ReadList<cBall>(SourceNode.Element("Balls"));
+            levelblocks = StandardHelper.ReadList<Block>(SourceNode.Element("Blocks"),pPersistenceData);
+            levelballs = StandardHelper.ReadList<cBall>(SourceNode.Element("Balls"),pPersistenceData);
             NoPaddle = SourceNode.GetAttributeBool("NoPaddle", false);
             PauseSound = SourceNode.GetAttributeString("PauseSound");
             StartTrigger = SourceNode.GetAttributeInt("StartTrigger");
-            DeathSound = SourceNode.GetAttributeString("DeathSound","mmdeath");
+            DeathSound = SourceNode.GetAttributeString("DeathSound", "mmdeath");
             try
             {
-                _SidebarColorMatrixValues = (float[][])SourceNode.ReadArray<float[]>("SideBarColorMatrix", null);
+                _SidebarColorMatrixValues = (float[][]) SourceNode.ReadArray<float[]>("SideBarColorMatrix", null,pPersistenceData);
             }
-            catch(InvalidCastException)
+            catch (InvalidCastException)
             {
-
             }
             SidebarImageKey = SourceNode.GetAttributeString("SidebarImageKey");
             SidebarTextColor = SourceNode.ReadElement<Color>("SidebarTextColor");
             PauseImageKey = SourceNode.GetAttributeString("PauseImageKey");
             try
             {
-                _PauseColorMatrixValues = (float[][])SourceNode.ReadArray<float[]>("PauseColorMatrix", null);
+                _PauseColorMatrixValues = (float[][]) SourceNode.ReadArray<float[]>("PauseColorMatrix", null,pPersistenceData);
             }
-            catch(InvalidCastException)
+            catch (InvalidCastException)
             {
-
             }
             PauseTextColor = SourceNode.ReadElement<Color>("PauseTextColor");
             PauseFont = SourceNode.ReadElement<Font>("PauseFont");
             LevelEvents = SourceNode.ReadList<TriggerEvent>("LevelEvents", null);
             try
             {
-                _AvailablePowerups = BCBlockGameState.StringToTypes(SourceNode.ReadList<String>("AvailablePowerups")).ToList();
+                _AvailablePowerups = BCBlockGameState.StringToTypes(SourceNode.ReadList<String>("AvailablePowerups",null,pPersistenceData)).ToList();
             }
-            catch { _AvailablePowerups = GamePowerUp.GetPowerUpTypes().ToList(); }
+            catch
+            {
+                _AvailablePowerups = GamePowerUp.GetPowerUpTypes().ToList();
+            }
 
-            MessageData = SourceNode.ReadList<PlayMessageData>("MessageData");
+            MessageData = SourceNode.ReadList<PlayMessageData>("MessageData",null,pPersistenceData);
 
             try
             {
-                Background = SourceNode.ReadElement<BackgroundDrawer>("Background", new BackgroundColourImageDrawer(Color.White));
+                Background = SourceNode.ReadElement<BackgroundDrawer>("Background", new BackgroundColourImageDrawer(Color.White),pPersistenceData);
             }
             catch
             {
@@ -615,55 +721,232 @@ namespace BASeCamp.BASeBlock
             }
 
             ClearTitle = SourceNode.GetAttributeString("ClearTitle", "       SCORE     \n");
-
         }
-      
-        public Level(SerializationInfo info, StreamingContext context):this()
+
+        public Level(SerializationInfo info, StreamingContext context) : this()
         {
             FromSerializer(info, context);
         }
+
         internal void FromSerializer(SerializationInfo info, StreamingContext context)
         {
             isloaded = true;
             Debug.Print("cLevel Serialization constructor");
             //each is wrapped with a try; any element causing an exception is ignored. Usually, an exception would occur if an item was missing.
             //SerializableImage grabimage = (SerializableImage)info.GetValue("BackgroundPic", typeof(SerializableImage));
-            try { MusicName = info.GetString("MusicName"); } catch { }
-            try { LevelName = info.GetString("LevelName"); } catch { }
-            try { Description = info.GetString("Description"); }catch { }
-            try { MaxBalls = info.GetInt32("MaxBalls"); }catch { }
-            try { LevelNameIntroTextFillColor = (Color)info.GetValue("LevelNameIntroTextFillColor", typeof(Color)); } catch { }
-            try { LevelNameIntroTextPenColor = (Color)info.GetValue("LevelNameIntroTextPenColor", typeof(Color)); } catch { }
-            try { LevelnameIntroFont = (Font)info.GetValue("LevelNameIntroFont", typeof(Font)); } catch { }
-            try { TallyMusicName = info.GetString("TallyMusic"); } catch { }
-            try { TallyTickSound = info.GetString("TallyTickSound"); } catch { }
-            try { TallyPicKey = info.GetString("TallyPicKey"); } catch { }
-            try { GameOverMusic = info.GetString("GameOverMusic"); } catch { }
-            try { GameOverPicKey = info.GetString("GameOverPicKey");}catch{ }
-            try { IntroMusicName = info.GetString("IntroMusicName"); } catch { }
-            try { NextLevel = info.GetInt32("NextLevel"); } catch { }
-            try { ShowNameLength = (TimeSpan)info.GetValue("ShowNameLength", typeof(TimeSpan)); } catch { }
-            try { levelblocks = (List<Block>)info.GetValue("Blocks", typeof(List<Block>)); } catch { }
-            try { levelballs = (List<cBall>)info.GetValue("Balls", typeof(List<cBall>)); } catch { }
-            try { NoPaddle = info.GetBoolean("NoPaddle"); } catch { }
-            try { PauseSound = info.GetString("PauseSound"); } catch { }
-            try { StartTrigger = info.GetInt32("StartTrigger"); } catch { }
-            try { DeathSound = info.GetString("DeathSound"); } catch { DeathSound = "mmdeath"; }
-            try { _SidebarColorMatrixValues = (float[][])info.GetValue("SideBarColorMatrix", typeof(float[][])); } catch { }
-            try { _SidebarImageKey = info.GetString("SidebarImageKey"); } catch { }
-            try { _SidebarTextColor = (Color)info.GetValue("SidebarTextColor", typeof(Color)); } catch { }
-            try { _PauseImageKey = info.GetString("PauseImageKey"); } catch { }
-            try { _PauseColorMatrixValues = (float[][])info.GetValue("PauseColorMatrix", typeof(float[][])); } catch { }
-            try { _PauseTextColor = (Color)info.GetValue("PauseTextColor", typeof(Color)); } catch { }
-            try { _PauseFont = (Font)info.GetValue("PauseFont", typeof(Font)); } catch { }
-            try { LevelEvents = (List<TriggerEvent>)info.GetValue("LevelEvents", typeof(List<TriggerEvent>)); }catch { }
+            try
+            {
+                MusicName = info.GetString("MusicName");
+            }
+            catch
+            {
+            }
+            try
+            {
+                LevelName = info.GetString("LevelName");
+            }
+            catch
+            {
+            }
+            try
+            {
+                Description = info.GetString("Description");
+            }
+            catch
+            {
+            }
+            try
+            {
+                MaxBalls = info.GetInt32("MaxBalls");
+            }
+            catch
+            {
+            }
+            try
+            {
+                LevelNameIntroTextFillColor = (Color) info.GetValue("LevelNameIntroTextFillColor", typeof(Color));
+            }
+            catch
+            {
+            }
+            try
+            {
+                LevelNameIntroTextPenColor = (Color) info.GetValue("LevelNameIntroTextPenColor", typeof(Color));
+            }
+            catch
+            {
+            }
+            try
+            {
+                LevelnameIntroFont = (Font) info.GetValue("LevelNameIntroFont", typeof(Font));
+            }
+            catch
+            {
+            }
+            try
+            {
+                TallyMusicName = info.GetString("TallyMusic");
+            }
+            catch
+            {
+            }
+            try
+            {
+                TallyTickSound = info.GetString("TallyTickSound");
+            }
+            catch
+            {
+            }
+            try
+            {
+                TallyPicKey = info.GetString("TallyPicKey");
+            }
+            catch
+            {
+            }
+            try
+            {
+                GameOverMusic = info.GetString("GameOverMusic");
+            }
+            catch
+            {
+            }
+            try
+            {
+                GameOverPicKey = info.GetString("GameOverPicKey");
+            }
+            catch
+            {
+            }
+            try
+            {
+                IntroMusicName = info.GetString("IntroMusicName");
+            }
+            catch
+            {
+            }
+            try
+            {
+                NextLevel = info.GetInt32("NextLevel");
+            }
+            catch
+            {
+            }
+            try
+            {
+                ShowNameLength = (TimeSpan) info.GetValue("ShowNameLength", typeof(TimeSpan));
+            }
+            catch
+            {
+            }
+            try
+            {
+                levelblocks = (List<Block>) info.GetValue("Blocks", typeof(List<Block>));
+            }
+            catch
+            {
+            }
+            try
+            {
+                levelballs = (List<cBall>) info.GetValue("Balls", typeof(List<cBall>));
+            }
+            catch
+            {
+            }
+            try
+            {
+                NoPaddle = info.GetBoolean("NoPaddle");
+            }
+            catch
+            {
+            }
+            try
+            {
+                PauseSound = info.GetString("PauseSound");
+            }
+            catch
+            {
+            }
+            try
+            {
+                StartTrigger = info.GetInt32("StartTrigger");
+            }
+            catch
+            {
+            }
+            try
+            {
+                DeathSound = info.GetString("DeathSound");
+            }
+            catch
+            {
+                DeathSound = "mmdeath";
+            }
+            try
+            {
+                _SidebarColorMatrixValues = (float[][]) info.GetValue("SideBarColorMatrix", typeof(float[][]));
+            }
+            catch
+            {
+            }
+            try
+            {
+                _SidebarImageKey = info.GetString("SidebarImageKey");
+            }
+            catch
+            {
+            }
+            try
+            {
+                _SidebarTextColor = (Color) info.GetValue("SidebarTextColor", typeof(Color));
+            }
+            catch
+            {
+            }
+            try
+            {
+                _PauseImageKey = info.GetString("PauseImageKey");
+            }
+            catch
+            {
+            }
+            try
+            {
+                _PauseColorMatrixValues = (float[][]) info.GetValue("PauseColorMatrix", typeof(float[][]));
+            }
+            catch
+            {
+            }
+            try
+            {
+                _PauseTextColor = (Color) info.GetValue("PauseTextColor", typeof(Color));
+            }
+            catch
+            {
+            }
+            try
+            {
+                _PauseFont = (Font) info.GetValue("PauseFont", typeof(Font));
+            }
+            catch
+            {
+            }
+            try
+            {
+                LevelEvents = (List<TriggerEvent>) info.GetValue("LevelEvents", typeof(List<TriggerEvent>));
+            }
+            catch
+            {
+            }
             try
             {
                 //info.AddValue("AvailablePowerups", BCBlockGameState.TypesToString(_AvailablePowerups).ToList());
-                _AvailablePowerups = BCBlockGameState.StringToTypes((List<String>)info.GetValue("AvailablePowerups", typeof(List<String>))).ToList();
-
+                _AvailablePowerups = BCBlockGameState.StringToTypes((List<String>) info.GetValue("AvailablePowerups", typeof(List<String>))).ToList();
             }
-            catch { _AvailablePowerups = GamePowerUp.GetPowerUpTypes().ToList(); }
+            catch
+            {
+                _AvailablePowerups = GamePowerUp.GetPowerUpTypes().ToList();
+            }
             try
             {
                 MessageData =
@@ -673,24 +956,28 @@ namespace BASeCamp.BASeBlock
             catch
             {
             } //empty catch...
-            
+
             //try{LevelImage = info.getImage("LevelImage");}catch{}
             //try { BackgroundColor = (Color)info.GetValue("BackgroundColor", typeof(Color)); }catch{}
             //try { BackgroundPicKey = info.GetString("BackgroundPic"); }catch {}
             try
             {
-
-                Background = (BackgroundColourImageDrawer)info.GetValue("Background", typeof(BackgroundColourImageDrawer));
+                Background = (BackgroundColourImageDrawer) info.GetValue("Background", typeof(BackgroundColourImageDrawer));
             }
             catch
             {
                 Background = new BackgroundColourImageDrawer(Color.Gray);
             }
-            try { _ClearTitle = info.GetString("ClearTitle"); }
-            catch { _ClearTitle = "       SCORE     \n"; }
-
-
+            try
+            {
+                _ClearTitle = info.GetString("ClearTitle");
+            }
+            catch
+            {
+                _ClearTitle = "       SCORE     \n";
+            }
         }
+
         public byte[] getserialbytes()
         {
             //simply serializes this object and returns the byte from that array.
@@ -699,12 +986,11 @@ namespace BASeCamp.BASeBlock
             bf.Serialize(ms, this);
             //long locate = ms.Position;
             ms.Seek(0, SeekOrigin.Begin);
-            byte[] returnit = new byte[(int)ms.Length];
+            byte[] returnit = new byte[(int) ms.Length];
 
-            ms.Read(returnit, 0, (int)ms.Length);
+            ms.Read(returnit, 0, (int) ms.Length);
 
             return returnit;
-
         }
 
         public String MD5Hash()
@@ -721,13 +1007,10 @@ namespace BASeCamp.BASeBlock
             }
 
             return sb.ToString();
-
-
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
         {
-            
             info.AddValue("MusicName", MusicName);
             info.AddValue("LevelNameIntroTextFillColor", LevelNameIntroTextFillColor);
             info.AddValue("LevelNameIntroTextPenColor", LevelNameIntroTextPenColor);
@@ -743,7 +1026,7 @@ namespace BASeCamp.BASeBlock
             info.AddValue("IntroMusicName", IntroMusicName);
             info.AddValue("MaxBalls", MaxBalls);
             info.AddValue("NextLevel", NextLevel);
-            info.AddValue("Blocks",levelblocks);
+            info.AddValue("Blocks", levelblocks);
             info.AddValue("Balls", levelballs);
             info.AddValue("NoPaddle", NoPaddle);
             //info.AddValue("BackgroundDrawType", Background.GetType().FullName);
@@ -763,24 +1046,10 @@ namespace BASeCamp.BASeBlock
             info.AddValue("AvailablePowerups", BCBlockGameState.TypesToString(_AvailablePowerups).ToList());
             info.AddValue("ClearTitle", _ClearTitle);
             //info.AddValue("BackgroundColor", BackgroundColor);
-   
+
             Image levelimage = BCBlockGameState.DrawLevelToImage(this);
             //use the extension method.
             //info.AddValue("LevelImage", levelimage);
-
-            
-
-            
-        }
-
-        #endregion
-
-        #region IDeserializationCallback Members
-
-        public void OnDeserialization(object sender)
-        {
-            InitMessageStack();
-            
         }
 
         #endregion
